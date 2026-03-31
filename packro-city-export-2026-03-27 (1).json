@@ -1,0 +1,496 @@
+{
+  "tripType": "city",
+  "name": "",
+  "categories": [
+    {
+      "id": "doc_w21sh8w",
+      "emoji": "📄",
+      "name": "Documente",
+      "open": true,
+      "items": [
+        {
+          "id": "ypxfyti",
+          "text": "Buletin / CI",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "yozh3mg",
+          "text": "Card bancar + cash",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "5wpdw67",
+          "text": "Bilete & rezervări",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "f6r7djy",
+          "text": "Asigurare medicală",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "zon5rs3",
+          "text": "Permis de conducere (dacă e cazul)",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2ktziyk",
+          "text": "Card de sanatate",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "act_9lze0tb",
+      "emoji": "🎭",
+      "name": "Activități",
+      "open": true,
+      "items": [
+        {
+          "id": "c18qo6d",
+          "text": "Hartă offline descărcată",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "41tay0h",
+          "text": "Rezervări confirmate",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "427zim0",
+          "text": "Adaptor de priză",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "yimds40",
+          "text": "Power bank",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "67qos7q",
+          "text": "Umbrelă compactă",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "z9c1di7",
+          "text": "Căști audio",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "vr7h391",
+          "text": "Cablu Lightning",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hieas8g",
+          "text": "Cabul USB C",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "zipqt2u",
+          "text": "Cablu Micro USB",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2ovo4g7",
+          "text": "Yoto",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jdv37y5",
+          "text": "Casti plus cablu Jack Yoto",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "0aybb9z",
+          "text": "Adaptor mufa jack",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "knyn1wj",
+          "text": "Tableta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "z2mlpnb",
+          "text": "Carti + Creioane de desenat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "1fqoax5",
+          "text": "Carti de citit",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "yh80yb3",
+          "text": "Jucarie Plus",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "mmyybfq",
+          "text": "Carti de joc",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ks2onf9",
+          "text": "Joc copii",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jvy4mac",
+          "text": "Descarcat continut offline Netflix",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jseh79n",
+          "text": "Descarcat continut offline Youtube",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "fypcjxu",
+          "text": "Acumulatori",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "m27p08r",
+          "text": "Lampa de veghe",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ae4f6ol",
+          "text": "Masca Scuba",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tdedbzk",
+          "text": "Ochelari innot",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "hai_3q9gdt5",
+      "emoji": "👔",
+      "name": "Îmbrăcăminte",
+      "open": false,
+      "items": [
+        {
+          "id": "vcarpt1",
+          "text": "Pantofi confortabili pt mers",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rkth14s",
+          "text": "2–3 tricouri / bluze",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "7lu8482",
+          "text": "Ținută elegantă seară",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "6n6wl1h",
+          "text": "Geacă ușoară / impermeabilă",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "x9e1fy7",
+          "text": "Lenjerie + șosete",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "med_mfi4j06",
+      "emoji": "💊",
+      "name": "Medicamente",
+      "open": true,
+      "items": [
+        {
+          "id": "vh4ej5j",
+          "text": "Nurofen/ Paracetamol / ibuprofen",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8kgg2zr",
+          "text": "Plasturi + dezinfectant",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8b9wcx3",
+          "text": "Medicamente personale",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "yu76vcr",
+          "text": "Servetele umede",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jausru0",
+          "text": "Servetele uscate",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "y6y3hnv",
+          "text": "Comprese sterile",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "23jp3g5",
+          "text": "Apa de mare",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "w89ln0u",
+          "text": "Antibiotic?",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "zvnjawe",
+          "text": "Parasinus",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hzta8sv",
+          "text": "Nurofen adulti",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ppxn0sx",
+          "text": "Ceaiuri",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "foo_vcr9md6",
+      "emoji": "🍎",
+      "name": "Food",
+      "open": false,
+      "items": [
+        {
+          "id": "yr6rdon",
+          "text": "Sticlă apă reutilizabilă",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nczgzbf",
+          "text": "Gustări ușoare de drum",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "4tr30hk",
+          "text": "Gumă de mestecat",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "chk_ow5rp2v",
+      "emoji": "✅",
+      "name": "De verificat",
+      "open": true,
+      "items": [
+        {
+          "id": "ofvvdpi",
+          "text": "Oprește apa",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hjayw9g",
+          "text": "Verifică gazul",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2zia346",
+          "text": "Ferestre & uși închise",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "yi8j31r",
+          "text": "Setează alarma",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "1vdcmz1",
+          "text": "Aparate electrice oprite",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "7cz91tm",
+          "text": "Notificat banca",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "ourm77v",
+      "emoji": "🧴",
+      "name": "Igiena",
+      "open": true,
+      "items": [
+        {
+          "id": "iiwe2kx",
+          "text": "Sampon adulti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "kmzempw",
+          "text": "Sampon adulti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "inw10w2",
+          "text": "Baby Sampon",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "5omlgmw",
+          "text": "Gel de dus M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "x9ci945",
+          "text": "Gel de dus F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "u7ia2tb",
+          "text": "Pasta de dinti adulti",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tpc90uh",
+          "text": "Pasta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "g2g6n79",
+          "text": "Periuta de dinti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "i80tt1g",
+          "text": "Periuta de dinti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "pappp13",
+          "text": "Periuta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "bmj4gc6",
+          "text": "Crema Nivea",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "6g7r5d9",
+          "text": "Crema baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8lta6tr",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "km7fe6c",
+          "text": "Deodorant M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "wcdk2cg",
+          "text": "Deodorant F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "bt31k6t",
+          "text": "Gel de par",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "4f3kafa",
+          "text": "Crema Plaja",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    }
+  ],
+  "restaurants": [],
+  "places": []
+}
