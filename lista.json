@@ -287,26 +287,116 @@
           "open": false,
           "items": [
             {
-              "id": "uv2dcsi",
-              "text": "Paracetamol / Ibuprofen",
+              "id": "mms3mz1",
+              "text": "Paracetamol / ibuprofen",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "arx54wm",
+              "id": "rtqacsd",
               "text": "Plasturi + dezinfectant",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "lrvsgk2",
+              "id": "oblllfw",
               "text": "Dezinfectant mâini",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "msd5hpe",
+              "id": "622q4sh",
               "text": "Medicamente personale",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "4fqhudk",
+              "text": "Servete umede",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "3ptz45h",
+              "text": "Servetele uscate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "gufh4jw",
+              "text": "Comprese sterile",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "h1l09aa",
+              "text": "Apa de mare",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ka4545p",
+              "text": "Antibiotic",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "okzgw15",
+              "text": "Parasinus",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "fqayy5k",
+              "text": "Nurofen adulti",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "l2iowq3",
+              "text": "Ceaiuri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pcrb4em",
+              "text": "Leucoplast",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "n96yvov",
+              "text": "Probiotic",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "58l0vcq",
+              "text": "Bomboane de sup/ Spray de gat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "5uh9dtm",
+              "text": "Picaturi de nas",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "v4fgxln",
+              "text": "Gel arsuri solare",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9fk68ci",
+              "text": "Repelent insecte",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "fwx18ed",
+              "text": "Gel dupa intepaturi",
               "checked": false,
               "qty": ""
             }
