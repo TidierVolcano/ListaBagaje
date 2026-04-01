@@ -1,44 +1,47 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T09:50:35.298Z",
+  "exportedAt": "2026-04-01T10:05:47.330Z",
+  "activeType": "city",
   "trips": [
     {
+      "id": "trip_woip260",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775037032577,
+      "active": false,
       "categories": [
         {
-          "id": "doc_y8o6z80",
+          "id": "doc_54jzvnf",
           "emoji": "📄",
           "name": "Documente",
-          "open": true,
+          "open": false,
           "items": [
             {
-              "id": "836915k",
+              "id": "87oo8vf",
               "text": "Buletin / CI",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "uzw7ayw",
+              "id": "dagug24",
               "text": "Card bancar + cash",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "dsexh1o",
+              "id": "c65hruz",
               "text": "Bilete & rezervări",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "ne9z3rn",
+              "id": "c7zh7nu",
               "text": "Asigurare medicală",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "j9wicp2",
+              "id": "ozzrt5l",
               "text": "Permis de conducere (dacă e cazul)",
               "checked": false,
               "qty": ""
@@ -46,43 +49,43 @@
           ]
         },
         {
-          "id": "act_8ky9bmw",
+          "id": "act_b8zv03p",
           "emoji": "🎭",
           "name": "Activități",
           "open": false,
           "items": [
             {
-              "id": "ts6b3qk",
+              "id": "1k3ihm9",
               "text": "Hartă offline descărcată",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9ovgape",
+              "id": "hc873n0",
               "text": "Rezervări confirmate",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9066ore",
+              "id": "9bbze47",
               "text": "Adaptor de priză",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "gkncfwy",
+              "id": "xhx6ibr",
               "text": "Power bank",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "k5osijc",
+              "id": "9i5u9yr",
               "text": "Umbrelă compactă",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "rcqfo5y",
+              "id": "o34546x",
               "text": "Căști audio",
               "checked": false,
               "qty": ""
@@ -90,37 +93,37 @@
           ]
         },
         {
-          "id": "hai_lfm3b7f",
+          "id": "hai_c7pvaar",
           "emoji": "👔",
           "name": "Îmbrăcăminte",
           "open": false,
           "items": [
             {
-              "id": "5o5wyvx",
+              "id": "r16djyv",
               "text": "Pantofi confortabili pt mers",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "va06h7e",
+              "id": "u6vxujn",
               "text": "2–3 tricouri / bluze",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "lgqnb8o",
+              "id": "6ow8jyo",
               "text": "Ținută elegantă seară",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "dcs6b2y",
+              "id": "fjtmdj3",
               "text": "Geacă ușoară / impermeabilă",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "7n0eay1",
+              "id": "k3ffkgx",
               "text": "Lenjerie + șosete",
               "checked": false,
               "qty": ""
@@ -128,31 +131,31 @@
           ]
         },
         {
-          "id": "med_eg2gvxl",
+          "id": "med_1skz6xo",
           "emoji": "💊",
           "name": "Medicamente",
           "open": false,
           "items": [
             {
-              "id": "ks706zt",
+              "id": "uv2dcsi",
               "text": "Paracetamol / Ibuprofen",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9j7yey8",
+              "id": "arx54wm",
               "text": "Plasturi + dezinfectant",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "gp8pcxb",
+              "id": "lrvsgk2",
               "text": "Dezinfectant mâini",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "h00l4tt",
+              "id": "msd5hpe",
               "text": "Medicamente personale",
               "checked": false,
               "qty": ""
@@ -160,25 +163,25 @@
           ]
         },
         {
-          "id": "foo_glj043o",
+          "id": "foo_288radc",
           "emoji": "🍎",
           "name": "Food",
           "open": false,
           "items": [
             {
-              "id": "6m1hicg",
+              "id": "muy3nqa",
               "text": "Sticlă apă reutilizabilă",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "5p7p3rt",
+              "id": "gn0c5sw",
               "text": "Gustări ușoare de drum",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "86sw67e",
+              "id": "qla7xo8",
               "text": "Gumă de mestecat",
               "checked": false,
               "qty": ""
@@ -186,43 +189,43 @@
           ]
         },
         {
-          "id": "chk_jqskod4",
+          "id": "chk_lzj95ee",
           "emoji": "✅",
           "name": "De verificat",
           "open": true,
           "items": [
             {
-              "id": "5xlpo8x",
+              "id": "iggddp5",
               "text": "Oprește apa",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "l581vcd",
+              "id": "vor32t3",
               "text": "Verifică gazul",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "l8eoqd4",
+              "id": "alfh5vy",
               "text": "Ferestre & uși închise",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "x3cb8st",
+              "id": "bskmdy3",
               "text": "Setează alarma",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "j8nui0g",
+              "id": "w89lrmd",
               "text": "Aparate electrice oprite",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9xjvq4p",
+              "id": "bjodyia",
               "text": "Notificat banca",
               "checked": false,
               "qty": ""
@@ -236,9 +239,11 @@
       "infos": []
     },
     {
+      "id": "trip_5izr7to",
       "type": "seacar",
-      "name": "",
-      "savedAt": null,
+      "name": "Lista mea",
+      "savedAt": 1775037657380,
+      "active": true,
       "categories": [
         {
           "id": "doc_g79e73j",
@@ -511,9 +516,11 @@
       "infos": []
     },
     {
+      "id": "trip_acfp1vw",
       "type": "seaair",
-      "name": "",
-      "savedAt": null,
+      "name": "Lista mea",
+      "savedAt": 1775037657380,
+      "active": false,
       "categories": [
         {
           "id": "doc_hfpj3at",
@@ -780,9 +787,11 @@
       "infos": []
     },
     {
+      "id": "trip_0hehb9i",
       "type": "camp",
-      "name": "",
-      "savedAt": null,
+      "name": "Lista mea",
+      "savedAt": 1775037657380,
+      "active": true,
       "categories": [
         {
           "id": "doc_z9mkr7b",
@@ -1061,6 +1070,1321 @@
             {
               "id": "bftovf7",
               "text": "Anunțat familie traseul",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        }
+      ],
+      "restaurants": [],
+      "places": [],
+      "itinerary": [],
+      "infos": []
+    },
+    {
+      "id": "j3752ld",
+      "type": "seaair",
+      "name": "Valencia",
+      "savedAt": 1775037915818,
+      "active": true,
+      "categories": [
+        {
+          "id": "doc_b9jzk9e",
+          "emoji": "📄",
+          "name": "Documente",
+          "open": false,
+          "items": [
+            {
+              "id": "n2002do",
+              "text": "Buletin / CI",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "4urmvz7",
+              "text": "Pasaport Alex",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mztbzuy",
+              "text": "Permis de conducere",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "osl9fl3",
+              "text": "Talon auto",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mgu6lo4",
+              "text": "RCA",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "hgzascr",
+              "text": "Rovinieta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rdnaron",
+              "text": "Viniete Europa",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "aajv95v",
+              "text": "Card bancar EUR",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mea0zjy",
+              "text": "Cash",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "roody2s",
+              "text": "Bilete & rezervări",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "onpromr",
+              "text": "Asigurare medicală",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ej9f408",
+              "text": "Card de sanatate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pkat9u5",
+              "text": "Roaming",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "act_sb4pob7",
+          "emoji": "🎭",
+          "name": "Activități",
+          "open": false,
+          "items": [
+            {
+              "id": "5t2v0q4",
+              "text": "Hartă offline descărcată",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "6vsyfqz",
+              "text": "Rezervări confirmate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "qa5srs6",
+              "text": "Adaptor de priză",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "4at6czn",
+              "text": "Power bank",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ooyvrsd",
+              "text": "Umbrelă compactă",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dj0ly6t",
+              "text": "Căști audio",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "q39em76",
+              "text": "Cablu Lightning",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9ptzhsl",
+              "text": "Cablu USB C",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ojtrogw",
+              "text": "Cablu Micro USB",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "oc3sz3m",
+              "text": "Yoto",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "kt5x6pb",
+              "text": "Casti + Cablu Yoto",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dmkxsn1",
+              "text": "Casti Beats",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "hca58sk",
+              "text": "Adaptor mufa jack",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iwvk6fp",
+              "text": "Tableta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "atjqy3k",
+              "text": "Suport Tableta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pchr3pd",
+              "text": "Casti + Creioane colorat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8p5gs9y",
+              "text": "Carti de citit",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9l6hppj",
+              "text": "Jucarie Plus",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "053tnt2",
+              "text": "Carti de Joc",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "bu4ys0g",
+              "text": "Jocuri copii",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jafmat6",
+              "text": "Descarcat continut Netflix",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mb5ypoy",
+              "text": "Descarcat continut Youtube",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "2kowaq1",
+              "text": "Acumulatori",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "240y1ao",
+              "text": "Lampa de veghe",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "zb9k8r5",
+              "text": "Masca Scuba",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "cdama0p",
+              "text": "Ochelari inot",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "qda621f",
+              "text": "Saltea gonflabila",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "l8bvz9j",
+              "text": "Minge gonflabila",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "3rg0qe4",
+              "text": "Saci de gunoi",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "hai_qbmkyrc",
+          "emoji": "👔",
+          "name": "Îmbrăcăminte",
+          "open": false,
+          "items": [
+            {
+              "id": "t40bpxc",
+              "text": "Pantofi confortabili pt mers",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "hveiq9e",
+              "text": "Lenjerie + șosete",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "llupvlv",
+              "text": "Costum de baie F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "0v23n0h",
+              "text": "Pantaloni scurti de baie M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "1uk4eyw",
+              "text": "Costum de baie Alex",
+              "checked": false,
+              "qty": "2"
+            },
+            {
+              "id": "lgyzsdf",
+              "text": "Slapi",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "0u81gw8",
+              "text": "Papuci de plaja",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rjz4j0n",
+              "text": "Prosoape microfibra",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9lu37w8",
+              "text": "Palarie/ Sapca",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "l7ophet",
+              "text": "Ochelari de soare",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "c6phvak",
+              "text": "Cleme pentru prosop",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "r6x645e",
+              "text": "Patura de plaja",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "118kwlh",
+              "text": "Set de plaja pentru copii",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "px5bx4p",
+              "text": "Perie mica pentru nisip",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "1ngusk8",
+              "text": "Lenjerie intima F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "v8ueip1",
+              "text": "Lenjerie intima M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dno7eh7",
+              "text": "Lenjerie intima Alex",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "miq7sk9",
+              "text": "Sosete",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nwf5kg4",
+              "text": "Haine de dormit",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "cvkf8ye",
+              "text": "Pantaloni lungi",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "92brd5c",
+              "text": "Rochii",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "xoob6y4",
+              "text": "Tricouri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "crn1xp0",
+              "text": "Maiouri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "i54e3va",
+              "text": "Camasa",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ags9c3x",
+              "text": "Bluza maneca luna/ Hanorac subtire",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nuiatwo",
+              "text": "Sandale",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "tn1stk0",
+              "text": "Adidasi comozi",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "g5ht22e",
+              "text": "Curea",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8ipinjz",
+              "text": "Jacheta ploaie",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "med_dgp6x2j",
+          "emoji": "💊",
+          "name": "Medicamente",
+          "open": false,
+          "items": [
+            {
+              "id": "mms3mz1",
+              "text": "Paracetamol / ibuprofen",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rtqacsd",
+              "text": "Plasturi + dezinfectant",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "oblllfw",
+              "text": "Dezinfectant mâini",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "622q4sh",
+              "text": "Medicamente personale",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "4fqhudk",
+              "text": "Servete umede",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "3ptz45h",
+              "text": "Servetele uscate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "gufh4jw",
+              "text": "Comprese sterile",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "h1l09aa",
+              "text": "Apa de mare",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ka4545p",
+              "text": "Antibiotic",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "okzgw15",
+              "text": "Parasinus",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "fqayy5k",
+              "text": "Nurofen adulti",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "l2iowq3",
+              "text": "Ceaiuri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pcrb4em",
+              "text": "Leucoplast",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "n96yvov",
+              "text": "Probiotic",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "58l0vcq",
+              "text": "Bomboane de sup/ Spray de gat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "5uh9dtm",
+              "text": "Picaturi de nas",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "v4fgxln",
+              "text": "Gel arsuri solare",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9fk68ci",
+              "text": "Repelent insecte",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "fwx18ed",
+              "text": "Gel dupa intepaturi",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "foo_bxq9tua",
+          "emoji": "🍎",
+          "name": "Food",
+          "open": false,
+          "items": [
+            {
+              "id": "d36vrs4",
+              "text": "Sticlă apă reutilizabilă",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "0qitd6v",
+              "text": "Gustări ușoare de drum",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rdbsg44",
+              "text": "Gumă de mestecat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9a9prp8",
+              "text": "Nuci si seminte",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "axvupd1",
+              "text": "Fructe uscate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "wleeewi",
+              "text": "Batoane proteice",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jdrxuh2",
+              "text": "Biscuiti digestivi sau crackers",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "22yeb6e",
+              "text": "Pungi cu zip (pentru produsele incepute)",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "auawdvb",
+              "text": "Sandwich (cascaval, salam uscat, unt de arahide) - chestii uscate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "t4ao8kq",
+              "text": "Mere, Banane, Struguri",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "chk_wetz5rt",
+          "emoji": "✅",
+          "name": "De verificat",
+          "open": true,
+          "items": [
+            {
+              "id": "jv8jcmk",
+              "text": "Oprește apa",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "o6oxzgv",
+              "text": "Opreste centrala",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8ra1x57",
+              "text": "Verifică gazul",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "y8g0jug",
+              "text": "Ferestre & uși închise",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "6aq9l6j",
+              "text": "Aparate electrice oprite",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "wnisnll",
+              "text": "Arunca gunoiul",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "vrj949s",
+              "text": "Scoate din priza electrocasnicele",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "eykg60r",
+              "text": "Goleste frigiderul",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ukk46gt",
+              "text": "Curata chiuveta si scurgerile",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "0qxiv0v",
+              "text": "Uda plantele",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "zprr2c1",
+          "emoji": "📷",
+          "name": "Igiena",
+          "open": true,
+          "items": [
+            {
+              "id": "qrh9k3a",
+              "text": "Sampon adulti M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "vjhw76y",
+              "text": "Sampon adulti F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "r93rfl9",
+              "text": "Baby Sampon",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jm6f0um",
+              "text": "Gel de dus M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dr8yzm4",
+              "text": "Gel de dus F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iuiqblm",
+              "text": "Pasta de dinti adulti",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "wmi49ig",
+              "text": "Pasta de dinti baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "buwqukd",
+              "text": "Periuta de dinti M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "5hkjjgg",
+              "text": "Periuta de dinti F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8jwe6j6",
+              "text": "Periuta de dinti baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "r4rzqy8",
+              "text": "Crema Nivea",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ogoqk3r",
+              "text": "Crema baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rl18kth",
+              "text": "Ata dentara",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "d5nowhz",
+              "text": "Deodorant M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "qt1xh4z",
+              "text": "Deodorant F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "tod6z0h",
+              "text": "Gel de par",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "e31m2oj",
+              "text": "Crema Plaja",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "x9n6025",
+              "text": "BIC-uri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "3evrxl1",
+              "text": "Dischete demachiante",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "fqddu9z",
+              "text": "Bicarbonat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "2zg88sb",
+              "text": "Ata dentara",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ud47u4p",
+              "text": "Sapun solid",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "500r6fg",
+              "text": "Detergent rufe",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "h91qpua",
+              "text": "Crema hidratanta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nat5ugu",
+              "text": "Balsam de buze",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "60jiq4i",
+              "text": "Pieptene",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "hopbojr",
+              "text": "Oglinda + penseta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "tmccmg4",
+              "text": "Absorbante",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8ps2q28",
+              "text": "Betisoare de urechi",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        }
+      ],
+      "restaurants": [
+        {
+          "id": "wajhuis",
+          "name": "El Palmar  - Restaurant Pasqualet",
+          "distance": "",
+          "unit": "km",
+          "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi și respectate locuri. Este o afacere de familie unde se gătește tradițional.\n\nDe ce să mergi: Au o curte interioară foarte plăcută și sunt renumiți pentru Paella Valenciana (cea cu pui și iepure) și All i Pebre (anghilă, un preparat specific zonei).\n\nPreț: Mediu.",
+          "checked": false,
+          "open": true
+        },
+        {
+          "id": "9rb2yxd",
+          "name": "El Palmar  - Restaurante Arrocería Maribel",
+          "distance": "",
+          "unit": "km",
+          "desc": "Restaurante Arrocería Maribel\nDacă vrei ceva un pic mai modern, dar cu rădăcini adânci în tradiție.\n\nDe ce să mergi: Prezentarea este mai rafinată, iar orezul este gătit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigăii). Au și opțiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
+          "checked": false,
+          "open": true
+        },
+        {
+          "id": "j0g6pil",
+          "name": "El Palmar  -Restaurante El Redolí",
+          "distance": "",
+          "unit": "km",
+          "desc": "Restaurante El Redolí\nAre o terasă superbă și o atmosferă foarte relaxată, fiind ideal dacă ești cu copilul după drumul cu bicicleta.\n\nDe ce să mergi: Raport calitate-preț excelent. Este foarte popular printre localnicii din Valencia care vin aici în weekend.\n\nSfat: Încearcă aici Arroz a Banda (orez gătit în supă de pește).",
+          "checked": false,
+          "open": true
+        }
+      ],
+      "places": [
+        {
+          "id": "ft9h6kz",
+          "name": "Orasul Artelor si Stiintei",
+          "distance": "",
+          "unit": "km",
+          "desc": "(Ciudad de las Artes y las Ciencias): Este simbolul orașului, un complex spectaculos proiectat de Santiago Calatrava. Chiar dacă nu intri în clădiri, plimbarea printre structurile albe și bazinele de apă turcoaz este obligatorie.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "m0yd8hg",
+          "name": "Oceanograful",
+          "distance": "",
+          "unit": "km",
+          "desc": "L’Oceanogràfic: Cel mai mare acvariu din Europa. Este fascinant pentru copii (și adulți), având un tunel cu rechini impresionant și ecosisteme din toate oceanele lumii.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "dxkfq41",
+          "name": "Catedrala din Valencia",
+          "distance": "",
+          "unit": "km",
+          "desc": "Catedrala din Valencia: O clădire superbă care îmbină stilurile gotic, baroc și romanic. Aici se află ceea ce mulți consideră a fi adevăratul Sfânt Graal. Nu rata urcarea în turnul El Miguelete pentru cea mai bună panoramă asupra orașului.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "l0a42n5",
+          "name": "Bursa Matasii",
+          "distance": "",
+          "unit": "km",
+          "desc": "Llotja de la Seda (Bursa Mătăsii): Un monument UNESCO, exemplu magnific de arhitectură gotică civilă, care amintește de epoca de aur a comerțului din Valencia.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "w0mudn5",
+          "name": "Piata Centerala din Valencia",
+          "distance": "",
+          "unit": "km",
+          "desc": "(Mercat Central): Una dintre cele mai mari și mai frumoase piețe de produse proaspete din Europa. Este locul perfect pentru a vedea viața locală și pentru a gusta produse tradiționale (atenție, se închide în jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "3wbv9pb",
+          "name": "Barrio del Carmen",
+          "distance": "",
+          "unit": "km",
+          "desc": "Cel mai vechi și boem cartier, plin de străduțe înguste, artă stradală (street art) și terase primitoare.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "pc4byv3",
+          "name": "Grădinile Turia",
+          "distance": "",
+          "unit": "km",
+          "desc": "Un parc imens de 9 km amenajat în fosta albie a râului care traversează orașul. Este locul ideal pentru a merge cu bicicleta de la centru până la mare. Nu rata Parcul Gulliver, un spatiu de joaca urias.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "h97xu2x",
+          "name": "Parcul Gulliver",
+          "distance": "",
+          "unit": "km",
+          "desc": " Situat în Grădinile Turia, este un loc de joacă uriaș sub forma personajului Gulliver, unde copiii pot urca și aluneca pe hainele și degetele uriașului.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "52kb0a8",
+          "name": "Valencia Bioparc",
+          "distance": "",
+          "unit": "km",
+          "desc": "O grădină zoologică de tip \"zoo-imersiune\", unde barierele sunt aproape invizibile, oferindu-ți senzația că te plimbi prin savana africană.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "gp3ga0s",
+          "name": "Plaja Urbana Las Arena",
+          "distance": "",
+          "unit": "km",
+          "desc": "Plaje foarte late, cu nisip fin, perfecte pentru o plimbare pe faleză sau un prânz cu paella lângă mare.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "2leywc9",
+          "name": "Plaja Urbana Malvarrosa",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "cwb7qwk",
+          "name": "Parcul Natural Albufera - Bicicleta",
+          "distance": "",
+          "unit": "km",
+          "desc": "Este, fără îndoială, cel mai frumos loc de vizitat cu bicicleta în afara centrului orașului Valencia. Este o experiență de o zi întreagă care combină natura, plaja și gastronomia.\nDificultate: Foarte mică. Tot traseul este complet plat.\n\nPeisaj: Vei pedala pe o pistă de biciclete dedicată care pleacă din Orașul Artelor și Științelor, trece prin păduri de pini (La Devesa), pe lângă dune de nisip și ajunge la imensul lac de apă dulce.\n\nDistanță: Din centrul Valenciei până în satul El Palmar (inima parcului) sunt aproximativ 20 km. Cu un e-bike, drumul acesta este o relaxare totală, chiar și cu un copil în scaun.\n\nCe să faci în Albufera (Etapele zilei)\nPlaja El Saler: Pe drum, oprește-te la această plajă. Este mult mai sălbatică și mai curată decât Malvarrosa din oraș.\n\nPlimbarea cu barca: Când ajungi la lac (Mirador de Pujol sau în El Palmar), trebuie neapărat să faci o plimbare cu barca tradițională (albuferenc). Costă în jur de 5€ - 10€ de persoană și durează 30-45 de minute. Este magic, mai ales că poți vedea flamingo și alte păsări protejate.\n\nPrânzul în El Palmar: Satul este considerat locul unde s-a inventat Paella. Oprește-te la unul dintre restaurantele locale pentru o paella autentică la ea acasă. (Atenție: în iunie e bine să rezervi masa cu o zi înainte).\n\n",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "ib926wp",
+          "name": "Rent a Bike",
+          "distance": "",
+          "unit": "km",
+          "desc": "Locații recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate în centrul vechi sau lângă Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPreț e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ în plus.\n\nValencia Bikes: Au 3 locații în oraș (Centru, Ruzafa și lângă port). Sunt cunoscuți pentru servicii de calitate.\n\nPreț e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un preț simbolic dacă închiriezi e-bike.\n\nPelican Bike: Situat aproape de Orașul Artelor și Științelor.\n\nPreț e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gamă largă de scaune și chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O opțiune excelentă lângă Grădinile Turia (Paseo de la Pechina 32).\n\nPreț e-bike: 25€ (până la închidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
+          "checked": false,
+          "open": true
+        }
+      ],
+      "itinerary": [],
+      "infos": [
+        {
+          "id": "gfxe42o",
+          "icon": "ℹ️",
+          "title": "Abonament Transport in comun",
+          "body": "🚇 Ce mijloace de transport poți folosi\n\nCu cardul SUMA (ex: SUMA 10) ai acces la:\n\n🟢 Metrou + tramvai\nMetrovalencia\n✔ inclus integral (zonele pe care le-ai cumpărat)\n🟢 Autobuze urbane\nEMT Valencia\n✔ toate autobuzele din oraș\n🟢 Trenuri locale\nRenfe Cercanías Valencia\n✔ doar în zona inclusă (de obicei zona A pentru turiști)\n\n👉 Pe scurt:\nacelași card = metrou + autobuz + tramvai + tren local\n\n✅ Cum se validează (foarte important)\n🚇 Metrou / tramvai\nintri în stație\napropii cardul de aparat (turnichet sau validator)\nse deschide poarta\n\n✔ la unele stații:\n\nvalidezi și la intrare și la ieșire\n🚌 Autobuz\nurci pe ușa din față\napropii cardul de validatorul de lângă șofer\n\n✔ apare confirmare (sunet + ecran)\n\n🚆 Tren (Cercanías)\nvalidezi la intrare (ca la metrou)\nuneori și la ieșire\n👥 Dacă sunteți 2 persoane (important)\n\n👉 se poate folosi același card:\n\nvalidezi o dată → pentru tine\nvalidezi încă o dată → pentru a doua persoană\n\n✔ aparatul scade 2 călătorii\n\n⏱️ Regula de transfer (mare avantaj)\n\n👉 ai ~90 minute pentru:\n\nschimb între metrou / autobuz / tramvai\n\n✔ fără să consume o călătorie nouă\n✔ în aceeași zonă\n\n⚠️ Greșeli frecvente\n❌ nu validezi în autobuz → amendă\n❌ uiți să validezi la ieșire (unde e necesar)\n❌ crezi că e per persoană (dar e reutilizabil)\n🧠 Concluzie simplă\n\n👉 cu SUMA:\n\nmergi cu aproape tot transportul din oraș\nvalidezi simplu: „tap card”\npoți folosi 1 card pentru familie\n\n\n--------------------------------------------------------------------------------------------------------\n\n1. Ce acoperă Zona A? (Unde vei merge cel mai des)\nZona A cuprinde tot orașul Valencia, inclusiv:\n\nCentrul istoric (Catedrala, Mercat Central).\n\nOrașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe).\n\nToată zona de plajă (Malvarrosa, Las Arenas).\n\nGrădina Zoologică (Bioparc).\n\nPortul.\n\nPractic, orice obiectiv turistic major din oraș este în Zona A. Dacă iei autobuzul (cele roșii, EMT), acesta circulă aproape exclusiv în Zona A.\n\n2. Ce NU acoperă Zona A?\nSingurul loc important pentru turiști care NU este în Zona A este Aeroportul.\n\nAeroportul se află în Zona C (sau marcată adesea ca AB+ pe noile hărți SUMA).\n\nDe aceea, la începutul conversației, ți-am sugerat taxiul pentru aeroport. Dacă ai lua metroul de la aeroport cu un card de Zona A, pur și simplu nu s-ar deschide porțile la ieșire.\n\n3. Cât costă un SUMA 10 pentru Zona A?\nÎn 2026, prețul pentru SUMA 10 (Zona A) este de aproximativ 8,00€ (plus cei 1€ sau 2€ pentru cardul fizic).\n\nCalcul rapid: Pentru grupul tău de 4 adulți, un drum în oraș costă 3,20€ în total. Este mult mai avantajos decât să cumperi bilete individuale de 1,50€ de persoană (care ar costa 6€ per grup).\n\n4. Cum îl ceri la ghișeu sau tonomat?\nDacă mergi la o tutungerie (Tabacos) sau la un ghișeu, cere pur și simplu:\n\n\"Un bonobus SUMA diez, Zona A, por favor.\" Dacă folosești tonomatul de la metrou:\n\nSelectează limba engleză.\n\nAlege \"Buy Card\" (dacă nu ai unul) sau \"Reload\" (dacă ai deja cardul).\n\nSelectează \"SUMA 10\".\n\nAlege \"Zone A\".\n\nPlătește cu cardul/Apple Pay."
+        },
+        {
+          "id": "nplxzkj",
+          "icon": "📌",
+          "title": "Bilete onlince. Orașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe, Hemisfèric)",
+          "body": "Orașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe, Hemisfèric)\nAceasta este cea mai aglomerată zonă. Nu cumpărați bilete separate de la casierie!\n\nBiletul Combo (3 în 1): Este cea mai bună variantă. Costă aproximativ 45€ - 53€ pentru adulți și acoperă toate cele trei locații.\n\nAvantaj Online: Primești acces prioritar (scanezi codul QR direct la turnicheți) și economisești câțiva euro față de prețul de la ghișeu.\n\nCopiii (4-5 ani): Atenție, la Oceanogràfic copiii sub 4 ani sunt gratis, dar cei de 4 și 5 ani plătesc bilet \"Redus\". Verificați vârsta exactă la momentul vizitei.\n\nSfat: Biletul combo este valabil 1, 2 sau 3 zile consecutive, deci nu trebuie să vedeți totul într-o singură zi (ceea ce e obositor cu copii mici).\n\n----------------------------------------------------------------------------------------------------------\nTicket to the Entire Complex of the City of Arts and Sciences €51.25  (3 in 1)\nOceanogràfic Valencia and Science Museum Combined Ticket  €45.40 (2 in 1)\n\nOceanogràfic - Estimated visit: 3–4 hours\nMuseu de les Ciències - Estimated visit: 2 hours"
+        },
+        {
+          "id": "ggcehxb",
+          "icon": "🔑",
+          "title": "Bilete onlince.  Bioparc ",
+          "body": "Bioparc (Grădina Zoologică de tip imersiv)\nEste considerată una dintre cele mai frumoase din lume și e perfectă pentru copiii de 4-5 ani.\n\nBilet Online: Cumpărarea de pe site-ul oficial sau platforme precum GetYourGuide îți oferă \"Fast Track\" (intrare rapidă).\n\nReduceri de grup: Există pachete numite \"Manada\" (pentru 4 persoane), care reduc prețul per bilet dacă sunteți exact 4 adulți.\n\nCopiii: La Bioparc, copiii sub 4 ani sunt gratis, iar cei de 4 și 5 ani plătesc tarif redus.\n\nPromoție: Uneori există coduri de reducere pentru după-amiază (bilete \"Biotardeo\") dacă vizitați parcul după ora 16:00.\n----------------------------------------------------------------------------------------------------------\n\nBioparc Valencia - Estimated visit: 3-4 hours - 90,50 €\nEntrada de Día  10:00 12:00 14:00 16:00 18:00\n"
+        },
+        {
+          "id": "2k3y6nk",
+          "icon": "🏨",
+          "title": "Rent EBIKE",
+          "body": "Valencia este unul dintre cele mai prietenoase orașe din Europa pentru biciclete, fiind aproape complet plat și având peste 160 km de piste dedicate. Pentru un grup de 4 adulți și 2 copii de 4-5 ani, închirierea de e-bike-uri (biciclete electrice) este o idee excelentă, mai ales că vă permit să parcurgeți tot parcul Turia (9 km lungime) fără efort.\n\nIată recomandările mele specifice pentru grupul vostru:\n\n1. Unde închiriați (Centre recomandate)\nPentru e-bike-uri de calitate și accesorii pentru copii, cele mai bune opțiuni sunt în zona centrului vechi (Ciutat Vella) sau lângă parcul Turia:\n\nPassion Bike (Serranos/Centru): Au o flotă mare de e-bike-uri și, foarte important, au scaune de copii și remorci (trailers). Sunt foarte obișnuiți cu turiștii.\n\nThe Bike Software / DoYouBike: Au mai multe locații în oraș. Sunt profesioniști și oferă asistență tehnică rapidă.\n\nValencia Bikes (Ruzafa sau Port): Ideali dacă vreți să începeți plimbarea direct dinspre port sau cartierul modern Ruzafa.\n\n2. Configurația pentru copii (4-5 ani)\nLa această vârstă, copiii sunt prea mari pentru scaunele mici de bebeluși, dar prea mici să pedaleze singuri pe distanțe lungi în trafic. Aveți 3 variante:\n\nScaun de spate (Rear Seat): Majoritatea centrelor au scaune care suportă până la 22-25 kg. Verificați greutatea copiilor înainte.\n\nRemorcă (Cariola/Trailer): O soluție excelentă pentru 2 copii. Stau amândoi în spate, protejați de soare, și se pot chiar juca sau dormi în timp ce voi pedalați.\n\nTag-along bike (Semicicletă): O bicicletă mică fără roată față care se agață de bicicleta adultului. Copilul poate pedala dacă vrea, dar este tras de tine. (Verificați disponibilitatea online, nu toate centrele au multe).\n\n3. Cât costă (Estimare 2026)\nE-bike adult: ~25€ - 35€ pentru o zi întreagă (8-10 ore) sau ~10€ - 15€ pentru 2-3 ore.\n\nScaun copil: ~5€ / zi.\n\nRemorcă (pentru 1 sau 2 copii): ~10€ - 15€ / zi.\n\n4. Reguli importante în Valencia\nPiste de biciclete: Este interzis să mergeți pe trotuar. Trebuie să folosiți pistele de biciclete (marcate cu roșu sau verde) sau drumurile cu limită de 30 km/h.\n\nCăști: Pentru copiii sub 16 ani, casca este obligatorie prin lege. Pentru adulți este recomandată, dar nu obligatorie în oraș.\n\nParcare: Nu lăsați bicicletele electrice nesupravegheate pe stradă peste noapte, chiar și cu antifurt. Majoritatea centrelor vă vor cere să le aduceți înapoi la închidere sau să le țineți în interiorul locației de cazare.\n\n5. Traseul perfect cu copiii\nVă recomand traseul prin Grădinile Turia (Jardín del Turia):\n\nÎncepeți de la Turnurile Serranos.\n\nPedalați prin albia secată a râului (fără mașini, doar natură și piste late).\n\nOpriți-vă la Parcul Gulliver (copiii se vor distra de minune).\n\nContinuați până la Orașul Artelor și Științelor.\n\nDacă aveți energie, pedalați încă 15 minute pe pista dreaptă până la Plaja Malvarrosa.\n\nSfat de rezervare: Fiind un grup de 6 persoane cu nevoi specifice (e-bike + accesorii copii), rezervați online cu cel puțin 48h înainte. E-bike-urile cu scaune de copii sunt primele care se epuizează în weekend-uri sau zile însorite."
+        }
+      ]
+    },
+    {
+      "id": "9jbqdli",
+      "type": "city",
+      "name": "Roma",
+      "savedAt": 1775037933169,
+      "active": true,
+      "categories": [
+        {
+          "id": "doc_30xr01k",
+          "emoji": "📄",
+          "name": "Documente",
+          "open": true,
+          "items": [
+            {
+              "id": "14j1qjz",
+              "text": "Buletin / CI",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "26aagk4",
+              "text": "Card bancar + cash",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "57o1jj0",
+              "text": "Bilete & rezervări",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nu2edj5",
+              "text": "Asigurare medicală",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nskiac1",
+              "text": "Permis de conducere (dacă e cazul)",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "2u0n10s",
+              "text": "Pasaport",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "act_zcu6jgm",
+          "emoji": "🎭",
+          "name": "Activități",
+          "open": false,
+          "items": [
+            {
+              "id": "6l2ajt7",
+              "text": "Hartă offline descărcată",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "d47g13n",
+              "text": "Rezervări confirmate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jfhxjy6",
+              "text": "Adaptor de priză",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "vww0sl3",
+              "text": "Power bank",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "j7kqpio",
+              "text": "Umbrelă compactă",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "yc6hare",
+              "text": "Căști audio",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "hai_v2knqmq",
+          "emoji": "👔",
+          "name": "Îmbrăcăminte",
+          "open": false,
+          "items": [
+            {
+              "id": "7vtap32",
+              "text": "Pantofi confortabili pt mers",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "zj0k8wk",
+              "text": "2–3 tricouri / bluze",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "42ud6dd",
+              "text": "Ținută elegantă seară",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "7yugf0s",
+              "text": "Geacă ușoară / impermeabilă",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "r8kadul",
+              "text": "Lenjerie + șosete",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "med_3iibeq0",
+          "emoji": "💊",
+          "name": "Medicamente",
+          "open": false,
+          "items": [
+            {
+              "id": "39di7y2",
+              "text": "Paracetamol / Ibuprofen",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iqkqc8b",
+              "text": "Plasturi + dezinfectant",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "z02mrj9",
+              "text": "Dezinfectant mâini",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "zuxm4gd",
+              "text": "Medicamente personale",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "foo_f6q6w2b",
+          "emoji": "🍎",
+          "name": "Food",
+          "open": false,
+          "items": [
+            {
+              "id": "w90ftcv",
+              "text": "Sticlă apă reutilizabilă",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ttzr97s",
+              "text": "Gustări ușoare de drum",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "owrhrym",
+              "text": "Gumă de mestecat",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        },
+        {
+          "id": "chk_g9geajr",
+          "emoji": "✅",
+          "name": "De verificat",
+          "open": true,
+          "items": [
+            {
+              "id": "p1mdb9e",
+              "text": "Oprește apa",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "lqsy7xy",
+              "text": "Verifică gazul",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dmj5sjz",
+              "text": "Ferestre & uși închise",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mvjxe8i",
+              "text": "Setează alarma",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "xznrx6f",
+              "text": "Aparate electrice oprite",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "nt7559i",
+              "text": "Notificat banca",
               "checked": false,
               "qty": ""
             }
