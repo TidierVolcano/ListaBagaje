@@ -915,13 +915,12 @@ async function incarcaListaDinGitHub() {
 
     const date = await raspuns.json();
 
-    // FORMAT NOU: { packroExport: true, trips: [...] }
+    // FORMAT NOU: { packroExport: true, trips: [...toate destinatiile...] }
     if (date.packroExport && Array.isArray(date.trips)) {
       const trips = [];
       const active = { city: null, seacar: null, seaair: null, camp: null };
-      let firstType = 'city';
 
-      date.trips.forEach((td, idx) => {
+      date.trips.forEach(td => {
         const type = td.type;
         if (!type) return;
         const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
@@ -938,11 +937,12 @@ async function incarcaListaDinGitHub() {
             infos:       td.infos       || []
           }
         });
-        active[type] = tripId;
-        if (idx === 0) firstType = type;
+        if (td.active || !active[type]) active[type] = tripId;
       });
 
-      // Pentru tipurile fără date în JSON, lasă null (vor fi create cu DEFAULT_CATS la render)
+      const firstType = (date.activeType && date.trips.find(t=>t.type===date.activeType)) 
+        ? date.activeType 
+        : (date.trips[0]?.type || 'city');
       const stareInitiala = {
         activeType: firstType,
         activeView: 'pack',
@@ -1585,30 +1585,35 @@ function newDest() {
 /* ═══════════════ EXPORT / IMPORT ═══════════════ */
 let _ej='';
 function buildFullExport() {
-  // Exportă TOATE tripurile active din toate taburile
-  const allTrips = Object.keys(TRIP_TYPES).map(type => {
-    const trip = activeTrip(type);
-    if (!trip) return null;
-    return {
-      type,
-      name: trip.name || '',
-      savedAt: trip.savedAt,
-      categories:  trip.data.categories  || [],
-      restaurants: trip.data.restaurants || [],
-      places:      trip.data.places      || [],
-      itinerary:   trip.data.itinerary   || [],
-      infos:       trip.data.infos       || []
-    };
-  }).filter(Boolean);
+  // Exportă TOATE destinațiile din TOATE taburile (nu doar cele active)
+  const allTrips = S.trips.map(trip => ({
+    id:          trip.id,
+    type:        trip.type,
+    name:        trip.name || '',
+    savedAt:     trip.savedAt,
+    active:      S.active[trip.type] === trip.id,  // marchează care era activă
+    categories:  trip.data.categories  || [],
+    restaurants: trip.data.restaurants || [],
+    places:      trip.data.places      || [],
+    itinerary:   trip.data.itinerary   || [],
+    infos:       trip.data.infos       || []
+  }));
+  const total = allTrips.length;
   return {
     packroExport: true,
     exportedAt: new Date().toISOString(),
+    activeType: activeType,
     trips: allTrips
   };
 }
 function openExp() {
-  _ej = JSON.stringify(buildFullExport(), null, 2);
+  const exp = buildFullExport();
+  const total = exp.trips.length;
+  _ej = JSON.stringify(exp, null, 2);
   document.getElementById('expTxt').value = _ej;
+  // actualizează descrierea cu nr de destinații
+  document.querySelector('#expMod p').innerHTML =
+    `Exportă <strong>${total} destinații</strong> din toate taburile într-un singur fișier JSON.<br>Pe iOS apasă <strong>Copiază</strong> și salvează într-o notă. Pe web apasă <strong>Descarcă</strong>.`;
   document.getElementById('expMod').classList.add('op');
 }
 function copyExp() {
@@ -1631,24 +1636,41 @@ function doImport() {
   try {
     const parsed=JSON.parse(document.getElementById('impTxt').value);
 
-    // FORMAT NOU: { packroExport: true, trips: [...] }
+    // FORMAT NOU: { packroExport: true, trips: [...toate destinatiile...] }
     if (parsed.packroExport && Array.isArray(parsed.trips)) {
+      // Șterge toate tripurile existente și le înlocuiește cu cele din import
+      S.trips = [];
+      S.active = { city: null, seacar: null, seaair: null, camp: null };
+
       parsed.trips.forEach(td => {
         if (!td.type || !TRIP_TYPES[td.type]) return;
-        const trip = activeTrip(td.type);
-        if (!trip) return;
-        trip.data = {
-          categories:  td.categories  || [],
-          restaurants: td.restaurants || [],
-          places:      td.places      || [],
-          itinerary:   td.itinerary   || [],
-          infos:       td.infos       || []
+        const tripId = 'trip_' + uid();
+        const trip = {
+          id: tripId,
+          type: td.type,
+          name: td.name || '',
+          savedAt: td.savedAt || Date.now(),
+          data: {
+            categories:  td.categories  || [],
+            restaurants: td.restaurants || [],
+            places:      td.places      || [],
+            itinerary:   td.itinerary   || [],
+            infos:       td.infos       || []
+          }
         };
-        if (td.name) trip.name = td.name;
-        if (td.savedAt) trip.savedAt = td.savedAt;
+        S.trips.push(trip);
+        // setează ca activă dacă era marcată sau e prima din tipul ăsta
+        if (td.active || !S.active[td.type]) {
+          S.active[td.type] = tripId;
+        }
       });
+
+      ensureActive();
+      if (parsed.activeType && TRIP_TYPES[parsed.activeType]) activeType = parsed.activeType;
       save(); renderAll(); closeMd('impMod');
-      toast(`✓ Import reușit! ${parsed.trips.length} liste încărcate.`);
+      const dest = parsed.trips.length;
+      const tipuri = [...new Set(parsed.trips.map(t=>t.type))].length;
+      toast(`✓ Import reușit! ${dest} destinații în ${tipuri} taburi.`);
       return;
     }
 
