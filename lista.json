@@ -249,7 +249,7 @@
           "id": "doc_g79e73j",
           "emoji": "📄",
           "name": "Documente",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "3r047zx",
@@ -526,7 +526,7 @@
           "id": "doc_hfpj3at",
           "emoji": "📄",
           "name": "Documente",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "tvil6gh",
@@ -722,7 +722,7 @@
           "id": "chk_7v79pob",
           "emoji": "✅",
           "name": "De verificat",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "qr5jfom",
@@ -797,7 +797,7 @@
           "id": "doc_z9mkr7b",
           "emoji": "📄",
           "name": "Documente",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "i33xhdr",
@@ -1017,7 +1017,7 @@
           "id": "chk_j8u7wgd",
           "emoji": "✅",
           "name": "De verificat",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "q8no0wl",
@@ -1542,7 +1542,7 @@
           "id": "zprr2c1",
           "emoji": "📷",
           "name": "Igiena",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "qrh9k3a",
@@ -1914,7 +1914,7 @@
           "id": "chk_wetz5rt",
           "emoji": "✅",
           "name": "De verificat",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "jv8jcmk",
@@ -1987,7 +1987,7 @@
           "unit": "km",
           "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi și respectate locuri. Este o afacere de familie unde se gătește tradițional.\n\nDe ce să mergi: Au o curte interioară foarte plăcută și sunt renumiți pentru Paella Valenciana (cea cu pui și iepure) și All i Pebre (anghilă, un preparat specific zonei).\n\nPreț: Mediu.",
           "checked": false,
-          "open": true
+          "open": false
         },
         {
           "id": "9rb2yxd",
