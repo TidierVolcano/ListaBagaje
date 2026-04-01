@@ -293,8 +293,7 @@
               "qty": ""
             }
           ]
-        }
-      ],
+        },
         {
           "id": "med_1skz6xo",
           "emoji": "💊",
@@ -516,7 +515,8 @@
               "qty": ""
             }
           ]
-        },
+        }
+      ],
       "restaurants": [
         {
           "id": "ogidxqc",
