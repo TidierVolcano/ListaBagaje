@@ -452,188 +452,6 @@
         }
       ]
     },
-{
-      "id": "zprr2c1",
-      "emoji": "📷",
-      "name": "Igiena",
-      "open": true,
-      "items": [
-        {
-          "id": "qrh9k3a",
-          "text": "Sampon adulti M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "vjhw76y",
-          "text": "Sampon adulti F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "r93rfl9",
-          "text": "Baby Sampon",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "jm6f0um",
-          "text": "Gel de dus M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "dr8yzm4",
-          "text": "Gel de dus F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "iuiqblm",
-          "text": "Pasta de dinti adulti",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "wmi49ig",
-          "text": "Pasta de dinti baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "buwqukd",
-          "text": "Periuta de dinti M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "5hkjjgg",
-          "text": "Periuta de dinti F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "8jwe6j6",
-          "text": "Periuta de dinti baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "r4rzqy8",
-          "text": "Crema Nivea",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "ogoqk3r",
-          "text": "Crema baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "rl18kth",
-          "text": "Ata dentara",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "d5nowhz",
-          "text": "Deodorant M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "qt1xh4z",
-          "text": "Deodorant F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "tod6z0h",
-          "text": "Gel de par",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "e31m2oj",
-          "text": "Crema Plaja",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "x9n6025",
-          "text": "BIC-uri",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "3evrxl1",
-          "text": "Dischete demachiante",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "fqddu9z",
-          "text": "Bicarbonat",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "2zg88sb",
-          "text": "Ata dentara",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "ud47u4p",
-          "text": "Sapun solid",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "500r6fg",
-          "text": "Detergent rufe",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "h91qpua",
-          "text": "Crema hidratanta",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "nat5ugu",
-          "text": "Balsam de buze",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "60jiq4i",
-          "text": "Pieptene",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "hopbojr",
-          "text": "Oglinda + penseta",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "tmccmg4",
-          "text": "Absorbante",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "8ps2q28",
-          "text": "Betisoare de urechi",
-          "checked": false,
-          "qty": ""
-        }
-      ]
-    },
     {
       "id": "med_dgp6x2j",
       "emoji": "💊",
@@ -891,6 +709,188 @@
           "qty": ""
         }
       ]
+    },
+    {
+      "id": "zprr2c1",
+      "emoji": "📷",
+      "name": "Igiena",
+      "open": true,
+      "items": [
+        {
+          "id": "qrh9k3a",
+          "text": "Sampon adulti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "vjhw76y",
+          "text": "Sampon adulti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "r93rfl9",
+          "text": "Baby Sampon",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jm6f0um",
+          "text": "Gel de dus M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "dr8yzm4",
+          "text": "Gel de dus F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "iuiqblm",
+          "text": "Pasta de dinti adulti",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "wmi49ig",
+          "text": "Pasta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "buwqukd",
+          "text": "Periuta de dinti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "5hkjjgg",
+          "text": "Periuta de dinti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8jwe6j6",
+          "text": "Periuta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "r4rzqy8",
+          "text": "Crema Nivea",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ogoqk3r",
+          "text": "Crema baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rl18kth",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "d5nowhz",
+          "text": "Deodorant M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "qt1xh4z",
+          "text": "Deodorant F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tod6z0h",
+          "text": "Gel de par",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "e31m2oj",
+          "text": "Crema Plaja",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "x9n6025",
+          "text": "BIC-uri",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "3evrxl1",
+          "text": "Dischete demachiante",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "fqddu9z",
+          "text": "Bicarbonat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2zg88sb",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ud47u4p",
+          "text": "Sapun solid",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "500r6fg",
+          "text": "Detergent rufe",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "h91qpua",
+          "text": "Crema hidratanta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nat5ugu",
+          "text": "Balsam de buze",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "60jiq4i",
+          "text": "Pieptene",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hopbojr",
+          "text": "Oglinda + penseta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tmccmg4",
+          "text": "Absorbante",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8ps2q28",
+          "text": "Betisoare de urechi",
+          "checked": false,
+          "qty": ""
+        }
+      ]
     }
   ],
   "restaurants": [
@@ -899,7 +899,7 @@
       "name": "El Palmar  - Restaurant Pasqualet",
       "distance": "",
       "unit": "km",
-      "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi și respectate locuri. Este o afacere de familie unde se gătește tradițional.\n\nDe ce să mergi: Au o curte interioară foarte plăcută și sunt renumiți pentru Paella Valenciana (cea cu pui și iepure) și All i Pebre (anghilă, un preparat specific zonei).\n\nPreț: Mediu.",
+      "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi si respectate locuri. Este o afacere de familie unde se gateste traditional.\n\nDe ce sa mergi: Au o curte interioara foarte placuta si sunt renumiti pentru Paella Valenciana (cea cu pui si iepure) si All i Pebre (anghila, un preparat specific zonei).\n\nPret: Mediu.",
       "checked": false,
       "open": true
     },
@@ -908,7 +908,7 @@
       "name": "El Palmar  - Restaurante Arrocería Maribel",
       "distance": "",
       "unit": "km",
-      "desc": "Restaurante Arrocería Maribel\nDacă vrei ceva un pic mai modern, dar cu rădăcini adânci în tradiție.\n\nDe ce să mergi: Prezentarea este mai rafinată, iar orezul este gătit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigăii). Au și opțiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
+      "desc": "Restaurante Arroceria Maribel\nDaca vrei ceva un pic mai modern, dar cu radacini adanci in traditie.\n\nDe ce sa mergi: Prezentarea este mai rafinata, iar orezul este gatit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigaii). Au si optiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
       "checked": false,
       "open": true
     },
@@ -917,7 +917,7 @@
       "name": "El Palmar  -Restaurante El Redolí",
       "distance": "",
       "unit": "km",
-      "desc": "Restaurante El Redolí\nAre o terasă superbă și o atmosferă foarte relaxată, fiind ideal dacă ești cu copilul după drumul cu bicicleta.\n\nDe ce să mergi: Raport calitate-preț excelent. Este foarte popular printre localnicii din Valencia care vin aici în weekend.\n\nSfat: Încearcă aici Arroz a Banda (orez gătit în supă de pește).",
+      "desc": "Restaurante El Redoli\nAre o terasa superba si o atmosfera foarte relaxata, fiind ideal daca esti cu copilul dupa drumul cu bicicleta.\n\nDe ce sa mergi: Raport calitate-pret excelent. Este foarte popular printre localnicii din Valencia care vin aici in weekend.\n\nSfat: Incearca aici Arroz a Banda (orez gatit in supa de peste).",
       "checked": false,
       "open": true
     }
@@ -928,7 +928,7 @@
       "name": "Orasul Artelor si Stiintei",
       "distance": "",
       "unit": "km",
-      "desc": "(Ciudad de las Artes y las Ciencias): Este simbolul orașului, un complex spectaculos proiectat de Santiago Calatrava. Chiar dacă nu intri în clădiri, plimbarea printre structurile albe și bazinele de apă turcoaz este obligatorie.",
+      "desc": "(Ciudad de las Artes y las Ciencias): Este simbolul orasului, un complex spectaculos proiectat de Santiago Calatrava. Chiar daca nu intri in cladiri, plimbarea printre structurile albe si bazinele de apa turcoaz este obligatorie.",
       "checked": false,
       "open": false
     },
@@ -937,7 +937,7 @@
       "name": "Oceanograful",
       "distance": "",
       "unit": "km",
-      "desc": "L’Oceanogràfic: Cel mai mare acvariu din Europa. Este fascinant pentru copii (și adulți), având un tunel cu rechini impresionant și ecosisteme din toate oceanele lumii.",
+      "desc": "L’Oceanografic: Cel mai mare acvariu din Europa. Este fascinant pentru copii (si adulti), avand un tunel cu rechini impresionant si ecosisteme din toate oceanele lumii.",
       "checked": false,
       "open": false
     },
@@ -946,7 +946,7 @@
       "name": "Catedrala din Valencia",
       "distance": "",
       "unit": "km",
-      "desc": "Catedrala din Valencia: O clădire superbă care îmbină stilurile gotic, baroc și romanic. Aici se află ceea ce mulți consideră a fi adevăratul Sfânt Graal. Nu rata urcarea în turnul El Miguelete pentru cea mai bună panoramă asupra orașului.",
+      "desc": "Catedrala din Valencia: O cladire superba care imbina stilurile gotic, baroc si romanic. Aici se afla ceea ce multi considera a fi adevaratul Sfant Graal. Nu rata urcarea in turnul El Miguelete pentru cea mai buna panorama asupra orasului.",
       "checked": false,
       "open": false
     },
@@ -955,7 +955,7 @@
       "name": "Bursa Matasii",
       "distance": "",
       "unit": "km",
-      "desc": "Llotja de la Seda (Bursa Mătăsii): Un monument UNESCO, exemplu magnific de arhitectură gotică civilă, care amintește de epoca de aur a comerțului din Valencia.",
+      "desc": "Llotja de la Seda (Bursa Matasii): Un monument UNESCO, exemplu magnific de arhitectura gotica civila, care aminteste de epoca de aur a comertului din Valencia.",
       "checked": false,
       "open": false
     },
@@ -964,7 +964,7 @@
       "name": "Piata Centerala din Valencia",
       "distance": "",
       "unit": "km",
-      "desc": "(Mercat Central): Una dintre cele mai mari și mai frumoase piețe de produse proaspete din Europa. Este locul perfect pentru a vedea viața locală și pentru a gusta produse tradiționale (atenție, se închide în jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
+      "desc": "(Mercat Central): Una dintre cele mai mari si mai frumoase piete de produse proaspete din Europa. Este locul perfect pentru a vedea viata locala si pentru a gusta produse traditionale (atentie, se inchide in jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
       "checked": false,
       "open": false
     },
@@ -973,7 +973,7 @@
       "name": "Barrio del Carmen",
       "distance": "",
       "unit": "km",
-      "desc": "Cel mai vechi și boem cartier, plin de străduțe înguste, artă stradală (street art) și terase primitoare.",
+      "desc": "Cel mai vechi si boem cartier, plin de stradute inguste, arta stradala (street art) si terase primitoare.",
       "checked": false,
       "open": false
     },
@@ -982,7 +982,7 @@
       "name": "Grădinile Turia",
       "distance": "",
       "unit": "km",
-      "desc": "Un parc imens de 9 km amenajat în fosta albie a râului care traversează orașul. Este locul ideal pentru a merge cu bicicleta de la centru până la mare. Nu rata Parcul Gulliver, un spatiu de joaca urias.",
+      "desc": "Un parc imens de 9 km amenajat in fosta albie a raului care traverseaza orasul. Este locul ideal pentru a merge cu bicicleta de la centru pana la mare. Nu rata Parcul Gulliver, un spatiu de joaca urias.",
       "checked": false,
       "open": false
     },
@@ -991,7 +991,7 @@
       "name": "Parcul Gulliver",
       "distance": "",
       "unit": "km",
-      "desc": " Situat în Grădinile Turia, este un loc de joacă uriaș sub forma personajului Gulliver, unde copiii pot urca și aluneca pe hainele și degetele uriașului.",
+      "desc": " Situat in Gradinile Turia, este un loc de joaca urias sub forma personajului Gulliver, unde copiii pot urca si aluneca pe hainele si degetele uriasului.",
       "checked": false,
       "open": false
     },
@@ -1000,7 +1000,7 @@
       "name": "Valencia Bioparc",
       "distance": "",
       "unit": "km",
-      "desc": "O grădină zoologică de tip \"zoo-imersiune\", unde barierele sunt aproape invizibile, oferindu-ți senzația că te plimbi prin savana africană.",
+      "desc": "O gradina zoologica de tip \"zoo-imersiune\", unde barierele sunt aproape invizibile, oferindu-ti senzatia ca te plimbi prin savana africana.",
       "checked": false,
       "open": false
     },
@@ -1009,7 +1009,7 @@
       "name": "Plaja Urbana Las Arena",
       "distance": "",
       "unit": "km",
-      "desc": "Plaje foarte late, cu nisip fin, perfecte pentru o plimbare pe faleză sau un prânz cu paella lângă mare.",
+      "desc": "Plaje foarte late, cu nisip fin, perfecte pentru o plimbare pe faleza sau un pranz cu paella langa mare.",
       "checked": false,
       "open": false
     },
@@ -1027,7 +1027,7 @@
       "name": "Parcul Natural Albufera - Bicicleta",
       "distance": "",
       "unit": "km",
-      "desc": "Este, fără îndoială, cel mai frumos loc de vizitat cu bicicleta în afara centrului orașului Valencia. Este o experiență de o zi întreagă care combină natura, plaja și gastronomia.\nDificultate: Foarte mică. Tot traseul este complet plat.\n\nPeisaj: Vei pedala pe o pistă de biciclete dedicată care pleacă din Orașul Artelor și Științelor, trece prin păduri de pini (La Devesa), pe lângă dune de nisip și ajunge la imensul lac de apă dulce.\n\nDistanță: Din centrul Valenciei până în satul El Palmar (inima parcului) sunt aproximativ 20 km. Cu un e-bike, drumul acesta este o relaxare totală, chiar și cu un copil în scaun.\n\nCe să faci în Albufera (Etapele zilei)\nPlaja El Saler: Pe drum, oprește-te la această plajă. Este mult mai sălbatică și mai curată decât Malvarrosa din oraș.\n\nPlimbarea cu barca: Când ajungi la lac (Mirador de Pujol sau în El Palmar), trebuie neapărat să faci o plimbare cu barca tradițională (albuferenc). Costă în jur de 5€ - 10€ de persoană și durează 30-45 de minute. Este magic, mai ales că poți vedea flamingo și alte păsări protejate.\n\nPrânzul în El Palmar: Satul este considerat locul unde s-a inventat Paella. Oprește-te la unul dintre restaurantele locale pentru o paella autentică la ea acasă. (Atenție: în iunie e bine să rezervi masa cu o zi înainte).\n\n",
+      "desc": "Este, fara indoiala, cel mai frumos loc de vizitat cu bicicleta in afara centrului orasului Valencia. Este o experienta de o zi intreaga care combina natura, plaja si gastronomia.\nDificultate: Foarte mica. Tot traseul este complet plat.\n\nPeisaj: Vei pedala pe o pista de biciclete dedicata care pleaca din Orasul Artelor si Stiintelor, trece prin paduri de pini (La Devesa), pe langa dune de nisip si ajunge la imensul lac de apa dulce.\n\nDistanta: Din centrul Valenciei pana in satul El Palmar (inima parcului) sunt aproximativ 20 km. Cu un e-bike, drumul acesta este o relaxare totala, chiar si cu un copil in scaun.\n\nCe sa faci in Albufera (Etapele zilei)\nPlaja El Saler: Pe drum, opreste-te la aceasta plaja. Este mult mai salbatica si mai curata decat Malvarrosa din oras.\n\nPlimbarea cu barca: Cand ajungi la lac (Mirador de Pujol sau in El Palmar), trebuie neaparat sa faci o plimbare cu barca traditionala (albuferenc). Costa in jur de 5€ - 10€ de persoana si dureaza 30-45 de minute. Este magic, mai ales ca poti vedea flamingo si alte pasari protejate.\n\nPranzul in El Palmar: Satul este considerat locul unde s-a inventat Paella. Opreste-te la unul dintre restaurantele locale pentru o paella autentica la ea acasa. (Atentie: in iunie e bine sa rezervi masa cu o zi inainte).\n\n",
       "checked": false,
       "open": false
     },
@@ -1036,7 +1036,7 @@
       "name": "Rent a Bike",
       "distance": "",
       "unit": "km",
-      "desc": "Locații recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate în centrul vechi sau lângă Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPreț e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ în plus.\n\nValencia Bikes: Au 3 locații în oraș (Centru, Ruzafa și lângă port). Sunt cunoscuți pentru servicii de calitate.\n\nPreț e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un preț simbolic dacă închiriezi e-bike.\n\nPelican Bike: Situat aproape de Orașul Artelor și Științelor.\n\nPreț e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gamă largă de scaune și chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O opțiune excelentă lângă Grădinile Turia (Paseo de la Pechina 32).\n\nPreț e-bike: 25€ (până la închidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
+      "desc": "Locatii recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate in centrul vechi sau langa Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPret e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ in plus.\n\nValencia Bikes: Au 3 locatii in oras (Centru, Ruzafa si langa port). Sunt cunoscuti pentru servicii de calitate.\n\nPret e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un pret simbolic daca inchiriezi e-bike.\n\nPelican Bike: Situat aproape de Orasul Artelor si Stiintelor.\n\nPret e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gama larga de scaune si chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O optiune excelenta langa Gradinile Turia (Paseo de la Pechina 32).\n\nPret e-bike: 25€ (pana la inchidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
       "checked": false,
       "open": true
     }
@@ -1047,25 +1047,25 @@
       "id": "gfxe42o",
       "icon": "ℹ️",
       "title": "Abonament Transport in comun",
-      "body": "🚇 Ce mijloace de transport poți folosi\n\nCu cardul SUMA (ex: SUMA 10) ai acces la:\n\n🟢 Metrou + tramvai\nMetrovalencia\n✔ inclus integral (zonele pe care le-ai cumpărat)\n🟢 Autobuze urbane\nEMT Valencia\n✔ toate autobuzele din oraș\n🟢 Trenuri locale\nRenfe Cercanías Valencia\n✔ doar în zona inclusă (de obicei zona A pentru turiști)\n\n👉 Pe scurt:\nacelași card = metrou + autobuz + tramvai + tren local\n\n✅ Cum se validează (foarte important)\n🚇 Metrou / tramvai\nintri în stație\napropii cardul de aparat (turnichet sau validator)\nse deschide poarta\n\n✔ la unele stații:\n\nvalidezi și la intrare și la ieșire\n🚌 Autobuz\nurci pe ușa din față\napropii cardul de validatorul de lângă șofer\n\n✔ apare confirmare (sunet + ecran)\n\n🚆 Tren (Cercanías)\nvalidezi la intrare (ca la metrou)\nuneori și la ieșire\n👥 Dacă sunteți 2 persoane (important)\n\n👉 se poate folosi același card:\n\nvalidezi o dată → pentru tine\nvalidezi încă o dată → pentru a doua persoană\n\n✔ aparatul scade 2 călătorii\n\n⏱️ Regula de transfer (mare avantaj)\n\n👉 ai ~90 minute pentru:\n\nschimb între metrou / autobuz / tramvai\n\n✔ fără să consume o călătorie nouă\n✔ în aceeași zonă\n\n⚠️ Greșeli frecvente\n❌ nu validezi în autobuz → amendă\n❌ uiți să validezi la ieșire (unde e necesar)\n❌ crezi că e per persoană (dar e reutilizabil)\n🧠 Concluzie simplă\n\n👉 cu SUMA:\n\nmergi cu aproape tot transportul din oraș\nvalidezi simplu: „tap card”\npoți folosi 1 card pentru familie\n\n\n--------------------------------------------------------------------------------------------------------\n\n1. Ce acoperă Zona A? (Unde vei merge cel mai des)\nZona A cuprinde tot orașul Valencia, inclusiv:\n\nCentrul istoric (Catedrala, Mercat Central).\n\nOrașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe).\n\nToată zona de plajă (Malvarrosa, Las Arenas).\n\nGrădina Zoologică (Bioparc).\n\nPortul.\n\nPractic, orice obiectiv turistic major din oraș este în Zona A. Dacă iei autobuzul (cele roșii, EMT), acesta circulă aproape exclusiv în Zona A.\n\n2. Ce NU acoperă Zona A?\nSingurul loc important pentru turiști care NU este în Zona A este Aeroportul.\n\nAeroportul se află în Zona C (sau marcată adesea ca AB+ pe noile hărți SUMA).\n\nDe aceea, la începutul conversației, ți-am sugerat taxiul pentru aeroport. Dacă ai lua metroul de la aeroport cu un card de Zona A, pur și simplu nu s-ar deschide porțile la ieșire.\n\n3. Cât costă un SUMA 10 pentru Zona A?\nÎn 2026, prețul pentru SUMA 10 (Zona A) este de aproximativ 8,00€ (plus cei 1€ sau 2€ pentru cardul fizic).\n\nCalcul rapid: Pentru grupul tău de 4 adulți, un drum în oraș costă 3,20€ în total. Este mult mai avantajos decât să cumperi bilete individuale de 1,50€ de persoană (care ar costa 6€ per grup).\n\n4. Cum îl ceri la ghișeu sau tonomat?\nDacă mergi la o tutungerie (Tabacos) sau la un ghișeu, cere pur și simplu:\n\n\"Un bonobus SUMA diez, Zona A, por favor.\" Dacă folosești tonomatul de la metrou:\n\nSelectează limba engleză.\n\nAlege \"Buy Card\" (dacă nu ai unul) sau \"Reload\" (dacă ai deja cardul).\n\nSelectează \"SUMA 10\".\n\nAlege \"Zone A\".\n\nPlătește cu cardul/Apple Pay."
+      "body": "🚇 Ce mijloace de transport poti folosi\n\nCu cardul SUMA (ex: SUMA 10) ai acces la:\n\n🟢 Metrou + tramvai\nMetrovalencia\n✔ inclus integral (zonele pe care le-ai cumparat)\n🟢 Autobuze urbane\nEMT Valencia\n✔ toate autobuzele din oras\n🟢 Trenuri locale\nRenfe Cercanias Valencia\n✔ doar in zona inclusa (de obicei zona A pentru turisti)\n\n👉 Pe scurt:\nacelasi card = metrou + autobuz + tramvai + tren local\n\n✅ Cum se valideaza (foarte important)\n🚇 Metrou / tramvai\nintri in statie\napropii cardul de aparat (turnichet sau validator)\nse deschide poarta\n\n✔ la unele statii:\n\nvalidezi si la intrare si la iesire\n🚌 Autobuz\nurci pe usa din fata\napropii cardul de validatorul de langa sofer\n\n✔ apare confirmare (sunet + ecran)\n\n🚆 Tren (Cercanias)\nvalidezi la intrare (ca la metrou)\nuneori si la iesire\n👥 Daca sunteti 2 persoane (important)\n\n👉 se poate folosi acelasi card:\n\nvalidezi o data → pentru tine\nvalidezi inca o data → pentru a doua persoana\n\n✔ aparatul scade 2 calatorii\n\n⏱️ Regula de transfer (mare avantaj)\n\n👉 ai ~90 minute pentru:\n\nschimb intre metrou / autobuz / tramvai\n\n✔ fara sa consume o calatorie noua\n✔ in aceeasi zona\n\n⚠️ Greseli frecvente\n❌ nu validezi in autobuz → amenda\n❌ uiti sa validezi la iesire (unde e necesar)\n❌ crezi ca e per persoana (dar e reutilizabil)\n🧠 Concluzie simpla\n\n👉 cu SUMA:\n\nmergi cu aproape tot transportul din oras\nvalidezi simplu: „tap card”\npoti folosi 1 card pentru familie\n\n\n--------------------------------------------------------------------------------------------------------\n\n1. Ce acopera Zona A? (Unde vei merge cel mai des)\nZona A cuprinde tot orasul Valencia, inclusiv:\n\nCentrul istoric (Catedrala, Mercat Central).\n\nOrasul Artelor si Stiintelor (Oceanografic, Muzeul de Stiinte).\n\nToata zona de plaja (Malvarrosa, Las Arenas).\n\nGradina Zoologica (Bioparc).\n\nPortul.\n\nPractic, orice obiectiv turistic major din oras este in Zona A. Daca iei autobuzul (cele rosii, EMT), acesta circula aproape exclusiv in Zona A.\n\n2. Ce NU acopera Zona A?\nSingurul loc important pentru turisti care NU este in Zona A este Aeroportul.\n\nAeroportul se afla in Zona C (sau marcata adesea ca AB+ pe noile harti SUMA).\n\nDe aceea, la inceputul conversatiei, ti-am sugerat taxiul pentru aeroport. Daca ai lua metroul de la aeroport cu un card de Zona A, pur si simplu nu s-ar deschide portile la iesire.\n\n3. Cat costa un SUMA 10 pentru Zona A?\nIn 2026, pretul pentru SUMA 10 (Zona A) este de aproximativ 8,00€ (plus cei 1€ sau 2€ pentru cardul fizic).\n\nCalcul rapid: Pentru grupul tau de 4 adulti, un drum in oras costa 3,20€ in total. Este mult mai avantajos decat sa cumperi bilete individuale de 1,50€ de persoana (care ar costa 6€ per grup).\n\n4. Cum il ceri la ghiseu sau tonomat?\nDaca mergi la o tutungerie (Tabacos) sau la un ghiseu, cere pur si simplu:\n\n\"Un bonobus SUMA diez, Zona A, por favor.\" Daca folosesti tonomatul de la metrou:\n\nSelecteaza limba engleza.\n\nAlege \"Buy Card\" (daca nu ai unul) sau \"Reload\" (daca ai deja cardul).\n\nSelecteaza \"SUMA 10\".\n\nAlege \"Zone A\".\n\nPlateste cu cardul/Apple Pay."
     },
     {
       "id": "nplxzkj",
       "icon": "📌",
-      "title": "Bilete onlince. Orașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe, Hemisfèric)",
-      "body": "Orașul Artelor și Științelor (Oceanogràfic, Muzeul de Științe, Hemisfèric)\nAceasta este cea mai aglomerată zonă. Nu cumpărați bilete separate de la casierie!\n\nBiletul Combo (3 în 1): Este cea mai bună variantă. Costă aproximativ 45€ - 53€ pentru adulți și acoperă toate cele trei locații.\n\nAvantaj Online: Primești acces prioritar (scanezi codul QR direct la turnicheți) și economisești câțiva euro față de prețul de la ghișeu.\n\nCopiii (4-5 ani): Atenție, la Oceanogràfic copiii sub 4 ani sunt gratis, dar cei de 4 și 5 ani plătesc bilet \"Redus\". Verificați vârsta exactă la momentul vizitei.\n\nSfat: Biletul combo este valabil 1, 2 sau 3 zile consecutive, deci nu trebuie să vedeți totul într-o singură zi (ceea ce e obositor cu copii mici).\n\n----------------------------------------------------------------------------------------------------------\nTicket to the Entire Complex of the City of Arts and Sciences €51.25  (3 in 1)\nOceanogràfic Valencia and Science Museum Combined Ticket  €45.40 (2 in 1)\n\nOceanogràfic - Estimated visit: 3–4 hours\nMuseu de les Ciències - Estimated visit: 2 hours"
+      "title": "Bilete online. Orasul Artelor si Stiintelor (Oceanografic, Muzeul de Stiinte, Hemisferic)",
+      "body": "Orasul Artelor si Stiintelor (Oceanografic, Muzeul de Stiinte, Hemisferic)\nAceasta este cea mai aglomerata zona. Nu cumparati bilete separate de la casierie!\n\nBiletul Combo (3 in 1): Este cea mai buna varianta. Costa aproximativ 45€ - 53€ pentru adulti si acopera toate cele trei locatii.\n\nAvantaj Online: Primesti acces prioritar (scanezi codul QR direct la turnicheti) si economisesti cativa euro fata de pretul de la ghiseu.\n\nCopiii (4-5 ani): Atentie, la Oceanografic copiii sub 4 ani sunt gratis, dar cei de 4 si 5 ani platesc bilet \"Redus\". Verificati varsta exacta la momentul vizitei.\n\nSfat: Biletul combo este valabil 1, 2 sau 3 zile consecutive, deci nu trebuie sa vedeti totul intr-o singura zi (ceea ce e obositor cu copii mici).\n\n----------------------------------------------------------------------------------------------------------\nTicket to the Entire Complex of the City of Arts and Sciences €51.25  (3 in 1)\nOceanogràfic Valencia and Science Museum Combined Ticket  €45.40 (2 in 1)\n\nOceanogràfic - Estimated visit: 3–4 hours\nMuseu de les Ciències - Estimated visit: 2 hours"
     },
     {
       "id": "ggcehxb",
       "icon": "🔑",
-      "title": "Bilete onlince.  Bioparc ",
-      "body": "Bioparc (Grădina Zoologică de tip imersiv)\nEste considerată una dintre cele mai frumoase din lume și e perfectă pentru copiii de 4-5 ani.\n\nBilet Online: Cumpărarea de pe site-ul oficial sau platforme precum GetYourGuide îți oferă \"Fast Track\" (intrare rapidă).\n\nReduceri de grup: Există pachete numite \"Manada\" (pentru 4 persoane), care reduc prețul per bilet dacă sunteți exact 4 adulți.\n\nCopiii: La Bioparc, copiii sub 4 ani sunt gratis, iar cei de 4 și 5 ani plătesc tarif redus.\n\nPromoție: Uneori există coduri de reducere pentru după-amiază (bilete \"Biotardeo\") dacă vizitați parcul după ora 16:00.\n----------------------------------------------------------------------------------------------------------\n\nBioparc Valencia - Estimated visit: 3-4 hours - 90,50 €\nEntrada de Día  10:00 12:00 14:00 16:00 18:00\n"
+      "title": "Bilete online.  Bioparc ",
+      "body": "Bioparc (Gradina Zoologica de tip imersiv)\nEste considerata una dintre cele mai frumoase din lume si e perfecta pentru copiii de 4-5 ani.\n\nBilet Online: Cumpararea de pe site-ul oficial sau platforme precum GetYourGuide iti ofera \"Fast Track\" (intrare rapida).\n\nReduceri de grup: Exista pachete numite \"Manada\" (pentru 4 persoane), care reduc pretul per bilet daca sunteti exact 4 adulti.\n\nCopiii: La Bioparc, copiii sub 4 ani sunt gratis, iar cei de 4 si 5 ani platesc tarif redus.\n\nPromotie: Uneori exista coduri de reducere pentru dupa-amiaza (bilete \"Biotardeo\") daca vizitati parcul dupa ora 16:00.\n----------------------------------------------------------------------------------------------------------\n\nBioparc Valencia - Estimated visit: 3-4 hours - 90,50 €\nEntrada de Día  10:00 12:00 14:00 16:00 18:00\n"
     },
     {
       "id": "2k3y6nk",
       "icon": "🏨",
       "title": "Rent EBIKE",
-      "body": "Valencia este unul dintre cele mai prietenoase orașe din Europa pentru biciclete, fiind aproape complet plat și având peste 160 km de piste dedicate. Pentru un grup de 4 adulți și 2 copii de 4-5 ani, închirierea de e-bike-uri (biciclete electrice) este o idee excelentă, mai ales că vă permit să parcurgeți tot parcul Turia (9 km lungime) fără efort.\n\nIată recomandările mele specifice pentru grupul vostru:\n\n1. Unde închiriați (Centre recomandate)\nPentru e-bike-uri de calitate și accesorii pentru copii, cele mai bune opțiuni sunt în zona centrului vechi (Ciutat Vella) sau lângă parcul Turia:\n\nPassion Bike (Serranos/Centru): Au o flotă mare de e-bike-uri și, foarte important, au scaune de copii și remorci (trailers). Sunt foarte obișnuiți cu turiștii.\n\nThe Bike Software / DoYouBike: Au mai multe locații în oraș. Sunt profesioniști și oferă asistență tehnică rapidă.\n\nValencia Bikes (Ruzafa sau Port): Ideali dacă vreți să începeți plimbarea direct dinspre port sau cartierul modern Ruzafa.\n\n2. Configurația pentru copii (4-5 ani)\nLa această vârstă, copiii sunt prea mari pentru scaunele mici de bebeluși, dar prea mici să pedaleze singuri pe distanțe lungi în trafic. Aveți 3 variante:\n\nScaun de spate (Rear Seat): Majoritatea centrelor au scaune care suportă până la 22-25 kg. Verificați greutatea copiilor înainte.\n\nRemorcă (Cariola/Trailer): O soluție excelentă pentru 2 copii. Stau amândoi în spate, protejați de soare, și se pot chiar juca sau dormi în timp ce voi pedalați.\n\nTag-along bike (Semicicletă): O bicicletă mică fără roată față care se agață de bicicleta adultului. Copilul poate pedala dacă vrea, dar este tras de tine. (Verificați disponibilitatea online, nu toate centrele au multe).\n\n3. Cât costă (Estimare 2026)\nE-bike adult: ~25€ - 35€ pentru o zi întreagă (8-10 ore) sau ~10€ - 15€ pentru 2-3 ore.\n\nScaun copil: ~5€ / zi.\n\nRemorcă (pentru 1 sau 2 copii): ~10€ - 15€ / zi.\n\n4. Reguli importante în Valencia\nPiste de biciclete: Este interzis să mergeți pe trotuar. Trebuie să folosiți pistele de biciclete (marcate cu roșu sau verde) sau drumurile cu limită de 30 km/h.\n\nCăști: Pentru copiii sub 16 ani, casca este obligatorie prin lege. Pentru adulți este recomandată, dar nu obligatorie în oraș.\n\nParcare: Nu lăsați bicicletele electrice nesupravegheate pe stradă peste noapte, chiar și cu antifurt. Majoritatea centrelor vă vor cere să le aduceți înapoi la închidere sau să le țineți în interiorul locației de cazare.\n\n5. Traseul perfect cu copiii\nVă recomand traseul prin Grădinile Turia (Jardín del Turia):\n\nÎncepeți de la Turnurile Serranos.\n\nPedalați prin albia secată a râului (fără mașini, doar natură și piste late).\n\nOpriți-vă la Parcul Gulliver (copiii se vor distra de minune).\n\nContinuați până la Orașul Artelor și Științelor.\n\nDacă aveți energie, pedalați încă 15 minute pe pista dreaptă până la Plaja Malvarrosa.\n\nSfat de rezervare: Fiind un grup de 6 persoane cu nevoi specifice (e-bike + accesorii copii), rezervați online cu cel puțin 48h înainte. E-bike-urile cu scaune de copii sunt primele care se epuizează în weekend-uri sau zile însorite."
+      "body": "Valencia este unul dintre cele mai prietenoase orase din Europa pentru biciclete, fiind aproape complet plat si avand peste 160 km de piste dedicate. Pentru un grup de 4 adulti si 2 copii de 4-5 ani, inchirierea de e-bike-uri (biciclete electrice) este o idee excelenta, mai ales ca va permit sa parcurgeti tot parcul Turia (9 km lungime) fara efort.\n\nIata recomandarile mele specifice pentru grupul vostru:\n\n1. Unde inchiriati (Centre recomandate)\nPentru e-bike-uri de calitate si accesorii pentru copii, cele mai bune optiuni sunt in zona centrului vechi (Ciutat Vella) sau langa parcul Turia:\n\nPassion Bike (Serranos/Centru): Au o flota mare de e-bike-uri si, foarte important, au scaune de copii si remorci (trailers). Sunt foarte obisnuiti cu turistii.\n\nThe Bike Software / DoYouBike: Au mai multe locatii in oras. Sunt profesionisti si ofera asistenta tehnica rapida.\n\nValencia Bikes (Ruzafa sau Port): Ideali daca vreti sa incepeti plimbarea direct dinspre port sau cartierul modern Ruzafa.\n\n2. Configuratia pentru copii (4-5 ani)\nLa aceasta varsta, copiii sunt prea mari pentru scaunele mici de bebelusi, dar prea mici sa pedaleze singuri pe distante lungi in trafic. Aveti 3 variante:\n\nScaun de spate (Rear Seat): Majoritatea centrelor au scaune care suporta pana la 22-25 kg. Verificati greutatea copiilor inainte.\n\nRemorca (Cariola/Trailer): O solutie excelenta pentru 2 copii. Stau amandoi in spate, protejati de soare, si se pot chiar juca sau dormi in timp ce voi pedalati.\n\nTag-along bike (Semicicleta): O bicicleta mica fara roata fata care se agata de bicicleta adultului. Copilul poate pedala daca vrea, dar este tras de tine. (Verificati disponibilitatea online, nu toate centrele au multe).\n\n3. Cat costa (Estimare 2026)\nE-bike adult: ~25€ - 35€ pentru o zi intreaga (8-10 ore) sau ~10€ - 15€ pentru 2-3 ore.\n\nScaun copil: ~5€ / zi.\n\nRemorca (pentru 1 sau 2 copii): ~10€ - 15€ / zi.\n\n4. Reguli importante in Valencia\nPiste de biciclete: Este interzis sa mergeti pe trotuar. Trebuie sa folositi pistele de biciclete (marcate cu rosu sau verde) sau drumurile cu limita de 30 km/h.\n\nCasti: Pentru copiii sub 16 ani, casca este obligatorie prin lege. Pentru adulti este recomandata, dar nu obligatorie in oras.\n\nParcare: Nu lasati bicicletele electrice nesupravegheate pe strada peste noapte, chiar si cu antifurt. Majoritatea centrelor va vor cere sa le aduceti inapoi la inchidere sau sa le tineti in interiorul locatiei de cazare.\n\n5. Traseul perfect cu copiii\nVa recomand traseul prin Gradinile Turia (Jardín del Turia):\n\nIncepeti de la Turnurile Serranos.\n\nPedalati prin albia secata a raului (fara masini, doar natura si piste late).\n\nOpriti-va la Parcul Gulliver (copiii se vor distra de minune).\n\nContinuati pana la Orasul Artelor si Stiintelor.\n\nDaca aveti energie, pedalati inca 15 minute pe pista dreapta pana la Plaja Malvarrosa.\n\nSfat de rezervare: Fiind un grup de 6 persoane cu nevoi specifice (e-bike + accesorii copii), rezervati online cu cel putin 48h inainte. E-bike-urile cu scaune de copii sunt primele care se epuizeaza in weekend-uri sau zile insorite."
     }
   ]
 }
