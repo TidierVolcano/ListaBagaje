@@ -453,6 +453,188 @@
       ]
     },
     {
+      "id": "zprr2c1",
+      "emoji": "📷",
+      "name": "Igiena",
+      "open": true,
+      "items": [
+        {
+          "id": "qrh9k3a",
+          "text": "Sampon adulti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "vjhw76y",
+          "text": "Sampon adulti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "r93rfl9",
+          "text": "Baby Sampon",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jm6f0um",
+          "text": "Gel de dus M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "dr8yzm4",
+          "text": "Gel de dus F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "iuiqblm",
+          "text": "Pasta de dinti adulti",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "wmi49ig",
+          "text": "Pasta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "buwqukd",
+          "text": "Periuta de dinti M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "5hkjjgg",
+          "text": "Periuta de dinti F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8jwe6j6",
+          "text": "Periuta de dinti baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "r4rzqy8",
+          "text": "Crema Nivea",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ogoqk3r",
+          "text": "Crema baby",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rl18kth",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "d5nowhz",
+          "text": "Deodorant M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "qt1xh4z",
+          "text": "Deodorant F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tod6z0h",
+          "text": "Gel de par",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "e31m2oj",
+          "text": "Crema Plaja",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "x9n6025",
+          "text": "BIC-uri",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "3evrxl1",
+          "text": "Dischete demachiante",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "fqddu9z",
+          "text": "Bicarbonat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2zg88sb",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ud47u4p",
+          "text": "Sapun solid",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "500r6fg",
+          "text": "Detergent rufe",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "h91qpua",
+          "text": "Crema hidratanta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nat5ugu",
+          "text": "Balsam de buze",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "60jiq4i",
+          "text": "Pieptene",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hopbojr",
+          "text": "Oglinda + penseta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tmccmg4",
+          "text": "Absorbante",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8ps2q28",
+          "text": "Betisoare de urechi",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
       "id": "med_dgp6x2j",
       "emoji": "💊",
       "name": "Medicamente",
@@ -705,188 +887,6 @@
         {
           "id": "0qxiv0v",
           "text": "Uda plantele",
-          "checked": false,
-          "qty": ""
-        }
-      ]
-    },
-    {
-      "id": "zprr2c1",
-      "emoji": "📷",
-      "name": "Igiena",
-      "open": true,
-      "items": [
-        {
-          "id": "qrh9k3a",
-          "text": "Sampon adulti M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "vjhw76y",
-          "text": "Sampon adulti F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "r93rfl9",
-          "text": "Baby Sampon",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "jm6f0um",
-          "text": "Gel de dus M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "dr8yzm4",
-          "text": "Gel de dus F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "iuiqblm",
-          "text": "Pasta de dinti adulti",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "wmi49ig",
-          "text": "Pasta de dinti baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "buwqukd",
-          "text": "Periuta de dinti M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "5hkjjgg",
-          "text": "Periuta de dinti F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "8jwe6j6",
-          "text": "Periuta de dinti baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "r4rzqy8",
-          "text": "Crema Nivea",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "ogoqk3r",
-          "text": "Crema baby",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "rl18kth",
-          "text": "Ata dentara",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "d5nowhz",
-          "text": "Deodorant M",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "qt1xh4z",
-          "text": "Deodorant F",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "tod6z0h",
-          "text": "Gel de par",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "e31m2oj",
-          "text": "Crema Plaja",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "x9n6025",
-          "text": "BIC-uri",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "3evrxl1",
-          "text": "Dischete demachiante",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "fqddu9z",
-          "text": "Bicarbonat",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "2zg88sb",
-          "text": "Ata dentara",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "ud47u4p",
-          "text": "Sapun solid",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "500r6fg",
-          "text": "Detergent rufe",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "h91qpua",
-          "text": "Crema hidratanta",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "nat5ugu",
-          "text": "Balsam de buze",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "60jiq4i",
-          "text": "Pieptene",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "hopbojr",
-          "text": "Oglinda + penseta",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "tmccmg4",
-          "text": "Absorbante",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "8ps2q28",
-          "text": "Betisoare de urechi",
           "checked": false,
           "qty": ""
         }
