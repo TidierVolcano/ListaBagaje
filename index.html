@@ -1593,45 +1593,58 @@ if(window.visualViewport){
   window.visualViewport.addEventListener('resize', recalcPadding);
 }
 </script>
-    <script>
-const urlJson = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
+<script>
+const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
 
-async function incarcaLista() {
-    try {
-        const raspuns = await fetch(urlJson);
-        if (!raspuns.ok) throw new Error('Nu am putut accesa JSON');
+async function incarcaListaDinGitHub() {
+  // Verificăm dacă există deja date salvate local
+  const dateSalvate = localStorage.getItem('packro_v2');
+  if (dateSalvate) return; // Deja are date, nu suprascrie
 
-        const date = await raspuns.json();
-        const container = document.getElementById('lista-produse');
-        container.innerHTML = ''; // Curățăm containerul
+  try {
+    const raspuns = await fetch(GITHUB_JSON_URL);
+    if (!raspuns.ok) throw new Error('Nu am putut accesa JSON-ul de pe GitHub');
 
-        // Iterăm prin categoriile din fișierul tău (Documente, Activități, etc.)
-        date.categories.forEach(categorie => {
-            // Creăm un titlu pentru categorie
-            const titlu = document.createElement('h3');
-            titlu.textContent = categorie.emoji + " " + categorie.name;
-            container.appendChild(titlu);
+    const date = await raspuns.json();
 
-            const ul = document.createElement('ul');
-            
-            // Iterăm prin obiectele din fiecare categorie
-            categorie.items.forEach(articol => {
-                const li = document.createElement('li');
-                li.textContent = articol.text;
-                if(articol.checked) li.style.textDecoration = "line-through";
-                ul.appendChild(li);
-            });
-            
-            container.appendChild(ul);
-        });
+    // Construim structura așteptată de aplicație
+    const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
+    const stareInitiala = {
+      trips: [
+        {
+          id: tripId,
+          type: date.tripType || 'city',
+          name: date.name || 'Lista mea',
+          savedAt: Date.now(),
+          data: {
+            categories: date.categories || [],
+            restaurants: date.restaurants || [],
+            places: date.places || [],
+            itinerary: date.itinerary || [],
+            infos: date.infos || []
+          }
+        }
+      ],
+      active: {
+        city: tripId,
+        beach: null,
+        mountain: null,
+        ski: null
+      }
+    };
 
-    } catch (eroare) {
-        console.error('Eroare:', eroare);
-        document.getElementById('lista-produse').innerHTML = 'Eroare la încărcarea datelor: ' + eroare.message;
-    }
+    // Salvăm în localStorage sub cheia folosită de aplicație
+    localStorage.setItem('packro_v2', JSON.stringify(stareInitiala));
+
+    // Reîncărcăm pagina pentru a aplica datele
+    location.reload();
+
+  } catch (eroare) {
+    console.error('Eroare la încărcarea listei din GitHub:', eroare);
+  }
 }
 
-incarcaLista();      
-    </script>  
+incarcaListaDinGitHub();
+</script>
 </body>
 </html>
