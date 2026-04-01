@@ -1,6 +1,6 @@
 {
   "tripType": "city",
-  "name": "VALENCIA SPAIN",
+  "name": "VALENCIA",
   "categories": [
     {
       "id": "doc_b9jzk9e",
@@ -15,8 +15,26 @@
           "qty": ""
         },
         {
+          "id": "4urmvz7",
+          "text": "Pasaport Alex",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "mztbzuy",
+          "text": "Permis de conducere",
+          "checked": false,
+          "qty": ""
+        },
+        {
           "id": "aajv95v",
-          "text": "Card bancar + cash",
+          "text": "Card bancar EUR",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "mea0zjy",
+          "text": "Cash",
           "checked": false,
           "qty": ""
         },
@@ -29,12 +47,6 @@
         {
           "id": "onpromr",
           "text": "Asigurare medicală",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "mztbzuy",
-          "text": "Permis de conducere (dacă e cazul)",
           "checked": false,
           "qty": ""
         },
