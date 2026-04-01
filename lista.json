@@ -1,13 +1,13 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:52:47.923Z",
+  "exportedAt": "2026-04-01T10:54:43.176Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_bcbhzq6",
+      "id": "trip_1dhx08c",
       "type": "city",
       "name": "Milano",
-      "savedAt": 1775037032577,
+      "savedAt": 1775040882059,
       "active": true,
       "categories": [
         {
@@ -346,11 +346,17 @@
           "icon": "🔑",
           "title": "Milano - Como ",
           "body": ""
+        },
+        {
+          "id": "lw6pyub",
+          "icon": "🏨",
+          "title": "Milano - Genoa 1:30min - €25.00",
+          "body": ""
         }
       ]
     },
     {
-      "id": "trip_2sjmr6m",
+      "id": "trip_ectw55m",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -627,7 +633,7 @@
       "infos": []
     },
     {
-      "id": "trip_4rxtnd5",
+      "id": "trip_dowi3bx",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -922,7 +928,7 @@
       "infos": []
     },
     {
-      "id": "trip_0ow46to",
+      "id": "trip_dt4nqi4",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -1996,7 +2002,7 @@
       ]
     },
     {
-      "id": "trip_uofdyrj",
+      "id": "trip_j817uy9",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
