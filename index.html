@@ -791,6 +791,7 @@ body {
         <div class="tog-track"></div><span>Checklist</span>
       </button>
       <div class="spc"></div>
+      <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GitHub</button>
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
       <button class="pill pill-save" onclick="openSave()">💾 Salvează</button>
@@ -901,6 +902,64 @@ body {
 
 <div class="toast" id="toast"></div>
 
+<script>
+const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
+
+async function incarcaListaDinGitHub() {
+  const dateSalvate = localStorage.getItem('packro_v7');
+  if (dateSalvate) return;
+
+  try {
+    const raspuns = await fetch(GITHUB_JSON_URL);
+    if (!raspuns.ok) throw new Error('Nu am putut accesa JSON-ul de pe GitHub');
+
+    const date = await raspuns.json();
+
+    const tripType = date.tripType || 'city';
+    const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
+    const stareInitiala = {
+      activeType: tripType,
+      activeView: 'pack',
+      clMode: false,
+      trips: [
+        {
+          id: tripId,
+          type: tripType,
+          name: date.name || 'Lista mea',
+          savedAt: Date.now(),
+          data: {
+            categories: date.categories || [],
+            restaurants: date.restaurants || [],
+            places: date.places || [],
+            itinerary: date.itinerary || [],
+            infos: date.infos || []
+          }
+        }
+      ],
+      active: {
+        city:   tripType === 'city'   ? tripId : null,
+        seacar: tripType === 'seacar' ? tripId : null,
+        seaair: tripType === 'seaair' ? tripId : null,
+        camp:   tripType === 'camp'   ? tripId : null
+      }
+    };
+
+    localStorage.setItem('packro_v7', JSON.stringify(stareInitiala));
+    location.reload();
+
+  } catch (eroare) {
+    console.error('Eroare la încărcarea listei din GitHub:', eroare);
+  }
+}
+
+async function resetDinGitHub() {
+  if (!confirm('Ștergi datele locale și reîncărci lista din GitHub? Modificările nesalvate pe GitHub se pierd.')) return;
+  localStorage.removeItem('packro_v7');
+  location.reload();
+}
+
+incarcaListaDinGitHub();
+</script>
 <script>
 /* ═══════════════ DATA ═══════════════ */
 const TRIP_TYPES = {
@@ -1593,57 +1652,6 @@ if(window.visualViewport){
   window.visualViewport.addEventListener('resize', recalcPadding);
 }
 </script>
-<script>
-const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
 
-async function incarcaListaDinGitHub() {
-  const dateSalvate = localStorage.getItem('packro_v7');
-  if (dateSalvate) return;
-
-  try {
-    const raspuns = await fetch(GITHUB_JSON_URL);
-    if (!raspuns.ok) throw new Error('Nu am putut accesa JSON-ul de pe GitHub');
-
-    const date = await raspuns.json();
-
-    const tripType = date.tripType || 'city';
-    const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
-    const stareInitiala = {
-      activeType: tripType,
-      activeView: 'pack',
-      clMode: false,
-      trips: [
-        {
-          id: tripId,
-          type: tripType,
-          name: date.name || 'Lista mea',
-          savedAt: Date.now(),
-          data: {
-            categories: date.categories || [],
-            restaurants: date.restaurants || [],
-            places: date.places || [],
-            itinerary: date.itinerary || [],
-            infos: date.infos || []
-          }
-        }
-      ],
-      active: {
-        city:   tripType === 'city'   ? tripId : null,
-        seacar: tripType === 'seacar' ? tripId : null,
-        seaair: tripType === 'seaair' ? tripId : null,
-        camp:   tripType === 'camp'   ? tripId : null
-      }
-    };
-
-    localStorage.setItem('packro_v7', JSON.stringify(stareInitiala));
-    location.reload();
-
-  } catch (eroare) {
-    console.error('Eroare la încărcarea listei din GitHub:', eroare);
-  }
-}
-
-incarcaListaDinGitHub();
-</script>
 </body>
 </html>
