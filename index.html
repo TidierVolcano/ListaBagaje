@@ -1594,38 +1594,44 @@ if(window.visualViewport){
 }
 </script>
     <script>
-        // Înlocuiește cu URL-ul tău RAW de la pasul 1
-        const urlJson = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
+const urlJson = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
 
-        async function incarcaLista() {
-            try {
-                const raspuns = await fetch(urlJson);
-                
-                if (!raspuns.ok) {
-                    throw new Error('Nu am putut accesa fișierul JSON');
-                }
+async function incarcaLista() {
+    try {
+        const raspuns = await fetch(urlJson);
+        if (!raspuns.ok) throw new Error('Nu am putut accesa JSON');
 
-                const date = await raspuns.json();
-                const container = document.getElementById('lista-produse');
-                
-                // Curățăm mesajul de "încărcare"
-                container.innerHTML = '';
+        const date = await raspuns.json();
+        const container = document.getElementById('lista-produse');
+        container.innerHTML = ''; // Curățăm containerul
 
-                // Presupunem că JSON-ul tău este un array de obiecte: [{"nume": "Mere"}, {"nume": "Paine"}]
-                date.forEach(produs => {
-                    const li = document.createElement('li');
-                    li.textContent = produs.nume; // Ajustează în funcție de structura JSON-ului tău
-                    container.appendChild(li);
-                });
+        // Iterăm prin categoriile din fișierul tău (Documente, Activități, etc.)
+        date.categories.forEach(categorie => {
+            // Creăm un titlu pentru categorie
+            const titlu = document.createElement('h3');
+            titlu.textContent = categorie.emoji + " " + categorie.name;
+            container.appendChild(titlu);
 
-            } catch (eroare) {
-                console.error('Eroare:', eroare);
-                document.getElementById('lista-produse').innerHTML = 'Eroare la încărcarea datelor.';
-            }
-        }
+            const ul = document.createElement('ul');
+            
+            // Iterăm prin obiectele din fiecare categorie
+            categorie.items.forEach(articol => {
+                const li = document.createElement('li');
+                li.textContent = articol.text;
+                if(articol.checked) li.style.textDecoration = "line-through";
+                ul.appendChild(li);
+            });
+            
+            container.appendChild(ul);
+        });
 
-        // Apelăm funcția la deschiderea paginii
-        incarcaLista();
+    } catch (eroare) {
+        console.error('Eroare:', eroare);
+        document.getElementById('lista-produse').innerHTML = 'Eroare la încărcarea datelor: ' + eroare.message;
+    }
+}
+
+incarcaLista();      
     </script>  
 </body>
 </html>
