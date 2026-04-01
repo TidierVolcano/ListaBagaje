@@ -6,7 +6,7 @@
       "id": "doc_b9jzk9e",
       "emoji": "📄",
       "name": "Documente",
-      "open": true,
+      "open": false,
       "items": [
         {
           "id": "n2002do",
@@ -23,6 +23,30 @@
         {
           "id": "mztbzuy",
           "text": "Permis de conducere",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "osl9fl3",
+          "text": "Talon auto",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "mgu6lo4",
+          "text": "RCA",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hgzascr",
+          "text": "Rovinieta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rdnaron",
+          "text": "Viniete Europa",
           "checked": false,
           "qty": ""
         },
@@ -55,6 +79,12 @@
           "text": "Card de sanatate",
           "checked": false,
           "qty": ""
+        },
+        {
+          "id": "pkat9u5",
+          "text": "Roaming",
+          "checked": false,
+          "qty": ""
         }
       ]
     },
@@ -62,7 +92,7 @@
       "id": "act_sb4pob7",
       "emoji": "🎭",
       "name": "Activități",
-      "open": true,
+      "open": false,
       "items": [
         {
           "id": "5t2v0q4",
@@ -253,188 +283,176 @@
           "qty": ""
         },
         {
-          "id": "vosefpn",
-          "text": "2–3 tricouri / bluze",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "9ucid22",
-          "text": "Ținută elegantă seară",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "0yzsf70",
-          "text": "Geacă ușoară / impermeabilă",
-          "checked": false,
-          "qty": ""
-        },
-        {
           "id": "hveiq9e",
           "text": "Lenjerie + șosete",
           "checked": false,
           "qty": ""
+        },
+        {
+          "id": "llupvlv",
+          "text": "Costum de baie F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "0v23n0h",
+          "text": "Pantaloni scurti de baie M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "1uk4eyw",
+          "text": "Costum de baie Alex",
+          "checked": false,
+          "qty": "2"
+        },
+        {
+          "id": "lgyzsdf",
+          "text": "Slapi",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "0u81gw8",
+          "text": "Papuci de plaja",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rjz4j0n",
+          "text": "Prosoape microfibra",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "9lu37w8",
+          "text": "Palarie/ Sapca",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "l7ophet",
+          "text": "Ochelari de soare",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "c6phvak",
+          "text": "Cleme pentru prosop",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "r6x645e",
+          "text": "Patura de plaja",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "118kwlh",
+          "text": "Set de plaja pentru copii",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "px5bx4p",
+          "text": "Perie mica pentru nisip",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "1ngusk8",
+          "text": "Lenjerie intima F",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "v8ueip1",
+          "text": "Lenjerie intima M",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "dno7eh7",
+          "text": "Lenjerie intima Alex",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "miq7sk9",
+          "text": "Sosete",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nwf5kg4",
+          "text": "Haine de dormit",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "cvkf8ye",
+          "text": "Pantaloni lungi",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "92brd5c",
+          "text": "Rochii",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "xoob6y4",
+          "text": "Tricouri",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "crn1xp0",
+          "text": "Maiouri",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "i54e3va",
+          "text": "Camasa",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ags9c3x",
+          "text": "Bluza maneca luna/ Hanorac subtire",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nuiatwo",
+          "text": "Sandale",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tn1stk0",
+          "text": "Adidasi comozi",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "g5ht22e",
+          "text": "Curea",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8ipinjz",
+          "text": "Jacheta ploaie",
+          "checked": false,
+          "qty": ""
         }
       ]
     },
-    {
-      "id": "med_dgp6x2j",
-      "emoji": "💊",
-      "name": "Medicamente",
-      "open": true,
-      "items": [
-        {
-          "id": "mms3mz1",
-          "text": "Paracetamol / ibuprofen",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "rtqacsd",
-          "text": "Plasturi + dezinfectant",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "oblllfw",
-          "text": "Dezinfectant mâini",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "622q4sh",
-          "text": "Medicamente personale",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "4fqhudk",
-          "text": "Servete umede",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "3ptz45h",
-          "text": "Servetele uscate",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "gufh4jw",
-          "text": "Comprese sterile",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "h1l09aa",
-          "text": "Apa de mare",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "ka4545p",
-          "text": "Antibiotic",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "okzgw15",
-          "text": "Parasinus",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "fqayy5k",
-          "text": "Nurofen adulti",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "l2iowq3",
-          "text": "Ceaiuri",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "pcrb4em",
-          "text": "Leucoplast",
-          "checked": false,
-          "qty": ""
-        }
-      ]
-    },
-    {
-      "id": "foo_bxq9tua",
-      "emoji": "🍎",
-      "name": "Food",
-      "open": false,
-      "items": [
-        {
-          "id": "d36vrs4",
-          "text": "Sticlă apă reutilizabilă",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "0qitd6v",
-          "text": "Gustări ușoare de drum",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "rdbsg44",
-          "text": "Gumă de mestecat",
-          "checked": false,
-          "qty": ""
-        }
-      ]
-    },
-    {
-      "id": "chk_wetz5rt",
-      "emoji": "✅",
-      "name": "De verificat",
-      "open": true,
-      "items": [
-        {
-          "id": "jv8jcmk",
-          "text": "Oprește apa",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "o6oxzgv",
-          "text": "Opreste centrala",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "8ra1x57",
-          "text": "Verifică gazul",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "y8g0jug",
-          "text": "Ferestre & uși închise",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "6aq9l6j",
-          "text": "Aparate electrice oprite",
-          "checked": false,
-          "qty": ""
-        },
-        {
-          "id": "wnisnll",
-          "text": "Arunca gunoiul",
-          "checked": false,
-          "qty": ""
-        }
-      ]
-    },
-    {
+{
       "id": "zprr2c1",
       "emoji": "📷",
       "name": "Igiena",
@@ -557,6 +575,318 @@
         {
           "id": "fqddu9z",
           "text": "Bicarbonat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "2zg88sb",
+          "text": "Ata dentara",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ud47u4p",
+          "text": "Sapun solid",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "500r6fg",
+          "text": "Detergent rufe",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "h91qpua",
+          "text": "Crema hidratanta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "nat5ugu",
+          "text": "Balsam de buze",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "60jiq4i",
+          "text": "Pieptene",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "hopbojr",
+          "text": "Oglinda + penseta",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "tmccmg4",
+          "text": "Absorbante",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8ps2q28",
+          "text": "Betisoare de urechi",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "med_dgp6x2j",
+      "emoji": "💊",
+      "name": "Medicamente",
+      "open": false,
+      "items": [
+        {
+          "id": "mms3mz1",
+          "text": "Paracetamol / ibuprofen",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rtqacsd",
+          "text": "Plasturi + dezinfectant",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "oblllfw",
+          "text": "Dezinfectant mâini",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "622q4sh",
+          "text": "Medicamente personale",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "4fqhudk",
+          "text": "Servete umede",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "3ptz45h",
+          "text": "Servetele uscate",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "gufh4jw",
+          "text": "Comprese sterile",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "h1l09aa",
+          "text": "Apa de mare",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ka4545p",
+          "text": "Antibiotic",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "okzgw15",
+          "text": "Parasinus",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "fqayy5k",
+          "text": "Nurofen adulti",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "l2iowq3",
+          "text": "Ceaiuri",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "pcrb4em",
+          "text": "Leucoplast",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "n96yvov",
+          "text": "Probiotic",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "58l0vcq",
+          "text": "Bomboane de sup/ Spray de gat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "5uh9dtm",
+          "text": "Picaturi de nas",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "v4fgxln",
+          "text": "Gel arsuri solare",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "9fk68ci",
+          "text": "Repelent insecte",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "fwx18ed",
+          "text": "Gel dupa intepaturi",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "foo_bxq9tua",
+      "emoji": "🍎",
+      "name": "Food",
+      "open": false,
+      "items": [
+        {
+          "id": "d36vrs4",
+          "text": "Sticlă apă reutilizabilă",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "0qitd6v",
+          "text": "Gustări ușoare de drum",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "rdbsg44",
+          "text": "Gumă de mestecat",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "9a9prp8",
+          "text": "Nuci si seminte",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "axvupd1",
+          "text": "Fructe uscate",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "wleeewi",
+          "text": "Batoane proteice",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "jdrxuh2",
+          "text": "Biscuiti digestivi sau crackers",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "22yeb6e",
+          "text": "Pungi cu zip (pentru produsele incepute)",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "auawdvb",
+          "text": "Sandwich (cascaval, salam uscat, unt de arahide) - chestii uscate",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "t4ao8kq",
+          "text": "Mere, Banane, Struguri",
+          "checked": false,
+          "qty": ""
+        }
+      ]
+    },
+    {
+      "id": "chk_wetz5rt",
+      "emoji": "✅",
+      "name": "De verificat",
+      "open": true,
+      "items": [
+        {
+          "id": "jv8jcmk",
+          "text": "Oprește apa",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "o6oxzgv",
+          "text": "Opreste centrala",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "8ra1x57",
+          "text": "Verifică gazul",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "y8g0jug",
+          "text": "Ferestre & uși închise",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "6aq9l6j",
+          "text": "Aparate electrice oprite",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "wnisnll",
+          "text": "Arunca gunoiul",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "vrj949s",
+          "text": "Scoate din priza electrocasnicele",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "eykg60r",
+          "text": "Goleste frigiderul",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "ukk46gt",
+          "text": "Curata chiuveta si scurgerile",
+          "checked": false,
+          "qty": ""
+        },
+        {
+          "id": "0qxiv0v",
+          "text": "Uda plantele",
           "checked": false,
           "qty": ""
         }
