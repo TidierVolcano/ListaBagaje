@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T11:06:16.312Z",
+  "exportedAt": "2026-04-01T11:10:29.382Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_a3f8o4u",
+      "id": "trip_ub6vp4x",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -281,6 +281,21 @@
           ]
         },
         {
+          "id": "h0191nk",
+          "emoji": "📷",
+          "name": "Igiena",
+          "open": true,
+          "items": [
+            {
+              "id": "m8nxgin",
+              "text": "Sampon",
+              "checked": false,
+              "qty": ""
+            }
+          ]
+        }
+      ],
+        {
           "id": "med_1skz6xo",
           "emoji": "💊",
           "name": "Medicamente",
@@ -425,6 +440,36 @@
               "text": "Gumă de mestecat",
               "checked": false,
               "qty": ""
+            },
+            {
+              "id": "62flegc",
+              "text": "Nuci si seminte",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "uw3khqq",
+              "text": "Batoane proteice",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "d522l90",
+              "text": "Biscuiti digestivi si Crackersi",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "oiek8u4",
+              "text": "Mere, Banane, Struguri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "qsbk275",
+              "text": "Pungi cu zip",
+              "checked": false,
+              "qty": ""
             }
           ]
         },
@@ -471,8 +516,7 @@
               "qty": ""
             }
           ]
-        }
-      ],
+        },
       "restaurants": [
         {
           "id": "ogidxqc",
@@ -590,7 +634,7 @@
       ]
     },
     {
-      "id": "trip_c23q3sx",
+      "id": "trip_y8nvbh6",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -867,7 +911,7 @@
       "infos": []
     },
     {
-      "id": "trip_y63ud1q",
+      "id": "trip_101dacz",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1162,7 +1206,7 @@
       "infos": []
     },
     {
-      "id": "trip_x2wvp6r",
+      "id": "trip_4gd0tk3",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2236,7 +2280,7 @@
       ]
     },
     {
-      "id": "trip_m84pmyn",
+      "id": "trip_d7m7m4q",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
