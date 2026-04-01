@@ -1,92 +1,218 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:54:43.176Z",
+  "exportedAt": "2026-04-01T11:06:16.312Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_1dhx08c",
+      "id": "trip_a3f8o4u",
       "type": "city",
       "name": "Milano",
-      "savedAt": 1775040882059,
+      "savedAt": 1775041533680,
       "active": true,
       "categories": [
         {
-          "id": "doc_54jzvnf",
+          "id": "doc_b9jzk9e",
           "emoji": "📄",
           "name": "Documente",
           "open": false,
           "items": [
             {
-              "id": "87oo8vf",
+              "id": "n2002do",
               "text": "Buletin / CI",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "dagug24",
-              "text": "Card bancar + cash",
+              "id": "4urmvz7",
+              "text": "Pasaport Alex",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "c65hruz",
+              "id": "mztbzuy",
+              "text": "Permis de conducere",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "aajv95v",
+              "text": "Card bancar EUR",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mea0zjy",
+              "text": "Cash",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "roody2s",
               "text": "Bilete & rezervări",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "c7zh7nu",
+              "id": "onpromr",
               "text": "Asigurare medicală",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "ozzrt5l",
-              "text": "Permis de conducere (dacă e cazul)",
+              "id": "ej9f408",
+              "text": "Card de sanatate",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pkat9u5",
+              "text": "Roaming",
               "checked": false,
               "qty": ""
             }
           ]
         },
         {
-          "id": "act_b8zv03p",
+          "id": "act_sb4pob7",
           "emoji": "🎭",
           "name": "Activități",
           "open": false,
           "items": [
             {
-              "id": "1k3ihm9",
+              "id": "5t2v0q4",
               "text": "Hartă offline descărcată",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "hc873n0",
+              "id": "6vsyfqz",
               "text": "Rezervări confirmate",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9bbze47",
+              "id": "qa5srs6",
               "text": "Adaptor de priză",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "xhx6ibr",
+              "id": "4at6czn",
               "text": "Power bank",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "9i5u9yr",
+              "id": "ooyvrsd",
               "text": "Umbrelă compactă",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "o34546x",
+              "id": "dj0ly6t",
               "text": "Căști audio",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "q39em76",
+              "text": "Cablu Lightning",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9ptzhsl",
+              "text": "Cablu USB C",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ojtrogw",
+              "text": "Cablu Micro USB",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "oc3sz3m",
+              "text": "Yoto",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "kt5x6pb",
+              "text": "Casti + Cablu Yoto",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "dmkxsn1",
+              "text": "Casti Beats",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "hca58sk",
+              "text": "Adaptor mufa jack",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iwvk6fp",
+              "text": "Tableta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "atjqy3k",
+              "text": "Suport Tableta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pchr3pd",
+              "text": "Casti + Creioane colorat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "8p5gs9y",
+              "text": "Carti de citit",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9l6hppj",
+              "text": "Jucarie Plus",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "053tnt2",
+              "text": "Carti de Joc",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "bu4ys0g",
+              "text": "Jocuri copii",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jafmat6",
+              "text": "Descarcat continut Netflix",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mb5ypoy",
+              "text": "Descarcat continut Youtube",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "3rg0qe4",
+              "text": "Saci de gunoi",
               "checked": false,
               "qty": ""
             }
@@ -99,32 +225,56 @@
           "open": false,
           "items": [
             {
-              "id": "r16djyv",
-              "text": "Pantofi confortabili pt mers",
+              "id": "j8fkhcq",
+              "text": "Chiloti - N.zile + 2",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "u6vxujn",
-              "text": "2–3 tricouri / bluze",
+              "id": "7ymxavw",
+              "text": "Sosete - N.zile + 2 (baieti)",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "6ow8jyo",
-              "text": "Ținută elegantă seară",
+              "id": "ivolhbr",
+              "text": "Sosete - N.zile + 1 (fete)",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "fjtmdj3",
-              "text": "Geacă ușoară / impermeabilă",
+              "id": "dxwz2af",
+              "text": "Tricouri - N.zile + 1",
               "checked": false,
               "qty": ""
             },
             {
-              "id": "k3ffkgx",
-              "text": "Lenjerie + șosete",
+              "id": "n63tw8k",
+              "text": "Pantaloni scurti N.zile",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "ct1rr2c",
+              "text": "Camasa / Bluza - 1",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "suus3r7",
+              "text": "Pijama subtire",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "4hdmtyn",
+              "text": "Pantaloni lejeri - 1",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "miy2bm3",
+              "text": "Copil - Aceleasi lucruri + 2",
               "checked": false,
               "qty": ""
             }
@@ -346,17 +496,11 @@
           "icon": "🔑",
           "title": "Milano - Como ",
           "body": ""
-        },
-        {
-          "id": "lw6pyub",
-          "icon": "🏨",
-          "title": "Milano - Genoa 1:30min - €25.00",
-          "body": ""
         }
       ]
     },
     {
-      "id": "trip_ectw55m",
+      "id": "trip_c23q3sx",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -633,7 +777,7 @@
       "infos": []
     },
     {
-      "id": "trip_dowi3bx",
+      "id": "trip_y63ud1q",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -928,7 +1072,7 @@
       "infos": []
     },
     {
-      "id": "trip_dt4nqi4",
+      "id": "trip_x2wvp6r",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2002,7 +2146,7 @@
       ]
     },
     {
-      "id": "trip_j817uy9",
+      "id": "trip_m84pmyn",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
