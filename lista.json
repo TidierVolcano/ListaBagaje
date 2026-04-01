@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:30:06.836Z",
-  "activeType": "seaair",
+  "exportedAt": "2026-04-01T10:30:45.654Z",
+  "activeType": "city",
   "trips": [
     {
-      "id": "trip_c1qy3qc",
+      "id": "trip_30booq0",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775037032577,
@@ -243,22 +243,13 @@
           "desc": "",
           "checked": false,
           "open": false
-        },
-        {
-          "id": "mvg7bg5",
-          "name": "Duomo di Milano",
-          "distance": "",
-          "unit": "km",
-          "desc": "",
-          "checked": false,
-          "open": false
         }
       ],
       "itinerary": [],
       "infos": []
     },
     {
-      "id": "trip_nwlnuz1",
+      "id": "trip_d98bfa8",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -476,7 +467,7 @@
           "id": "chk_oopofsp",
           "emoji": "✅",
           "name": "De verificat",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "zmtoljo",
@@ -535,7 +526,7 @@
       "infos": []
     },
     {
-      "id": "trip_c63vlg9",
+      "id": "trip_qbu3e4v",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -830,7 +821,7 @@
       "infos": []
     },
     {
-      "id": "trip_07n04bl",
+      "id": "trip_tj8za1m",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -1904,7 +1895,7 @@
       ]
     },
     {
-      "id": "trip_rdj9rkf",
+      "id": "trip_1utzh6a",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
@@ -2148,7 +2139,7 @@
           "unit": "km",
           "desc": "",
           "checked": false,
-          "open": false
+          "open": true
         }
       ],
       "itinerary": [],
