@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:26:02.734Z",
+  "exportedAt": "2026-04-01T10:27:59.395Z",
   "activeType": "city",
   "trips": [
     {
@@ -514,277 +514,6 @@
             {
               "id": "kcg403o",
               "text": "Vecin anunțat",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        }
-      ],
-      "restaurants": [],
-      "places": [],
-      "itinerary": [],
-      "infos": []
-    },
-    {
-      "id": "trip_zm7p871",
-      "type": "seaair",
-      "name": "Lista mea",
-      "savedAt": 1775037657380,
-      "active": false,
-      "categories": [
-        {
-          "id": "doc_hfpj3at",
-          "emoji": "📄",
-          "name": "Documente",
-          "open": false,
-          "items": [
-            {
-              "id": "tvil6gh",
-              "text": "Pașaport (min 6 luni valabil)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "iwnow81",
-              "text": "Bilete avion (print/screenshot)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "altdmqc",
-              "text": "Voucher hotel",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "uyam4e2",
-              "text": "Card + cash valuta dest.",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "ct42tb0",
-              "text": "Asigurare de călătorie",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "3ft604s",
-              "text": "Boarding pass după check-in",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        },
-        {
-          "id": "act_ysp6cj5",
-          "emoji": "🤿",
-          "name": "Activități",
-          "open": false,
-          "items": [
-            {
-              "id": "7htnqph",
-              "text": "Adaptor priză universal",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "tf4h4p1",
-              "text": "Tabletă cu conținut offline",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "9sdqbxh",
-              "text": "Pernuță gât + mască somn",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "77hdji3",
-              "text": "Căști noise-cancelling",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        },
-        {
-          "id": "hai_ije3qbr",
-          "emoji": "👙",
-          "name": "Îmbrăcăminte",
-          "open": false,
-          "items": [
-            {
-              "id": "3jevore",
-              "text": "Costume de baie (2–3)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "ahox1k7",
-              "text": "Prosop compact microfibre",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "z14t39f",
-              "text": "Sandale plajă + seară",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "kzi25ai",
-              "text": "Hanorac (frig în avion)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "6czcci3",
-              "text": "Ochelari de soare",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "sllpzjk",
-              "text": "Pălărie",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        },
-        {
-          "id": "med_12bdpqz",
-          "emoji": "💊",
-          "name": "Medicamente",
-          "open": false,
-          "items": [
-            {
-              "id": "hu33b25",
-              "text": "Cremă solară SPF 50+ (cală!)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "0curxes",
-              "text": "After sun",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "crys3q7",
-              "text": "Antihistaminice",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "4n7eny9",
-              "text": "Picături nazale (avion)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "vk8sicu",
-              "text": "Pastile antidiareice",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "frn7ycs",
-              "text": "⚠️ Lichide max 100ml în pungă ZIP!",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        },
-        {
-          "id": "foo_qdseg6b",
-          "emoji": "🍎",
-          "name": "Food",
-          "open": false,
-          "items": [
-            {
-              "id": "fd2k9cg",
-              "text": "Gustări pentru zbor",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "feswf1l",
-              "text": "Gumă mestecat (decolare/aterizare)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "sh8tob8",
-              "text": "Sticlă apă goală (după security)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "9pw7tin",
-              "text": "Bomboane copii (urechi)",
-              "checked": false,
-              "qty": ""
-            }
-          ]
-        },
-        {
-          "id": "chk_7v79pob",
-          "emoji": "✅",
-          "name": "De verificat",
-          "open": false,
-          "items": [
-            {
-              "id": "qr5jfom",
-              "text": "Check-in online (24h înainte)",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "g8r1d3k",
-              "text": "Boarding pass salvat",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "4hyoojv",
-              "text": "Bagaj cală sub limita greutate",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "g2d87ma",
-              "text": "Lichide în ZIP la îndemână",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "97afozw",
-              "text": "Pașaport valabil verificat",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "jrogn5b",
-              "text": "Oprește apa & gazul",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "alrffl0",
-              "text": "Ferestre & uși",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "n9c2sc6",
-              "text": "Telefoane 100% încărcate",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "1r079at",
-              "text": "Taxi/Uber rezervat aeroport",
               "checked": false,
               "qty": ""
             }
@@ -2402,7 +2131,17 @@
         }
       ],
       "restaurants": [],
-      "places": [],
+      "places": [
+        {
+          "id": "cbuio38",
+          "name": "Fontana di Trevi",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true
+        }
+      ],
       "itinerary": [],
       "infos": []
     }
