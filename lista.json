@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:48:08.233Z",
+  "exportedAt": "2026-04-01T10:52:47.923Z",
   "activeType": "city",
   "trips": [
     {
@@ -328,7 +328,26 @@
         }
       ],
       "itinerary": [],
-      "infos": []
+      "infos": [
+        {
+          "id": "m1uqpt8",
+          "icon": "ℹ️",
+          "title": "Milano - Verona  1:30min - €35.00",
+          "body": ""
+        },
+        {
+          "id": "qqknqwd",
+          "icon": "📌",
+          "title": "Milano - Bergamo 42min",
+          "body": ""
+        },
+        {
+          "id": "mau88de",
+          "icon": "🔑",
+          "title": "Milano - Como ",
+          "body": ""
+        }
+      ]
     },
     {
       "id": "trip_2sjmr6m",
