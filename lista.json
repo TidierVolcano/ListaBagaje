@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T10:30:45.654Z",
+  "exportedAt": "2026-04-01T10:48:08.233Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_30booq0",
+      "id": "trip_bcbhzq6",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775037032577,
@@ -233,7 +233,53 @@
           ]
         }
       ],
-      "restaurants": [],
+      "restaurants": [
+        {
+          "id": "ogidxqc",
+          "name": "Trattoria Milanese",
+          "distance": "",
+          "unit": "km",
+          "desc": "Situată aproape de centrul istoric, este locul perfect pentru un prânz sau o cină clasică, într-o atmosferă de modă veche.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "is8kr5l",
+          "name": "El Brellin",
+          "distance": "",
+          "unit": "km",
+          "desc": "Amplasată într-un loc pitoresc pe malul canalului Naviglio Grande, oferă o experiență romantică și preparate lombarde excelente.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "y429gp9",
+          "name": "Trattoria Madonnina",
+          "distance": "",
+          "unit": "km",
+          "desc": "O locație rustică în zona Navigli, apreciată pentru prețurile corecte și atmosfera de cartier.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "tb9kzf9",
+          "name": "Luini",
+          "distance": "",
+          "unit": "km",
+          "desc": "O instituție în Milano, aflată lângă Duomo. Trebuie neapărat să încerci panzerotti (un fel de gogoși sărate umplute cu mozzarella și roșii). Pregătește-te pentru o coadă mică, dar care merge repede.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "zsa7w9q",
+          "name": "Pizzium - Via Vigevano",
+          "distance": "",
+          "unit": "km",
+          "desc": "Dacă ți se face dor de o pizza napoletană autentică, Pizzium este una dintre cele mai bune opțiuni moderne din oraș.",
+          "checked": false,
+          "open": false
+        }
+      ],
       "places": [
         {
           "id": "1e2g5h1",
@@ -243,13 +289,49 @@
           "desc": "",
           "checked": false,
           "open": false
+        },
+        {
+          "id": "atbr9tg",
+          "name": "Duomo di Milano",
+          "distance": "",
+          "unit": "km",
+          "desc": "Se poate urca pe terasele de pe acoperis pentru o vederea panoramica asupra orasului si a Alpilor in silele senine.\nInteriorul gazduieste vitralii uriase si o oraga impresionanta, una dintre cele mai mari din Europa.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "jsbvu2d",
+          "name": "Teatro alla Scala",
+          "distance": "",
+          "unit": "km",
+          "desc": "Este situat la celălalt capăt al galeriei și este una dintre cele mai renumite săli de operă din lume.\n\nMuzeul teatrului oferă o privire în culisele spectacolelor de operă și balet.\n\nPiața din fața sa găzduiește statuia lui Leonardo da Vinci, un loc popular de întâlnire.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "jptnq7r",
+          "name": "Galleria Vittorio Emanuele II",
+          "distance": "",
+          "unit": "km",
+          "desc": "Galleria Vittorio Emanuele II\nSe află chiar lângă catedrală și este considerată „camera de zi” a milanezilor datorită eleganței sale.\n\nGăzduiește magazine de lux, restaurante istorice și mozaicuri faimoase pe podea.\n\nArhitectura cu cupolă de sticlă și fier este un exemplu remarcabil de design din secolul al XIX-lea.",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "v307wj7",
+          "name": "Lacul Como sau Bergamo",
+          "distance": "",
+          "unit": "km",
+          "desc": "Escapadă la Lacul Como sau Bergamo\nDatorită poziției sale, Milano este baza perfectă pentru a vizita regiunea lacurilor sau orașe medievale pitorești.\n\nLacul Como: Puteți lua trenul din gara Milano Cadorna sau Centrale până în orașul Como (aproximativ o oră). De acolo, o plimbare cu vaporasul până în Bellagio sau Varenna oferă peisaje montane spectaculoase.",
+          "checked": false,
+          "open": false
         }
       ],
       "itinerary": [],
       "infos": []
     },
     {
-      "id": "trip_d98bfa8",
+      "id": "trip_2sjmr6m",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -526,7 +608,7 @@
       "infos": []
     },
     {
-      "id": "trip_qbu3e4v",
+      "id": "trip_4rxtnd5",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -821,7 +903,7 @@
       "infos": []
     },
     {
-      "id": "trip_tj8za1m",
+      "id": "trip_0ow46to",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -1895,7 +1977,7 @@
       ]
     },
     {
-      "id": "trip_1utzh6a",
+      "id": "trip_uofdyrj",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
