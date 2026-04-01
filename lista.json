@@ -456,7 +456,7 @@
       "id": "zprr2c1",
       "emoji": "📷",
       "name": "Igiena",
-      "open": true,
+      "open": false,
       "items": [
         {
           "id": "qrh9k3a",
@@ -828,7 +828,7 @@
       "id": "chk_wetz5rt",
       "emoji": "✅",
       "name": "De verificat",
-      "open": true,
+      "open": false,
       "items": [
         {
           "id": "jv8jcmk",
@@ -901,7 +901,7 @@
       "unit": "km",
       "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi si respectate locuri. Este o afacere de familie unde se gateste traditional.\n\nDe ce sa mergi: Au o curte interioara foarte placuta si sunt renumiti pentru Paella Valenciana (cea cu pui si iepure) si All i Pebre (anghila, un preparat specific zonei).\n\nPret: Mediu.",
       "checked": false,
-      "open": true
+      "open": false
     },
     {
       "id": "9rb2yxd",
@@ -910,7 +910,7 @@
       "unit": "km",
       "desc": "Restaurante Arroceria Maribel\nDaca vrei ceva un pic mai modern, dar cu radacini adanci in traditie.\n\nDe ce sa mergi: Prezentarea este mai rafinata, iar orezul este gatit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigaii). Au si optiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
       "checked": false,
-      "open": true
+      "open": false
     },
     {
       "id": "j0g6pil",
@@ -919,7 +919,7 @@
       "unit": "km",
       "desc": "Restaurante El Redoli\nAre o terasa superba si o atmosfera foarte relaxata, fiind ideal daca esti cu copilul dupa drumul cu bicicleta.\n\nDe ce sa mergi: Raport calitate-pret excelent. Este foarte popular printre localnicii din Valencia care vin aici in weekend.\n\nSfat: Incearca aici Arroz a Banda (orez gatit in supa de peste).",
       "checked": false,
-      "open": true
+      "open": false
     }
   ],
   "places": [
