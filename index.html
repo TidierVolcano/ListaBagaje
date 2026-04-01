@@ -876,8 +876,8 @@ body {
   <div class="mdsh">
     <div class="mdh"></div>
     <h3>⬆ Importă</h3>
-    <p>Lipești JSON exportat din PackRo:</p>
-    <textarea class="mdta" id="impTxt" placeholder='{"categories":[]}'></textarea>
+    <p>Lipești JSON exportat din PackRo. Suportă atât <strong>export complet</strong> (toate listele) cât și export dintr-o singură listă (format vechi).</p>
+    <textarea class="mdta" id="impTxt" placeholder='{"packroExport":true,"trips":[...]}'></textarea>
     <div class="mda">
       <button class="mb mb-c" onclick="closeMd('impMod')">Anulează</button>
       <button class="mb mb-g" onclick="doImport()">Importă</button>
@@ -889,8 +889,8 @@ body {
 <div class="mdbg" id="expMod" onclick="if(event.target===this)closeMd('expMod')">
   <div class="mdsh">
     <div class="mdh"></div>
-    <h3>⬇ Exportă</h3>
-    <p>Pe iOS apasă <strong>Copiază</strong> și salvează într-o notă.<br>Pe web apasă <strong>Descarcă</strong>.</p>
+    <h3>⬇ Exportă toate listele</h3>
+    <p>Exportă <strong>toate taburile</strong> (City Break, Mare, Cort) într-un singur fișier JSON.<br>Pe iOS apasă <strong>Copiază</strong> și salvează într-o notă. Pe web apasă <strong>Descarcă</strong>.</p>
     <textarea class="mdta" id="expTxt" readonly></textarea>
     <div class="mda">
       <button class="mb mb-c" onclick="closeMd('expMod')">Închide</button>
@@ -915,6 +915,47 @@ async function incarcaListaDinGitHub() {
 
     const date = await raspuns.json();
 
+    // FORMAT NOU: { packroExport: true, trips: [...] }
+    if (date.packroExport && Array.isArray(date.trips)) {
+      const trips = [];
+      const active = { city: null, seacar: null, seaair: null, camp: null };
+      let firstType = 'city';
+
+      date.trips.forEach((td, idx) => {
+        const type = td.type;
+        if (!type) return;
+        const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
+        trips.push({
+          id: tripId,
+          type,
+          name: td.name || 'Lista mea',
+          savedAt: td.savedAt || Date.now(),
+          data: {
+            categories:  td.categories  || [],
+            restaurants: td.restaurants || [],
+            places:      td.places      || [],
+            itinerary:   td.itinerary   || [],
+            infos:       td.infos       || []
+          }
+        });
+        active[type] = tripId;
+        if (idx === 0) firstType = type;
+      });
+
+      // Pentru tipurile fără date în JSON, lasă null (vor fi create cu DEFAULT_CATS la render)
+      const stareInitiala = {
+        activeType: firstType,
+        activeView: 'pack',
+        clMode: false,
+        trips,
+        active
+      };
+      localStorage.setItem('packro_v7', JSON.stringify(stareInitiala));
+      location.reload();
+      return;
+    }
+
+    // FORMAT VECHI: { tripType, categories, ... } — un singur trip
     const tripType = date.tripType || 'city';
     const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
     const stareInitiala = {
@@ -1543,11 +1584,31 @@ function newDest() {
 
 /* ═══════════════ EXPORT / IMPORT ═══════════════ */
 let _ej='';
+function buildFullExport() {
+  // Exportă TOATE tripurile active din toate taburile
+  const allTrips = Object.keys(TRIP_TYPES).map(type => {
+    const trip = activeTrip(type);
+    if (!trip) return null;
+    return {
+      type,
+      name: trip.name || '',
+      savedAt: trip.savedAt,
+      categories:  trip.data.categories  || [],
+      restaurants: trip.data.restaurants || [],
+      places:      trip.data.places      || [],
+      itinerary:   trip.data.itinerary   || [],
+      infos:       trip.data.infos       || []
+    };
+  }).filter(Boolean);
+  return {
+    packroExport: true,
+    exportedAt: new Date().toISOString(),
+    trips: allTrips
+  };
+}
 function openExp() {
-  const trip=activeTrip();
-  const d={tripType:activeType,name:trip?.name||'',...trip?.data};
-  _ej=JSON.stringify(d,null,2);
-  document.getElementById('expTxt').value=_ej;
+  _ej = JSON.stringify(buildFullExport(), null, 2);
+  document.getElementById('expTxt').value = _ej;
   document.getElementById('expMod').classList.add('op');
 }
 function copyExp() {
@@ -1558,8 +1619,7 @@ function copyExp() {
 }
 function dlExp() {
   try {
-    const trip=activeTrip();
-    const fname=`packro-${activeType}-${(trip?.name||'export').replace(/[^a-z0-9]/gi,'-')}-${new Date().toISOString().slice(0,10)}.json`;
+    const fname=`packro-toate-listele-${new Date().toISOString().slice(0,10)}.json`;
     const blob=new Blob([_ej],{type:'application/json'}),url=URL.createObjectURL(blob);
     const a=document.createElement('a'); a.href=url; a.download=fname;
     document.body.appendChild(a); a.click(); setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url);},400);
@@ -1570,7 +1630,30 @@ function openImp(){ document.getElementById('impTxt').value=''; document.getElem
 function doImport() {
   try {
     const parsed=JSON.parse(document.getElementById('impTxt').value);
-    if(!parsed.categories) throw new Error();
+
+    // FORMAT NOU: { packroExport: true, trips: [...] }
+    if (parsed.packroExport && Array.isArray(parsed.trips)) {
+      parsed.trips.forEach(td => {
+        if (!td.type || !TRIP_TYPES[td.type]) return;
+        const trip = activeTrip(td.type);
+        if (!trip) return;
+        trip.data = {
+          categories:  td.categories  || [],
+          restaurants: td.restaurants || [],
+          places:      td.places      || [],
+          itinerary:   td.itinerary   || [],
+          infos:       td.infos       || []
+        };
+        if (td.name) trip.name = td.name;
+        if (td.savedAt) trip.savedAt = td.savedAt;
+      });
+      save(); renderAll(); closeMd('impMod');
+      toast(`✓ Import reușit! ${parsed.trips.length} liste încărcate.`);
+      return;
+    }
+
+    // FORMAT VECHI: { categories: [...], tripType: "city", ... }
+    if (!parsed.categories) throw new Error();
     const trip=activeTrip(); if(!trip) return;
     trip.data={categories:parsed.categories,restaurants:parsed.restaurants||[],places:parsed.places||[],itinerary:parsed.itinerary||[],infos:parsed.infos||[]};
     if(parsed.name&&!trip.name) trip.name=parsed.name;
