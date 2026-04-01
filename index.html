@@ -718,6 +718,21 @@ body {
 
 /* 5-button seg-bar — reduce font a bit */
 .seg-bar .seg-btn { font-size:.7rem }
+
+/* ═══ PRINT / PDF STYLES ═══ */
+@media print {
+  * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  html, body { margin:0 !important; padding:0 !important; background:#fff !important; }
+  body > *:not(#pdf-overlay) { display:none !important; }
+  #pdf-overlay {
+    display:block !important;
+    position:static !important;
+    width:100% !important; height:auto !important;
+    background:#fff !important;
+  }
+  @page { margin:10mm 10mm; size:A4 portrait; }
+}
+#pdf-overlay { display:none; }
 </style>
 </head>
 <body>
@@ -794,6 +809,7 @@ body {
       <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GitHub</button>
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
+      <button class="pill pill-g" onclick="generatePDF()" title="Generează PDF">📄 PDF</button>
       <button class="pill pill-save" onclick="openSave()">💾 Salvează</button>
     </div>
     <div class="seg-bar">
@@ -1740,6 +1756,181 @@ function toast(msg){
 }
 function e(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+/* ═══════════════ GENERATE PDF ═══════════════ */
+function generatePDF() {
+  const trip = activeTrip();
+  if (!trip) { toast('⚠ Nicio destinație activă'); return; }
+
+  const tripName  = trip.name || 'Lista mea';
+  const typeInfo  = TRIP_TYPES[trip.type] || {};
+  const typeLabel = typeInfo.label || '';
+  const icon      = typeInfo.icon  || '📋';
+  const dateStr   = new Date().toLocaleDateString('ro-RO', {day:'2-digit', month:'long', year:'numeric'});
+  const d         = trip.data;
+
+  // ── helpers ──────────────────────────────────────────────────────────
+  const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+  // ── build category blocks ─────────────────────────────────────────
+  function buildCatBlock(cat) {
+    const total   = cat.items.length;
+    const checked = cat.items.filter(i => i.checked).length;
+    const pct     = total ? Math.round(checked/total*100) : 0;
+    const badgeCol = checked===total && total>0 ? '#27ae60' : '#7a8ea8';
+    let rows = '';
+    cat.items.forEach(item => {
+      const chk = item.checked;
+      const qty = item.qty ? `<span style="font-family:monospace;font-size:7pt;color:#888;margin-left:3px">${esc(item.qty)}</span>` : '';
+      rows += `<div style="display:flex;align-items:baseline;gap:5px;padding:2px 0;border-bottom:1px dotted #eee">
+        <span style="flex-shrink:0;width:11px;height:11px;border:1.5px solid ${chk?'#27ae60':'#ccc'};border-radius:3px;display:inline-block;background:${chk?'#27ae60':'#fff'};position:relative;top:1px">
+          ${chk?'<span style="color:#fff;font-size:8px;position:absolute;top:-2px;left:1px">✓</span>':''}
+        </span>
+        <span style="flex:1;font-size:7.5pt;color:${chk?'#aaa':'#1a2e4a'};${chk?'text-decoration:line-through':''}">${esc(item.text)}${qty}</span>
+      </div>`;
+    });
+    return `<div style="break-inside:avoid;margin-bottom:6px;border:1px solid #e0d9cd;border-radius:6px;overflow:hidden">
+      <div style="background:#1a2e4a;padding:4px 8px;display:flex;align-items:center;gap:6px">
+        <span style="font-size:10pt">${cat.emoji||'📦'}</span>
+        <span style="font-family:Georgia,serif;font-weight:700;color:#fff;font-size:8pt;flex:1">${esc(cat.name)}</span>
+        <span style="font-family:monospace;font-size:6.5pt;color:${badgeCol};background:rgba(255,255,255,.12);padding:1px 6px;border-radius:99px">${checked}/${total}</span>
+      </div>
+      <div style="padding:4px 8px 3px">${rows||'<span style="color:#bbb;font-size:7pt;font-style:italic">—</span>'}</div>
+    </div>`;
+  }
+
+  // ── place/restaurant blocks ───────────────────────────────────────
+  function buildPlaceBlock(p) {
+    const col = p.type==='tv' ? '#b8445a' : '#2a8a7e';
+    const done = p.done ? 'text-decoration:line-through;color:#aaa' : '';
+    const meta = [p.budget&&`💰 ${esc(p.budget)}`, p.rating&&`⭐ ${esc(p.rating)}`, p.meal&&`🍽️ ${esc(p.meal)}`].filter(Boolean).join('  ');
+    return `<div style="break-inside:avoid;margin-bottom:5px;border:1px solid #e0d9cd;border-left:3px solid ${col};border-radius:5px;padding:5px 8px">
+      <div style="font-family:Georgia,serif;font-weight:700;font-size:8pt;${done}">${p.done?'✓ ':''} ${esc(p.name||'—')}</div>
+      ${meta ? `<div style="font-size:6.5pt;color:#888;margin-top:2px">${meta}</div>` : ''}
+    </div>`;
+  }
+
+  // ── itinerary blocks ──────────────────────────────────────────────
+  function buildItinBlock(it) {
+    return `<div style="break-inside:avoid;margin-bottom:4px;padding:4px 8px;background:#f5f0e8;border-radius:5px;border-left:3px solid #c8892a">
+      <span style="font-family:monospace;font-size:6.5pt;color:#c8892a;font-weight:700">${esc(it.day||'')}</span>
+      <span style="font-size:7.5pt;margin-left:6px">${esc(it.text||'')}</span>
+    </div>`;
+  }
+
+  // ── build section HTML ────────────────────────────────────────────
+  function section(title, emoji, contentHtml) {
+    if (!contentHtml) return '';
+    return `<div style="margin-bottom:12px">
+      <div style="font-family:Georgia,serif;font-size:9pt;font-weight:900;color:#1a2e4a;border-bottom:1.5px solid #c8892a;padding-bottom:3px;margin-bottom:6px">${emoji} ${title}</div>
+      ${contentHtml}
+    </div>`;
+  }
+
+  // ── categories section (2-col grid) ──────────────────────────────
+  const cats = d.categories || [];
+  let catHtml = '';
+  if (cats.length) {
+    // split cats into 2 columns by distributing roughly equal items
+    let col1 = '', col2 = '';
+    let count1 = 0, count2 = 0;
+    cats.forEach(cat => {
+      const w = (cat.items||[]).length + 1.5; // +1.5 for header weight
+      if (count1 <= count2) { col1 += buildCatBlock(cat); count1 += w; }
+      else { col2 += buildCatBlock(cat); count2 += w; }
+    });
+    catHtml = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start">
+      <div>${col1}</div><div>${col2}</div>
+    </div>`;
+  }
+
+  // ── restaurants ────────────────────────────────────────────────────
+  const rests = d.restaurants || [];
+  let restHtml = '';
+  if (rests.length) {
+    let rc1='', rc2='', ri=0;
+    rests.forEach(r => { if(ri%2===0) rc1+=buildPlaceBlock(r); else rc2+=buildPlaceBlock(r); ri++; });
+    restHtml = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start"><div>${rc1}</div><div>${rc2}</div></div>`;
+  }
+
+  // ── places ─────────────────────────────────────────────────────────
+  const places = d.places || [];
+  let placesHtml = '';
+  if (places.length) {
+    let pc1='', pc2='', pi=0;
+    places.forEach(p => { if(pi%2===0) pc1+=buildPlaceBlock(p); else pc2+=buildPlaceBlock(p); pi++; });
+    placesHtml = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start"><div>${pc1}</div><div>${pc2}</div></div>`;
+  }
+
+  // ── itinerary ──────────────────────────────────────────────────────
+  const itin = d.itinerary || [];
+  let itinHtml = '';
+  if (itin.length) {
+    let ic1='', ic2='', ii=0;
+    itin.forEach(it => { if(ii%2===0) ic1+=buildItinBlock(it); else ic2+=buildItinBlock(it); ii++; });
+    itinHtml = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start"><div>${ic1}</div><div>${ic2}</div></div>`;
+  }
+
+  // ── infos ─────────────────────────────────────────────────────────
+  const infos = d.infos || [];
+  let infosHtml = '';
+  if (infos.length) {
+    infosHtml = infos.map(info => `<div style="margin-bottom:4px;padding:4px 8px;border:1px solid #e0d9cd;border-radius:5px;font-size:7.5pt">
+      <strong style="color:#1a2e4a">${esc(info.title||'')}</strong>
+      ${info.text ? `<div style="color:#555;margin-top:2px">${esc(info.text)}</div>` : ''}
+    </div>`).join('');
+    infosHtml = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${infosHtml}</div>`;
+  }
+
+  // ── progress bar ──────────────────────────────────────────────────
+  const allItems = cats.flatMap(c => c.items||[]);
+  const totalItems = allItems.length;
+  const checkedItems = allItems.filter(i => i.checked).length;
+  const pctAll = totalItems ? Math.round(checkedItems/totalItems*100) : 0;
+
+  // ── assemble full HTML ────────────────────────────────────────────
+  const html = `
+    <div style="font-family:'DM Sans',Arial,sans-serif;color:#1a2e4a;font-size:8.5pt;line-height:1.4">
+
+      <!-- HEADER -->
+      <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:2.5px solid #c8892a;padding-bottom:7px;margin-bottom:10px">
+        <div>
+          <div style="font-family:Georgia,serif;font-size:16pt;font-weight:900;color:#1a2e4a;line-height:1">${icon} ${esc(tripName)}</div>
+          <div style="font-family:monospace;font-size:7pt;color:#888;margin-top:3px;text-transform:uppercase;letter-spacing:.5px">${esc(typeLabel)} · ${dateStr} · PackRo</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:monospace;font-size:18pt;font-weight:900;color:${pctAll===100?'#27ae60':'#c8892a'}">${pctAll}%</div>
+          <div style="font-size:6.5pt;color:#aaa">${checkedItems} / ${totalItems} iteme</div>
+          <div style="width:80px;height:5px;background:#eee;border-radius:99px;margin-top:3px;overflow:hidden">
+            <div style="width:${pctAll}%;height:100%;background:${pctAll===100?'#27ae60':'#c8892a'};border-radius:99px"></div>
+          </div>
+        </div>
+      </div>
+
+      ${section('Bagaje', '🎒', catHtml)}
+      ${section('Mâncăm', '🍽️', restHtml)}
+      ${section('Vizităm', '🗺️', placesHtml)}
+      ${section('Itinerar', '🗓️', itinHtml)}
+      ${section('Info', 'ℹ️', infosHtml)}
+
+      <!-- FOOTER -->
+      <div style="margin-top:8px;border-top:1px solid #e0d9cd;padding-top:5px;font-size:6.5pt;color:#bbb;text-align:center;font-family:monospace">
+        PackRo · packro.ro · Generat ${dateStr}
+      </div>
+    </div>`;
+
+  // inject & print
+  const overlay = document.getElementById('pdf-overlay');
+  overlay.innerHTML = html;
+  overlay.style.display = 'block';
+  requestAnimationFrame(() => {
+    window.print();
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.innerHTML = '';
+    }, 1000);
+  });
+}
+
 /* ═══════════════ INIT ═══════════════ */
 // Show sidebar before render to avoid flash
 applyLayout();
@@ -1757,6 +1948,7 @@ if(window.visualViewport){
   window.visualViewport.addEventListener('resize', recalcPadding);
 }
 </script>
+<div id="pdf-overlay"></div>
 
 </body>
 </html>
