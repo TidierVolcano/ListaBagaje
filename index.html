@@ -719,6 +719,94 @@ body::before {
 /* ═══ BACKGROUND THEMES ═══ */
 body.bg-city::before { display: block }
 body.bg-plain::before { display: none }
+
+/* ── Aurora Borealis ── */
+body.bg-aurora { background: #050a18 !important }
+body.bg-aurora::before { display: none !important }
+#packro-aurora-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-aurora #packro-aurora-layers { display: block }
+.packro-aurora-blob { position: absolute; width: 120%; left: -10%; height: 55%; border-radius: 50%; filter: blur(50px); mix-blend-mode: screen }
+.packro-aurora-blob:nth-child(1) { top: 5%; background: radial-gradient(ellipse, rgba(80,220,180,.55) 0%, transparent 70%); animation: packroAurora1 7s ease-in-out infinite }
+.packro-aurora-blob:nth-child(2) { top: 8%; background: radial-gradient(ellipse, rgba(120,80,255,.45) 0%, transparent 70%); animation: packroAurora2 9s ease-in-out infinite }
+.packro-aurora-blob:nth-child(3) { top: 18%; background: radial-gradient(ellipse, rgba(0,180,255,.35) 0%, transparent 70%); animation: packroAurora3 5s ease-in-out infinite }
+@keyframes packroAurora1 { 0%,100%{transform:translateX(-10%) rotate(-5deg) scaleY(.9)} 50%{transform:translateX(10%) rotate(5deg) scaleY(1.1)} }
+@keyframes packroAurora2 { 0%,100%{transform:translateX(15%) rotate(3deg) scaleY(1)} 50%{transform:translateX(-15%) rotate(-3deg) scaleY(.85)} }
+@keyframes packroAurora3 { 0%,100%{transform:translateX(-5%) scaleX(1)} 50%{transform:translateX(5%) scaleX(1.15)} }
+
+/* ── Synthwave Retro ── */
+body.bg-synthwave { background: linear-gradient(180deg, #1a0630 0%, #2d0050 40%, #c0205a 100%) !important }
+body.bg-synthwave::before { display: none !important }
+#packro-synth-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-synthwave #packro-synth-layers { display: block }
+#packro-synth-grid { position: absolute; bottom: -20px; left: -20%; right: -20%; height: 55%; background-image: linear-gradient(rgba(255,45,149,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,45,149,.4) 1px, transparent 1px); background-size: 40px 40px; transform: perspective(300px) rotateX(55deg); transform-origin: bottom center; animation: packroGridScroll 1.2s linear infinite }
+@keyframes packroGridScroll { from{background-position:0 0} to{background-position:0 40px} }
+#packro-synth-sun { position: absolute; top: 12%; left: 50%; transform: translateX(-50%); width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(180deg, #ff6b00, #ffcc00); box-shadow: 0 0 70px rgba(255,150,0,.5); overflow: hidden }
+#packro-synth-sun::after { content: ''; position: absolute; left: 0; right: 0; height: 55%; bottom: 0; background: repeating-linear-gradient(transparent, transparent 9px, #1a0630 9px, #1a0630 10px) }
+#packro-synth-glow { position: absolute; width: 300px; height: 60px; bottom: 42%; left: 50%; transform: translateX(-50%); background: rgba(255,45,149,.15); filter: blur(20px); border-radius: 50% }
+
+/* ── Deep Ocean ── */
+body.bg-deepocean { background: linear-gradient(180deg, #001a33 0%, #003060 50%, #001a40 100%) !important }
+body.bg-deepocean::before { display: none !important }
+#packro-ocean-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-deepocean #packro-ocean-layers { display: block }
+.packro-wave { position: absolute; border-radius: 40%; opacity: .2; width: 200%; left: -50% }
+.packro-wave:nth-child(1) { bottom: -5%; height: 120px; background: #0077cc; animation: packroWave 5s ease-in-out infinite }
+.packro-wave:nth-child(2) { bottom: 2%; height: 100px; background: #0055aa; animation: packroWave 7s ease-in-out infinite reverse }
+.packro-wave:nth-child(3) { bottom: 8%; height: 80px; background: #003d88; animation: packroWave 9s ease-in-out infinite }
+@keyframes packroWave { 0%,100%{transform:scaleX(1) translateX(0)} 50%{transform:scaleX(1.05) translateX(-2%)} }
+
+/* ── Golden Dusk ── */
+body.bg-goldendusk { background: linear-gradient(180deg, #0d0020 0%, #1a0050 20%, #6b1a8a 45%, #cc4400 65%, #ff8800 80%, #ffbb33 100%) !important }
+body.bg-goldendusk::before { display: none !important }
+#packro-dusk-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-goldendusk #packro-dusk-layers { display: block }
+#packro-dusk-sun { position: absolute; bottom: 22%; left: 50%; transform: translateX(-50%); width: 90px; height: 90px; border-radius: 50%; background: #ffcc00; box-shadow: 0 0 90px rgba(255,200,0,.7), 0 0 180px rgba(255,100,0,.35) }
+.packro-dusk-cloud { position: absolute; background: rgba(255,80,0,.1); border-radius: 50%; filter: blur(25px) }
+.packro-dusk-cloud:nth-child(2) { width: 220px; height: 90px; top: 22%; left: -5%; animation: packroDuskCloud 8s ease-in-out infinite alternate }
+.packro-dusk-cloud:nth-child(3) { width: 160px; height: 70px; top: 32%; right: -3%; animation: packroDuskCloud 6s ease-in-out infinite alternate-reverse }
+@keyframes packroDuskCloud { from{transform:translateX(0)} to{transform:translateX(5%)} }
+
+/* ── Cyberpunk Rain ── */
+body.bg-cyberpunk { background: linear-gradient(180deg, #050510 0%, #0a0520 100%) !important }
+body.bg-cyberpunk::before { display: none !important }
+#packro-cyber-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-cyberpunk #packro-cyber-layers { display: block }
+.packro-neon-line { position: absolute; left: 0; right: 0; height: 1px; opacity: .3 }
+.packro-neon-line:nth-child(1) { top: 25%; background: linear-gradient(90deg, transparent, rgba(0,255,170,.5), transparent) }
+.packro-neon-line:nth-child(2) { top: 55%; background: linear-gradient(90deg, transparent, rgba(255,0,200,.4), transparent) }
+.packro-cyber-glow { position: absolute; border-radius: 50%; filter: blur(40px); mix-blend-mode: screen }
+.packro-cyber-glow:nth-child(3) { width: 250px; height: 250px; top: -80px; left: 30%; background: rgba(0,255,170,.12) }
+.packro-cyber-glow:nth-child(4) { width: 200px; height: 200px; bottom: -60px; right: 20%; background: rgba(255,0,200,.1) }
+
+/* ── Misty Mountains ── */
+body.bg-misty { background: linear-gradient(180deg, #c8d8e8 0%, #a0b8cc 40%, #e8f0f8 100%) !important }
+body.bg-misty::before { display: none !important }
+#packro-misty-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-misty #packro-misty-layers { display: block }
+#packro-misty-svg { position: absolute; inset: 0; width: 100%; height: 100% }
+.packro-mist { position: absolute; left: -10%; right: -10%; filter: blur(16px); border-radius: 40%; background: rgba(255,255,255,.55) }
+.packro-mist:nth-child(2) { bottom: 28%; height: 55px; animation: packroMist 6s ease-in-out infinite alternate }
+.packro-mist:nth-child(3) { bottom: 18%; height: 40px; animation: packroMist 8s ease-in-out infinite alternate-reverse }
+.packro-mist:nth-child(4) { bottom: 10%; height: 30px; background: rgba(255,255,255,.7); animation: packroMist 5s ease-in-out infinite alternate }
+@keyframes packroMist { 0%{transform:translateX(0) scaleX(1)} 100%{transform:translateX(3%) scaleX(1.04)} }
+
+/* ── Cherry Blossom ── */
+body.bg-blossom { background: linear-gradient(180deg, #fce4ec 0%, #f8bbd9 50%, #f0d4e8 100%) !important }
+body.bg-blossom::before { display: none !important }
+#packro-blossom-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-blossom #packro-blossom-layers { display: block }
+.packro-branch { position: absolute; top: 0; background: #6d3a2e; border-radius: 2px; transform-origin: bottom center; animation: packroBranchSway 3s ease-in-out infinite }
+.packro-branch:nth-child(1) { left: 5%; width: 5px; height: 45vh }
+.packro-branch:nth-child(2) { left: 8%; width: 3px; height: 28vh; transform: rotate(22deg); animation-delay: -.4s }
+.packro-branch:nth-child(3) { right: 8%; width: 4px; height: 38vh; animation-delay: -.8s }
+@keyframes packroBranchSway { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(2deg)} }
+
+/* ── Arctic Ice ── */
+body.bg-arctic { background: linear-gradient(180deg, #e8f4ff 0%, #b8d8f0 40%, #d8ecff 100%) !important }
+body.bg-arctic::before { display: none !important }
+#packro-arctic-layers { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden }
+body.bg-arctic #packro-arctic-layers { display: block }
+
 body.bg-nature::before {
   display: block;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Crect width='1440' height='320' fill='%2327ae60' opacity='.04'/%3E%3Cellipse cx='200' cy='300' rx='180' ry='60' fill='%2327ae60' opacity='.08'/%3E%3Cellipse cx='600' cy='290' rx='220' ry='70' fill='%231a7a45' opacity='.07'/%3E%3Cellipse cx='1000' cy='295' rx='200' ry='65' fill='%2327ae60' opacity='.08'/%3E%3Cellipse cx='1350' cy='300' rx='150' ry='55' fill='%231a7a45' opacity='.07'/%3E%3Crect x='0' y='316' width='1440' height='4' fill='%231a7a45' opacity='.08'/%3E%3C/svg%3E");
@@ -738,25 +826,93 @@ body.bg-night::before {
 }
 
 /* ═══ BG PICKER MODAL ═══ */
-.bg-picker-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0;
+#bgPickerGrid { margin: 12px 0 4px }
+
+.bg-live-preview {
+  width: 100%; height: 80px; border-radius: 12px; overflow: hidden;
+  margin-bottom: 14px; position: relative;
+  border: 1.5px solid var(--card-border);
+  box-shadow: 0 2px 12px rgba(26,46,74,.10);
+  transition: all .3s ease;
+  flex-shrink: 0;
+}
+.bg-live-preview-inner {
+  width: 100%; height: 100%; position: relative;
+  display: flex; align-items: flex-end;
+}
+.bg-live-preview-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 28px;
+  background: var(--navy); display: flex; align-items: center; padding: 0 12px; gap: 8px;
+}
+.bg-live-preview-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.35); flex-shrink: 0 }
+.bg-live-preview-dot.gold { background: var(--gold) }
+.bg-live-preview-line { height: 4px; border-radius: 99px; background: rgba(255,255,255,.15); flex: 1 }
+.bg-live-preview-label {
+  position: absolute; top: 10px; left: 14px;
+  font-family: 'DM Mono', monospace; font-size: .6rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .8px; color: rgba(26,46,74,.5);
+  transition: color .2s;
+}
+
+.bg-cat-section { margin-bottom: 16px }
+.bg-cat-label {
+  font-size: .64rem; font-family: 'DM Mono', monospace; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--muted);
+  margin-bottom: 8px; padding: 0 2px;
+  display: flex; align-items: center; gap: 8px;
+}
+.bg-cat-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--card-border);
+}
+.bg-picker-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
 }
 .bg-option {
-  border: 1.5px solid var(--card-border); border-radius: 14px;
-  padding: 14px 8px 10px; cursor: pointer; text-align: center;
+  border: 1.5px solid var(--card-border); border-radius: 12px;
+  cursor: pointer; text-align: center;
   transition: all .18s; background: var(--card-bg);
   -webkit-backdrop-filter: var(--card-blur); backdrop-filter: var(--card-blur);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  display: flex; flex-direction: column; align-items: stretch; gap: 0;
+  overflow: hidden; position: relative;
 }
-.bg-option:hover { border-color: var(--gold); background: rgba(255,248,232,.9); transform: translateY(-2px) }
-.bg-option.sel { border-color: var(--gold); background: rgba(255,248,232,.9); box-shadow: 0 0 0 3px rgba(200,137,42,.2) }
+.bg-option:hover { border-color: var(--gold); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(200,137,42,.18) }
+.bg-option.sel { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,137,42,.22) }
+.bg-option.sel::after {
+  content: '✓'; position: absolute; top: 5px; right: 7px;
+  font-size: .65rem; color: var(--gold); font-weight: 800;
+  text-shadow: 0 0 6px rgba(255,255,255,.9);
+}
 .bg-option-preview {
-  width: 52px; height: 36px; border-radius: 8px; overflow: hidden;
-  border: 1px solid rgba(0,0,0,.08); flex-shrink: 0;
+  width: 100%; height: 52px; overflow: hidden; flex-shrink: 0; position: relative;
 }
-.bg-option-label { font-size: .72rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--text); line-height: 1.2; text-align: center }
+.bg-option-preview-svg {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.bg-option-footer {
+  padding: 6px 6px 7px; display: flex; flex-direction: column; align-items: center; gap: 1px;
+}
+.bg-option-emoji { font-size: .95rem; line-height: 1.1 }
+.bg-option-label {
+  font-size: .65rem; font-family: 'DM Sans', sans-serif; font-weight: 600;
+  color: var(--text); line-height: 1.2; text-align: center;
+}
+.bg-smart-sugg {
+  background: linear-gradient(135deg, rgba(200,137,42,.12), rgba(232,168,62,.08));
+  border: 1.5px dashed rgba(200,137,42,.45);
+  border-radius: 12px; padding: 11px 14px; margin-bottom: 14px;
+  font-size: .8rem; font-family: 'DM Sans', sans-serif; color: var(--text);
+  cursor: pointer; transition: all .18s; display: flex; align-items: center; gap: 10px;
+}
+.bg-smart-sugg:hover { background: linear-gradient(135deg, rgba(200,137,42,.18), rgba(232,168,62,.14)); border-color: var(--gold) }
+.bg-smart-sugg-icon { font-size: 1.4rem; flex-shrink: 0 }
+.bg-smart-sugg-text { flex: 1 }
+.bg-smart-sugg-text strong { display: block; font-size: .78rem; color: var(--navy); margin-bottom: 1px }
+.bg-smart-sugg-text span { font-size: .74rem; color: var(--muted) }
+.bg-smart-apply { background: var(--gold); color: #fff; border: none; border-radius: 8px; padding: 5px 12px; font-size: .72rem; font-weight: 600; font-family: 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background .15s }
+.bg-smart-apply:hover { background: var(--gold2) }
 @media (max-width: 360px) {
-  .bg-picker-grid { grid-template-columns: repeat(2, 1fr) }
+  .bg-picker-row { grid-template-columns: repeat(2, 1fr) }
+  .bg-option-preview { height: 42px }
 }
 
 /* ═══ ITINERARIU ═══ */
@@ -3105,21 +3261,51 @@ function getSmartBg(tripName) {
 
 const BG_OPTIONS = [
   // ── Teme ──
-  { id: 'city',     label: '🏙️ Cityscape',   color1: '#e8dece', color2: '#1a2e4a',  cat: 'teme' },
-  { id: 'night',    label: '🌃 Noapte',        color1: '#1a2e4a', color2: '#253d60',  cat: 'teme' },
-  { id: 'ocean',    label: '🌊 Ocean',          color1: '#d6eaf8', color2: '#1a6fa8',  cat: 'teme' },
-  { id: 'nature',   label: '🌿 Natură',         color1: '#d5f5e3', color2: '#1a7a45',  cat: 'teme' },
-  { id: 'desert',   label: '☀️ Desert',         color1: '#fdebd0', color2: '#c8892a',  cat: 'teme' },
-  { id: 'plain',    label: '⬜ Simplu',          color1: '#f5f0e8', color2: '#e8dece',  cat: 'teme' },
+  { id: 'city',     emoji: '🏙️', label: 'Cityscape',   bg: '#e8dece',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#e8dece"/><rect x="0" y="30" width="12" height="30" fill="#1a2e4a" opacity=".18"/><rect x="10" y="22" width="10" height="38" fill="#1a2e4a" opacity=".18"/><rect x="20" y="35" width="8" height="25" fill="#1a2e4a" opacity=".18"/><rect x="28" y="18" width="14" height="42" fill="#1a2e4a" opacity=".22"/><rect x="42" y="28" width="10" height="32" fill="#1a2e4a" opacity=".18"/><rect x="52" y="12" width="16" height="48" fill="#1a2e4a" opacity=".22"/><rect x="68" y="24" width="12" height="36" fill="#1a2e4a" opacity=".18"/><rect x="80" y="32" width="10" height="28" fill="#1a2e4a" opacity=".15"/><rect x="90" y="16" width="18" height="44" fill="#1a2e4a" opacity=".22"/><rect x="108" y="28" width="12" height="32" fill="#1a2e4a" opacity=".18"/><rect x="32" y="24" width="3" height="2" fill="#c8892a" opacity=".5"/><rect x="58" y="18" width="3" height="2" fill="#c8892a" opacity=".5"/><rect x="96" y="22" width="3" height="2" fill="#c8892a" opacity=".5"/></svg>`, cat: 'teme' },
+  { id: 'night',    emoji: '🌃', label: 'Noapte',       bg: '#1a2e4a',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#1a2e4a"/><rect x="0" y="28" width="12" height="32" fill="#253d60" opacity=".9"/><rect x="10" y="20" width="10" height="40" fill="#253d60" opacity=".9"/><rect x="20" y="32" width="8" height="28" fill="#253d60" opacity=".9"/><rect x="28" y="15" width="14" height="45" fill="#253d60" opacity=".9"/><rect x="52" y="10" width="16" height="50" fill="#253d60" opacity=".9"/><rect x="68" y="22" width="12" height="38" fill="#253d60" opacity=".9"/><rect x="90" y="14" width="18" height="46" fill="#253d60" opacity=".9"/><rect x="30" y="21" width="3" height="2" fill="#e8a83e" opacity=".9"/><rect x="55" y="16" width="3" height="2" fill="#e8a83e" opacity=".9"/><rect x="93" y="20" width="3" height="2" fill="#e8a83e" opacity=".9"/><rect x="72" y="28" width="3" height="2" fill="#e8a83e" opacity=".7"/><circle cx="100" cy="8" r="3" fill="#fff" opacity=".6"/><circle cx="20" cy="6" r="1.5" fill="#fff" opacity=".5"/><circle cx="60" cy="4" r="1" fill="#fff" opacity=".5"/></svg>`, cat: 'teme' },
+  { id: 'ocean',    emoji: '🌊', label: 'Ocean',        bg: '#cce4f5',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky_o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cce4f5"/><stop offset="1" stop-color="#a8d4ef"/></linearGradient><linearGradient id="sea_o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a9fd5"/><stop offset="1" stop-color="#1a6fa8"/></linearGradient></defs><rect width="120" height="60" fill="url(#sky_o)"/><rect y="36" width="120" height="24" fill="url(#sea_o)"/><path d="M0 36 Q30 32 60 36 Q90 40 120 36" fill="none" stroke="#1a6fa8" stroke-width="1" opacity=".3"/><circle cx="30" cy="18" r="10" fill="#ffe" opacity=".5"/><path d="M0 40 Q30 38 60 40 Q90 42 120 40 L120 60 L0 60Z" fill="#1a5090" opacity=".25"/></svg>`, cat: 'teme' },
+  { id: 'nature',   emoji: '🌿', label: 'Natură',       bg: '#d5f0e0',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#d5f0e0"/><ellipse cx="20" cy="55" rx="22" ry="14" fill="#1a7a45" opacity=".2"/><ellipse cx="60" cy="52" rx="28" ry="18" fill="#1a7a45" opacity=".25"/><ellipse cx="100" cy="55" rx="24" ry="14" fill="#1a7a45" opacity=".2"/><path d="M40 60 L40 32 Q50 20 60 32 L60 60" fill="#1a4a2e" opacity=".18"/><path d="M55 35 Q60 25 65 35" fill="none" stroke="#1a4a2e" stroke-width="1" opacity=".2"/><circle cx="85" cy="14" r="8" fill="#f5d26a" opacity=".4"/></svg>`, cat: 'teme' },
+  { id: 'desert',   emoji: '☀️', label: 'Desert',       bg: '#f5e8d0',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky_d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fce8c0"/><stop offset="1" stop-color="#f5d8a0"/></linearGradient></defs><rect width="120" height="60" fill="url(#sky_d)"/><circle cx="100" cy="14" r="11" fill="#e8a83e" opacity=".6"/><path d="M0 42 Q20 36 40 42 Q60 48 80 40 Q100 34 120 40 L120 60 L0 60Z" fill="#c8892a" opacity=".3"/><path d="M0 50 Q30 46 60 50 Q90 54 120 50 L120 60 L0 60Z" fill="#c8892a" opacity=".2"/></svg>`, cat: 'teme' },
+  { id: 'plain',    emoji: '⬜', label: 'Simplu',        bg: '#f5f0e8',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#f5f0e8"/><rect x="15" y="15" width="40" height="6" rx="3" fill="#ddd6c8" opacity=".7"/><rect x="15" y="26" width="28" height="4" rx="2" fill="#ddd6c8" opacity=".5"/><rect x="15" y="36" width="34" height="4" rx="2" fill="#ddd6c8" opacity=".5"/><rect x="65" y="15" width="40" height="28" rx="6" fill="#e8dece" opacity=".8"/></svg>`, cat: 'teme' },
   // ── Peisaje ──
-  { id: 'sea',      label: '⛵ Mare & Bărci',   color1: '#d6eaf8', color2: '#1a4fa8',  cat: 'peisaje' },
-  { id: 'tropical', label: '🌴 Tropical',        color1: '#d5f5e3', color2: '#1a4a2e',  cat: 'peisaje' },
-  { id: 'mountain', label: '⛰️ Munte',           color1: '#dce8f0', color2: '#2a3f5f',  cat: 'peisaje' },
+  { id: 'sea',      emoji: '⛵', label: 'Mare',          bg: '#cce4f5',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#daeef8"/><rect y="32" width="120" height="28" fill="#1a6fa8" opacity=".55"/><path d="M0 38 Q30 34 60 38 Q90 42 120 38" fill="none" stroke="#fff" stroke-width="1" opacity=".2"/><path d="M0 46 Q30 44 60 46 Q90 48 120 46" fill="none" stroke="#fff" stroke-width=".8" opacity=".15"/><line x1="55" y1="32" x2="55" y2="12" stroke="#1a2e4a" stroke-width="1.5" opacity=".5"/><path d="M55 13 L55 32 L72 28Z" fill="#1a2e4a" opacity=".35"/><path d="M55 16 L55 32 L40 28Z" fill="#1a2e4a" opacity=".25"/><path d="M48 32 Q55 34 62 32 L60 35 Q55 37 50 35Z" fill="#1a2e4a" opacity=".4"/></svg>`, cat: 'peisaje' },
+  { id: 'tropical', emoji: '🌴', label: 'Tropical',     bg: '#d0f0ea',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#d0f0ea"/><rect y="40" width="120" height="20" fill="#1a7a6a" opacity=".3"/><path d="M0 46 Q30 42 60 46 Q90 50 120 46" fill="none" stroke="#1a7a6a" stroke-width="1" opacity=".3"/><line x1="30" y1="60" x2="28" y2="28" stroke="#1a4a2e" stroke-width="4" opacity=".4"/><path d="M28 28 Q10 20 5 28 Q12 34 28 28Z" fill="#1a6a3e" opacity=".5"/><path d="M28 28 Q16 16 14 24 Q20 30 28 28Z" fill="#1a6a3e" opacity=".5"/><path d="M28 28 Q42 18 40 26 Q34 32 28 28Z" fill="#1a6a3e" opacity=".5"/><circle cx="90" cy="14" r="9" fill="#ffe066" opacity=".45"/></svg>`, cat: 'peisaje' },
+  { id: 'mountain', emoji: '⛰️', label: 'Munte',         bg: '#dce8f0',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#dce8f0"/><path d="M0 60 L20 28 L34 44 L55 10 L76 36 L88 20 L100 36 L120 18 L120 60Z" fill="#2a3f5f" opacity=".18"/><path d="M0 60 L20 36 L34 50 L55 22 L76 44 L88 30 L100 44 L120 28 L120 60Z" fill="#2a3f5f" opacity=".10"/><path d="M48 10 L55 10 L62 18" stroke="#fff" stroke-width="2" fill="none" opacity=".5"/></svg>`, cat: 'peisaje' },
   // ── Monumente ──
-  { id: 'rome',     label: '🏛️ Roma',            color1: '#f0ece4', color2: '#4a3a2a',  cat: 'monumente' },
-  { id: 'paris',    label: '🗼 Paris',            color1: '#eaeef4', color2: '#2a3550',  cat: 'monumente' },
-  { id: 'milano',   label: '⛪ Milano',           color1: '#ece8f0', color2: '#3a2a4a',  cat: 'monumente' },
-  { id: 'valencia', label: '🔵 Valencia',         color1: '#d8f0ee', color2: '#1a5a56',  cat: 'monumente' },
+  { id: 'rome',     emoji: '🏛️', label: 'Roma',          bg: '#f0ece4',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#f0ece4"/><path d="M20 60 L20 32 A50 16 0 0 1 100 32 L100 60Z" fill="#4a3a2a" opacity=".12"/><path d="M22 60 L22 34 A48 14 0 0 1 98 34 L98 60" stroke="#4a3a2a" stroke-width="1.2" fill="none" opacity=".15"/><line x1="30" y1="34" x2="30" y2="60" stroke="#4a3a2a" stroke-width="3" opacity=".12"/><line x1="45" y1="34" x2="45" y2="60" stroke="#4a3a2a" stroke-width="3" opacity=".12"/><line x1="60" y1="34" x2="60" y2="60" stroke="#4a3a2a" stroke-width="3" opacity=".12"/><line x1="75" y1="34" x2="75" y2="60" stroke="#4a3a2a" stroke-width="3" opacity=".12"/><line x1="90" y1="34" x2="90" y2="60" stroke="#4a3a2a" stroke-width="3" opacity=".12"/></svg>`, cat: 'monumente' },
+  { id: 'paris',    emoji: '🗼', label: 'Paris',          bg: '#eaeef4',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#eaeef4"/><path d="M52 60 L56 46 L54 44 L56 36 L54 34 L60 16 L62 16 L66 4 L70 16 L72 16 L78 34 L76 36 L78 44 L76 46 L80 60Z" fill="#2a3550" opacity=".2"/><line x1="66" y1="4" x2="66" y2="0" stroke="#2a3550" stroke-width="1.5" opacity=".2"/><line x1="57" y1="36" x2="75" y2="36" stroke="#2a3550" stroke-width="1" opacity=".15"/><line x1="55" y1="46" x2="77" y2="46" stroke="#2a3550" stroke-width="1" opacity=".15"/></svg>`, cat: 'monumente' },
+  { id: 'milano',   emoji: '⛪', label: 'Milano',         bg: '#ece8f0',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#ece8f0"/><rect x="35" y="30" width="50" height="30" fill="#3a2a4a" opacity=".1"/><polygon points="60,4 63,30 57,30" fill="#3a2a4a" opacity=".18"/><line x1="60" y1="4" x2="60" y2="0" stroke="#3a2a4a" stroke-width="1.5" opacity=".2"/><circle cx="60" cy="-1" r="2" fill="#c8892a" opacity=".3"/><polygon points="47,14 49,30 45,30" fill="#3a2a4a" opacity=".12"/><polygon points="73,14 75,30 71,30" fill="#3a2a4a" opacity=".12"/></svg>`, cat: 'monumente' },
+  { id: 'valencia', emoji: '🔵', label: 'Valencia',       bg: '#d8f0ee',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#d8f0ee"/><ellipse cx="60" cy="48" rx="30" ry="14" fill="#1a5a56" opacity=".15"/><ellipse cx="60" cy="48" rx="28" ry="12" fill="#d8f0ee" opacity=".7"/><path d="M30 48 A30 14 0 0 1 90 48" stroke="#1a5a56" stroke-width="1.5" fill="none" opacity=".2"/><line x1="60" y1="34" x2="60" y2="60" stroke="#1a5a56" stroke-width="2" opacity=".15"/><ellipse cx="20" cy="52" rx="14" ry="8" fill="#1a5a56" opacity=".12"/><ellipse cx="100" cy="52" rx="14" ry="8" fill="#1a5a56" opacity=".12"/></svg>`, cat: 'monumente' },
+  // ── Animate ──
+  { id: 'aurora',     emoji: '🌌', label: 'Aurora Borealis', bg: '#050a18',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#050a18"/><path d="M-10 20 Q30 8 70 18 Q110 28 130 15" stroke="rgba(80,220,180,.5)" stroke-width="18" fill="none"/><path d="M-10 30 Q40 15 80 28 Q110 35 130 22" stroke="rgba(120,80,255,.4)" stroke-width="14" fill="none"/><path d="M-10 25 Q30 18 65 22 Q100 26 130 18" stroke="rgba(0,180,255,.35)" stroke-width="10" fill="none"/><circle cx="20" cy="8" r="1" fill="#fff" opacity=".8"/><circle cx="55" cy="5" r=".7" fill="#fff" opacity=".7"/><circle cx="90" cy="9" r="1" fill="#fff" opacity=".6"/><circle cx="38" cy="12" r=".5" fill="#fff" opacity=".5"/></svg>`, cat: 'animate' },
+  { id: 'synthwave',  emoji: '🎮', label: 'Synthwave',        bg: '#1a0630',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a0630"/><stop offset=".4" stop-color="#2d0050"/><stop offset="1" stop-color="#c0205a"/></linearGradient></defs><rect width="120" height="60" fill="url(#sg)"/><circle cx="60" cy="20" r="14" fill="#ff8800" opacity=".9"/><rect x="-5" y="52" width="130" height="1" fill="rgba(255,45,149,.5)"/><line x1="-5" y1="44" x2="125" y2="44" stroke="rgba(255,45,149,.3)" stroke-width=".5"/><line x1="20" y1="36" x2="20" y2="60" stroke="rgba(255,45,149,.3)" stroke-width=".5"/><line x1="40" y1="36" x2="40" y2="60" stroke="rgba(255,45,149,.25)" stroke-width=".5"/><line x1="60" y1="36" x2="60" y2="60" stroke="rgba(255,45,149,.25)" stroke-width=".5"/><line x1="80" y1="36" x2="80" y2="60" stroke="rgba(255,45,149,.25)" stroke-width=".5"/><line x1="100" y1="36" x2="100" y2="60" stroke="rgba(255,45,149,.25)" stroke-width=".5"/></svg>`, cat: 'animate' },
+  { id: 'deepocean',  emoji: '🌊', label: 'Adancuri Ocean',  bg: '#001a33',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="og" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#001a33"/><stop offset=".5" stop-color="#003060"/><stop offset="1" stop-color="#001a40"/></linearGradient></defs><rect width="120" height="60" fill="url(#og)"/><ellipse cx="60" cy="52" rx="80" ry="16" fill="#0077cc" opacity=".25"/><ellipse cx="60" cy="56" rx="80" ry="12" fill="#0055aa" opacity=".2"/><circle cx="30" cy="38" r="3" fill="none" stroke="rgba(100,200,255,.4)" stroke-width=".7"/><circle cx="70" cy="42" r="2" fill="none" stroke="rgba(100,200,255,.3)" stroke-width=".6"/><circle cx="95" cy="35" r="2.5" fill="none" stroke="rgba(100,200,255,.35)" stroke-width=".6"/></svg>`, cat: 'animate' },
+  { id: 'goldendusk', emoji: '🌅', label: 'Amurg de Aur',    bg: '#0d0020',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0020"/><stop offset=".2" stop-color="#1a0050"/><stop offset=".45" stop-color="#6b1a8a"/><stop offset=".65" stop-color="#cc4400"/><stop offset=".82" stop-color="#ff8800"/><stop offset="1" stop-color="#ffbb33"/></linearGradient></defs><rect width="120" height="60" fill="url(#dg)"/><circle cx="60" cy="42" r="10" fill="#ffcc00" opacity=".9"/><circle cx="15" cy="10" r=".8" fill="#fff" opacity=".7"/><circle cx="35" cy="6" r=".6" fill="#fff" opacity=".6"/><circle cx="80" cy="8" r=".7" fill="#fff" opacity=".65"/><circle cx="100" cy="12" r=".5" fill="#fff" opacity=".5"/></svg>`, cat: 'animate' },
+  { id: 'cyberpunk',  emoji: '🌧️', label: 'Cyberpunk Rain',  bg: '#050510',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#050510"/><line x1="0" y1="15" x2="120" y2="15" stroke="rgba(0,255,170,.3)" stroke-width=".8"/><line x1="0" y1="35" x2="120" y2="35" stroke="rgba(255,0,200,.25)" stroke-width=".8"/><line x1="15" y1="0" x2="14" y2="60" stroke="rgba(0,255,170,.3)" stroke-width=".6"/><line x1="35" y1="0" x2="34" y2="60" stroke="rgba(255,0,200,.25)" stroke-width=".5"/><line x1="55" y1="0" x2="54" y2="60" stroke="rgba(0,255,170,.2)" stroke-width=".5"/><line x1="75" y1="0" x2="74" y2="60" stroke="rgba(255,0,200,.2)" stroke-width=".5"/><line x1="95" y1="0" x2="94" y2="60" stroke="rgba(0,255,170,.2)" stroke-width=".5"/><ellipse cx="45" cy="20" rx="30" ry="20" fill="rgba(0,255,170,.05)"/><ellipse cx="85" cy="50" rx="25" ry="18" fill="rgba(255,0,200,.05)"/></svg>`, cat: 'animate' },
+  { id: 'misty',      emoji: '⛰️', label: 'Munti in Ceata',  bg: '#c8d8e8',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#c8d8e8"/><path d="M0 60 L15 32 L25 44 L40 18 L55 38 L68 12 L82 34 L93 16 L105 32 L120 22 L120 60Z" fill="#6a8aaa" opacity=".25"/><path d="M0 60 L12 42 L24 52 L38 28 L52 46 L66 24 L80 42 L94 28 L108 40 L120 34 L120 60Z" fill="#8aaac4" opacity=".28"/><rect x="-5" y="44" width="130" height="8" fill="rgba(255,255,255,.5)" rx="4"/><rect x="-5" y="50" width="130" height="6" fill="rgba(255,255,255,.6)" rx="3"/></svg>`, cat: 'animate' },
+  { id: 'blossom',    emoji: '🌸', label: 'Cherry Blossom',  bg: '#fce4ec',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#fce4ec"/><rect x="8" y="0" width="4" height="50" fill="#6d3a2e" opacity=".5" rx="2"/><ellipse cx="30" cy="20" rx="5" ry="3" fill="rgba(255,180,200,.7)" transform="rotate(-20 30 20)"/><ellipse cx="55" cy="8" rx="4" ry="2.5" fill="rgba(255,220,230,.8)" transform="rotate(10 55 8)"/><ellipse cx="80" cy="35" rx="5" ry="3" fill="rgba(255,180,200,.65)" transform="rotate(-15 80 35)"/><ellipse cx="95" cy="15" rx="3.5" ry="2" fill="rgba(255,200,215,.75)" transform="rotate(30 95 15)"/><ellipse cx="40" cy="45" rx="4" ry="2.5" fill="rgba(255,180,200,.6)" transform="rotate(5 40 45)"/><ellipse cx="70" cy="50" rx="5" ry="3" fill="rgba(255,220,230,.7)" transform="rotate(-25 70 50)"/></svg>`, cat: 'animate' },
+  { id: 'arctic',     emoji: '❄️', label: 'Ghetar Arctic',    bg: '#e8f4ff',
+    miniSvg: `<svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="60" fill="#e8f4ff"/><polygon points="30,10 33,20 40,20 34,26 36,36 30,30 24,36 26,26 20,20 27,20" fill="none" stroke="rgba(100,180,255,.5)" stroke-width=".8"/><polygon points="80,5 82,13 88,13 83,18 85,26 80,21 75,26 77,18 72,13 78,13" fill="none" stroke="rgba(100,180,255,.4)" stroke-width=".7"/><polygon points="58,32 60,38 65,38 61,42 63,48 58,44 53,48 55,42 51,38 56,38" fill="none" stroke="rgba(100,180,255,.45)" stroke-width=".7"/><circle cx="20" cy="40" r="1" fill="#fff" opacity=".7"/><circle cx="45" cy="25" r=".8" fill="#fff" opacity=".6"/><circle cx="95" cy="35" r="1" fill="#fff" opacity=".65"/></svg>`, cat: 'animate' },
 ];
 
 /* Style tag pentru SVG-uri dinamice */
@@ -3151,6 +3337,18 @@ function applyBg(id) {
   document.querySelectorAll('.bg-option').forEach(el => {
     el.classList.toggle('sel', el.dataset.bgId === id);
   });
+  // update live preview
+  const selOpt = BG_OPTIONS.find(o => o.id === id);
+  if (selOpt) {
+    const lp = document.getElementById('bgLivePreview');
+    const ll = document.getElementById('bgLiveLabel');
+    if (lp) lp.style.background = selOpt.bg;
+    if (ll) ll.textContent = `${selOpt.emoji} ${selOpt.label}`;
+    const inner = lp?.querySelector('.bg-live-preview-inner div');
+    if (inner) inner.innerHTML = selOpt.miniSvg.replace(/viewBox="0 0 120 60"/, 'viewBox="0 0 120 60" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;display:block"');
+  }
+  // start canvas animation if applicable (defined later in script)
+  if (typeof _startBgAnim === 'function') _startBgAnim(id);
 }
 
 function openBgPicker() {
@@ -3159,41 +3357,97 @@ function openBgPicker() {
   const trip = activeTrip();
   grid.innerHTML = '';
 
-  // Smart suggestion
+  // ── Live preview bar ──
+  const curOpt = BG_OPTIONS.find(o => o.id === cur) || BG_OPTIONS[0];
+  const liveWrap = document.createElement('div');
+  liveWrap.id = 'bgLivePreview';
+  liveWrap.className = 'bg-live-preview';
+  liveWrap.style.background = curOpt.bg;
+  liveWrap.innerHTML = `
+    <div class="bg-live-preview-inner">
+      <div style="position:absolute;inset:0;overflow:hidden">
+        ${curOpt.miniSvg.replace(/viewBox="0 0 120 60"/, 'viewBox="0 0 120 60" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;position:absolute;inset:0"')}
+      </div>
+    </div>
+    <div class="bg-live-preview-bar">
+      <div class="bg-live-preview-dot gold"></div>
+      <div class="bg-live-preview-dot"></div>
+      <div class="bg-live-preview-dot"></div>
+      <div class="bg-live-preview-line"></div>
+    </div>
+    <div class="bg-live-preview-label" id="bgLiveLabel">${curOpt.emoji} ${curOpt.label}</div>`;
+  grid.appendChild(liveWrap);
+
+  // ── Smart suggestion ──
   const smart = getSmartBg(trip?.name || '');
   if (smart && smart !== cur) {
-    const destName = trip?.name || '';
+    const smartOpt = BG_OPTIONS.find(o => o.id === smart);
     const sugg = document.createElement('div');
-    sugg.style.cssText = 'background:rgba(200,137,42,.1);border:1.5px dashed rgba(200,137,42,.4);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:.78rem;font-family:\'DM Sans\',sans-serif;color:var(--text);cursor:pointer;transition:all .15s;';
-    sugg.innerHTML = `<strong>🎯 Sugestie pentru „${e(destName)}":</strong> ${BG_OPTIONS.find(o=>o.id===smart)?.label || smart} <span style="color:var(--gold);font-weight:600;margin-left:6px">→ Aplică</span>`;
-    sugg.onclick = () => applyBg(smart);
+    sugg.className = 'bg-smart-sugg';
+    sugg.innerHTML = `
+      <div class="bg-smart-sugg-icon">${smartOpt?.emoji || '🎯'}</div>
+      <div class="bg-smart-sugg-text">
+        <strong>Sugestie pentru „${e(trip?.name || '')}"</strong>
+        <span>Tema ${smartOpt?.label || smart} se potrivește destinației tale</span>
+      </div>
+      <button class="bg-smart-apply" onclick="applyBg('${smart}');event.stopPropagation()">Aplică</button>`;
     grid.appendChild(sugg);
   }
 
-  // Group by category
+  // ── Categories ──
   const cats = [
     { id: 'teme',       label: 'Teme' },
     { id: 'peisaje',    label: 'Peisaje' },
     { id: 'monumente',  label: 'Monumente' },
+    { id: 'animate',    label: 'Animate ✨' },
   ];
   cats.forEach(cat => {
     const opts = BG_OPTIONS.filter(o => o.cat === cat.id);
     if (!opts.length) return;
+    const section = document.createElement('div');
+    section.className = 'bg-cat-section';
     const lbl = document.createElement('div');
     lbl.className = 'bg-cat-label';
     lbl.textContent = cat.label;
-    grid.appendChild(lbl);
+    section.appendChild(lbl);
     const row = document.createElement('div');
-    row.className = 'bg-picker-grid';
+    row.className = 'bg-picker-row';
     opts.forEach(opt => {
       const el = document.createElement('div');
       el.className = 'bg-option' + (opt.id === cur ? ' sel' : '');
       el.dataset.bgId = opt.id;
-      el.innerHTML = `<div class="bg-option-preview" style="background:linear-gradient(135deg,${opt.color1},${opt.color2})"></div><div class="bg-option-label">${opt.label}</div>`;
+      const svgForCard = opt.miniSvg
+        .replace(/viewBox="0 0 120 60"/, 'viewBox="0 0 120 60" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;display:block"');
+      el.innerHTML = `
+        <div class="bg-option-preview" style="background:${opt.bg}">${svgForCard}</div>
+        <div class="bg-option-footer">
+          <span class="bg-option-emoji">${opt.emoji}</span>
+          <span class="bg-option-label">${opt.label}</span>
+        </div>`;
+      // hover: update live preview label
+      el.addEventListener('mouseenter', () => {
+        const lp = document.getElementById('bgLivePreview');
+        const ll = document.getElementById('bgLiveLabel');
+        if (lp) lp.style.background = opt.bg;
+        if (ll) ll.textContent = `${opt.emoji} ${opt.label}`;
+        // swap svg in live preview
+        const inner = lp?.querySelector('.bg-live-preview-inner div');
+        if (inner) inner.innerHTML = svgForCard;
+      });
+      el.addEventListener('mouseleave', () => {
+        const selOpt = BG_OPTIONS.find(o => o.id === loadBg()) || BG_OPTIONS[0];
+        const lp = document.getElementById('bgLivePreview');
+        const ll = document.getElementById('bgLiveLabel');
+        if (lp) lp.style.background = selOpt.bg;
+        if (ll) ll.textContent = `${selOpt.emoji} ${selOpt.label}`;
+        const inner = lp?.querySelector('.bg-live-preview-inner div');
+        if (inner) inner.innerHTML = selOpt.miniSvg.replace(/viewBox="0 0 120 60"/, 'viewBox="0 0 120 60" preserveAspectRatio="xMidYMax slice" style="width:100%;height:100%;display:block"');
+      });
       el.onclick = () => applyBg(opt.id);
       row.appendChild(el);
     });
-    grid.appendChild(row);
+    section.appendChild(row);
+    grid.appendChild(section);
   });
   document.getElementById('bgMod').classList.add('op');
 }
@@ -3415,7 +3669,141 @@ if(window.visualViewport){
   window.visualViewport.addEventListener('resize', recalcPadding);
 }
 </script>
+</script>
 <div id="pdf-overlay"></div>
+
+<!-- ═══ ANIMATED BACKGROUND LAYERS ═══ -->
+<div id="packro-aurora-layers">
+  <div class="packro-aurora-blob"></div>
+  <div class="packro-aurora-blob"></div>
+  <div class="packro-aurora-blob"></div>
+  <canvas id="packro-aurora-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<div id="packro-synth-layers">
+  <div id="packro-synth-sun"></div>
+  <div id="packro-synth-grid"></div>
+  <div id="packro-synth-glow"></div>
+</div>
+
+<div id="packro-ocean-layers">
+  <div class="packro-wave"></div>
+  <div class="packro-wave"></div>
+  <div class="packro-wave"></div>
+  <canvas id="packro-ocean-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<div id="packro-dusk-layers">
+  <canvas id="packro-dusk-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <div id="packro-dusk-sun"></div>
+  <div class="packro-dusk-cloud"></div>
+  <div class="packro-dusk-cloud"></div>
+</div>
+
+<div id="packro-cyber-layers">
+  <div class="packro-neon-line"></div>
+  <div class="packro-neon-line"></div>
+  <div class="packro-cyber-glow"></div>
+  <div class="packro-cyber-glow"></div>
+  <canvas id="packro-rain-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<div id="packro-misty-layers">
+  <svg id="packro-misty-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 900 L120 480 L200 640 L320 280 L440 560 L560 180 L680 480 L800 240 L920 520 L1040 300 L1160 520 L1280 380 L1440 440 L1440 900Z" fill="#6a8aaa" opacity=".2"/>
+    <path d="M0 900 L100 580 L200 700 L340 420 L460 640 L580 340 L700 580 L820 380 L940 600 L1060 420 L1180 580 L1300 460 L1440 520 L1440 900Z" fill="#8aaac4" opacity=".22"/>
+    <path d="M0 900 L80 680 L180 760 L300 580 L420 720 L560 500 L680 680 L800 540 L920 700 L1040 560 L1200 680 L1320 600 L1440 640 L1440 900Z" fill="#b0c8de" opacity=".28"/>
+  </svg>
+  <div class="packro-mist"></div>
+  <div class="packro-mist"></div>
+  <div class="packro-mist"></div>
+</div>
+
+<div id="packro-blossom-layers">
+  <div class="packro-branch"></div>
+  <div class="packro-branch"></div>
+  <div class="packro-branch"></div>
+  <canvas id="packro-blossom-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<div id="packro-arctic-layers">
+  <canvas id="packro-arctic-canvas" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+</div>
+
+<script>
+/* ANIMATED BACKGROUND ENGINE */
+let _animFrames = {};
+function _stopAllAnims() { Object.values(_animFrames).forEach(cancelAnimationFrame); _animFrames = {}; }
+function _startBgAnim(id) {
+  _stopAllAnims();
+  if(id==='aurora')     _startAurora();
+  if(id==='deepocean')  _startOcean();
+  if(id==='goldendusk') _startDusk();
+  if(id==='cyberpunk')  _startRain();
+  if(id==='blossom')    _startBlossom();
+  if(id==='arctic')     _startArctic();
+}
+// applyBg already calls _startBgAnim internally (fixed hoisting bug)
+
+function _startAurora() {
+  const cvs = document.getElementById('packro-aurora-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const stars=Array.from({length:80},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height*.55,r:Math.random()*.9+.2,o:Math.random()*.7+.1,phase:Math.random()*Math.PI*2}));
+  function draw(t){ctx.clearRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{ctx.globalAlpha=s.o*(.5+.5*Math.sin(t*.0008+s.phase));ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();});ctx.globalAlpha=1;_animFrames.aurora=requestAnimationFrame(draw);}
+  _animFrames.aurora=requestAnimationFrame(draw);
+}
+
+function _startOcean() {
+  const cvs=document.getElementById('packro-ocean-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const bubbles=Array.from({length:20},()=>({x:Math.random()*cvs.width,y:cvs.height+Math.random()*100,r:Math.random()*5+2,speed:Math.random()*.5+.25,wobble:Math.random()*Math.PI*2}));
+  function draw(t){ctx.clearRect(0,0,cvs.width,cvs.height);bubbles.forEach(b=>{b.y-=b.speed;b.x+=Math.sin(t*.001+b.wobble)*.4;if(b.y<-10){b.y=cvs.height+10;b.x=Math.random()*cvs.width;}ctx.globalAlpha=Math.max(0,Math.min(.4,(1-b.y/cvs.height)*.5));ctx.strokeStyle='rgba(100,200,255,.7)';ctx.lineWidth=.8;ctx.beginPath();ctx.arc(b.x,b.y,b.r,0,Math.PI*2);ctx.stroke();});ctx.globalAlpha=1;_animFrames.ocean=requestAnimationFrame(draw);}
+  _animFrames.ocean=requestAnimationFrame(draw);
+}
+
+function _startDusk() {
+  const cvs=document.getElementById('packro-dusk-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const stars=Array.from({length:50},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height*.38,r:Math.random()*.7+.2,phase:Math.random()*Math.PI*2}));
+  function draw(t){ctx.clearRect(0,0,cvs.width,cvs.height);stars.forEach(s=>{ctx.globalAlpha=.25+.25*Math.sin(t*.001+s.phase);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();});ctx.globalAlpha=1;_animFrames.dusk=requestAnimationFrame(draw);}
+  _animFrames.dusk=requestAnimationFrame(draw);
+}
+
+function _startRain() {
+  const cvs=document.getElementById('packro-rain-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const drops=Array.from({length:80},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height,speed:Math.random()*2+.8,len:Math.random()*14+7,hue:Math.random()>.5?'0,255,170':'255,0,200'}));
+  function draw(){ctx.clearRect(0,0,cvs.width,cvs.height);drops.forEach(d=>{d.y+=d.speed;if(d.y>cvs.height){d.y=-d.len;d.x=Math.random()*cvs.width;}const g=ctx.createLinearGradient(d.x,d.y-d.len,d.x,d.y);g.addColorStop(0,`rgba(${d.hue},0)`);g.addColorStop(1,`rgba(${d.hue},.6)`);ctx.strokeStyle=g;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(d.x,d.y-d.len);ctx.lineTo(d.x,d.y);ctx.stroke();});_animFrames.rain=requestAnimationFrame(draw);}
+  _animFrames.rain=requestAnimationFrame(draw);
+}
+
+function _startBlossom() {
+  const cvs=document.getElementById('packro-blossom-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const petals=Array.from({length:50},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height,rot:Math.random()*Math.PI*2,rotSpd:(Math.random()-.5)*.04,speed:Math.random()*.7+.25,drift:(Math.random()-.5)*.4,size:Math.random()*6+4,col:Math.random()>.5?'rgba(255,180,200,.75)':'rgba(255,220,230,.85)'}));
+  function draw(){ctx.clearRect(0,0,cvs.width,cvs.height);petals.forEach(p=>{p.y+=p.speed;p.x+=p.drift;p.rot+=p.rotSpd;if(p.y>cvs.height+10){p.y=-10;p.x=Math.random()*cvs.width;}ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.col;ctx.beginPath();ctx.ellipse(0,0,p.size,p.size*.58,0,0,Math.PI*2);ctx.fill();ctx.restore();});_animFrames.blossom=requestAnimationFrame(draw);}
+  _animFrames.blossom=requestAnimationFrame(draw);
+}
+
+function _startArctic() {
+  const cvs=document.getElementById('packro-arctic-canvas'); if(!cvs) return;
+  cvs.width=window.innerWidth; cvs.height=window.innerHeight;
+  const ctx=cvs.getContext('2d');
+  const crystals=Array.from({length:16},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height,size:Math.random()*30+12,rot:Math.random()*Math.PI/3,phase:Math.random()*Math.PI*2}));
+  const snow=Array.from({length:60},()=>({x:Math.random()*cvs.width,y:Math.random()*cvs.height,r:Math.random()*1.8+.4,speed:Math.random()*.25+.1}));
+  function drawHex(x,y,size,rot){ctx.beginPath();for(let i=0;i<6;i++){const a=rot+i*Math.PI/3;i?ctx.lineTo(x+size*Math.cos(a),y+size*Math.sin(a)):ctx.moveTo(x+size*Math.cos(a),y+size*Math.sin(a));}ctx.closePath();}
+  function draw(t){ctx.clearRect(0,0,cvs.width,cvs.height);crystals.forEach(c=>{const op=.06+.05*Math.sin(t*.0008+c.phase);ctx.globalAlpha=op;ctx.strokeStyle='rgba(100,180,255,.9)';ctx.lineWidth=.7;drawHex(c.x,c.y,c.size,c.rot);ctx.stroke();drawHex(c.x,c.y,c.size*.55,c.rot+Math.PI/6);ctx.stroke();ctx.beginPath();for(let i=0;i<6;i++){const a=c.rot+i*Math.PI/3;ctx.moveTo(c.x,c.y);ctx.lineTo(c.x+c.size*Math.cos(a),c.y+c.size*Math.sin(a));}ctx.stroke();});snow.forEach(s=>{s.y+=s.speed;s.x+=Math.sin(t*.001+s.y*.05)*.2;if(s.y>cvs.height){s.y=0;s.x=Math.random()*cvs.width;}ctx.globalAlpha=.45;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();});ctx.globalAlpha=1;_animFrames.arctic=requestAnimationFrame(draw);}
+  _animFrames.arctic=requestAnimationFrame(draw);
+}
+
+/* Start animation for current bg on load */
+_startBgAnim(loadBg());
+</script>
 
 </body>
 </html>
