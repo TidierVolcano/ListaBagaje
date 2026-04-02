@@ -6,8 +6,8 @@
      • Altele       → Cache-First    (alte resurse statice)
 ═══════════════════════════════════════════════ */
 
-const CACHE_NAME    = 'packro-v6';
-const RUNTIME_CACHE = 'packro-runtime-v6';
+const CACHE_NAME    = 'packro-v7';
+const RUNTIME_CACHE = 'packro-runtime-v7';
 
 // Resurse pre-cached la instalare
 const PRECACHE_URLS = [
