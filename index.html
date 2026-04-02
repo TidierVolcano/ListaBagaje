@@ -6,6 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 <meta name="theme-color" content="#1a2e4a"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="PackRo"/>
+<link rel="manifest" href="manifest.json"/>
 <title>PackRo</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -36,6 +39,27 @@ body {
   overflow-x:hidden;
   -webkit-tap-highlight-color:transparent;
   -webkit-font-smoothing:antialiased;
+  position: relative;
+}
+
+/* ── Cityscape background ── */
+body::before {
+  content:'';
+  position:fixed;
+  bottom:0; left:0; right:0;
+  height:45vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='xMidYMax slice'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23c8892a' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%231a2e4a' stop-opacity='.06'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1440' height='320' fill='url(%23sky)'/%3E%3C!-- far buildings --%3E%3Crect x='0' y='200' width='60' height='120' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='55' y='170' width='45' height='150' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='95' y='210' width='35' height='110' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='125' y='185' width='50' height='135' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='170' y='220' width='30' height='100' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='195' y='160' width='55' height='160' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='245' y='195' width='40' height='125' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='280' y='175' width='65' height='145' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='340' y='215' width='35' height='105' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='370' y='150' width='50' height='170' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='415' y='200' width='45' height='120' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='455' y='180' width='40' height='140' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='490' y='165' width='70' height='155' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='555' y='205' width='35' height='115' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='585' y='170' width='55' height='150' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='635' y='190' width='45' height='130' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='675' y='155' width='60' height='165' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='730' y='210' width='30' height='110' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='755' y='175' width='50' height='145' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='800' y='195' width='40' height='125' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='835' y='160' width='65' height='160' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='895' y='205' width='35' height='115' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='925' y='180' width='55' height='140' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='975' y='165' width='45' height='155' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1015' y='190' width='50' height='130' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1060' y='150' width='60' height='170' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1115' y='210' width='35' height='110' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1145' y='175' width='55' height='145' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1195' y='195' width='40' height='125' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1230' y='160' width='65' height='160' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1290' y='200' width='50' height='120' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1335' y='170' width='45' height='150' fill='%231a2e4a' opacity='.04'/%3E%3Crect x='1375' y='185' width='65' height='135' fill='%231a2e4a' opacity='.04'/%3E%3C!-- mid buildings --%3E%3Crect x='10' y='230' width='55' height='90' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='80' y='215' width='40' height='105' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='130' y='240' width='50' height='80' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='200' y='220' width='60' height='100' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='280' y='235' width='45' height='85' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='350' y='210' width='55' height='110' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='430' y='230' width='50' height='90' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='510' y='215' width='65' height='105' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='600' y='225' width='45' height='95' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='670' y='200' width='70' height='120' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='760' y='230' width='50' height='90' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='840' y='215' width='55' height='105' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='920' y='235' width='45' height='85' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='990' y='210' width='60' height='110' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='1075' y='225' width='50' height='95' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='1155' y='220' width='55' height='100' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='1240' y='230' width='65' height='90' fill='%231a2e4a' opacity='.07'/%3E%3Crect x='1340' y='215' width='50' height='105' fill='%231a2e4a' opacity='.07'/%3E%3C!-- foreground buildings --%3E%3Crect x='0' y='255' width='70' height='65' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='90' y='245' width='55' height='75' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='175' y='258' width='80' height='62' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='290' y='250' width='60' height='70' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='390' y='260' width='75' height='60' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='500' y='248' width='65' height='72' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='600' y='255' width='80' height='65' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='720' y='245' width='60' height='75' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='820' y='258' width='70' height='62' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='930' y='250' width='80' height='70' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1050' y='260' width='65' height='60' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1160' y='248' width='75' height='72' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1280' y='255' width='80' height='65' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1390' y='245' width='50' height='75' fill='%231a2e4a' opacity='.1'/%3E%3C!-- windows --%3E%3Crect x='18' y='238' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='30' y='238' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='18' y='248' width='8' height='5' rx='1' fill='%23c8892a' opacity='.12'/%3E%3Crect x='300' y='258' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='312' y='258' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='520' y='255' width='8' height='5' rx='1' fill='%23c8892a' opacity='.15'/%3E%3Crect x='532' y='255' width='8' height='5' rx='1' fill='%23c8892a' opacity='.1'/%3E%3Crect x='730' y='252' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='742' y='252' width='8' height='5' rx='1' fill='%23c8892a' opacity='.12'/%3E%3Crect x='940' y='258' width='8' height='5' rx='1' fill='%23c8892a' opacity='.18'/%3E%3Crect x='1170' y='255' width='8' height='5' rx='1' fill='%23c8892a' opacity='.15'/%3E%3Crect x='1182' y='255' width='8' height='5' rx='1' fill='%23c8892a' opacity='.1'/%3E%3C!-- ground --%3E%3Crect x='0' y='318' width='1440' height='2' fill='%231a2e4a' opacity='.08'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content sits above background */
+.app-header, .tab-bar, .sidebar, .content, .mdbg, .toast, .offline-pill, .pwa-banner, #pdf-overlay {
+  position: relative;
+  z-index: 1;
 }
 
 /* ═══════════════════════════════════════
@@ -703,6 +727,293 @@ body {
 .add-info-btn:hover { border-color:var(--navy2); background:rgba(26,46,74,.04) }
 .add-info-btn:active { border-color:var(--navy) }
 
+/* ═══ DE CUMPĂRAT — redesign ═══ */
+.shop-hero {
+  background: linear-gradient(135deg, #2a8a7e 0%, #1a6fa8 100%);
+  border-radius: var(--r); margin-bottom: 14px;
+  padding: 18px 18px 14px; color: #fff;
+  box-shadow: 0 4px 18px rgba(26,111,168,.22);
+  display: flex; align-items: center; gap: 14px;
+}
+.shop-hero-icon { font-size: 2.4rem; flex-shrink: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,.2)) }
+.shop-hero-text { flex: 1; min-width: 0 }
+.shop-hero-title {
+  font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 900;
+  color: #fff; margin-bottom: 2px;
+}
+.shop-hero-sub { font-size: .75rem; color: rgba(255,255,255,.75); font-family: 'DM Mono', monospace }
+.shop-hero-pct {
+  font-family: 'DM Mono', monospace; font-size: 1.6rem; font-weight: 900;
+  color: #fff; text-align: right; flex-shrink: 0;
+}
+.shop-hero-pct small { display: block; font-size: .6rem; color: rgba(255,255,255,.6); font-weight: 400 }
+.shop-progress-bar {
+  height: 5px; background: rgba(255,255,255,.22); border-radius: 99px;
+  margin-top: 8px; overflow: hidden;
+}
+.shop-progress-fill {
+  height: 100%; background: #fff; border-radius: 99px;
+  transition: width .4s ease;
+}
+.shop-store-group {
+  background: var(--white); border-radius: var(--r); margin-bottom: 12px;
+  box-shadow: 0 2px 14px rgba(26,46,74,.07); overflow: hidden;
+  border: 1.5px solid var(--border);
+  transition: box-shadow .15s;
+}
+.shop-store-group:hover { box-shadow: 0 4px 20px rgba(26,46,74,.12) }
+.shop-store-hdr {
+  display: flex; align-items: center; gap: 10px; padding: 11px 14px 9px;
+  background: linear-gradient(90deg, rgba(42,138,126,.1) 0%, rgba(245,240,232,.0) 100%);
+  border-bottom: 1px solid var(--sand);
+}
+.shop-store-icon {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: linear-gradient(135deg, #2a8a7e, #1a6fa8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(26,111,168,.2);
+}
+.shop-store-name {
+  font-family: 'Fraunces', serif; font-size: .97rem; font-weight: 700;
+  color: var(--text); flex: 1;
+}
+.shop-store-badge {
+  font-family: 'DM Mono', monospace; font-size: .65rem; padding: 3px 10px;
+  border-radius: 99px; background: var(--sand); color: var(--muted);
+  flex-shrink: 0;
+}
+.shop-store-badge.done { background: #d4f0e0; color: var(--green) }
+.shop-store-progress {
+  height: 3px; background: var(--sand); margin: 0;
+}
+.shop-store-progress-fill {
+  height: 100%; background: linear-gradient(90deg, #2a8a7e, #1a6fa8);
+  transition: width .35s ease; border-radius: 0 99px 99px 0;
+}
+.shop-item-row {
+  display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+  border-bottom: 1px solid rgba(232,222,206,.5); transition: background .12s;
+}
+.shop-item-row:last-child { border-bottom: none }
+.shop-item-row:hover { background: rgba(245,240,232,.5) }
+.shop-item-row.bought { background: rgba(39,174,96,.03) }
+.shop-chk {
+  width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--border);
+  flex-shrink: 0; cursor: pointer; appearance: none; -webkit-appearance: none;
+  position: relative; transition: all .15s; background: #fff;
+}
+.shop-chk:checked { background: linear-gradient(135deg, #2a8a7e, #27ae60); border-color: #2a8a7e }
+.shop-chk:checked::after {
+  content: '✓'; position: absolute; top: -1px; left: 2px;
+  font-size: 13px; color: #fff; font-weight: 700;
+}
+.shop-item-text {
+  flex: 1; border: none; background: transparent; color: var(--text);
+  font-family: 'DM Sans', sans-serif; outline: none; min-width: 0;
+  font-size: 16px; padding: 0;
+}
+.shop-item-row.bought .shop-item-text { text-decoration: line-through; color: var(--muted) }
+.shop-item-store-tag {
+  font-size: .66rem; color: #1a6fa8; font-family: 'DM Mono', monospace;
+  background: #e8f4fd; border-radius: 99px; padding: 2px 8px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.shop-add-card {
+  background: var(--white); border-radius: var(--r); margin-bottom: 12px;
+  box-shadow: 0 2px 14px rgba(26,46,74,.07); overflow: hidden;
+  border: 1.5px solid var(--border);
+}
+.shop-add-title {
+  font-family: 'Fraunces', serif; font-size: .88rem; font-weight: 700;
+  color: var(--muted); padding: 10px 14px 0; display: flex; align-items: center; gap: 6px;
+}
+.shop-add-row {
+  display: flex; gap: 8px; align-items: center; padding: 8px 14px 12px;
+  flex-wrap: wrap;
+}
+.shop-add-inp {
+  flex: 2; min-width: 110px; border: 1.5px solid var(--border); background: var(--cream);
+  border-radius: var(--rs); padding: 10px 12px; font-size: 16px;
+  font-family: 'DM Sans', sans-serif; color: var(--text); outline: none;
+  transition: all .15s;
+}
+.shop-add-inp:focus { box-shadow: 0 0 0 2px rgba(42,138,126,.25); border-color: #2a8a7e; background: #fff }
+.shop-add-inp::placeholder { color: var(--muted) }
+.shop-store-inp {
+  flex: 1; min-width: 90px; border: 1.5px solid var(--border); background: var(--cream);
+  border-radius: var(--rs); padding: 10px 12px; font-size: 16px;
+  font-family: 'DM Sans', sans-serif; color: var(--text); outline: none;
+  transition: all .15s;
+}
+.shop-store-inp:focus { box-shadow: 0 0 0 2px rgba(42,138,126,.25); border-color: #2a8a7e; background: #fff }
+.shop-store-inp::placeholder { color: var(--muted) }
+.shop-add-btn {
+  background: linear-gradient(135deg, #2a8a7e, #1a6fa8); color: #fff; border: none;
+  border-radius: var(--rs); padding: 0 18px; height: 42px; font-size: .88rem;
+  font-family: 'DM Sans', sans-serif; font-weight: 600;
+  cursor: pointer; display: flex; align-items: center; gap: 6px;
+  transition: all .15s; flex-shrink: 0; white-space: nowrap;
+}
+.shop-add-btn:hover { opacity: .88 }
+.shop-add-btn:active { transform: scale(.96) }
+.shop-sort-bar {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;
+}
+.shop-sort-lbl { font-size: .73rem; color: var(--muted); font-family: 'DM Mono', monospace }
+.shop-sort-btn {
+  padding: 5px 13px; border-radius: 99px; border: 1.5px solid var(--border);
+  background: transparent; font-size: .73rem; font-family: 'DM Sans', sans-serif;
+  color: var(--muted); cursor: pointer; transition: all .15s; min-height: 30px;
+}
+.shop-sort-btn.act { border-color: #2a8a7e; background: #2a8a7e; color: #fff }
+.shop-sort-btn:not(.act):hover { border-color: #2a8a7e; color: #2a8a7e }
+.shop-ungrouped {
+  background: var(--white); border-radius: var(--r); margin-bottom: 10px;
+  box-shadow: 0 2px 14px rgba(26,46,74,.07); overflow: hidden;
+  border: 1.5px solid var(--border);
+}
+.shop-ungrouped-hdr {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+  border-bottom: 1px solid var(--sand);
+}
+.shop-ungrouped-title {
+  font-family: 'Fraunces', serif; font-size: .9rem; font-weight: 700;
+  color: var(--muted); flex: 1; font-style: italic;
+}
+.shop-clear-btn {
+  padding: 6px 14px; border-radius: 99px; border: 1.5px solid var(--border);
+  background: transparent; font-size: .73rem; font-family: 'DM Sans', sans-serif;
+  color: var(--muted); cursor: pointer; transition: all .15s; min-height: 30px;
+  display: flex; align-items: center; gap: 5px;
+}
+.shop-clear-btn:hover { border-color: var(--red); color: var(--red); background: rgba(192,57,43,.06) }
+.shop-empty-state {
+  text-align: center; padding: 36px 20px 28px;
+  background: var(--white); border-radius: var(--r);
+  box-shadow: 0 2px 14px rgba(26,46,74,.07);
+  border: 1.5px dashed var(--border);
+}
+.shop-empty-state .em { font-size: 3rem; display: block; margin-bottom: 10px }
+.shop-empty-state p { color: var(--muted); font-size: .9rem; line-height: 1.6 }
+
+.maps-btn {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:5px 11px; border-radius:99px;
+  background:#e8f4fd; border:1.5px solid #a8d4f0;
+  color:#1a6fa8; font-size:.72rem; font-family:'DM Sans',sans-serif;
+  font-weight:600; cursor:pointer; transition:all .15s;
+  white-space:nowrap; min-height:30px; flex-shrink:0;
+}
+.maps-btn:hover { background:#1a6fa8; color:#fff; border-color:#1a6fa8 }
+.maps-btn:active { opacity:.8 }
+.coords-wrap { padding:4px 14px 10px; display:flex; align-items:center; gap:8px }
+.coords-inp {
+  flex:1; border:1px solid var(--border); border-radius:var(--rs);
+  padding:8px 12px; font-size:14px; font-family:'DM Mono',monospace;
+  color:var(--text); outline:none; background:var(--cream);
+  transition:box-shadow .15s;
+}
+.coords-inp:focus { box-shadow:0 0 0 2px var(--gold); border-color:var(--gold); background:#fff }
+.coords-inp::placeholder { color:#bbb; font-family:'DM Sans',sans-serif; font-size:13px }
+.coords-lbl { font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; flex-shrink:0 }
+
+.cat-dh {
+  font-size:1.1rem; color:#ccc; cursor:grab; flex-shrink:0;
+  touch-action:none; padding:2px 4px; line-height:1;
+  transition:color .15s;
+}
+.cat-dh:hover { color:var(--sand) }
+.cat-card.cat-drag { opacity:.4; }
+.cat-card.cat-dov {
+  outline:2px dashed var(--gold);
+  background:rgba(200,137,42,.06);
+  border-radius:var(--r);
+}
+
+/* ═══ CATEGORII FAVORITE ═══ */
+.fav-cat-card {
+  background:var(--cream); border-radius:var(--rs); padding:12px 14px;
+  margin-bottom:8px; border:1.5px solid var(--border); transition:all .15s;
+}
+.fav-cat-card:hover { border-color:var(--gold); background:#fffbf3 }
+.fav-cat-hdr { display:flex; align-items:center; gap:10px; margin-bottom:6px }
+.fav-cat-emo { font-size:1.2rem; flex-shrink:0 }
+.fav-cat-name {
+  font-family:'Fraunces',serif; font-size:.95rem; font-weight:700;
+  color:var(--text); flex:1;
+}
+.fav-cat-count {
+  font-family:'DM Mono',monospace; font-size:.67rem; padding:2px 8px;
+  border-radius:99px; background:var(--sand); color:var(--muted); flex-shrink:0;
+}
+.fav-cat-items {
+  font-size:.75rem; color:var(--muted); font-family:'DM Sans',sans-serif;
+  line-height:1.5; padding-left:4px;
+}
+.fav-cat-actions { display:flex; gap:6px; margin-top:10px }
+.fav-import-btn {
+  flex:1; padding:8px 12px; border-radius:var(--rs); border:none;
+  background:var(--gold); color:#fff; font-size:.8rem; font-family:'DM Sans',sans-serif;
+  font-weight:600; cursor:pointer; transition:all .15s; min-height:36px;
+}
+.fav-import-btn:hover { background:var(--gold2) }
+.fav-import-btn:active { opacity:.85 }
+.fav-del-btn {
+  padding:8px 12px; border-radius:var(--rs); border:1.5px solid var(--border);
+  background:transparent; color:var(--muted); font-size:.8rem;
+  font-family:'DM Sans',sans-serif; cursor:pointer; transition:all .15s; min-height:36px;
+}
+.fav-del-btn:hover { border-color:var(--red); color:var(--red); background:rgba(192,57,43,.06) }
+.fav-empty { text-align:center; padding:28px 16px; color:var(--muted); font-size:.88rem }
+.fav-empty .em { font-size:2rem; display:block; margin-bottom:8px }
+.save-fav-btn {
+  background:none; border:none; cursor:pointer; color:#ccc; font-size:1rem;
+  padding:6px; transition:color .15s; line-height:1; border-radius:6px;
+  flex-shrink:0; title:'Salvează ca Favorit';
+}
+.save-fav-btn:hover { color:var(--gold); background:rgba(200,137,42,.1) }
+.save-fav-btn.saved { color:var(--gold) }
+
+/* ═══ PWA INSTALL BANNER ═══ */
+.pwa-banner {
+  position:fixed; bottom:calc(68px + var(--sab) + 8px); left:14px; right:14px;
+  z-index:300; background:var(--navy); color:#fff;
+  border-radius:14px; padding:12px 16px;
+  box-shadow:0 4px 24px rgba(0,0,0,.3);
+  display:flex; align-items:center; gap:10px;
+  animation:fadeUp .3s ease;
+  max-width:480px; margin:0 auto;
+}
+.pwa-banner-text { flex:1; font-size:.82rem; line-height:1.4 }
+.pwa-banner-text strong { display:block; font-size:.88rem; margin-bottom:2px }
+.pwa-install-btn {
+  padding:8px 16px; border-radius:99px; border:none;
+  background:var(--gold); color:#fff; font-size:.8rem;
+  font-family:'DM Sans',sans-serif; font-weight:600;
+  cursor:pointer; white-space:nowrap; flex-shrink:0; min-height:34px;
+}
+.pwa-install-btn:hover { background:var(--gold2) }
+.pwa-dismiss-btn {
+  background:none; border:none; color:rgba(255,255,255,.5);
+  font-size:1.1rem; cursor:pointer; padding:4px; flex-shrink:0; line-height:1;
+}
+.pwa-dismiss-btn:hover { color:#fff }
+@media (min-width:860px) {
+  .pwa-banner { bottom:20px; left:calc(var(--sidebar-w) + 20px) }
+}
+
+/* ═══ OFFLINE INDICATOR ═══ */
+.offline-pill {
+  position:fixed; top:calc(var(--sat) + 6px); right:8px; z-index:500;
+  background:#c0392b; color:#fff; border-radius:99px;
+  padding:4px 12px; font-size:.68rem; font-family:'DM Mono',monospace;
+  font-weight:600; letter-spacing:.3px; display:none;
+  box-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+.offline-pill.show { display:block; animation:fadeUp .3s ease }
+
 /* Icon picker popup */
 .icon-picker {
   position:absolute; z-index:400; background:#fff; border-radius:14px;
@@ -810,6 +1121,7 @@ body {
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
       <button class="pill pill-g" onclick="generatePDF()" title="Generează PDF">📄 PDF</button>
+      <button class="pill pill-g" onclick="openFavs()">⭐ Favorite</button>
       <button class="pill pill-save" onclick="openSave()">💾 Salvează</button>
     </div>
     <div class="seg-bar">
@@ -818,6 +1130,7 @@ body {
       <button class="seg-btn"      id="sb-visit" onclick="switchView('visit')">🗺️ Vizităm</button>
       <button class="seg-btn"      id="sb-itin"  onclick="switchView('itin')">🗓️ Itinerar</button>
       <button class="seg-btn"      id="sb-info"  onclick="switchView('info')">ℹ️ Info</button>
+      <button class="seg-btn"      id="sb-shop"  onclick="switchView('shop')">🛒 Cumpărături</button>
     </div>
   </div>
 </header>
@@ -917,6 +1230,38 @@ body {
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- OFFLINE INDICATOR -->
+<div class="offline-pill" id="offlinePill">📵 Offline</div>
+
+<!-- PWA INSTALL BANNER -->
+<div class="pwa-banner" id="pwaBanner" style="display:none">
+  <span style="font-size:1.6rem;flex-shrink:0">📲</span>
+  <div class="pwa-banner-text">
+    <strong>Instalează PackRo</strong>
+    Funcționează 100% offline — perfect la munte sau fără semnal!
+  </div>
+  <button class="pwa-install-btn" onclick="pwsInstall()">Instalează</button>
+  <button class="pwa-dismiss-btn" onclick="pwaDismiss()" title="Închide">✕</button>
+</div>
+
+<!-- FAVORITE CATEGORIES MODAL -->
+<div class="mdbg" id="favMod" onclick="if(event.target===this)closeMd('favMod')">
+  <div class="mdsh">
+    <div class="mdh"></div>
+    <h3>⭐ Categorii Favorite</h3>
+    <p>Salvează categorii cu obiectele lor ca <strong>template-uri reutilizabile</strong> și importă-le rapid în orice destinație.</p>
+    <div id="favList"></div>
+    <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--sand)">
+      <p style="font-size:.78rem;color:var(--muted);margin-bottom:0">
+        💡 Apasă <strong>⭐</strong> lângă orice categorie din lista de bagaje pentru a o salva ca favorit.
+      </p>
+    </div>
+    <div class="mda">
+      <button class="mb mb-c" onclick="closeMd('favMod')">Închide</button>
+    </div>
+  </div>
+</div>
 
 <script>
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
@@ -1085,7 +1430,7 @@ function newTrip(type, name) {
     open: c.id==='chk'||c.id==='doc',
     items: c.i.map(t => ({id:uid(),text:t,checked:false,qty:''}))
   }));
-  return {id:uid(), type, name, savedAt:null, data:{categories:cats,restaurants:[],places:[],itinerary:[],infos:[]}};
+  return {id:uid(), type, name, savedAt:null, data:{categories:cats,restaurants:[],places:[],itinerary:[],infos:[],shopping:[]}};
 }
 function save() {
   S.activeType=activeType; S.activeView=activeView; S.clMode=clMode;
@@ -1183,6 +1528,11 @@ function renderTrip(type) {
   else d.infos.forEach(card => inf.appendChild(buildInfoCard(card, type)));
   const aib=mk('button','add-info-btn'); aib.innerHTML='ℹ️&nbsp; Adaugă informație'; aib.onclick=()=>addInfo(type);
   inf.appendChild(aib); panel.appendChild(inf);
+
+  if (!d.shopping) d.shopping=[];
+  const shp = mk('div','vsec'+(activeView==='shop'?' act':''),{id:`vs-shop-${type}`});
+  shp.appendChild(buildShopView(d.shopping, type));
+  panel.appendChild(shp);
 }
 
 function emptySt(emo, txt) {
@@ -1194,8 +1544,10 @@ function emptySt(emo, txt) {
 function buildCat(cat, type) {
   const chk=cat.items.filter(i=>i.checked).length, tot=cat.items.length, done=tot>0&&chk===tot;
   const card=mk('div','cat-card');
+  card.dataset.cid=cat.id; card.dataset.type=type;
   const hdr=mk('div','cat-hdr');
   hdr.innerHTML=`
+    <span class="cat-dh" data-cdh title="Trage pentru reordonare">⠿</span>
     <span class="cat-emo">${cat.emoji}</span>
     <input class="cat-nm" value="${e(cat.name)}" readonly
       onchange="renCat('${type}','${cat.id}',this.value)"
@@ -1203,8 +1555,25 @@ function buildCat(cat, type) {
       onblur="this.readOnly=true;this.parentElement.classList.remove('ed')"/>
     <span class="cat-bdg ${done?'ok':''}">${chk}/${tot}</span>
     <button class="idbtn" onclick="event.stopPropagation();delCat('${type}','${cat.id}')" title="Șterge categoria">🗑</button>
+    <button class="save-fav-btn" onclick="event.stopPropagation();saveCatAsFav('${type}','${cat.id}')" title="Salvează ca Favorit">⭐</button>
     <span class="cat-chv ${cat.open?'op':''}">▼</span>`;
-  hdr.addEventListener('click', ev => { if(['INPUT','BUTTON'].includes(ev.target.tagName)) return; togCat(type,cat.id); });
+  hdr.addEventListener('click', ev => { if(['INPUT','BUTTON','SPAN'].includes(ev.target.tagName)&&ev.target.dataset.cdh===undefined) return; if(ev.target.dataset.cdh!==undefined) return; togCat(type,cat.id); });
+
+  // Desktop drag
+  card.draggable = true;
+  card.addEventListener('dragstart', ev => {
+    if (!ev.target.closest('[data-cdh]') && ev.target !== card && !ev.target.closest('.cat-hdr')) { ev.preventDefault(); return; }
+    CDC = { cid: cat.id, type };
+    card.classList.add('cat-drag');
+    ev.dataTransfer.effectAllowed = 'move';
+  });
+  card.addEventListener('dragend', () => clrCatDrag());
+  card.addEventListener('dragover', ev => { ev.preventDefault(); if(CDC&&CDC.cid!==cat.id) card.classList.add('cat-dov'); });
+  card.addEventListener('dragleave', () => card.classList.remove('cat-dov'));
+  card.addEventListener('drop', ev => { ev.preventDefault(); dropCat(card); });
+
+  // Touch drag — handle only
+  hdr.querySelector('[data-cdh]').addEventListener('touchstart', ev => tcStart(ev, card), {passive:false});
   card.appendChild(hdr);
   const body=mk('div','cat-body'+(cat.open?'':' hid'));
   const list=mk('div','items-list',{'data-cid':cat.id,'data-type':type});
@@ -1264,8 +1633,19 @@ function buildPlace(p, type, ptype) {
         </select>
         <span class="lbl">de la cazare</span>
       </div>
+      <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide în Google Maps">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Maps
+      </button>
     </div>
     <div class="place-det${p.open?'':' hid'}">
+      <div class="coords-wrap">
+        <span class="coords-lbl">📌 coords</span>
+        <input class="coords-inp" value="${e(p.coords||'')}"
+          placeholder="Coordonate sau adresă (ex: 44.4268, 26.1025)"
+          onchange="epf('${type}','${ptype}','${p.id}','coords',this.value)"
+          title="Coordonate GPS sau adresă pentru Google Maps"/>
+      </div>
       <div class="place-desc-wrap">
         <div class="desc-lbl">${ptype==='food'?'🗒 Note / tips':'💡 De ce vreau să merg / descriere'}</div>
         <textarea class="pdesc"
@@ -1489,7 +1869,7 @@ function switchType(type) {
 function switchView(v) {
   activeView=v; save();
   Object.keys(TRIP_TYPES).forEach(type=>{
-    ['pack','food','visit','itin','info'].forEach(vv=>{
+    ['pack','food','visit','itin','info','shop'].forEach(vv=>{
       const s=document.getElementById(`vs-${vv}-${type}`); if(s)s.classList.toggle('act',vv===v);
     });
   });
@@ -1508,6 +1888,7 @@ function updHdr() {
             activeView==='food'?`${d?.restaurants?.length||0} locuri · mâncare`:
             activeView==='visit'?`${d?.places?.length||0} obiective · vizite`:
             activeView==='itin'?`${d?.itinerary?.length||0} zile planificate`:
+            activeView==='shop'?`${d?.shopping?.length||0} produse de cumpărat`:
             `${d?.infos?.length||0} informații utile`;
   document.getElementById('hSub').textContent=sub+' — '+td.sub;
   document.getElementById('ringFill').style.strokeDashoffset=113.1-(113.1*pct/100);
@@ -1534,7 +1915,7 @@ function updTabs() {
   });
 }
 function updCL()  { document.getElementById('clTog').classList.toggle('on',clMode); }
-function updSeg() { ['pack','food','visit','itin','info'].forEach(v=>{const b=document.getElementById('sb-'+v);if(b)b.classList.toggle('act',v===activeView);}); }
+function updSeg() { ['pack','food','visit','itin','info','shop'].forEach(v=>{const b=document.getElementById('sb-'+v);if(b)b.classList.toggle('act',v===activeView);}); }
 function toggleCL() { clMode=!clMode; save(); renderAll(); }
 
 /* ═══════════════ SAVE & MANAGER ═══════════════ */
@@ -1598,6 +1979,178 @@ function newDest() {
   toast('✓ Destinație nouă!'); setTimeout(openSave,400);
 }
 
+function openMaps(name, coords) {
+  const q = coords && coords.trim() ? coords.trim() : name.trim();
+  if (!q) { toast('⚠ Adaugă un nume sau coordonate!'); return; }
+  const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+  window.open(url, '_blank');
+}
+let shopSort = 'magazin'; // 'magazin' | 'adaugare'
+
+function buildShopView(items, type) {
+  const wrap = mk('div');
+
+  // Hero card with total progress
+  const total = items.length, bought = items.filter(i=>i.bought).length;
+  const pct = total ? Math.round(bought/total*100) : 0;
+  const hero = mk('div','shop-hero');
+  hero.innerHTML = `
+    <span class="shop-hero-icon">🛒</span>
+    <div class="shop-hero-text">
+      <div class="shop-hero-title">Lista de Cumpărături</div>
+      <div class="shop-hero-sub">${total ? `${bought} din ${total} cumpărate` : 'Niciun produs adăugat încă'}</div>
+      <div class="shop-progress-bar"><div class="shop-progress-fill" style="width:${pct}%"></div></div>
+    </div>
+    <div class="shop-hero-pct">${pct}%<small>finalizat</small></div>`;
+  wrap.appendChild(hero);
+
+  // Sort bar
+  const sortBar = mk('div','shop-sort-bar');
+  sortBar.innerHTML = `
+    <span class="shop-sort-lbl">Ordonare:</span>
+    <button class="shop-sort-btn ${shopSort==='magazin'?'act':''}" onclick="setShopSort('magazin','${type}')">🏪 Magazin</button>
+    <button class="shop-sort-btn ${shopSort==='adaugare'?'act':''}" onclick="setShopSort('adaugare','${type}')">🕐 Adăugare</button>
+  `;
+  wrap.appendChild(sortBar);
+
+  if (!items.length) {
+    const empty = mk('div','shop-empty-state');
+    empty.innerHTML = `<span class="em">🛍️</span><p>Adaugă produsele pe care vrei să le cumperi și magazinul de unde le poți lua.</p>`;
+    wrap.appendChild(empty);
+  } else if (shopSort === 'magazin') {
+    const groups = {};
+    items.forEach(it => {
+      const key = (it.store||'').trim() || '—';
+      if (!groups[key]) groups[key] = [];
+      groups[key].push(it);
+    });
+    const storeEmojis = { 'Lidl':'🟡','lidl':'🟡','Kaufland':'🔴','kaufland':'🔴','Penny':'🔴','penny':'🔴','Carrefour':'🔵','carrefour':'🔵','Mega':'🟠','mega':'🟠','Profi':'🟢','profi':'🟢','Ikea':'🔷','ikea':'🔷','—':'📋' };
+    const emoji = s => storeEmojis[s] || '🏪';
+    Object.keys(groups).sort((a,b)=>a==='—'?1:b==='—'?-1:a.localeCompare(b,'ro')).forEach(store => {
+      const grpEl = mk('div','shop-store-group');
+      const gb = groups[store].filter(i=>i.bought).length;
+      const gt = groups[store].length;
+      const gpct = gt ? Math.round(gb/gt*100) : 0;
+      const isDone = gb===gt && gt>0;
+      grpEl.innerHTML = `
+        <div class="shop-store-hdr">
+          <div class="shop-store-icon">${emoji(store)}</div>
+          <span class="shop-store-name">${e(store)}</span>
+          <span class="shop-store-badge ${isDone?'done':''}">${isDone?'✓ gata':`${gb}/${gt}`}</span>
+        </div>
+        <div class="shop-store-progress"><div class="shop-store-progress-fill" style="width:${gpct}%"></div></div>`;
+      groups[store].forEach(it => grpEl.appendChild(buildShopItem(it, type, false)));
+      wrap.appendChild(grpEl);
+    });
+  } else {
+    const flat = mk('div','shop-ungrouped');
+    const hdr = mk('div','shop-ungrouped-hdr');
+    hdr.innerHTML = `<span class="shop-ungrouped-title">Toate produsele</span><span class="shop-store-badge">${bought}/${total}</span>`;
+    flat.appendChild(hdr);
+    items.forEach(it => flat.appendChild(buildShopItem(it, type, true)));
+    wrap.appendChild(flat);
+  }
+
+  // Clear bought button
+  if (items.some(i=>i.bought)) {
+    const clrBtn = mk('button','shop-clear-btn');
+    clrBtn.style.cssText = 'margin-bottom:10px';
+    clrBtn.innerHTML = '🗑 Șterge produsele cumpărate';
+    clrBtn.onclick = () => clearBoughtShop(type);
+    wrap.appendChild(clrBtn);
+  }
+
+  // Add card
+  const addCard = mk('div','shop-add-card');
+  addCard.innerHTML = `<div class="shop-add-title">➕ Adaugă produs nou</div>`;
+  const addRow = mk('div','shop-add-row');
+  addRow.innerHTML = `
+    <input class="shop-add-inp" id="shop-inp-${type}" placeholder="🛍 Produs (ex: șampon, lapte...)"
+      onkeydown="if(event.key==='Enter'){shopAdd('${type}');}"/>
+    <input class="shop-store-inp" id="shop-store-${type}" placeholder="🏪 Magazin (ex: Lidl)"
+      onkeydown="if(event.key==='Enter'){shopAdd('${type}');}"/>
+    <button class="shop-add-btn" onclick="shopAdd('${type}')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Adaugă
+    </button>
+  `;
+  addCard.appendChild(addRow);
+  wrap.appendChild(addCard);
+  return wrap;
+}
+
+function buildShopItem(it, type, showStore) {
+  const row = mk('div','shop-item-row'+(it.bought?' bought':''));
+  row.dataset.sid = it.id;
+  row.innerHTML = `
+    <input type="checkbox" class="shop-chk" ${it.bought?'checked':''}
+      onchange="togShop('${type}','${it.id}',this.checked)"/>
+    <input class="shop-item-text" value="${e(it.text||'')}"
+      onchange="editShop('${type}','${it.id}','text',this.value)"/>
+    ${showStore && it.store ? `<span class="shop-item-store-tag">🏪 ${e(it.store)}</span>` : ''}
+    <button class="idbtn" onclick="delShop('${type}','${it.id}')" title="Șterge">✕</button>`;
+  return row;
+}
+
+function setShopSort(sort, type) {
+  shopSort = sort;
+  const d = tripData(type);
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping||[], type)); }
+}
+
+function shopAdd(type) {
+  const d = tripData(type); if (!d) return;
+  if (!d.shopping) d.shopping = [];
+  const txtEl = document.getElementById('shop-inp-'+type);
+  const storeEl = document.getElementById('shop-store-'+type);
+  const txt = txtEl?.value.trim();
+  const store = storeEl?.value.trim();
+  if (!txt) { txtEl?.focus(); return; }
+  d.shopping.push({id:uid(), text:txt, store:store||'', bought:false});
+  save();
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  // re-focus product input, clear it; keep store
+  setTimeout(() => {
+    const ni = document.getElementById('shop-inp-'+type);
+    if (ni) { ni.value=''; ni.focus(); }
+  }, 50);
+  updHdr();
+}
+
+function togShop(type, id, val) {
+  const d = tripData(type); if (!d?.shopping) return;
+  const it = d.shopping.find(i=>i.id===id); if (!it) return;
+  it.bought = val; save();
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  updHdr();
+}
+
+function editShop(type, id, field, val) {
+  const d = tripData(type); if (!d?.shopping) return;
+  const it = d.shopping.find(i=>i.id===id); if (!it) return;
+  it[field] = val; save();
+}
+
+function delShop(type, id) {
+  const d = tripData(type); if (!d?.shopping) return;
+  d.shopping = d.shopping.filter(i=>i.id!==id); save();
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  updHdr();
+}
+
+function clearBoughtShop(type) {
+  const d = tripData(type); if (!d?.shopping) return;
+  if (!confirm('Ștergi toate produsele cumpărate?')) return;
+  d.shopping = d.shopping.filter(i=>!i.bought); save();
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  updHdr(); toast('✓ Produse cumpărate șterse!');
+}
+
 /* ═══════════════ EXPORT / IMPORT ═══════════════ */
 let _ej='';
 function buildFullExport() {
@@ -1612,7 +2165,8 @@ function buildFullExport() {
     restaurants: trip.data.restaurants || [],
     places:      trip.data.places      || [],
     itinerary:   trip.data.itinerary   || [],
-    infos:       trip.data.infos       || []
+    infos:       trip.data.infos       || [],
+    shopping:    trip.data.shopping    || []
   }));
   const total = allTrips.length;
   return {
@@ -1671,7 +2225,8 @@ function doImport() {
             restaurants: td.restaurants || [],
             places:      td.places      || [],
             itinerary:   td.itinerary   || [],
-            infos:       td.infos       || []
+            infos:       td.infos       || [],
+            shopping:    td.shopping    || []
           }
         };
         S.trips.push(trip);
@@ -1693,7 +2248,7 @@ function doImport() {
     // FORMAT VECHI: { categories: [...], tripType: "city", ... }
     if (!parsed.categories) throw new Error();
     const trip=activeTrip(); if(!trip) return;
-    trip.data={categories:parsed.categories,restaurants:parsed.restaurants||[],places:parsed.places||[],itinerary:parsed.itinerary||[],infos:parsed.infos||[]};
+    trip.data={categories:parsed.categories,restaurants:parsed.restaurants||[],places:parsed.places||[],itinerary:parsed.itinerary||[],infos:parsed.infos||[],shopping:parsed.shopping||[]};
     if(parsed.name&&!trip.name) trip.name=parsed.name;
     save(); renderAll(); closeMd('impMod'); toast('✓ Import reușit!');
   } catch { alert('JSON invalid! Folosiți JSON-ul exportat din PackRo.'); }
@@ -1746,6 +2301,84 @@ function tdEnd(ev){
     }
   }
   document.querySelectorAll('.drag,.dov').forEach(el=>el.classList.remove('drag','dov')); TDI=null;
+}
+
+/* ═══════════════ DRAG & DROP CATEGORII — DESKTOP ═══════════════ */
+let CDC = null; // { cid, type }
+function clrCatDrag() {
+  document.querySelectorAll('.cat-drag,.cat-dov').forEach(el => el.classList.remove('cat-drag','cat-dov'));
+}
+function dropCat(targetCard) {
+  if (!CDC) return; clrCatDrag();
+  const targetCid = targetCard.dataset.cid;
+  const targetType = targetCard.dataset.type;
+  if (!targetCid || CDC.cid === targetCid || CDC.type !== targetType) return;
+  const d = tripData(targetType); if (!d) return;
+  const cats = d.categories;
+  const si = cats.findIndex(c => c.id === CDC.cid);
+  const ti = cats.findIndex(c => c.id === targetCid);
+  if (si < 0 || ti < 0) return;
+  const [cat] = cats.splice(si, 1);
+  cats.splice(ti, 0, cat);
+  save(); renderTrip(targetType); CDC = null;
+}
+
+/* ═══════════════ DRAG & DROP CATEGORII — TOUCH ═══════════════ */
+let TCC = null, TCG = null, TCOY = 0;
+function tcStart(ev, card) {
+  if (ev.touches.length > 1) return;
+  ev.preventDefault();
+  ev.stopPropagation();
+  const t = ev.touches[0];
+  TCOY = t.clientY - card.getBoundingClientRect().top;
+  TCC = card; card.classList.add('cat-drag');
+  const name = card.querySelector('.cat-nm')?.value || '';
+  const emo  = card.querySelector('.cat-emo')?.textContent || '';
+  TCG = mk('div','drag-ghost');
+  TCG.textContent = emo + ' ' + name;
+  document.body.appendChild(TCG);
+  mvCatGhost(t.clientX, t.clientY);
+  document.addEventListener('touchmove', tcMove, {passive:false});
+  document.addEventListener('touchend',  tcEnd);
+}
+function mvCatGhost(x, y) {
+  if (!TCG) return;
+  TCG.style.left = (x - 90) + 'px';
+  TCG.style.top  = (y - TCOY + scrollY) + 'px';
+}
+function tcMove(ev) {
+  ev.preventDefault();
+  const t = ev.touches[0];
+  mvCatGhost(t.clientX, t.clientY);
+  document.querySelectorAll('.cat-dov').forEach(el => el.classList.remove('cat-dov'));
+  const el = document.elementFromPoint(t.clientX, t.clientY); if (!el) return;
+  const c = el.closest('.cat-card');
+  if (c && c !== TCC) c.classList.add('cat-dov');
+}
+function tcEnd(ev) {
+  document.removeEventListener('touchmove', tcMove);
+  document.removeEventListener('touchend',  tcEnd);
+  if (TCG) { TCG.remove(); TCG = null; }
+  const t = ev.changedTouches[0];
+  const el = document.elementFromPoint(t.clientX, t.clientY);
+  if (el && TCC) {
+    const targetCard = el.closest('.cat-card');
+    if (targetCard && targetCard !== TCC && targetCard.dataset.type === TCC.dataset.type) {
+      const d = tripData(TCC.dataset.type);
+      if (d) {
+        const cats = d.categories;
+        const si = cats.findIndex(c => c.id === TCC.dataset.cid);
+        const ti = cats.findIndex(c => c.id === targetCard.dataset.cid);
+        if (si >= 0 && ti >= 0) {
+          const [cat] = cats.splice(si, 1);
+          cats.splice(ti, 0, cat);
+          save(); renderTrip(TCC.dataset.type);
+        }
+      }
+    }
+  }
+  document.querySelectorAll('.cat-drag,.cat-dov').forEach(el => el.classList.remove('cat-drag','cat-dov'));
+  TCC = null;
 }
 
 /* ═══════════════ TOAST & UTILS ═══════════════ */
@@ -1929,6 +2562,152 @@ function generatePDF() {
       overlay.innerHTML = '';
     }, 1000);
   });
+}
+
+/* ═══════════════ SERVICE WORKER & PWA ═══════════════ */
+const FAV_SK = 'packro_favs_v1';
+
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('[PackRo SW] Înregistrat:', reg.scope))
+      .catch(err => console.warn('[PackRo SW] Eroare:', err));
+  });
+}
+
+// Offline / Online indicator
+function updOffline() {
+  const pill = document.getElementById('offlinePill');
+  if (!navigator.onLine) {
+    pill.classList.add('show');
+  } else {
+    pill.classList.remove('show');
+  }
+}
+window.addEventListener('online',  updOffline);
+window.addEventListener('offline', updOffline);
+updOffline();
+
+// PWA Install prompt
+let _deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  _deferredPrompt = e;
+  // Show banner only if not dismissed before
+  if (!localStorage.getItem('packro_pwa_dismissed')) {
+    setTimeout(() => {
+      document.getElementById('pwaBanner').style.display = 'flex';
+    }, 2000);
+  }
+});
+window.addEventListener('appinstalled', () => {
+  document.getElementById('pwaBanner').style.display = 'none';
+  toast('✓ PackRo instalat! Funcționează offline.');
+});
+function pwsInstall() {
+  if (!_deferredPrompt) return;
+  _deferredPrompt.prompt();
+  _deferredPrompt.userChoice.then(choice => {
+    if (choice.outcome === 'accepted') toast('✓ PackRo se instalează...');
+    _deferredPrompt = null;
+    document.getElementById('pwaBanner').style.display = 'none';
+  });
+}
+function pwaDismiss() {
+  document.getElementById('pwaBanner').style.display = 'none';
+  localStorage.setItem('packro_pwa_dismissed', '1');
+}
+
+/* ═══════════════ CATEGORII FAVORITE ═══════════════ */
+function loadFavs() {
+  try { const r = localStorage.getItem(FAV_SK); return r ? JSON.parse(r) : []; }
+  catch { return []; }
+}
+function saveFavs(favs) {
+  try { localStorage.setItem(FAV_SK, JSON.stringify(favs)); } catch(e) {}
+}
+
+function saveCatAsFav(type, catId) {
+  const d = tripData(type); if (!d) return;
+  const cat = d.categories.find(c => c.id === catId); if (!cat) return;
+  const favs = loadFavs();
+  // Check if already saved (same name)
+  if (favs.find(f => f.name === cat.name)) {
+    if (!confirm(`„${cat.name}" există deja în Favorite. Îl înlocuiești?`)) return;
+    const idx = favs.findIndex(f => f.name === cat.name);
+    favs.splice(idx, 1);
+  }
+  favs.push({
+    id: uid(),
+    emoji: cat.emoji,
+    name: cat.name,
+    items: cat.items.map(i => ({ id: uid(), text: i.text, checked: false, qty: i.qty || '' })),
+    savedAt: Date.now()
+  });
+  saveFavs(favs);
+  toast(`⭐ „${cat.name}" salvat în Favorite!`);
+}
+
+function openFavs() {
+  renderFavList();
+  document.getElementById('favMod').classList.add('op');
+}
+
+function renderFavList() {
+  const favs = loadFavs();
+  const list = document.getElementById('favList');
+  list.innerHTML = '';
+  if (!favs.length) {
+    list.innerHTML = `<div class="fav-empty"><span class="em">⭐</span>Nicio categorie favorită salvată încă.<br>Apasă <strong>⭐</strong> lângă orice categorie din bagaje.</div>`;
+    return;
+  }
+  favs.forEach(fav => {
+    const card = mk('div', 'fav-cat-card');
+    const preview = fav.items.slice(0, 4).map(i => `• ${e(i.text)}`).join('<br>');
+    const more = fav.items.length > 4 ? `<span style="color:var(--gold)">+ încă ${fav.items.length - 4} obiecte</span>` : '';
+    card.innerHTML = `
+      <div class="fav-cat-hdr">
+        <span class="fav-cat-emo">${fav.emoji || '📦'}</span>
+        <span class="fav-cat-name">${e(fav.name)}</span>
+        <span class="fav-cat-count">${fav.items.length} obiecte</span>
+      </div>
+      <div class="fav-cat-items">${preview}${more ? '<br>' + more : ''}</div>
+      <div class="fav-cat-actions">
+        <button class="fav-import-btn" onclick="importFavCat('${fav.id}')">📥 Importă în destinația curentă</button>
+        <button class="fav-del-btn" onclick="deleteFav('${fav.id}')">🗑</button>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+
+function importFavCat(favId) {
+  const favs = loadFavs();
+  const fav = favs.find(f => f.id === favId); if (!fav) return;
+  const d = tripData(activeType); if (!d) return;
+  // Create a fresh copy with new IDs
+  const newCat = {
+    id: uid(),
+    emoji: fav.emoji,
+    name: fav.name,
+    open: true,
+    items: fav.items.map(i => ({ id: uid(), text: i.text, checked: false, qty: i.qty || '' }))
+  };
+  d.categories.push(newCat);
+  save();
+  renderTrip(activeType);
+  closeMd('favMod');
+  switchView('pack');
+  toast(`✓ „${fav.name}" importat în ${activeTrip()?.name || 'destinația curentă'}!`);
+}
+
+function deleteFav(favId) {
+  const favs = loadFavs();
+  const fav = favs.find(f => f.id === favId);
+  if (!confirm(`Ștergi „${fav?.name || 'acest favorit'}" din Favorite?`)) return;
+  saveFavs(favs.filter(f => f.id !== favId));
+  renderFavList();
+  toast('✓ Favorit șters.');
 }
 
 /* ═══════════════ INIT ═══════════════ */
