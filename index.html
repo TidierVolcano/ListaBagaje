@@ -505,10 +505,10 @@ body::before {
 }
 
 /* ═══════════════════════════════════════
-   DESKTOP LAYOUT  (≥ 860px)
+   DESKTOP LAYOUT  (≥ 1024px)
    Left sidebar with trip tabs
 ═══════════════════════════════════════ */
-@media (min-width: 860px) {
+@media (min-width: 1024px) {
   body { display:flex; min-height:100vh; background:#e2dbd0 }
 
   /* Sidebar */
@@ -611,6 +611,131 @@ body::before {
   .tog-pill { padding:5px 8px; font-size:.7rem }
   .seg-btn { font-size:.62rem; padding:6px 2px }
   .trip-dest-name { max-width:130px }
+}
+
+/* ═══ iPhone — hdr-actions scrollabil orizontal ═══ */
+@media (max-width: 679px) {
+  .hdr-actions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+    gap: 6px;
+  }
+  .hdr-actions::-webkit-scrollbar { display: none }
+  .hdr-actions .spc { display: none }
+  .pill, .tog-pill { flex-shrink: 0 }
+  /* seg-bar scrollabil orizontal pe telefon */
+  .seg-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 3px 3px;
+    margin: 0 16px 10px;
+    gap: 3px;
+  }
+  .seg-bar::-webkit-scrollbar { display: none }
+  .seg-btn { flex-shrink: 0; padding: 6px 10px }
+}
+
+/* ═══ TABLET (680px – 1023px) — sidebar compact ═══ */
+@media (min-width: 680px) and (max-width: 1023px) {
+  :root { --sidebar-w: 190px }
+  body { display: flex }
+
+  .sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--navy);
+    display: flex; flex-direction: column;
+    padding-top: var(--sat);
+    padding-left: var(--sal);
+    z-index: 200;
+    box-shadow: 4px 0 20px rgba(0,0,0,.18);
+  }
+  .sidebar-logo { padding: 18px 16px 14px; border-bottom: 1px solid rgba(255,255,255,.08) }
+  .sidebar-logo-title { font-family:'Fraunces',serif; font-size:1.2rem; font-weight:900; color:#fff }
+  .sidebar-logo-sub { font-size:.64rem; color:rgba(255,255,255,.4); font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:.8px; margin-top:2px }
+  .sidebar-trips { flex:1; padding:12px 10px; overflow-y:auto }
+  .sidebar-section-label { font-size:.62rem; color:rgba(255,255,255,.35); font-family:'DM Mono',monospace; text-transform:uppercase; letter-spacing:.8px; padding:4px 8px 8px }
+  .sidebar-tab { display:flex; align-items:center; gap:9px; padding:10px 10px; border-radius:10px; cursor:pointer; border:none; background:transparent; color:rgba(255,255,255,.45); width:100%; text-align:left; font-family:'DM Sans',sans-serif; transition:all .15s; margin-bottom:3px; position:relative }
+  .sidebar-tab:hover { background:rgba(255,255,255,.09); color:rgba(255,255,255,.8) }
+  .sidebar-tab.act { background:rgba(255,255,255,.14); color:#fff }
+  .sidebar-tab.act::before { content:''; position:absolute; left:0; top:20%; bottom:20%; width:3px; border-radius:0 3px 3px 0; background:var(--gold2) }
+  .sidebar-tab-icon { font-size:1.15rem; flex-shrink:0 }
+  .sidebar-tab-info { flex:1; min-width:0 }
+  .sidebar-tab-label { font-size:.79rem; font-weight:600; line-height:1.2 }
+  .sidebar-tab-dest { font-size:.62rem; font-family:'DM Mono',monospace; color:var(--gold2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-top:1px }
+  .sidebar-tab-badge { background:var(--gold); color:#fff; border-radius:99px; font-size:.55rem; font-family:'DM Mono',monospace; padding:1px 6px; font-weight:600; flex-shrink:0 }
+
+  .tab-bar { display: none !important }
+
+  .app-header { left: var(--sidebar-w); right: 0; top: 0; padding-top: var(--sat); padding-left: 0; padding-right: 0 }
+
+  .content {
+    margin-left: var(--sidebar-w);
+    padding-top: var(--header-height, 180px);
+    padding-left: 20px; padding-right: 20px;
+    padding-bottom: 40px;
+    width: calc(100% - var(--sidebar-w));
+    max-width: calc(var(--sidebar-w) + 700px);
+  }
+
+  .mdbg { align-items: center }
+  .mdsh { border-radius: 18px; padding-bottom: 20px; max-height: 80vh; box-shadow: 0 20px 60px rgba(0,0,0,.25) }
+  .toast { bottom: 30px }
+  .cat-nm { font-size: .98rem }
+
+  /* hdr-actions pe tabletă — wrap normal, mai spațiat */
+  .hdr-actions { flex-wrap: wrap; overflow-x: visible; padding-bottom: 8px }
+  .seg-bar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none }
+  .seg-bar::-webkit-scrollbar { display: none }
+  .seg-btn { flex-shrink: 0 }
+}
+
+/* ═══ BACKGROUND THEMES ═══ */
+body.bg-city::before { display: block }
+body.bg-plain::before { display: none }
+body.bg-nature::before {
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Crect width='1440' height='320' fill='%2327ae60' opacity='.04'/%3E%3Cellipse cx='200' cy='300' rx='180' ry='60' fill='%2327ae60' opacity='.08'/%3E%3Cellipse cx='600' cy='290' rx='220' ry='70' fill='%231a7a45' opacity='.07'/%3E%3Cellipse cx='1000' cy='295' rx='200' ry='65' fill='%2327ae60' opacity='.08'/%3E%3Cellipse cx='1350' cy='300' rx='150' ry='55' fill='%231a7a45' opacity='.07'/%3E%3Crect x='0' y='316' width='1440' height='4' fill='%231a7a45' opacity='.08'/%3E%3C/svg%3E");
+}
+body.bg-ocean::before {
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Crect width='1440' height='320' fill='%231a6fa8' opacity='.04'/%3E%3Cpath d='M0 280 Q360 240 720 270 Q1080 300 1440 260 L1440 320 L0 320Z' fill='%231a6fa8' opacity='.07'/%3E%3Cpath d='M0 300 Q360 270 720 290 Q1080 310 1440 280 L1440 320 L0 320Z' fill='%231a5a90' opacity='.06'/%3E%3C/svg%3E");
+}
+body.bg-desert::before {
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Crect width='1440' height='320' fill='%23c8892a' opacity='.04'/%3E%3Cpath d='M0 290 Q200 260 400 280 Q600 300 800 270 Q1000 250 1200 275 Q1350 290 1440 270 L1440 320 L0 320Z' fill='%23c8892a' opacity='.07'/%3E%3Ccircle cx='1300' cy='60' r='45' fill='%23e8a83e' opacity='.08'/%3E%3C/svg%3E");
+}
+body.bg-night::before {
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Crect width='1440' height='320' fill='%231a2e4a' opacity='.08'/%3E%3Crect x='0' y='200' width='60' height='120' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='80' y='170' width='50' height='150' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='160' y='210' width='40' height='110' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='230' y='185' width='55' height='135' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='310' y='220' width='35' height='100' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='370' y='160' width='60' height='160' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='460' y='195' width='45' height='125' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='530' y='175' width='70' height='145' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='640' y='215' width='35' height='105' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='700' y='155' width='55' height='165' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='790' y='195' width='50' height='125' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='870' y='170' width='60' height='150' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='960' y='215' width='45' height='105' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1030' y='180' width='55' height='140' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1120' y='165' width='50' height='155' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1200' y='200' width='65' height='120' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1300' y='185' width='45' height='135' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='1380' y='210' width='60' height='110' fill='%231a2e4a' opacity='.1'/%3E%3Crect x='40' y='235' width='8' height='5' rx='1' fill='%23c8892a' opacity='.35'/%3E%3Crect x='55' y='235' width='8' height='5' rx='1' fill='%23c8892a' opacity='.25'/%3E%3Crect x='390' y='168' width='8' height='5' rx='1' fill='%23c8892a' opacity='.35'/%3E%3Crect x='545' y='182' width='8' height='5' rx='1' fill='%23c8892a' opacity='.3'/%3E%3Crect x='720' y='162' width='8' height='5' rx='1' fill='%23c8892a' opacity='.35'/%3E%3Crect x='885' y='178' width='8' height='5' rx='1' fill='%23c8892a' opacity='.3'/%3E%3Crect x='1050' y='188' width='8' height='5' rx='1' fill='%23c8892a' opacity='.35'/%3E%3Crect x='1215' y='208' width='8' height='5' rx='1' fill='%23c8892a' opacity='.25'/%3E%3Crect x='0' y='318' width='1440' height='2' fill='%231a2e4a' opacity='.12'/%3E%3C/svg%3E");
+  filter: brightness(1.6);
+}
+
+/* ═══ BG PICKER MODAL ═══ */
+.bg-picker-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0;
+}
+.bg-option {
+  border: 2px solid var(--border); border-radius: 14px;
+  padding: 14px 8px 10px; cursor: pointer; text-align: center;
+  transition: all .18s; background: #fff;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.bg-option:hover { border-color: var(--gold); background: #fffbf3; transform: translateY(-2px) }
+.bg-option.sel { border-color: var(--gold); background: #fffbf3; box-shadow: 0 0 0 3px rgba(200,137,42,.2) }
+.bg-option-preview {
+  width: 52px; height: 36px; border-radius: 8px; overflow: hidden;
+  border: 1px solid rgba(0,0,0,.08); flex-shrink: 0;
+}
+.bg-option-label { font-size: .72rem; font-family: 'DM Sans', sans-serif; font-weight: 600; color: var(--text); line-height: 1.2; text-align: center }
+@media (max-width: 360px) {
+  .bg-picker-grid { grid-template-columns: repeat(2, 1fr) }
 }
 
 /* ═══ ITINERARIU ═══ */
@@ -1000,7 +1125,7 @@ body::before {
   font-size:1.1rem; cursor:pointer; padding:4px; flex-shrink:0; line-height:1;
 }
 .pwa-dismiss-btn:hover { color:#fff }
-@media (min-width:860px) {
+@media (min-width:1024px) {
   .pwa-banner { bottom:20px; left:calc(var(--sidebar-w) + 20px) }
 }
 
@@ -1122,6 +1247,7 @@ body::before {
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
       <button class="pill pill-g" onclick="generatePDF()" title="Generează PDF">📄 PDF</button>
       <button class="pill pill-g" onclick="openFavs()">⭐ Favorite</button>
+      <button class="pill pill-g" onclick="openBgPicker()" title="Schimbă fundalul">🎨 Fundal</button>
       <button class="pill pill-save" onclick="openSave()">💾 Salvează</button>
     </div>
     <div class="seg-bar">
@@ -1243,6 +1369,19 @@ body::before {
   </div>
   <button class="pwa-install-btn" onclick="pwsInstall()">Instalează</button>
   <button class="pwa-dismiss-btn" onclick="pwaDismiss()" title="Închide">✕</button>
+</div>
+
+<!-- BACKGROUND PICKER MODAL -->
+<div class="mdbg" id="bgMod" onclick="if(event.target===this)closeMd('bgMod')">
+  <div class="mdsh">
+    <div class="mdh"></div>
+    <h3>🎨 Fundal Aplicație</h3>
+    <p>Alege fundalul care îți place. Preferința se salvează automat.</p>
+    <div class="bg-picker-grid" id="bgPickerGrid"></div>
+    <div class="mda">
+      <button class="mb mb-c" onclick="closeMd('bgMod')">Închide</button>
+    </div>
+  </div>
 </div>
 
 <!-- FAVORITE CATEGORIES MODAL -->
@@ -1453,12 +1592,14 @@ function ensureActive() {
 }
 
 /* ═══════════════ LAYOUT ═══════════════ */
-function isDesktop() { return window.matchMedia('(min-width:860px)').matches; }
+function isDesktop() { return window.matchMedia('(min-width:1024px)').matches; }
+function isTablet()  { return window.matchMedia('(min-width:680px) and (max-width:1023px)').matches; }
+function hasSidebar(){ return isDesktop() || isTablet(); }
 
 function applyLayout() {
   const sidebar = document.getElementById('sidebar');
   const tabBar  = document.getElementById('tabBar');
-  if (isDesktop()) {
+  if (hasSidebar()) {
     sidebar.style.display = 'flex';
     tabBar.style.display  = 'none';
   } else {
@@ -1475,7 +1616,7 @@ function recalcPadding() {
     content.style.paddingTop = h + 'px';
     // also update toast bottom if mobile
     const toast = document.getElementById('toast');
-    if (!isDesktop()) {
+    if (!hasSidebar()) {
       const tb = document.getElementById('tabBar');
       toast.style.bottom = (tb.offsetHeight + 14) + 'px';
     } else {
@@ -2709,6 +2850,50 @@ function deleteFav(favId) {
   renderFavList();
   toast('✓ Favorit șters.');
 }
+
+/* ═══════════════ FUNDAL / BACKGROUND ═══════════════ */
+const BG_SK = 'packro_bg';
+const BG_OPTIONS = [
+  { id: 'city',    label: '🏙️ Cityscape',  color1: '#e8dece', color2: '#1a2e4a' },
+  { id: 'night',   label: '🌃 Noapte',      color1: '#1a2e4a', color2: '#253d60' },
+  { id: 'ocean',   label: '🌊 Ocean',       color1: '#d6eaf8', color2: '#1a6fa8' },
+  { id: 'nature',  label: '🌿 Natură',      color1: '#d5f5e3', color2: '#1a7a45' },
+  { id: 'desert',  label: '☀️ Desert',      color1: '#fdebd0', color2: '#c8892a' },
+  { id: 'plain',   label: '⬜ Simplu',       color1: '#f5f0e8', color2: '#e8dece' },
+];
+
+function loadBg() {
+  return localStorage.getItem(BG_SK) || 'city';
+}
+function applyBg(id) {
+  document.body.className = document.body.className
+    .replace(/\bbg-\S+/g, '').trim();
+  document.body.classList.add('bg-' + id);
+  localStorage.setItem(BG_SK, id);
+  // update selections in picker if open
+  document.querySelectorAll('.bg-option').forEach(el => {
+    el.classList.toggle('sel', el.dataset.bgId === id);
+  });
+}
+function openBgPicker() {
+  const grid = document.getElementById('bgPickerGrid');
+  const cur = loadBg();
+  grid.innerHTML = '';
+  BG_OPTIONS.forEach(opt => {
+    const el = document.createElement('div');
+    el.className = 'bg-option' + (opt.id === cur ? ' sel' : '');
+    el.dataset.bgId = opt.id;
+    el.innerHTML = `
+      <div class="bg-option-preview" style="background:linear-gradient(135deg,${opt.color1},${opt.color2})"></div>
+      <div class="bg-option-label">${opt.label}</div>`;
+    el.onclick = () => applyBg(opt.id);
+    grid.appendChild(el);
+  });
+  document.getElementById('bgMod').classList.add('op');
+}
+
+// Apply saved background on load
+applyBg(loadBg());
 
 /* ═══════════════ INIT ═══════════════ */
 // Show sidebar before render to avoid flash
