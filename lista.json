@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-01T11:10:29.382Z",
+  "exportedAt": "2026-04-02T09:56:49.705Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_ub6vp4x",
+      "id": "trip_fapj3b4",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -631,10 +631,11 @@
           "title": "Milano - Como ",
           "body": ""
         }
-      ]
+      ],
+      "shopping": []
     },
     {
-      "id": "trip_y8nvbh6",
+      "id": "trip_3yxjv1k",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -908,10 +909,11 @@
       "restaurants": [],
       "places": [],
       "itinerary": [],
-      "infos": []
+      "infos": [],
+      "shopping": []
     },
     {
-      "id": "trip_101dacz",
+      "id": "trip_iaq6iki",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1203,10 +1205,11 @@
       "restaurants": [],
       "places": [],
       "itinerary": [],
-      "infos": []
+      "infos": [],
+      "shopping": []
     },
     {
-      "id": "trip_4gd0tk3",
+      "id": "trip_ik0u8pg",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2277,10 +2280,11 @@
           "title": "Rent EBIKE",
           "body": "Valencia este unul dintre cele mai prietenoase orașe din Europa pentru biciclete, fiind aproape complet plat și având peste 160 km de piste dedicate. Pentru un grup de 4 adulți și 2 copii de 4-5 ani, închirierea de e-bike-uri (biciclete electrice) este o idee excelentă, mai ales că vă permit să parcurgeți tot parcul Turia (9 km lungime) fără efort.\n\nIată recomandările mele specifice pentru grupul vostru:\n\n1. Unde închiriați (Centre recomandate)\nPentru e-bike-uri de calitate și accesorii pentru copii, cele mai bune opțiuni sunt în zona centrului vechi (Ciutat Vella) sau lângă parcul Turia:\n\nPassion Bike (Serranos/Centru): Au o flotă mare de e-bike-uri și, foarte important, au scaune de copii și remorci (trailers). Sunt foarte obișnuiți cu turiștii.\n\nThe Bike Software / DoYouBike: Au mai multe locații în oraș. Sunt profesioniști și oferă asistență tehnică rapidă.\n\nValencia Bikes (Ruzafa sau Port): Ideali dacă vreți să începeți plimbarea direct dinspre port sau cartierul modern Ruzafa.\n\n2. Configurația pentru copii (4-5 ani)\nLa această vârstă, copiii sunt prea mari pentru scaunele mici de bebeluși, dar prea mici să pedaleze singuri pe distanțe lungi în trafic. Aveți 3 variante:\n\nScaun de spate (Rear Seat): Majoritatea centrelor au scaune care suportă până la 22-25 kg. Verificați greutatea copiilor înainte.\n\nRemorcă (Cariola/Trailer): O soluție excelentă pentru 2 copii. Stau amândoi în spate, protejați de soare, și se pot chiar juca sau dormi în timp ce voi pedalați.\n\nTag-along bike (Semicicletă): O bicicletă mică fără roată față care se agață de bicicleta adultului. Copilul poate pedala dacă vrea, dar este tras de tine. (Verificați disponibilitatea online, nu toate centrele au multe).\n\n3. Cât costă (Estimare 2026)\nE-bike adult: ~25€ - 35€ pentru o zi întreagă (8-10 ore) sau ~10€ - 15€ pentru 2-3 ore.\n\nScaun copil: ~5€ / zi.\n\nRemorcă (pentru 1 sau 2 copii): ~10€ - 15€ / zi.\n\n4. Reguli importante în Valencia\nPiste de biciclete: Este interzis să mergeți pe trotuar. Trebuie să folosiți pistele de biciclete (marcate cu roșu sau verde) sau drumurile cu limită de 30 km/h.\n\nCăști: Pentru copiii sub 16 ani, casca este obligatorie prin lege. Pentru adulți este recomandată, dar nu obligatorie în oraș.\n\nParcare: Nu lăsați bicicletele electrice nesupravegheate pe stradă peste noapte, chiar și cu antifurt. Majoritatea centrelor vă vor cere să le aduceți înapoi la închidere sau să le țineți în interiorul locației de cazare.\n\n5. Traseul perfect cu copiii\nVă recomand traseul prin Grădinile Turia (Jardín del Turia):\n\nÎncepeți de la Turnurile Serranos.\n\nPedalați prin albia secată a râului (fără mașini, doar natură și piste late).\n\nOpriți-vă la Parcul Gulliver (copiii se vor distra de minune).\n\nContinuați până la Orașul Artelor și Științelor.\n\nDacă aveți energie, pedalați încă 15 minute pe pista dreaptă până la Plaja Malvarrosa.\n\nSfat de rezervare: Fiind un grup de 6 persoane cu nevoi specifice (e-bike + accesorii copii), rezervați online cu cel puțin 48h înainte. E-bike-urile cu scaune de copii sunt primele care se epuizează în weekend-uri sau zile însorite."
         }
-      ]
+      ],
+      "shopping": []
     },
     {
-      "id": "trip_d7m7m4q",
+      "id": "trip_8jyri4m",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
@@ -2528,7 +2532,8 @@
         }
       ],
       "itinerary": [],
-      "infos": []
+      "infos": [],
+      "shopping": []
     }
   ]
 }
