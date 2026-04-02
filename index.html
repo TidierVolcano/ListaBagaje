@@ -1328,7 +1328,7 @@ body.bg-night::before {
         <div class="tog-track"></div><span>Checklist</span>
       </button>
       <div class="spc"></div>
-      <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GH</button>
+      <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GitHub</button>
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
       <button class="pill pill-g" onclick="generatePDF()" title="Generează PDF">📄 PDF</button>
@@ -1595,7 +1595,7 @@ async function incarcaListaDinGitHub() {
 }
 
 async function resetDinGitHub() {
-  if (!confirm('Ștergi datele locale și reîncărci lista din GitHub??? Modificările nesalvate pe GitHub se pierd.')) return;
+  if (!confirm('Ștergi datele locale și reîncărci lista din GitHub? Modificările nesalvate pe GitHub se pierd.')) return;
   localStorage.removeItem('packro_v7');
   location.reload();
 }
