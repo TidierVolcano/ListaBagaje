@@ -4,7 +4,7 @@
    Tot conținutul aplicației e cached la instalare.
 ═══════════════════════════════════════════════ */
 
-const CACHE_NAME = 'packro-v1';
+const CACHE_NAME = 'packro-v2';
 
 // Resurse de pre-cached la instalare (shell-ul aplicației)
 const PRECACHE_URLS = [
