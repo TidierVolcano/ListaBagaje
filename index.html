@@ -1054,7 +1054,7 @@ body.bg-night::before {
 }
 .shop-clear-btn:hover { border-color: var(--red); color: var(--red); background: rgba(192,57,43,.06) }
 .shop-empty-state {
-  text-align: center; padding: 36px 20px 28px;
+  text-align: center; padding: 16px 20px 14px;
   background: var(--card-bg);
   -webkit-backdrop-filter: var(--card-blur);
   backdrop-filter: var(--card-blur);
@@ -1062,8 +1062,8 @@ body.bg-night::before {
   box-shadow: var(--card-shadow);
   border: 1.5px dashed rgba(200,137,42,0.25);
 }
-.shop-empty-state .em { font-size: 3rem; display: block; margin-bottom: 10px }
-.shop-empty-state p { color: var(--muted); font-size: .9rem; line-height: 1.6 }
+.shop-empty-state .em { font-size: 1.8rem; display: block; margin-bottom: 6px }
+.shop-empty-state p { color: var(--muted); font-size: .8rem; line-height: 1.4 }
 
 .maps-btn {
   display:inline-flex; align-items:center; gap:5px;
@@ -1215,6 +1215,47 @@ body.bg-night::before {
   @page { margin:10mm 10mm; size:A4 portrait; }
 }
 #pdf-overlay { display:none; }
+
+/* ═══ SETTINGS / REORDER MODAL ═══ */
+.reorder-section { margin-bottom: 18px }
+.reorder-section-label {
+  font-size: .72rem; font-family: 'DM Mono', monospace; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--muted); margin-bottom: 8px; padding-left: 2px;
+}
+.reorder-list { display: flex; flex-direction: column; gap: 6px }
+.reorder-item {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(232,222,206,0.45); border: 1px solid var(--card-border);
+  border-radius: 10px; padding: 9px 12px; cursor: grab;
+  user-select: none; -webkit-user-select: none; transition: all .15s;
+  font-size: .84rem; font-family: 'DM Sans', sans-serif;
+}
+.reorder-item:active { cursor: grabbing }
+.reorder-item.drag-over { background: rgba(200,137,42,.12); border-color: var(--gold); transform: scale(1.02) }
+.reorder-item.dragging  { opacity: .4 }
+.reorder-handle { font-size: 1rem; color: var(--muted); flex-shrink: 0; line-height:1 }
+.reorder-item-label { flex: 1 }
+.reorder-toggle {
+  width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--border);
+  flex-shrink: 0; cursor: pointer; appearance: none; -webkit-appearance: none;
+  position: relative; transition: all .15s; background: #fff;
+}
+.reorder-toggle:checked { background: var(--gold); border-color: var(--gold) }
+.reorder-toggle:checked::after { content:'✓'; position:absolute; top:-1px; left:2px; font-size:11px; color:#fff; font-weight:700 }
+.settings-save-btn {
+  width: 100%; padding: 11px; border-radius: var(--rs); border: none;
+  background: var(--gold); color: #fff; font-size: .9rem; font-weight: 600;
+  font-family: 'DM Sans', sans-serif; cursor: pointer; margin-top: 4px;
+  transition: opacity .15s;
+}
+.settings-save-btn:hover { opacity: .88 }
+
+/* ═══ BG PICKER — categories ═══ */
+.bg-cat-label {
+  font-size: .68rem; font-family: 'DM Mono', monospace; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--muted); margin: 14px 0 8px; padding-left: 2px;
+}
+.bg-cat-label:first-child { margin-top: 0 }
 </style>
 </head>
 <body>
@@ -1294,6 +1335,7 @@ body.bg-night::before {
       <button class="pill pill-g" onclick="generatePDF()" title="Generează PDF">📄 PDF</button>
       <button class="pill pill-g" onclick="openFavs()">⭐ Favorite</button>
       <button class="pill pill-g" onclick="openBgPicker()" title="Schimbă fundalul">🎨 Fundal</button>
+      <button class="pill pill-g" onclick="openSettings()" title="Setări interfață">⚙️ Setări</button>
       <button class="pill pill-save" onclick="openSave()">💾 Salvează</button>
     </div>
     <div class="seg-bar">
@@ -1415,6 +1457,20 @@ body.bg-night::before {
   </div>
   <button class="pwa-install-btn" onclick="pwsInstall()">Instalează</button>
   <button class="pwa-dismiss-btn" onclick="pwaDismiss()" title="Închide">✕</button>
+</div>
+
+<!-- SETTINGS / REORDER MODAL -->
+<div class="mdbg" id="settingsMod" onclick="if(event.target===this)closeMd('settingsMod')">
+  <div class="mdsh">
+    <div class="mdh"></div>
+    <h3>⚙️ Setări Interfață</h3>
+    <p>Reordonează butoanele și tab-urile. Trage elementele cu <strong>⠿</strong> sau bifează/debifează pentru a le ascunde.</p>
+    <div id="settingsContent"></div>
+    <button class="settings-save-btn" onclick="saveSettings()">✓ Salvează ordinea</button>
+    <div class="mda" style="margin-top:8px">
+      <button class="mb mb-c" onclick="closeMd('settingsMod')">Închide</button>
+    </div>
+  </div>
 </div>
 
 <!-- BACKGROUND PICKER MODAL -->
@@ -2899,41 +2955,246 @@ function deleteFav(favId) {
 
 /* ═══════════════ FUNDAL / BACKGROUND ═══════════════ */
 const BG_SK = 'packro_bg';
-const BG_OPTIONS = [
-  { id: 'city',    label: '🏙️ Cityscape',  color1: '#e8dece', color2: '#1a2e4a' },
-  { id: 'night',   label: '🌃 Noapte',      color1: '#1a2e4a', color2: '#253d60' },
-  { id: 'ocean',   label: '🌊 Ocean',       color1: '#d6eaf8', color2: '#1a6fa8' },
-  { id: 'nature',  label: '🌿 Natură',      color1: '#d5f5e3', color2: '#1a7a45' },
-  { id: 'desert',  label: '☀️ Desert',      color1: '#fdebd0', color2: '#c8892a' },
-  { id: 'plain',   label: '⬜ Simplu',       color1: '#f5f0e8', color2: '#e8dece' },
+
+/* SVG-uri inline pentru fundaluri complexe (injectate dinamic) */
+const BG_SVGS = {
+  sea: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 230 Q360 218 720 230 Q1080 242 1440 230 L1440 320 L0 320Z" fill="%231a6fa8" opacity=".06"/>
+    <path d="M0 258 Q360 248 720 258 Q1080 268 1440 258 L1440 320 L0 320Z" fill="%231a4fa8" opacity=".05"/>
+    <path d="M0 244 Q200 238 400 244 Q600 250 800 244 Q1000 238 1200 244 Q1320 248 1440 244" stroke="%231a6fa8" stroke-width="1.5" fill="none" opacity=".06"/>
+    <path d="M680 224 Q705 232 730 224 L726 229 Q705 235 684 229Z" fill="%231a2e4a" opacity=".10"/>
+    <rect x="704" y="178" width="2" height="48" fill="%231a2e4a" opacity=".10"/>
+    <path d="M706 180 L706 223 L736 221Z" fill="%231a2e4a" opacity=".08"/>
+    <path d="M705 187 L705 223 L676 221Z" fill="%231a2e4a" opacity=".07"/>
+    <path d="M1050 228 Q1068 234 1086 228 L1083 232 Q1068 237 1053 232Z" fill="%231a2e4a" opacity=".08"/>
+    <rect x="1067" y="198" width="1.5" height="32" fill="%231a2e4a" opacity=".08"/>
+    <path d="M1068 199 L1068 227 L1091 226Z" fill="%231a2e4a" opacity=".06"/>
+    <path d="M1067 204 L1067 227 L1047 226Z" fill="%231a2e4a" opacity=".06"/>
+    <path d="M280 232 Q294 237 308 232 L306 235 Q294 239 282 235Z" fill="%231a2e4a" opacity=".07"/>
+    <rect x="293" y="208" width="1.5" height="26" fill="%231a2e4a" opacity=".07"/>
+    <path d="M294 209 L294 231 L312 230Z" fill="%231a2e4a" opacity=".05"/>
+    <path d="M293 213 L293 231 L277 230Z" fill="%231a2e4a" opacity=".05"/>
+    <path d="M1285 234 Q1293 237 1301 234 L1300 236 Q1293 239 1286 236Z" fill="%231a2e4a" opacity=".06"/>
+    <rect x="1292" y="220" width="1" height="15" fill="%231a2e4a" opacity=".06"/>
+    <path d="M1293 221 L1293 234 L1304 233Z" fill="%231a2e4a" opacity=".04"/>
+    <rect x="0" y="318" width="1440" height="2" fill="%231a6fa8" opacity=".07"/>
+  </svg>`,
+
+  tropical: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 260 Q360 250 720 260 Q1080 270 1440 260 L1440 320 L0 320Z" fill="%231a8a7e" opacity=".05"/>
+    <path d="M0 275 Q360 267 720 275 Q1080 283 1440 275 L1440 320 L0 320Z" fill="%231a6fa8" opacity=".05"/>
+    <path d="M0 263 Q200 258 400 263 Q600 268 800 263 Q1000 258 1200 263 Q1320 266 1440 263" stroke="%231a8a7e" stroke-width="1.5" fill="none" opacity=".06"/>
+    <line x1="320" y1="320" x2="310" y2="220" stroke="%231a4a2e" stroke-width="5" opacity=".08"/>
+    <line x1="310" y1="220" x2="305" y2="210" stroke="%231a4a2e" stroke-width="4" opacity=".07"/>
+    <path d="M310 210 Q270 190 250 200 Q265 215 310 210Z" fill="%231a6a3e" opacity=".07"/>
+    <path d="M310 210 Q290 180 280 188 Q292 205 310 210Z" fill="%231a6a3e" opacity=".07"/>
+    <path d="M310 210 Q340 188 338 200 Q328 212 310 210Z" fill="%231a6a3e" opacity=".07"/>
+    <path d="M310 210 Q350 198 350 210 Q338 218 310 210Z" fill="%231a6a3e" opacity=".06"/>
+    <path d="M310 210 Q278 215 275 225 Q288 226 310 210Z" fill="%231a6a3e" opacity=".06"/>
+    <line x1="1100" y1="320" x2="1092" y2="235" stroke="%231a4a2e" stroke-width="5" opacity=".07"/>
+    <line x1="1092" y1="235" x2="1088" y2="226" stroke="%231a4a2e" stroke-width="4" opacity=".07"/>
+    <path d="M1088 226 Q1052 208 1036 218 Q1050 232 1088 226Z" fill="%231a6a3e" opacity=".06"/>
+    <path d="M1088 226 Q1068 198 1060 206 Q1072 222 1088 226Z" fill="%231a6a3e" opacity=".06"/>
+    <path d="M1088 226 Q1114 204 1112 218 Q1102 228 1088 226Z" fill="%231a6a3e" opacity=".06"/>
+    <path d="M1088 226 Q1126 214 1126 228 Q1114 236 1088 226Z" fill="%231a6a3e" opacity=".05"/>
+    <line x1="700" y1="320" x2="695" y2="256" stroke="%231a4a2e" stroke-width="4" opacity=".06"/>
+    <path d="M695 256 Q668 242 656 250 Q666 262 695 256Z" fill="%231a6a3e" opacity=".05"/>
+    <path d="M695 256 Q715 240 714 250 Q706 258 695 256Z" fill="%231a6a3e" opacity=".05"/>
+    <rect x="0" y="318" width="1440" height="2" fill="%231a8a7e" opacity=".07"/>
+  </svg>`,
+
+  rome: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M430 320 L430 205 A290 90 0 0 1 1010 205 L1010 320Z" fill="%231a2e4a" opacity=".05"/>
+    <path d="M445 320 L445 210 A275 85 0 0 1 995 210 L995 320Z" fill="%23f5f0e8" opacity=".5"/>
+    <path d="M430 320 L430 205 A290 90 0 0 1 1010 205 L1010 320" stroke="%231a2e4a" stroke-width="2" fill="none" opacity=".07"/>
+    <path d="M460 320 L460 230 L500 230 L500 320M530 320 L530 230 L570 230 L570 320M600 320 L600 230 L640 230 L640 320M670 320 L670 230 L710 230 L710 320M730 320 L730 230 L770 230 L770 320M800 320 L800 230 L840 230 L840 320M870 320 L870 230 L910 230 L910 320M940 320 L940 230 L980 230 L980 320" stroke="%231a2e4a" stroke-width="1.5" fill="none" opacity=".05"/>
+    <path d="M478 230 Q490 218 502 230M548 230 Q560 218 572 230M618 230 Q630 218 642 230M688 230 Q700 218 712 230M748 230 Q760 218 772 230M818 230 Q830 218 842 230M888 230 Q900 218 912 230M958 230 Q970 218 982 230" stroke="%231a2e4a" stroke-width="1.5" fill="none" opacity=".05"/>
+    <path d="M460 255 L980 255" stroke="%231a2e4a" stroke-width="1" fill="none" opacity=".04"/>
+    <path d="M460 280 L980 280" stroke="%231a2e4a" stroke-width="1" fill="none" opacity=".04"/>
+    <rect x="0" y="318" width="1440" height="2" fill="%231a2e4a" opacity=".06"/>
+  </svg>`,
+
+  paris: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M680 320 L688 272 L680 270 L685 250 L680 248 L700 200 L705 200 L720 155 L735 200 L740 200 L760 248 L755 250 L760 270 L752 272 L760 320Z" fill="%231a2e4a" opacity=".07"/>
+    <path d="M680 320 L688 272 L695 272 L685 248 L700 200 L720 155 L720 320Z" fill="%231a2e4a" opacity=".04"/>
+    <line x1="719" y1="155" x2="720" y2="110" stroke="%231a2e4a" stroke-width="2" opacity=".08"/>
+    <line x1="686" y1="250" x2="754" y2="250" stroke="%231a2e4a" stroke-width="1.5" opacity=".06"/>
+    <line x1="682" y1="272" x2="758" y2="272" stroke="%231a2e4a" stroke-width="1.5" opacity=".06"/>
+    <rect x="530" y="260" width="80" height="60" fill="%231a2e4a" opacity=".04"/>
+    <rect x="560" y="250" width="20" height="10" fill="%231a2e4a" opacity=".04"/>
+    <rect x="830" y="255" width="90" height="65" fill="%231a2e4a" opacity=".04"/>
+    <rect x="850" y="245" width="25" height="10" fill="%231a2e4a" opacity=".04"/>
+    <rect x="400" y="270" width="70" height="50" fill="%231a2e4a" opacity=".03"/>
+    <rect x="970" y="268" width="80" height="52" fill="%231a2e4a" opacity=".03"/>
+    <rect x="230" y="278" width="120" height="42" fill="%231a2e4a" opacity=".03"/>
+    <rect x="1090" y="275" width="110" height="45" fill="%231a2e4a" opacity=".03"/>
+    <rect x="0" y="316" width="1440" height="4" fill="%231a2e4a" opacity=".05"/>
+  </svg>`,
+
+  milano: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <rect x="540" y="220" width="360" height="100" fill="%231a2e4a" opacity=".05"/>
+    <polygon points="720,90 726,220 714,220" fill="%231a2e4a" opacity=".08"/>
+    <line x1="720" y1="90" x2="720" y2="68" stroke="%231a2e4a" stroke-width="2" opacity=".09"/>
+    <circle cx="720" cy="66" r="4" fill="%23c8892a" opacity=".12"/>
+    <polygon points="650,148 654,220 646,220" fill="%231a2e4a" opacity=".07"/>
+    <polygon points="790,148 794,220 786,220" fill="%231a2e4a" opacity=".07"/>
+    <polygon points="610,170 613,220 607,220" fill="%231a2e4a" opacity=".06"/>
+    <polygon points="830,170 833,220 827,220" fill="%231a2e4a" opacity=".06"/>
+    <polygon points="576,188 579,220 573,220" fill="%231a2e4a" opacity=".05"/>
+    <polygon points="864,188 867,220 861,220" fill="%231a2e4a" opacity=".05"/>
+    <polygon points="558,198 560,220 556,220" fill="%231a2e4a" opacity=".04"/>
+    <polygon points="882,198 884,220 880,220" fill="%231a2e4a" opacity=".04"/>
+    <path d="M545 220 L895 220" stroke="%231a2e4a" stroke-width="1.5" opacity=".05"/>
+    <rect x="570" y="220" width="30" height="3" fill="%231a2e4a" opacity=".06" rx="1"/>
+    <rect x="640" y="220" width="30" height="3" fill="%231a2e4a" opacity="%06" rx="1"/>
+    <rect x="770" y="220" width="30" height="3" fill="%231a2e4a" opacity=".06" rx="1"/>
+    <rect x="840" y="220" width="30" height="3" fill="%231a2e4a" opacity=".06" rx="1"/>
+    <rect x="0" y="316" width="1440" height="4" fill="%231a2e4a" opacity=".05"/>
+  </svg>`,
+
+  valencia: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 290 Q360 282 720 288 Q1080 294 1440 288 L1440 320 L0 320Z" fill="%231a8a7e" opacity=".05"/>
+    <ellipse cx="720" cy="280" rx="180" ry="48" fill="%231a2e4a" opacity=".06"/>
+    <ellipse cx="720" cy="280" rx="170" ry="42" fill="%23f5f0e8" opacity=".5"/>
+    <path d="M540 280 A180 48 0 0 1 900 280" stroke="%231a2e4a" stroke-width="2" fill="none" opacity=".07"/>
+    <line x1="720" y1="232" x2="720" y2="320" stroke="%231a2e4a" stroke-width="3" opacity=".06"/>
+    <ellipse cx="720" cy="275" rx="140" ry="28" stroke="%231a2e4a" stroke-width="1" fill="none" opacity=".05"/>
+    <ellipse cx="490" cy="292" rx="80" ry="28" fill="%231a2e4a" opacity=".05"/>
+    <ellipse cx="490" cy="292" rx="74" ry="24" fill="%23f5f0e8" opacity=".4"/>
+    <path d="M410 292 A80 28 0 0 1 570 292" stroke="%231a2e4a" stroke-width="1.5" fill="none" opacity=".06"/>
+    <line x1="490" y1="264" x2="490" y2="320" stroke="%231a2e4a" stroke-width="2" opacity=".05"/>
+    <ellipse cx="950" cy="292" rx="80" ry="28" fill="%231a2e4a" opacity=".05"/>
+    <ellipse cx="950" cy="292" rx="74" ry="24" fill="%23f5f0e8" opacity=".4"/>
+    <path d="M870 292 A80 28 0 0 1 1030 292" stroke="%231a2e4a" stroke-width="1.5" fill="none" opacity=".06"/>
+    <line x1="950" y1="264" x2="950" y2="320" stroke="%231a2e4a" stroke-width="2" opacity=".05"/>
+    <path d="M0 302 Q360 296 720 302 Q1080 308 1440 302" stroke="%231a8a7e" stroke-width="1" fill="none" opacity=".05"/>
+    <rect x="0" y="316" width="1440" height="4" fill="%231a2e4a" opacity=".05"/>
+  </svg>`,
+
+  mountain: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+    <path d="M0 320 L180 160 L280 240 L400 120 L520 220 L640 80 L760 200 L860 100 L960 210 L1080 130 L1200 220 L1320 150 L1440 200 L1440 320Z" fill="%231a2e4a" opacity=".05"/>
+    <path d="M0 320 L180 180 L280 255 L400 145 L520 235 L640 110 L760 210 L860 120 L960 225 L1080 150 L1200 235 L1320 165 L1440 215 L1440 320Z" fill="%231a2e4a" opacity=".03"/>
+    <path d="M380 120 L400 120 L420 145" stroke="%23fff" stroke-width="2" fill="none" opacity=".08"/>
+    <path d="M620 80 L640 78 L660 100" stroke="%23fff" stroke-width="2" fill="none" opacity=".08"/>
+    <path d="M840 100 L860 98 L880 120" stroke="%23fff" stroke-width="2" fill="none" opacity=".07"/>
+    <path d="M1060 130 L1080 128 L1100 150" stroke="%23fff" stroke-width="2" fill="none" opacity=".07"/>
+    <path d="M160 170 L170 165 Q175 160 180 165 L185 170" stroke="%231a2e4a" stroke-width="1.5" fill="%231a2e4a" opacity=".04"/>
+    <path d="M500 225 L508 218 Q513 212 518 218 L526 225" stroke="%231a2e4a" stroke-width="1.5" fill="%231a2e4a" opacity=".04"/>
+    <rect x="0" y="316" width="1440" height="4" fill="%231a2e4a" opacity=".06"/>
+  </svg>`,
+};
+
+/* Mapare cuvinte-cheie din numele destinatiei → tema background */
+const SMART_BG_MAP = [
+  { words: ['roma','rome','colosseum','italia','napoli','florenta','venetia'], bg: 'rome' },
+  { words: ['paris','franta','eiffel','nice','lyon'],                          bg: 'paris' },
+  { words: ['milano','milan','duomo'],                                         bg: 'milano' },
+  { words: ['valencia','oceanografic'],                                        bg: 'valencia' },
+  { words: ['mare','plaja','beach','costa','riviera','mamaia','neptun','eforie','vama'], bg: 'sea' },
+  { words: ['munte','mountain','alps','alpi','sinaia','busteni','predeal','poiana'], bg: 'mountain' },
+  { words: ['tropical','bali','hawaii','cancun','maldive','phuket','caribbean'], bg: 'tropical' },
 ];
 
-function loadBg() {
-  return localStorage.getItem(BG_SK) || 'city';
+function getSmartBg(tripName) {
+  if (!tripName) return null;
+  const lower = tripName.toLowerCase();
+  for (const entry of SMART_BG_MAP) {
+    if (entry.words.some(w => lower.includes(w))) return entry.bg;
+  }
+  return null;
 }
+
+const BG_OPTIONS = [
+  // ── Teme ──
+  { id: 'city',     label: '🏙️ Cityscape',   color1: '#e8dece', color2: '#1a2e4a',  cat: 'teme' },
+  { id: 'night',    label: '🌃 Noapte',        color1: '#1a2e4a', color2: '#253d60',  cat: 'teme' },
+  { id: 'ocean',    label: '🌊 Ocean',          color1: '#d6eaf8', color2: '#1a6fa8',  cat: 'teme' },
+  { id: 'nature',   label: '🌿 Natură',         color1: '#d5f5e3', color2: '#1a7a45',  cat: 'teme' },
+  { id: 'desert',   label: '☀️ Desert',         color1: '#fdebd0', color2: '#c8892a',  cat: 'teme' },
+  { id: 'plain',    label: '⬜ Simplu',          color1: '#f5f0e8', color2: '#e8dece',  cat: 'teme' },
+  // ── Peisaje ──
+  { id: 'sea',      label: '⛵ Mare & Bărci',   color1: '#d6eaf8', color2: '#1a4fa8',  cat: 'peisaje' },
+  { id: 'tropical', label: '🌴 Tropical',        color1: '#d5f5e3', color2: '#1a4a2e',  cat: 'peisaje' },
+  { id: 'mountain', label: '⛰️ Munte',           color1: '#dce8f0', color2: '#2a3f5f',  cat: 'peisaje' },
+  // ── Monumente ──
+  { id: 'rome',     label: '🏛️ Roma',            color1: '#f0ece4', color2: '#4a3a2a',  cat: 'monumente' },
+  { id: 'paris',    label: '🗼 Paris',            color1: '#eaeef4', color2: '#2a3550',  cat: 'monumente' },
+  { id: 'milano',   label: '⛪ Milano',           color1: '#ece8f0', color2: '#3a2a4a',  cat: 'monumente' },
+  { id: 'valencia', label: '🔵 Valencia',         color1: '#d8f0ee', color2: '#1a5a56',  cat: 'monumente' },
+];
+
+/* Style tag pentru SVG-uri dinamice */
+let _bgStyleEl = null;
+function getBgStyleEl() {
+  if (!_bgStyleEl) {
+    _bgStyleEl = document.createElement('style');
+    _bgStyleEl.id = 'packro-bg-dyn';
+    document.head.appendChild(_bgStyleEl);
+  }
+  return _bgStyleEl;
+}
+
+function loadBg() { return localStorage.getItem(BG_SK) || 'city'; }
+
 function applyBg(id) {
-  document.body.className = document.body.className
-    .replace(/\bbg-\S+/g, '').trim();
+  document.body.className = document.body.className.replace(/\bbg-\S+/g, '').trim();
   document.body.classList.add('bg-' + id);
   localStorage.setItem(BG_SK, id);
+  // Injectează SVG dacă e o temă cu SVG custom
+  const styleEl = getBgStyleEl();
+  if (BG_SVGS[id]) {
+    const enc = encodeURIComponent(BG_SVGS[id]);
+    styleEl.textContent = `body.bg-${id}::before { display:block !important; background-image:url("data:image/svg+xml,${enc}") !important; }`;
+  } else {
+    styleEl.textContent = '';
+  }
   // update selections in picker if open
   document.querySelectorAll('.bg-option').forEach(el => {
     el.classList.toggle('sel', el.dataset.bgId === id);
   });
 }
+
 function openBgPicker() {
   const grid = document.getElementById('bgPickerGrid');
   const cur = loadBg();
+  const trip = activeTrip();
   grid.innerHTML = '';
-  BG_OPTIONS.forEach(opt => {
-    const el = document.createElement('div');
-    el.className = 'bg-option' + (opt.id === cur ? ' sel' : '');
-    el.dataset.bgId = opt.id;
-    el.innerHTML = `
-      <div class="bg-option-preview" style="background:linear-gradient(135deg,${opt.color1},${opt.color2})"></div>
-      <div class="bg-option-label">${opt.label}</div>`;
-    el.onclick = () => applyBg(opt.id);
-    grid.appendChild(el);
+
+  // Smart suggestion
+  const smart = getSmartBg(trip?.name || '');
+  if (smart && smart !== cur) {
+    const destName = trip?.name || '';
+    const sugg = document.createElement('div');
+    sugg.style.cssText = 'background:rgba(200,137,42,.1);border:1.5px dashed rgba(200,137,42,.4);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:.78rem;font-family:\'DM Sans\',sans-serif;color:var(--text);cursor:pointer;transition:all .15s;';
+    sugg.innerHTML = `<strong>🎯 Sugestie pentru „${e(destName)}":</strong> ${BG_OPTIONS.find(o=>o.id===smart)?.label || smart} <span style="color:var(--gold);font-weight:600;margin-left:6px">→ Aplică</span>`;
+    sugg.onclick = () => applyBg(smart);
+    grid.appendChild(sugg);
+  }
+
+  // Group by category
+  const cats = [
+    { id: 'teme',       label: 'Teme' },
+    { id: 'peisaje',    label: 'Peisaje' },
+    { id: 'monumente',  label: 'Monumente' },
+  ];
+  cats.forEach(cat => {
+    const opts = BG_OPTIONS.filter(o => o.cat === cat.id);
+    if (!opts.length) return;
+    const lbl = document.createElement('div');
+    lbl.className = 'bg-cat-label';
+    lbl.textContent = cat.label;
+    grid.appendChild(lbl);
+    const row = document.createElement('div');
+    row.className = 'bg-picker-grid';
+    opts.forEach(opt => {
+      const el = document.createElement('div');
+      el.className = 'bg-option' + (opt.id === cur ? ' sel' : '');
+      el.dataset.bgId = opt.id;
+      el.innerHTML = `<div class="bg-option-preview" style="background:linear-gradient(135deg,${opt.color1},${opt.color2})"></div><div class="bg-option-label">${opt.label}</div>`;
+      el.onclick = () => applyBg(opt.id);
+      row.appendChild(el);
+    });
+    grid.appendChild(row);
   });
   document.getElementById('bgMod').classList.add('op');
 }
@@ -2941,9 +3202,206 @@ function openBgPicker() {
 // Apply saved background on load
 applyBg(loadBg());
 
+
+
+/* ═══════════════ SETĂRI / REORDONARE ═══════════════ */
+const SETTINGS_SK_BTN = 'packro_btn_order';
+const SETTINGS_SK_TAB = 'packro_tab_order';
+
+const HDR_BTNS_DEF = [
+  { id: 'github',   label: '🔄 GitHub',    onclick: "resetDinGitHub()", cls: 'pill-g',    title: 'Resetează la versiunea din GitHub' },
+  { id: 'import',   label: '⬆ Import',     onclick: "openImp()",        cls: 'pill-g' },
+  { id: 'export',   label: '⬇ Export',     onclick: "openExp()",        cls: 'pill-g' },
+  { id: 'pdf',      label: '📄 PDF',       onclick: "generatePDF()",    cls: 'pill-g',    title: 'Generează PDF' },
+  { id: 'favs',     label: '⭐ Favorite',   onclick: "openFavs()",       cls: 'pill-g' },
+  { id: 'bg',       label: '🎨 Fundal',    onclick: "openBgPicker()",   cls: 'pill-g' },
+  { id: 'settings', label: '⚙️ Setări',    onclick: "openSettings()",   cls: 'pill-g' },
+];
+const SEG_TABS_DEF = [
+  { id: 'pack',  label: '🎒 Bagaje' },
+  { id: 'food',  label: '🍽️ Mâncăm' },
+  { id: 'visit', label: '🗺️ Vizităm' },
+  { id: 'itin',  label: '🗓️ Itinerar' },
+  { id: 'info',  label: 'ℹ️ Info' },
+  { id: 'shop',  label: '🛒 Cumpărături' },
+];
+
+function loadBtnOrder()  { try { const r=localStorage.getItem(SETTINGS_SK_BTN); return r?JSON.parse(r):null; } catch{return null;} }
+function loadTabOrder()  { try { const r=localStorage.getItem(SETTINGS_SK_TAB); return r?JSON.parse(r):null; } catch{return null;} }
+function saveBtnOrder(o) { try { localStorage.setItem(SETTINGS_SK_BTN, JSON.stringify(o)); } catch(ex){} }
+function saveTabOrder(o) { try { localStorage.setItem(SETTINGS_SK_TAB, JSON.stringify(o)); } catch(ex){} }
+
+function getOrderedBtns() {
+  const ord = loadBtnOrder();
+  if (!ord) return HDR_BTNS_DEF;
+  return [
+    ...ord.filter(id => HDR_BTNS_DEF.find(b=>b.id===id)).map(id => HDR_BTNS_DEF.find(b=>b.id===id)),
+    ...HDR_BTNS_DEF.filter(b => !ord.includes(b.id))
+  ];
+}
+function getOrderedTabs() {
+  const ord = loadTabOrder();
+  if (!ord) return SEG_TABS_DEF;
+  return [
+    ...ord.filter(id => SEG_TABS_DEF.find(t=>t.id===id)).map(id => SEG_TABS_DEF.find(t=>t.id===id)),
+    ...SEG_TABS_DEF.filter(t => !ord.includes(t.id))
+  ];
+}
+
+function renderHdrActions() {
+  const container = document.querySelector('.hdr-actions');
+  if (!container) return;
+  // Keep toggle pill and spc
+  const tog = container.querySelector('#clTog');
+  const spc = container.querySelector('.spc');
+  // Clear dynamic buttons (not toggle, not spc)
+  container.querySelectorAll('.pill').forEach(el => el.remove());
+  // Add ordered buttons
+  getOrderedBtns().forEach(btn => {
+    const el = document.createElement('button');
+    el.className = 'pill ' + btn.cls;
+    el.innerHTML = btn.label;
+    el.setAttribute('onclick', btn.onclick);
+    if (btn.title) el.title = btn.title;
+    container.appendChild(el);
+  });
+  // Always-last: Salvează
+  const save = document.createElement('button');
+  save.className = 'pill pill-save';
+  save.innerHTML = '💾 Salvează';
+  save.setAttribute('onclick', 'openSave()');
+  container.appendChild(save);
+}
+
+function renderSegBar() {
+  const bar = document.querySelector('.seg-bar');
+  if (!bar) return;
+  bar.innerHTML = '';
+  getOrderedTabs().forEach(tab => {
+    const btn = document.createElement('button');
+    btn.className = 'seg-btn' + (tab.id === activeView ? ' act' : '');
+    btn.id = 'sb-' + tab.id;
+    btn.textContent = tab.label;
+    btn.setAttribute('onclick', `switchView('${tab.id}')`);
+    bar.appendChild(btn);
+  });
+}
+
+// ─ Settings Modal ─────────────────────────────────────
+function openSettings() {
+  renderSettingsContent();
+  document.getElementById('settingsMod').classList.add('op');
+}
+
+function renderSettingsContent() {
+  const cont = document.getElementById('settingsContent');
+  cont.innerHTML = '';
+
+  // ── Butoane header ──
+  const btnSection = document.createElement('div');
+  btnSection.className = 'reorder-section';
+  btnSection.innerHTML = '<div class="reorder-section-label">Butoane Header</div>';
+  const btnList = document.createElement('div');
+  btnList.className = 'reorder-list';
+  btnList.id = 'reorder-btns';
+  getOrderedBtns().forEach(btn => {
+    btnList.appendChild(makeReorderItem(btn.id, btn.label, 'btn'));
+  });
+  btnSection.appendChild(btnList);
+  cont.appendChild(btnSection);
+
+  // ── Tab-uri vizualizare ──
+  const tabSection = document.createElement('div');
+  tabSection.className = 'reorder-section';
+  tabSection.innerHTML = '<div class="reorder-section-label">Tab-uri Vizualizare</div>';
+  const tabList = document.createElement('div');
+  tabList.className = 'reorder-list';
+  tabList.id = 'reorder-tabs';
+  getOrderedTabs().forEach(tab => {
+    tabList.appendChild(makeReorderItem(tab.id, tab.label, 'tab'));
+  });
+  tabSection.appendChild(tabList);
+  cont.appendChild(tabSection);
+
+  initDragDrop(btnList);
+  initDragDrop(tabList);
+}
+
+function makeReorderItem(id, label, type) {
+  const item = document.createElement('div');
+  item.className = 'reorder-item';
+  item.dataset.id = id;
+  item.dataset.rtype = type;
+  item.draggable = true;
+  item.innerHTML = `<span class="reorder-handle">⠿</span><span class="reorder-item-label">${label}</span>`;
+  return item;
+}
+
+function initDragDrop(list) {
+  let dragSrc = null;
+  list.querySelectorAll('.reorder-item').forEach(item => {
+    item.addEventListener('dragstart', ev => {
+      dragSrc = item;
+      item.classList.add('dragging');
+      ev.dataTransfer.effectAllowed = 'move';
+    });
+    item.addEventListener('dragend', () => {
+      item.classList.remove('dragging');
+      list.querySelectorAll('.reorder-item').forEach(i => i.classList.remove('drag-over'));
+    });
+    item.addEventListener('dragover', ev => {
+      ev.preventDefault();
+      ev.dataTransfer.dropEffect = 'move';
+      list.querySelectorAll('.reorder-item').forEach(i => i.classList.remove('drag-over'));
+      if (item !== dragSrc) item.classList.add('drag-over');
+    });
+    item.addEventListener('drop', ev => {
+      ev.preventDefault();
+      if (dragSrc && dragSrc !== item) {
+        const items = [...list.querySelectorAll('.reorder-item')];
+        const from = items.indexOf(dragSrc);
+        const to   = items.indexOf(item);
+        if (from < to) list.insertBefore(dragSrc, item.nextSibling);
+        else           list.insertBefore(dragSrc, item);
+      }
+      list.querySelectorAll('.reorder-item').forEach(i => i.classList.remove('drag-over'));
+    });
+
+    // Touch support
+    let touchY = 0;
+    item.addEventListener('touchstart', ev => { touchY = ev.touches[0].clientY; dragSrc = item; item.classList.add('dragging'); }, { passive: true });
+    item.addEventListener('touchend', ev => {
+      item.classList.remove('dragging');
+      list.querySelectorAll('.reorder-item').forEach(i => i.classList.remove('drag-over'));
+      const touch = ev.changedTouches[0];
+      const target = document.elementFromPoint(touch.clientX, touch.clientY)?.closest('.reorder-item');
+      if (target && target !== dragSrc && target.closest('[id]')?.id === list.id) {
+        const items = [...list.querySelectorAll('.reorder-item')];
+        const from = items.indexOf(dragSrc);
+        const to   = items.indexOf(target);
+        if (from < to) list.insertBefore(dragSrc, target.nextSibling);
+        else           list.insertBefore(dragSrc, target);
+      }
+    }, { passive: true });
+  });
+}
+
+function saveSettings() {
+  const btnOrder = [...document.querySelectorAll('#reorder-btns .reorder-item')].map(i => i.dataset.id);
+  const tabOrder = [...document.querySelectorAll('#reorder-tabs .reorder-item')].map(i => i.dataset.id);
+  saveBtnOrder(btnOrder);
+  saveTabOrder(tabOrder);
+  renderHdrActions();
+  renderSegBar();
+  closeMd('settingsMod');
+  toast('✓ Ordinea salvată!');
+}
+
 /* ═══════════════ INIT ═══════════════ */
 // Show sidebar before render to avoid flash
 applyLayout();
+renderHdrActions();
+renderSegBar();
 renderAll();
 switchType(activeType);
 switchView(activeView);
