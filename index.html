@@ -1692,7 +1692,8 @@ async function incarcaListaDinGitHub() {
             restaurants: td.restaurants || [],
             places:      td.places      || [],
             itinerary:   td.itinerary   || [],
-            infos:       td.infos       || []
+            infos:       td.infos       || [],
+            shopping:    td.shopping    || []
           }
         });
         if (td.active || !active[type]) active[type] = tripId;
@@ -1731,7 +1732,8 @@ async function incarcaListaDinGitHub() {
             restaurants: date.restaurants || [],
             places: date.places || [],
             itinerary: date.itinerary || [],
-            infos: date.infos || []
+            infos: date.infos || [],
+            shopping: date.shopping || []
           }
         }
       ],
@@ -1766,7 +1768,7 @@ async function resetDinGitHub() {
         const type = td.type; if (!type) return;
         const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
         trips.push({ id: tripId, type, name: td.name || 'Lista mea', savedAt: td.savedAt || Date.now(),
-          data: { categories: td.categories||[], restaurants: td.restaurants||[], places: td.places||[], itinerary: td.itinerary||[], infos: td.infos||[] }
+          data: { categories: td.categories||[], restaurants: td.restaurants||[], places: td.places||[], itinerary: td.itinerary||[], infos: td.infos||[], shopping: td.shopping||[] }
         });
         if (td.active || !active[type]) active[type] = tripId;
       });
