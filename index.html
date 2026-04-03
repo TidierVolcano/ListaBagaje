@@ -1667,7 +1667,8 @@ async function incarcaListaDinGitHub() {
   if (dateSalvate) return;
 
   try {
-    const raspuns = await fetch(GITHUB_JSON_URL);
+    // cache: 'no-store' ocolește Service Worker-ul și aduce mereu versiunea live de pe GitHub
+    const raspuns = await fetch(GITHUB_JSON_URL, { cache: 'no-store' });
     if (!raspuns.ok) throw new Error('Nu am putut accesa JSON-ul de pe GitHub');
 
     const date = await raspuns.json();
@@ -1753,7 +1754,29 @@ async function incarcaListaDinGitHub() {
 async function resetDinGitHub() {
   if (!confirm('Ștergi datele locale și reîncărci lista din GitHub? Modificările nesalvate pe GitHub se pierd.')) return;
   localStorage.removeItem('packro_v7');
-  location.reload();
+  // Fetch direct cu no-store — ocolim cache-ul Service Worker
+  try {
+    const raspuns = await fetch(GITHUB_JSON_URL, { cache: 'no-store' });
+    if (!raspuns.ok) throw new Error('Status ' + raspuns.status);
+    const date = await raspuns.json();
+    if (date.packroExport && Array.isArray(date.trips)) {
+      const trips = [];
+      const active = { city: null, seacar: null, seaair: null, camp: null };
+      date.trips.forEach(td => {
+        const type = td.type; if (!type) return;
+        const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
+        trips.push({ id: tripId, type, name: td.name || 'Lista mea', savedAt: td.savedAt || Date.now(),
+          data: { categories: td.categories||[], restaurants: td.restaurants||[], places: td.places||[], itinerary: td.itinerary||[], infos: td.infos||[] }
+        });
+        if (td.active || !active[type]) active[type] = tripId;
+      });
+      const firstType = (date.activeType && date.trips.find(t=>t.type===date.activeType)) ? date.activeType : (date.trips[0]?.type||'city');
+      localStorage.setItem('packro_v7', JSON.stringify({ activeType: firstType, activeView: 'pack', clMode: false, trips, active }));
+    }
+    location.reload();
+  } catch (eroare) {
+    alert('Nu am putut lua lista din GitHub:\n' + eroare.message);
+  }
 }
 
 incarcaListaDinGitHub();
