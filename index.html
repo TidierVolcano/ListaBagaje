@@ -608,14 +608,21 @@ body::before {
     padding-left:0; padding-right:0;
   }
 
-  /* Content — offset by sidebar width */
+  /* Content — offset by sidebar width, centered in remaining space */
   .content {
-    margin-left:var(--sidebar-w);
-    padding-top:var(--header-height, 180px);
-    padding-left:28px; padding-right:28px;
-    padding-bottom:40px;
-    width:calc(100% - var(--sidebar-w));
-    max-width:calc(var(--sidebar-w) + 780px);
+    margin-left: var(--sidebar-w);
+    width: calc(100% - var(--sidebar-w));
+    padding-top: calc(var(--header-height, 180px) + 18px);
+    padding-bottom: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content > * {
+    width: 100%;
+    max-width: 700px;
   }
 
   /* Modal as centered dialog, not bottom sheet */
@@ -707,12 +714,13 @@ body::before {
 
   .content {
     margin-left: var(--sidebar-w);
-    padding-top: var(--header-height, 180px);
-    padding-left: 20px; padding-right: 20px;
-    padding-bottom: 40px;
     width: calc(100% - var(--sidebar-w));
-    max-width: calc(var(--sidebar-w) + 700px);
+    padding-top: calc(var(--header-height, 180px) + 14px);
+    padding-left: 24px; padding-right: 24px;
+    padding-bottom: 40px;
+    display: flex; flex-direction: column; align-items: center;
   }
+  .content > * { width: 100%; max-width: 680px; }
 
   .mdbg { align-items: center }
   .mdsh { border-radius: 18px; padding-bottom: 20px; max-height: 80vh; box-shadow: 0 20px 60px rgba(0,0,0,.25) }
@@ -1941,7 +1949,8 @@ function recalcPadding() {
   requestAnimationFrame(() => {
     const h = document.getElementById('appHdr').offsetHeight;
     const content = document.querySelector('.content');
-    content.style.paddingTop = h + 'px';
+    const extraTop = hasSidebar() ? 20 : 0;
+    content.style.paddingTop = (h + extraTop) + 'px';
     // also update toast bottom if mobile
     const toast = document.getElementById('toast');
     if (!hasSidebar()) {
@@ -2092,8 +2101,6 @@ function buildItem(item, cid, type) {
       onchange="togItem('${type}','${cid}','${item.id}',this.checked)"/>
     <input class="itxt" value="${e(item.text)}"
       onchange="editTxt('${type}','${cid}','${item.id}',this.value)"/>
-    <input class="iqty" value="${e(item.qty||'')}" placeholder="qty"
-      onchange="editQty('${type}','${cid}','${item.id}',this.value)" title="Cantitate"/>
     <button class="shop-send-btn${alreadySent?' sent':''}"
       onclick="sendToShopping('${type}',document.querySelector('[data-iid=\\'${item.id}\\'] .itxt')?.value||'${e(item.text)}')"
       title="${alreadySent?'Deja în Cumpărături':'Trimite în Cumpărături'}">
