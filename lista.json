@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-02T11:20:17.762Z",
+  "exportedAt": "2026-04-03T07:08:19.354Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_lavvaj3",
+      "id": "trip_z21uzvv",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -281,14 +281,170 @@
           ]
         },
         {
-          "id": "h0191nk",
+          "id": "sctbuml",
           "emoji": "📷",
           "name": "Igiena",
           "open": false,
           "items": [
             {
-              "id": "m8nxgin",
-              "text": "Sampon",
+              "id": "zb33yef",
+              "text": "Sampon adulti M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "0d3bef2",
+              "text": "Sampon adulti F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "bm0acyx",
+              "text": "Baby Sampon",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "53d28i5",
+              "text": "Gel de dus M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "mb0jq22",
+              "text": "Gel de dus F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "9z6kyt7",
+              "text": "Pasta de dinti adulti",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "rpvpp20",
+              "text": "Pasta de dinti baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "xjxgdk8",
+              "text": "Periuta de dinti M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "jxybmo8",
+              "text": "Periuta de dinti F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "s3hlpb6",
+              "text": "Periuta de dinti baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "sqr1fom",
+              "text": "Crema Nivea",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "zra3gir",
+              "text": "Crema baby",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "524abjt",
+              "text": "Deodorant M",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "pkygnl1",
+              "text": "Deodorant F",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iusf0jl",
+              "text": "Gel de par",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "o5mkixe",
+              "text": "BIC-uri",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "qc4kk6r",
+              "text": "Dischete demachiante",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "vt9paz1",
+              "text": "Bicarbonat",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "kigdpy6",
+              "text": "Ata dentara",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "wfpgpf6",
+              "text": "Sapun solid",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "i9s8gnr",
+              "text": "Detergent rufe",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "vja5tja",
+              "text": "Crema hidratanta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "23qrtta",
+              "text": "Balsam de buze",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "iinhkp6",
+              "text": "Pieptene",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "11l61ag",
+              "text": "Oglinda + penseta",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "chilbh1",
+              "text": "Absorbante",
+              "checked": false,
+              "qty": ""
+            },
+            {
+              "id": "2zy6yae",
+              "text": "Betisoare de urechi",
               "checked": false,
               "qty": ""
             }
@@ -632,10 +788,101 @@
           "body": ""
         }
       ],
-      "shopping": []
+      "shopping": [
+        {
+          "id": "6xk7fx4",
+          "text": "Slapi Clau",
+          "store": "HERVIS",
+          "bought": false
+        },
+        {
+          "id": "ftbo3yd",
+          "text": "Slapi Dana",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "xn4yl7b",
+          "text": "Tricouri Clau",
+          "store": "Decathlon",
+          "bought": false
+        },
+        {
+          "id": "cjehfic",
+          "text": "Sosete Clau",
+          "store": "Decathlon",
+          "bought": false
+        },
+        {
+          "id": "nj1e36b",
+          "text": "Cube Compression",
+          "store": "Thule",
+          "bought": false
+        },
+        {
+          "id": "6vyw8ic",
+          "text": "Pasta de dinti adulti",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "bdciarq",
+          "text": "Pasta de dinti copii",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "gvzak5g",
+          "text": "Periute de dinti voiaj",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "tkek04o",
+          "text": "Periuta de dinti Alex",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "8nnphet",
+          "text": "Apa",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "uc16nhl",
+          "text": "Batoane Proteice",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "cmlu2fd",
+          "text": "Chiloti Clau",
+          "store": "Coresi",
+          "bought": false
+        },
+        {
+          "id": "5uvn7ge",
+          "text": "Recipiente plastic 100ml",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "fskz1g8",
+          "text": "Servetele Uscate",
+          "store": "Lidl",
+          "bought": false
+        },
+        {
+          "id": "q6vof4q",
+          "text": "Servetele Umede",
+          "store": "Lidl",
+          "bought": false
+        }
+      ]
     },
     {
-      "id": "trip_xm627il",
+      "id": "trip_udggke1",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -913,7 +1160,7 @@
       "shopping": []
     },
     {
-      "id": "trip_8phz8cl",
+      "id": "trip_73bhuct",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1209,7 +1456,7 @@
       "shopping": []
     },
     {
-      "id": "trip_pwe90j8",
+      "id": "trip_sk05clm",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2284,7 +2531,7 @@
       "shopping": []
     },
     {
-      "id": "trip_15poumb",
+      "id": "trip_1id1odk",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
