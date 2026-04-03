@@ -1,14 +1,14 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-03T07:24:19.100Z",
+  "exportedAt": "2026-04-03T07:40:06.791Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_gwr9nu9",
+      "id": "trip_fg2x3vh",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
-      "active": true,
+      "active": false,
       "categories": [
         {
           "id": "doc_b9jzk9e",
@@ -788,95 +788,10 @@
           "body": ""
         }
       ],
-      "shopping": [
-        {
-          "id": "6xk7fx4",
-          "text": "Slapi Clau",
-          "store": "HERVIS",
-          "bought": false
-        },
-        {
-          "id": "ftbo3yd",
-          "text": "Slapi Dana",
-          "store": "",
-          "bought": false
-        },
-        {
-          "id": "xn4yl7b",
-          "text": "Tricouri Clau",
-          "store": "Decathlon",
-          "bought": false
-        },
-        {
-          "id": "cjehfic",
-          "text": "Sosete Clau",
-          "store": "Decathlon",
-          "bought": false
-        },
-        {
-          "id": "nj1e36b",
-          "text": "Cube Compression",
-          "store": "Thule",
-          "bought": false
-        },
-        {
-          "id": "6vyw8ic",
-          "text": "Pasta de dinti adulti",
-          "store": "DM/Farmacia TEI",
-          "bought": false
-        },
-        {
-          "id": "bdciarq",
-          "text": "Pasta de dinti copii",
-          "store": "DM/Farmacia TEI",
-          "bought": false
-        },
-        {
-          "id": "gvzak5g",
-          "text": "Periute de dinti voiaj",
-          "store": "DM/Farmacia TEI",
-          "bought": false
-        },
-        {
-          "id": "tkek04o",
-          "text": "Periuta de dinti Alex",
-          "store": "DM/Farmacia TEI",
-          "bought": false
-        },
-        {
-          "id": "8nnphet",
-          "text": "Apa",
-          "store": "",
-          "bought": false
-        },
-        {
-          "id": "uc16nhl",
-          "text": "Batoane Proteice",
-          "store": "",
-          "bought": false
-        },
-        {
-          "id": "5uvn7ge",
-          "text": "Recipiente plastic 100ml",
-          "store": "DM/Farmacia TEI",
-          "bought": false
-        },
-        {
-          "id": "fskz1g8",
-          "text": "Servetele Uscate",
-          "store": "Lidl",
-          "bought": false
-        },
-        {
-          "id": "q6vof4q",
-          "text": "Servetele Umede",
-          "store": "Lidl",
-          "bought": false
-        }
-      ]
+      "shopping": []
     },
     {
-      "id": "trip_1l6037g",
+      "id": "trip_546mqgj",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1154,7 +1069,7 @@
       "shopping": []
     },
     {
-      "id": "trip_8nmp02v",
+      "id": "trip_01yuk9u",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1450,7 +1365,7 @@
       "shopping": []
     },
     {
-      "id": "trip_p92obk3",
+      "id": "trip_02gdcyw",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2525,11 +2440,11 @@
       "shopping": []
     },
     {
-      "id": "trip_654cjxy",
+      "id": "trip_ruaxcal",
       "type": "city",
       "name": "Roma",
-      "savedAt": 1775037933169,
-      "active": false,
+      "savedAt": 1775202005903,
+      "active": true,
       "categories": [
         {
           "id": "doc_30xr01k",
@@ -2770,11 +2685,49 @@
           "desc": "",
           "checked": false,
           "open": true
+        },
+        {
+          "id": "x40rrkx",
+          "name": "De vizita - Test",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true
+        },
+        {
+          "id": "awq3xvs",
+          "name": "",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true
         }
       ],
       "itinerary": [],
-      "infos": [],
-      "shopping": []
+      "infos": [
+        {
+          "id": "hid4qfz",
+          "icon": "ℹ️",
+          "title": "Info Test",
+          "body": ""
+        },
+        {
+          "id": "53h8mkr",
+          "icon": "📌",
+          "title": "",
+          "body": ""
+        }
+      ],
+      "shopping": [
+        {
+          "id": "990xa78",
+          "text": "Test",
+          "store": "",
+          "bought": false
+        }
+      ]
     }
   ]
 }
