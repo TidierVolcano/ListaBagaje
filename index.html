@@ -263,6 +263,16 @@ body::before {
 }
 .idbtn:hover { color:var(--red); background:rgba(192,57,43,.08) }
 .idbtn:active { color:var(--red) }
+.shop-send-btn {
+  background:none; border:none; cursor:pointer; font-size:.85rem;
+  padding:5px 6px; transition:all .15s; line-height:1; border-radius:6px;
+  color:var(--muted); flex-shrink:0; display:flex; align-items:center;
+  gap:3px; white-space:nowrap;
+}
+.shop-send-btn:hover { color:var(--gold); background:rgba(200,137,42,.1) }
+.shop-send-btn:active { transform:scale(.92) }
+.shop-send-btn.sent { color:var(--green); opacity:.6; cursor:default }
+.shop-send-btn.sent:hover { background:none; transform:none }
 .cat-body { border-top:1px solid var(--sand) }
 .cat-body.hid { display:none }
 
@@ -1133,6 +1143,42 @@ body.bg-night::before {
   background: #e8f4fd; border-radius: 99px; padding: 2px 8px;
   white-space: nowrap; flex-shrink: 0;
 }
+.shop-edit-btn {
+  background: none; border: none; cursor: pointer; font-size: .8rem;
+  padding: 5px 6px; border-radius: 6px; color: var(--muted);
+  transition: all .15s; flex-shrink: 0; line-height: 1;
+}
+.shop-edit-btn:hover { color: var(--gold); background: rgba(200,137,42,.1) }
+.shop-item-row.editing { background: rgba(42,138,126,.05); flex-wrap: wrap; gap: 6px; padding: 9px 14px }
+.shop-item-edit-fields {
+  display: none; width: 100%; gap: 6px; align-items: center;
+}
+.shop-item-row.editing .shop-item-edit-fields { display: flex; flex-wrap: wrap }
+.shop-item-row.editing .shop-chk { align-self: center }
+.shop-item-row.editing > .shop-item-text { font-weight: 600; color: var(--muted); font-size: .8rem; flex: none; width: 100%; pointer-events: none }
+.shop-edit-inp {
+  flex: 2; min-width: 100px; border: 1.5px solid #2a8a7e;
+  background: rgba(255,252,246,.95); border-radius: var(--rs);
+  padding: 7px 10px; font-size: 15px; font-family: 'DM Sans', sans-serif;
+  color: var(--text); outline: none; transition: box-shadow .15s;
+}
+.shop-edit-inp:focus { box-shadow: 0 0 0 2px rgba(42,138,126,.2) }
+.shop-edit-store-inp {
+  flex: 1; min-width: 80px; border: 1.5px solid var(--card-border);
+  background: rgba(232,222,206,.55); border-radius: var(--rs);
+  padding: 7px 10px; font-size: 15px; font-family: 'DM Mono', monospace;
+  color: var(--text); outline: none; transition: all .15s;
+}
+.shop-edit-store-inp:focus { border-color: #2a8a7e; box-shadow: 0 0 0 2px rgba(42,138,126,.15); background: rgba(255,252,246,.95) }
+.shop-edit-store-inp::placeholder { color: var(--muted) }
+.shop-edit-save-btn {
+  background: linear-gradient(135deg, #2a8a7e, #1a6fa8); color: #fff;
+  border: none; border-radius: var(--rs); padding: 7px 13px;
+  font-size: .82rem; font-family: 'DM Sans', sans-serif; font-weight: 600;
+  cursor: pointer; flex-shrink: 0; transition: opacity .15s; white-space: nowrap;
+}
+.shop-edit-save-btn:hover { opacity: .88 }
+.shop-edit-save-btn:active { transform: scale(.95) }
 .shop-add-card {
   background: var(--card-bg);
   -webkit-backdrop-filter: var(--card-blur);
@@ -2010,9 +2056,36 @@ function buildCat(cat, type) {
   body.appendChild(ar); card.appendChild(body); return card;
 }
 
+function isItemInShopping(type, text) {
+  const d = tripData(type);
+  if (!d?.shopping) return false;
+  return d.shopping.some(s => s.text.trim().toLowerCase() === text.trim().toLowerCase());
+}
+
+function sendToShopping(type, text) {
+  if (!text.trim()) return;
+  const d = tripData(type);
+  if (!d) return;
+  if (!d.shopping) d.shopping = [];
+  if (isItemInShopping(type, text)) {
+    toast('⚠ Produsul există deja în Cumpărături!');
+    return;
+  }
+  d.shopping.push({id:uid(), text:text.trim(), store:'', bought:false});
+  save();
+  // refresh shop view if visible
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  updHdr();
+  toast('🛒 Adăugat în Cumpărături!');
+  // re-render pack to update button state
+  renderTrip(type);
+}
+
 function buildItem(item, cid, type) {
   const row=mk('div','item-row'+(item.checked&&clMode?' chked':''));
   row.draggable=true; row.dataset.iid=item.id; row.dataset.cid=cid; row.dataset.type=type;
+  const alreadySent = isItemInShopping(type, item.text);
   row.innerHTML=`
     <span class="dh" data-dh title="Trage pentru reordonare">⠿</span>
     <input type="checkbox" class="ichk ${clMode?'':'hid'}" ${item.checked?'checked':''}
@@ -2021,6 +2094,11 @@ function buildItem(item, cid, type) {
       onchange="editTxt('${type}','${cid}','${item.id}',this.value)"/>
     <input class="iqty" value="${e(item.qty||'')}" placeholder="qty"
       onchange="editQty('${type}','${cid}','${item.id}',this.value)" title="Cantitate"/>
+    <button class="shop-send-btn${alreadySent?' sent':''}"
+      onclick="sendToShopping('${type}',document.querySelector('[data-iid=\\'${item.id}\\'] .itxt')?.value||'${e(item.text)}')"
+      title="${alreadySent?'Deja în Cumpărături':'Trimite în Cumpărături'}">
+      ${alreadySent?'✓':'🛒'}
+    </button>
     <button class="idbtn" onclick="delItem('${type}','${cid}','${item.id}')" title="Șterge">✕</button>`;
   row.addEventListener('dragstart', ev => { DD={iid:item.id,cid,type}; row.classList.add('drag'); ev.dataTransfer.effectAllowed='move'; });
   row.addEventListener('dragend',   ()  => clrDrag());
@@ -2505,14 +2583,49 @@ function buildShopView(items, type) {
 function buildShopItem(it, type, showStore) {
   const row = mk('div','shop-item-row'+(it.bought?' bought':''));
   row.dataset.sid = it.id;
+  const storeTag = (showStore && it.store) ? `<span class="shop-item-store-tag">🏪 ${e(it.store)}</span>` : '';
+  const storeTagGrouped = (!showStore && it.store) ? `<span class="shop-item-store-tag" style="display:none">🏪 ${e(it.store)}</span>` : '';
   row.innerHTML = `
     <input type="checkbox" class="shop-chk" ${it.bought?'checked':''}
       onchange="togShop('${type}','${it.id}',this.checked)"/>
-    <input class="shop-item-text" value="${e(it.text||'')}"
-      onchange="editShop('${type}','${it.id}','text',this.value)"/>
-    ${showStore && it.store ? `<span class="shop-item-store-tag">🏪 ${e(it.store)}</span>` : ''}
-    <button class="idbtn" onclick="delShop('${type}','${it.id}')" title="Șterge">✕</button>`;
+    <span class="shop-item-text">${e(it.text||'')}</span>
+    ${storeTag}${storeTagGrouped}
+    <button class="shop-edit-btn" onclick="toggleShopEdit(this,'${type}','${it.id}','${e(it.text||'')}','${e(it.store||'')}')" title="Editează">✏️</button>
+    <button class="idbtn" onclick="delShop('${type}','${it.id}')" title="Șterge">✕</button>
+    <div class="shop-item-edit-fields">
+      <input class="shop-edit-inp" placeholder="Denumire produs..." value="${e(it.text||'')}"/>
+      <input class="shop-edit-store-inp" placeholder="🏪 Magazin..." value="${e(it.store||'')}"/>
+      <button class="shop-edit-save-btn" onclick="saveShopEdit(this,'${type}','${it.id}')">✓ Salvează</button>
+    </div>`;
   return row;
+}
+
+function toggleShopEdit(btn, type, id, text, store) {
+  const row = btn.closest('.shop-item-row');
+  const isEditing = row.classList.contains('editing');
+  // close any other open edits first
+  document.querySelectorAll('.shop-item-row.editing').forEach(r => r.classList.remove('editing'));
+  if (!isEditing) {
+    row.classList.add('editing');
+    setTimeout(() => { const inp = row.querySelector('.shop-edit-inp'); if(inp) inp.focus(); }, 50);
+  }
+}
+
+function saveShopEdit(btn, type, id) {
+  const row = btn.closest('.shop-item-row');
+  const newText = row.querySelector('.shop-edit-inp')?.value.trim();
+  const newStore = row.querySelector('.shop-edit-store-inp')?.value.trim();
+  if (!newText) { row.querySelector('.shop-edit-inp')?.focus(); return; }
+  const d = tripData(type); if (!d?.shopping) return;
+  const it = d.shopping.find(i=>i.id===id); if (!it) return;
+  it.text = newText;
+  it.store = newStore || '';
+  save();
+  // refresh shop view
+  const sec = document.getElementById(`vs-shop-${type}`);
+  if (sec) { sec.innerHTML=''; sec.appendChild(buildShopView(d.shopping, type)); }
+  updHdr();
+  toast('✓ Produs actualizat!');
 }
 
 function setShopSort(sort, type) {
