@@ -1,13 +1,13 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-03T07:19:32.616Z",
+  "exportedAt": "2026-04-03T07:24:19.100Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_jrsl5xg",
+      "id": "trip_gwr9nu9",
       "type": "city",
       "name": "Milano",
-      "savedAt": 1775200771743,
+      "savedAt": 1775041533680,
       "active": true,
       "categories": [
         {
@@ -790,33 +790,93 @@
       ],
       "shopping": [
         {
-          "id": "1ymw1dv",
-          "text": "Recipiente 100ml",
-          "store": "DM/Farmacia TEI",
+          "id": "6xk7fx4",
+          "text": "Slapi Clau",
+          "store": "HERVIS",
           "bought": false
         },
         {
-          "id": "7aixcnc",
-          "text": "Tricouri",
+          "id": "ftbo3yd",
+          "text": "Slapi Dana",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "xn4yl7b",
+          "text": "Tricouri Clau",
           "store": "Decathlon",
           "bought": false
         },
         {
-          "id": "avbt23j",
-          "text": "Servetele Umede",
+          "id": "cjehfic",
+          "text": "Sosete Clau",
+          "store": "Decathlon",
+          "bought": false
+        },
+        {
+          "id": "nj1e36b",
+          "text": "Cube Compression",
+          "store": "Thule",
+          "bought": false
+        },
+        {
+          "id": "6vyw8ic",
+          "text": "Pasta de dinti adulti",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "bdciarq",
+          "text": "Pasta de dinti copii",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "gvzak5g",
+          "text": "Periute de dinti voiaj",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "tkek04o",
+          "text": "Periuta de dinti Alex",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "8nnphet",
+          "text": "Apa",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "uc16nhl",
+          "text": "Batoane Proteice",
+          "store": "",
+          "bought": false
+        },
+        {
+          "id": "5uvn7ge",
+          "text": "Recipiente plastic 100ml",
+          "store": "DM/Farmacia TEI",
+          "bought": false
+        },
+        {
+          "id": "fskz1g8",
+          "text": "Servetele Uscate",
           "store": "Lidl",
           "bought": false
         },
         {
-          "id": "tqxekac",
-          "text": "Servetele Uscate",
+          "id": "q6vof4q",
+          "text": "Servetele Umede",
           "store": "Lidl",
           "bought": false
         }
       ]
     },
     {
-      "id": "trip_5aij13w",
+      "id": "trip_1l6037g",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1094,7 +1154,7 @@
       "shopping": []
     },
     {
-      "id": "trip_s48eg97",
+      "id": "trip_8nmp02v",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1390,7 +1450,7 @@
       "shopping": []
     },
     {
-      "id": "trip_ymkl2ki",
+      "id": "trip_p92obk3",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -1974,7 +2034,7 @@
             },
             {
               "id": "2zg88sb",
-              "text": "Ata dentara",
+              "text": "Ata dentara?",
               "checked": false,
               "qty": ""
             },
@@ -2465,7 +2525,7 @@
       "shopping": []
     },
     {
-      "id": "trip_iehaa7f",
+      "id": "trip_654cjxy",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
