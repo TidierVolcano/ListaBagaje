@@ -2990,12 +2990,13 @@ function generatePDF() {
 /* ═══════════════ SERVICE WORKER & PWA ═══════════════ */
 const FAV_SK = 'packro_favs_v1';
 
-// Service Worker dezactivat — dezînregistrează orice SW existent
+// Register Service Worker
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(regs => {
-    regs.forEach(reg => reg.unregister());
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('[PackRo SW] Înregistrat:', reg.scope))
+      .catch(err => console.warn('[PackRo SW] Eroare:', err));
   });
-  caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
 }
 
 // Offline / Online indicator
