@@ -427,6 +427,117 @@ body::before {
 }
 .empty-st .em { font-size:2.4rem; display:block; margin-bottom:12px }
 
+/* ═══ CAZARE CARD ═══ */
+.accom-card {
+  background: linear-gradient(135deg, rgba(26,46,74,0.97) 0%, rgba(37,61,96,0.97) 100%);
+  border: 1px solid rgba(200,137,42,0.35);
+  border-radius: var(--r); margin-bottom: 14px;
+  box-shadow: 0 4px 24px rgba(26,46,74,0.18), 0 1px 0 rgba(255,255,255,0.08) inset;
+  overflow: hidden;
+  position: relative;
+}
+.accom-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2), var(--gold));
+  opacity: 0.7;
+}
+.accom-hdr {
+  display:flex; align-items:center; gap:12px; padding:14px 16px;
+}
+.accom-icon {
+  font-size:1.6rem; flex-shrink:0; line-height:1;
+  filter: drop-shadow(0 2px 6px rgba(200,137,42,0.4));
+}
+.accom-info { flex:1; min-width:0 }
+.accom-label {
+  font-size:.6rem; color:var(--gold2); font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.8px; margin-bottom:2px;
+}
+.accom-name-text {
+  font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem;
+  color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.accom-name-empty {
+  font-family:'Fraunces',serif; font-size:.95rem;
+  color:rgba(255,255,255,.35); font-style:italic;
+}
+.accom-loc-btn {
+  display:inline-flex; align-items:center; gap:5px; margin-top:4px;
+  background:rgba(200,137,42,0.18); border:1px solid rgba(200,137,42,0.28);
+  border-radius:99px; padding:4px 11px; cursor:pointer;
+  font-size:.75rem; color:var(--gold2); font-family:'DM Sans',sans-serif;
+  font-weight:500; transition:all .15s; max-width:100%; text-align:left;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  border-style:none; outline:none;
+}
+.accom-loc-btn:hover { background:rgba(200,137,42,0.32); border-color:rgba(200,137,42,0.5) }
+.accom-loc-btn:active { opacity:.8 }
+.accom-loc-empty {
+  font-size:.75rem; color:rgba(255,255,255,.25); font-style:italic;
+  display:block; margin-top:3px; padding-left:2px;
+}
+.accom-actions { display:flex; gap:6px; flex-shrink:0 }
+.accom-btn {
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15);
+  border-radius:8px; padding:7px 10px; cursor:pointer; color:rgba(255,255,255,.8);
+  font-size:.82rem; font-family:'DM Sans',sans-serif; font-weight:500;
+  transition:all .15s; white-space:nowrap; min-height:34px;
+  display:flex; align-items:center; gap:4px;
+}
+.accom-btn:hover { background:rgba(255,255,255,.18) }
+.accom-btn:active { background:rgba(255,255,255,.25) }
+.accom-btn.primary { background:var(--gold); border-color:var(--gold2); color:#fff }
+.accom-btn.primary:hover { background:var(--gold2) }
+.accom-btn.accom-dist-btn {
+  background: linear-gradient(135deg, rgba(42,138,126,.35), rgba(42,138,126,.2));
+  border-color: rgba(42,138,126,.5); color: #7eeee6;
+}
+.accom-btn.accom-dist-btn:hover { background: rgba(42,138,126,.5); color:#fff }
+.accom-btn.accom-dist-btn:disabled { opacity:.55; cursor:not-allowed }
+.accom-edit-area {
+  padding:0 16px 14px; border-top:1px solid rgba(255,255,255,.07);
+}
+.accom-edit-area.hid { display:none }
+.accom-edit-area .accom-inp-row {
+  display:flex; gap:8px; flex-wrap:wrap; align-items:center; padding-top:12px;
+}
+.accom-inp {
+  flex:1; min-width:120px; background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18); border-radius:var(--rs);
+  padding:9px 12px; font-size:15px; font-family:'DM Sans',sans-serif;
+  color:#fff; outline:none; transition:all .15s;
+  -webkit-text-fill-color: #fff;
+}
+.accom-inp::placeholder { color:rgba(255,255,255,.35) }
+.accom-inp:focus { border-color:var(--gold2); background:rgba(255,255,255,.15);
+  box-shadow:0 0 0 3px rgba(200,137,42,.18) }
+.accom-hint {
+  font-size:.72rem; color:rgba(255,255,255,.35); padding:6px 2px 2px;
+  line-height:1.5; font-family:'DM Sans',sans-serif;
+}
+/* Auto-distance badge in place cards */
+.dist-auto-badge {
+  display:inline-flex; align-items:center; gap:4px;
+  background:rgba(42,138,126,.18); border:1px solid rgba(42,138,126,.35);
+  border-radius:99px; padding:2px 8px; font-size:.69rem;
+  font-family:'DM Mono',monospace; color:var(--teal); white-space:nowrap;
+  margin-left:4px; vertical-align:middle; cursor:default;
+}
+/* Route from accommodation button */
+.place-meta-btns {
+  display:flex; gap:5px; align-items:center; flex-wrap:wrap;
+}
+.route-from-accom-btn {
+  display:inline-flex; align-items:center; gap:4px;
+  background:rgba(26,46,74,.08); border:1px solid rgba(26,46,74,.18);
+  border-radius:99px; padding:5px 11px; font-size:.76rem;
+  font-family:'DM Sans',sans-serif; font-weight:500;
+  color:var(--navy); cursor:pointer; transition:all .15s; white-space:nowrap;
+  min-height:30px;
+}
+.route-from-accom-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy) }
+.route-from-accom-btn:active { opacity:.8 }
+
 /* ═══ MODALS ═══ */
 .mdbg {
   position:fixed; inset:0; z-index:300;
@@ -1747,7 +1858,8 @@ async function incarcaListaDinGitHub() {
             places:      td.places      || [],
             itinerary:   td.itinerary   || [],
             infos:       td.infos       || [],
-            shopping:    td.shopping    || []
+            shopping:    td.shopping    || [],
+            accommodation: td.accommodation || {name:'',coords:''}
           }
         });
         if (td.active || !active[type]) active[type] = tripId;
@@ -1822,7 +1934,7 @@ async function resetDinGitHub() {
         const type = td.type; if (!type) return;
         const tripId = 'trip_' + Math.random().toString(36).slice(2, 9);
         trips.push({ id: tripId, type, name: td.name || 'Lista mea', savedAt: td.savedAt || Date.now(),
-          data: { categories: td.categories||[], restaurants: td.restaurants||[], places: td.places||[], itinerary: td.itinerary||[], infos: td.infos||[], shopping: td.shopping||[] }
+          data: { categories: td.categories||[], restaurants: td.restaurants||[], places: td.places||[], itinerary: td.itinerary||[], infos: td.infos||[], shopping: td.shopping||[], accommodation: td.accommodation||{name:'',coords:''} }
         });
         if (td.active || !active[type]) active[type] = tripId;
       });
@@ -1905,7 +2017,7 @@ function newTrip(type, name) {
     open: c.id==='chk'||c.id==='doc',
     items: c.i.map(t => ({id:uid(),text:t,checked:false,qty:''}))
   }));
-  return {id:uid(), type, name, savedAt:null, data:{categories:cats,restaurants:[],places:[],itinerary:[],infos:[],shopping:[]}};
+  return {id:uid(), type, name, savedAt:null, data:{categories:cats,restaurants:[],places:[],itinerary:[],infos:[],shopping:[],accommodation:{name:'',coords:''}}};
 }
 function save() {
   S.activeType=activeType; S.activeView=activeView; S.clMode=clMode;
@@ -1915,7 +2027,11 @@ function uid() { return Math.random().toString(36).slice(2,9); }
 
 function activeTripId(type) { return S.active[type||activeType]; }
 function activeTrip(type)   { const id=activeTripId(type); return S.trips.find(t=>t.id===id); }
-function tripData(type)     { return activeTrip(type)?.data || null; }
+function tripData(type) {
+  const d = activeTrip(type)?.data || null;
+  if (d && !d.accommodation) d.accommodation = {name:'',coords:''};
+  return d;
+}
 
 function ensureActive() {
   Object.keys(TRIP_TYPES).forEach(type => {
@@ -1975,6 +2091,9 @@ function renderTrip(type) {
   const d = tripData(type);
   if (!d) return;
   panel.innerHTML = '';
+
+  // Always-visible accommodation card at the top
+  panel.appendChild(buildAccommodationCard(type));
 
   const ps = mk('div','vsec'+(activeView==='pack'?' act':''),{id:`vs-pack-${type}`});
   d.categories.forEach(cat => ps.appendChild(buildCat(cat, type)));
@@ -2119,6 +2238,25 @@ function buildItem(item, cid, type) {
 function buildPlace(p, type, ptype) {
   const card=mk('div',`place-card t${ptype==='food'?'f':'v'}${p.checked?' done':''}`);
   card.dataset.pid=p.id;
+
+  // Distance logic
+  const autoDist  = autoDistanceLabel(type, p.coords);   // Haversine (only if both have lat/lng)
+  const hasAccom  = hasAccommodation(type);               // Any accommodation set?
+
+  // Badge: show auto-calculated km when both have GPS coords
+  const autoDistBadge = autoDist
+    ? `<span class="dist-auto-badge" title="Distanță linie dreaptă față de cazare">🧭 ${autoDist}</span>`
+    : '';
+
+  // Route button: show when accommodation is set (works with any address/name)
+  const routeBtn = hasAccom
+    ? `<button class="route-from-accom-btn" 
+         onclick="openDirectionsFromAccom('${type}','${e(p.name||'')}','${e(p.coords||'')}')"
+         title="Deschide ruta de la cazare în Google Maps">
+         🗺 De la cazare
+       </button>`
+    : '';
+
   card.innerHTML=`
     <div class="place-top">
       <input type="checkbox" class="pchk" ${p.checked?'checked':''}
@@ -2132,7 +2270,8 @@ function buildPlace(p, type, ptype) {
     <div class="place-meta">
       <div class="m-chip">
         <span class="lbl">📍 dist.</span>
-        <input class="m-inp" value="${e(p.distance||'')}" placeholder="—" title="Distanță față de cazare"
+        <input class="m-inp" value="${autoDist || e(p.distance||'')}" placeholder="—"
+          title="Distanță față de cazare"
           onchange="epf('${type}','${ptype}','${p.id}','distance',this.value)"/>
         <select class="m-sel" onchange="epf('${type}','${ptype}','${p.id}','unit',this.value)">
           <option value="km" ${(p.unit||'km')==='km'?'selected':''}>km</option>
@@ -2140,19 +2279,23 @@ function buildPlace(p, type, ptype) {
           <option value="m" ${p.unit==='m'?'selected':''}>m</option>
         </select>
         <span class="lbl">de la cazare</span>
+        ${autoDistBadge}
       </div>
-      <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide în Google Maps">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Maps
-      </button>
+      <div class="place-meta-btns">
+        ${routeBtn}
+        <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide în Google Maps">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Maps
+        </button>
+      </div>
     </div>
     <div class="place-det${p.open?'':' hid'}">
       <div class="coords-wrap">
         <span class="coords-lbl">📌 coords</span>
         <input class="coords-inp" value="${e(p.coords||'')}"
           placeholder="Coordonate sau adresă (ex: 44.4268, 26.1025)"
-          onchange="epf('${type}','${ptype}','${p.id}','coords',this.value)"
-          title="Coordonate GPS sau adresă pentru Google Maps"/>
+          onchange="epf('${type}','${ptype}','${p.id}','coords',this.value);renderTrip('${type}')"
+          title="Coordonate GPS sau adresă pentru Google Maps și calcul automat distanță"/>
       </div>
       <div class="place-desc-wrap">
         <div class="desc-lbl">${ptype==='food'?'🗒 Note / tips':'💡 De ce vreau să merg / descriere'}</div>
@@ -2493,6 +2636,226 @@ function openMaps(name, coords) {
   const url = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
   window.open(url, '_blank');
 }
+
+/* ═══════════════ CAZARE (ACCOMMODATION) ═══════════════ */
+function getAccommodation(type) {
+  const d = tripData(type);
+  if (!d) return {name:'',coords:''};
+  if (!d.accommodation) d.accommodation = {name:'',coords:''};
+  return d.accommodation;
+}
+
+function saveAccommodation(type) {
+  const d = tripData(type); if (!d) return;
+  if (!d.accommodation) d.accommodation = {name:'',coords:''};
+  const nameEl  = document.getElementById(`accom-name-inp-${type}`);
+  const coordEl = document.getElementById(`accom-coords-inp-${type}`);
+  if (!nameEl || !coordEl) return;
+  d.accommodation.name   = nameEl.value.trim();
+  d.accommodation.coords = coordEl.value.trim();
+  save();
+  renderTrip(type);
+  toast('✓ Cazare salvată!');
+}
+
+function toggleAccomEdit(type) {
+  const ea = document.getElementById(`accom-edit-${type}`);
+  if (!ea) return;
+  ea.classList.toggle('hid');
+  if (!ea.classList.contains('hid')) {
+    setTimeout(() => { const inp = document.getElementById(`accom-name-inp-${type}`); if(inp) inp.focus(); }, 100);
+  }
+}
+
+function openAccomMaps(type) {
+  const ac = getAccommodation(type);
+  const q  = ac.coords && ac.coords.trim() ? ac.coords.trim() : ac.name.trim();
+  if (!q) { toast('⚠ Adaugă locația cazării mai întâi!'); return; }
+  window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q), '_blank');
+}
+
+function buildAccommodationCard(type) {
+  const ac = getAccommodation(type);
+  const hasName   = ac.name   && ac.name.trim();
+  const hasCoords = ac.coords && ac.coords.trim();
+  const card = mk('div','accom-card');
+
+  const hdr = mk('div','accom-hdr');
+  hdr.innerHTML = `
+    <span class="accom-icon">🏨</span>
+    <div class="accom-info">
+      <div class="accom-label">Cazare rezervată</div>
+      ${hasName
+        ? `<div class="accom-name-text">${e(ac.name)}</div>`
+        : `<div class="accom-name-empty">Adaugă cazarea ta...</div>`}
+      ${hasCoords
+        ? `<button class="accom-loc-btn" onclick="openAccomMaps('${type}')" title="Deschide în Google Maps">
+             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+             ${e(ac.coords)}
+           </button>`
+        : `<span class="accom-loc-empty">📍 Nicio locație adăugată</span>`}
+    </div>
+    <div class="accom-actions">
+      ${hasCoords ? `<button class="accom-btn primary" onclick="openAccomMaps('${type}')" title="Deschide în Maps">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Maps
+      </button>` : ''}
+      ${hasName || hasCoords ? `<button class="accom-btn accom-dist-btn" id="accom-autodist-btn-${type}"
+        onclick="autoCalcAllDistances('${type}')"
+        title="Geocodare automată + calcul distanțe față de toate restaurantele și obiectivele">
+        📐 Calculează distanțe auto
+      </button>` : ''}
+      <button class="accom-btn" onclick="toggleAccomEdit('${type}')" title="Editează cazare">✏️ Editează</button>
+    </div>`;
+  card.appendChild(hdr);
+
+  const editArea = mk('div', 'accom-edit-area hid');
+  editArea.id = `accom-edit-${type}`;
+  editArea.innerHTML = `
+    <div class="accom-inp-row">
+      <input class="accom-inp" id="accom-name-inp-${type}"
+        placeholder="🏨 Nume cazare (ex: Hotel Ibis, Airbnb Central...)"
+        value="${e(ac.name)}"
+        onkeydown="if(event.key==='Enter') saveAccommodation('${type}')"/>
+      <input class="accom-inp" id="accom-coords-inp-${type}"
+        placeholder="📍 Adresă sau coordonate GPS (ex: 44.4268, 26.1025)"
+        value="${e(ac.coords)}"
+        onkeydown="if(event.key==='Enter') saveAccommodation('${type}')"/>
+      <button class="accom-btn primary" onclick="saveAccommodation('${type}')">✓ Salvează</button>
+    </div>
+    <div class="accom-hint">💡 Adresa sau coordonatele GPS vor fi folosite pentru a calcula distanțele automat față de restaurante și obiective.</div>`;
+  card.appendChild(editArea);
+  return card;
+}
+
+/* ═══════════════ HAVERSINE DISTANCE ═══════════════ */
+function parseLatLng(str) {
+  if (!str || !str.trim()) return null;
+  const m = str.trim().match(/^(-?\d+(?:\.\d+)?)\s*[,\s]\s*(-?\d+(?:\.\d+)?)$/);
+  if (!m) return null;
+  const lat = parseFloat(m[1]), lng = parseFloat(m[2]);
+  if (isNaN(lat) || isNaN(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
+  return {lat, lng};
+}
+
+function haversineKm(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function autoDistanceLabel(type, placeCoords) {
+  if (!placeCoords || !placeCoords.trim()) return null;
+  const ac = getAccommodation(type);
+  if (!ac.coords || !ac.coords.trim()) return null;
+  const p1 = parseLatLng(ac.coords);
+  const p2 = parseLatLng(placeCoords);
+  if (!p1 || !p2) return null;
+  const km = haversineKm(p1.lat, p1.lng, p2.lat, p2.lng);
+  if (km < 1) return Math.round(km * 1000) + ' m';
+  return km.toFixed(1) + ' km';
+}
+
+function hasAccommodation(type) {
+  const ac = getAccommodation(type);
+  return !!(ac.name && ac.name.trim()) || !!(ac.coords && ac.coords.trim());
+}
+
+function openDirectionsFromAccom(type, placeName, placeCoords) {
+  const ac = getAccommodation(type);
+  const origin = (ac.coords && ac.coords.trim()) ? ac.coords.trim() : ac.name.trim();
+  if (!origin) { toast('⚠ Adaugă mai întâi cazarea (Editează → salvează adresa)!'); return; }
+  const dest = (placeCoords && placeCoords.trim()) ? placeCoords.trim() : placeName.trim();
+  if (!dest) { toast('⚠ Adaugă un nume sau adresă pentru această locație!'); return; }
+  const url = 'https://www.google.com/maps/dir/?api=1'
+    + '&origin=' + encodeURIComponent(origin)
+    + '&destination=' + encodeURIComponent(dest);
+  window.open(url, '_blank');
+}
+
+/* ═══════════════ GEOCODARE AUTO (Nominatim / OpenStreetMap) ═══════════════ */
+async function geocodeAddress(query) {
+  try {
+    const url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q='
+      + encodeURIComponent(query);
+    const res = await fetch(url, { headers: { 'Accept-Language': 'ro,en' } });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data && data[0]) return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+  } catch(e) {}
+  return null;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function autoCalcAllDistances(type) {
+  const d = tripData(type);
+  if (!d) return;
+  const ac = getAccommodation(type);
+  const acQuery = (ac.coords && ac.coords.trim()) || (ac.name && ac.name.trim());
+  if (!acQuery) { toast('⚠ Adaugă mai întâi adresa cazării!'); return; }
+
+  // Update button state
+  const btn = document.getElementById(`accom-autodist-btn-${type}`);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Se calculează...'; }
+
+  try {
+    // Step 1: geocode accommodation if no lat/lng yet
+    let acCoords = parseLatLng(ac.coords);
+    if (!acCoords) {
+      toast('📡 Geocodare cazare...');
+      acCoords = await geocodeAddress(acQuery);
+      if (!acCoords) { toast('⚠ Nu am găsit cazarea pe hartă. Încearcă o adresă mai precisă.'); return; }
+      ac.coords = acCoords.lat.toFixed(6) + ', ' + acCoords.lng.toFixed(6);
+      save();
+    }
+
+    // Step 2: geocode each place without coords and calculate distance
+    const allPlaces = [
+      ...(d.restaurants || []).map(p => ({ p, ptype: 'food' })),
+      ...(d.places      || []).map(p => ({ p, ptype: 'visit' }))
+    ];
+
+    let updated = 0, failed = 0;
+    for (const { p, ptype } of allPlaces) {
+      // Determine search query: use existing coords, or name
+      const existingCoords = parseLatLng(p.coords);
+      let placeCoords = existingCoords;
+
+      if (!placeCoords && (p.name || '').trim()) {
+        // Geocode by name (+ context: accommodation city)
+        await sleep(1100); // Nominatim rate limit: 1 req/sec
+        const query = p.coords && p.coords.trim() ? p.coords : p.name.trim();
+        toast(`📡 Geocodare: ${p.name.slice(0,28)}...`);
+        placeCoords = await geocodeAddress(query);
+        if (placeCoords) {
+          p.coords = placeCoords.lat.toFixed(6) + ', ' + placeCoords.lng.toFixed(6);
+        }
+      }
+
+      if (placeCoords) {
+        const km = haversineKm(acCoords.lat, acCoords.lng, placeCoords.lat, placeCoords.lng);
+        const label = km < 1 ? Math.round(km * 1000) + ' m' : km.toFixed(1) + ' km';
+        p.distance = label;
+        p.unit = km < 1 ? 'm' : 'km';
+        updated++;
+      } else {
+        failed++;
+      }
+    }
+
+    save();
+    renderTrip(type);
+    const msg = failed > 0
+      ? `✓ ${updated} distanțe calculate! (${failed} locuri negăsite — adaugă adresa manual)`
+      : `✓ ${updated} distanțe calculate automat!`;
+    toast(msg);
+
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '📐 Calculează distanțe auto'; }
+  }
+}
 let shopSort = 'magazin'; // 'magazin' | 'adaugare'
 
 function buildShopView(items, type) {
@@ -2709,7 +3072,8 @@ function buildFullExport() {
     places:      trip.data.places      || [],
     itinerary:   trip.data.itinerary   || [],
     infos:       trip.data.infos       || [],
-    shopping:    trip.data.shopping    || []
+    shopping:    trip.data.shopping    || [],
+    accommodation: trip.data.accommodation || {name:'',coords:''}
   }));
   const total = allTrips.length;
   return {
@@ -2769,7 +3133,8 @@ function doImport() {
             places:      td.places      || [],
             itinerary:   td.itinerary   || [],
             infos:       td.infos       || [],
-            shopping:    td.shopping    || []
+            shopping:    td.shopping    || [],
+            accommodation: td.accommodation || {name:'',coords:''}
           }
         };
         S.trips.push(trip);
@@ -2791,7 +3156,7 @@ function doImport() {
     // FORMAT VECHI: { categories: [...], tripType: "city", ... }
     if (!parsed.categories) throw new Error();
     const trip=activeTrip(); if(!trip) return;
-    trip.data={categories:parsed.categories,restaurants:parsed.restaurants||[],places:parsed.places||[],itinerary:parsed.itinerary||[],infos:parsed.infos||[],shopping:parsed.shopping||[]};
+    trip.data={categories:parsed.categories,restaurants:parsed.restaurants||[],places:parsed.places||[],itinerary:parsed.itinerary||[],infos:parsed.infos||[],shopping:parsed.shopping||[],accommodation:parsed.accommodation||{name:'',coords:''}};
     if(parsed.name&&!trip.name) trip.name=parsed.name;
     save(); renderAll(); closeMd('impMod'); toast('✓ Import reușit!');
   } catch { alert('JSON invalid! Folosiți JSON-ul exportat din PackRo.'); }
