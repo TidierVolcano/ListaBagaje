@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T17:36:11.107Z",
+  "exportedAt": "2026-04-05T18:01:47.950Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_kdekca8",
+      "id": "trip_l97rnmd",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -706,13 +706,13 @@
         },
         {
           "id": "tb9kzf9",
-          "name": "Luini",
-          "distance": "5520.2 km",
+          "name": "Panzerotti Luini",
+          "distance": "1.2 km",
           "unit": "km",
-          "desc": "O instituție în Milano, aflată lângă Duomo. Trebuie neapărat să încerci panzerotti (un fel de gogoși sărate umplute cu mozzarella și roșii). Pregătește-te pentru o coadă mică, dar care merge repede.",
+          "desc": "Trebuie neapărat să încerci panzerotti (un fel de gogoși sărate umplute cu mozzarella și roșii). Pregătește-te pentru o coadă mică, dar care merge repede.",
           "checked": false,
           "open": false,
-          "coords": "1.018037, 34.340727"
+          "coords": "45.465846, 9.191420"
         },
         {
           "id": "zsa7w9q",
@@ -728,12 +728,13 @@
       "places": [
         {
           "id": "1e2g5h1",
-          "name": "Stadionul Giuseppe Meazza",
-          "distance": "",
+          "name": "Stadio Giuseppe Meazza",
+          "distance": "6.7 km",
           "unit": "km",
           "desc": "",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "45.478200, 9.123964"
         },
         {
           "id": "atbr9tg",
@@ -767,49 +768,53 @@
         },
         {
           "id": "v307wj7",
-          "name": "Lacul Como sau Bergamo",
-          "distance": "",
+          "name": "Lago di Como",
+          "distance": "59.1 km",
           "unit": "km",
           "desc": "Escapadă la Lacul Como sau Bergamo\nDatorită poziției sale, Milano este baza perfectă pentru a vizita regiunea lacurilor sau orașe medievale pitorești.\n\nLacul Como: Puteți lua trenul din gara Milano Cadorna sau Centrale până în orașul Como (aproximativ o oră). De acolo, o plimbare cu vaporasul până în Bellagio sau Varenna oferă peisaje montane spectaculoase.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "45.991759, 9.264881"
         },
         {
           "id": "u07wlzs",
-          "name": "Museul dei Bambini",
-          "distance": "",
-          "unit": "km",
+          "name": "Museo dei Bambini Milano",
+          "distance": "260 m",
+          "unit": "m",
           "desc": "",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "45.459951, 9.205128"
         },
         {
           "id": "lv45fkq",
-          "name": "Muzeul national de Stiinta si Tehnologie",
-          "distance": "",
-          "unit": "km",
-          "desc": "",
-          "checked": false,
-          "open": false
-        },
-        {
-          "id": "xrz5vxh",
-          "name": "Castelul Sforezo&Parco Sempione si Turnul Branca",
-          "distance": "",
-          "unit": "km",
-          "desc": "",
-          "checked": false,
-          "open": false
-        },
-        {
-          "id": "zy3xix2",
-          "name": "Muzeul de istorie naturala",
-          "distance": "962.2 km",
+          "name": "Leonardo da Vinci Museum Milano",
+          "distance": "2.8 km",
           "unit": "km",
           "desc": "",
           "checked": false,
           "open": false,
-          "coords": "51.496511, -0.176002"
+          "coords": "45.461781, 9.170587"
+        },
+        {
+          "id": "xrz5vxh",
+          "name": "Sforzesco Castle",
+          "distance": "39.9 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false,
+          "coords": "45.478747, 8.695630"
+        },
+        {
+          "id": "zy3xix2",
+          "name": "Milan Natural History Museum Museo Civico di Storia Naturale di Milano",
+          "distance": "1.2 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false,
+          "coords": "45.472734, 9.202442"
         },
         {
           "id": "z923w3q",
@@ -833,12 +838,13 @@
         },
         {
           "id": "w8eswy9",
-          "name": "Acquaworld(Concoreszo)",
-          "distance": "",
+          "name": "Acquaworld Milano",
+          "distance": "16.5 km",
           "unit": "km",
           "desc": "",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "45.583413, 9.329031"
         },
         {
           "id": "a4k7tov",
@@ -852,12 +858,13 @@
         },
         {
           "id": "xgfsmx8",
-          "name": "Acvariul Civic",
-          "distance": "",
+          "name": "Acquario Civico e Stazione Idrobiologica di Milano",
+          "distance": "2.4 km",
           "unit": "km",
           "desc": "",
           "checked": false,
-          "open": true
+          "open": false,
+          "coords": "45.473786, 9.180928"
         },
         {
           "id": "fh1c4d2",
@@ -874,7 +881,7 @@
         {
           "id": "vil3ofx",
           "num": 1,
-          "label": "milano",
+          "label": "Ziua 1: Centrul Istoric și \"Gustul\" Milano",
           "open": true,
           "activities": [
             {
@@ -908,7 +915,35 @@
               "done": false
             }
           ],
-          "body": "Ziua 1: Centrul Istoric și \"Gustul\" Milano Concentrare pe zona Duomo – mers pe jos puțin. • Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona. • Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!). • După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori.\nZiua 2: Tehnologie, Cavaleri și Joacă Zona Parco Sempione – cea mai prietenoasă zonă pentru copii. • Dimineața: Muzeul Național de Știință și Tehnologie. Rezervați minim 3 ore. Submarinul Enrico Toti și avioanele sunt piesa centrală. • Prânz: În zona Sant'Ambrogio (sunt multe bistrouri mici). • După-amiaza: Castello Sforzesco. Intrați în curțile interioare (e gratuit). Apoi treceți direct în Parco Sempione. • Opțional: Turnul Branca (în parc) pentru o vedere de sus sau Acvariul Civic (este chiar la marginea parcului, vizită rapidă de 40 min).\nZiua 3: Ziua \"Alex\" (Leolandia) Ieșire din oraș spre Capriate San Gervasio. • Toată ziua: Leolandia. • Sfat: Plecați devreme (ora 09:00) ca să prindeți deschiderea la 10:00. Fiindcă aveți în listă \"Vii o dată, revii gratis\", păstrați biletele! Dacă Alex e prea obosit, vă puteți întoarce a doua zi doar pentru spectacole sau ce ați ratat. • Cină: Probabil veți mânca în parc sau pe drumul de întoarcere.\nZiua 4: Educație și Natură Zona Porta Venezia. • Dimineața: MUBA (Museo dei Bambini). Verificați orele atelierelor și rezervați online! Este o experiență senzorială superbă pentru un copil de 5 ani. • Prânz: În zona Porta Venezia. • După-amiaza: Muzeul de Istorie Naturală (este fix peste drum, în Giardini Pubblici Indro Montanelli). Are secțiuni mari cu dinozauri care sunt \"must-see\" la această vârstă. • Seara: Plimbare prin parcul de lângă muzeu – are locuri de joacă foarte bune.\nZiua 5 (Extra): Escapadă sau Relaxare În funcție de energie. • Varianta A (Activă): Trenul spre Como (1h). Plimbare cu vaporașul. E foarte relaxant pentru toți. • Varianta B (Distracție): Acquaworld în Concorezzo (dacă mai aveți chef de bălăceală). • Varianta C (Fotbal): Stadionul San Siro. Dacă Alex nu e fan, lăsați-l pe tati să meargă singur 2 ore, iar restul grupului poate merge la Idroscalo pentru o plimbare pe malul lacului artificial."
+          "body": "Concentrare pe zona Duomo – mers pe jos puțin.\n• Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona.\n• Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!).\n• După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori."
+        },
+        {
+          "id": "oo1gw4r",
+          "num": 2,
+          "label": "Ziua 2: Tehnologie, Cavaleri și Joacă",
+          "body": "Zona Parco Sempione – cea mai prietenoasă zonă pentru copii.\n• Dimineața: Muzeul Național de Știință și Tehnologie. Rezervați minim 3 ore. Submarinul Enrico Toti și avioanele sunt piesa centrală.\n• Prânz: În zona Sant'Ambrogio (sunt multe bistrouri mici).\n• După-amiaza: Castello Sforzesco. Intrați în curțile interioare (e gratuit). Apoi treceți direct în Parco Sempione.\n• Opțional: Turnul Branca (în parc) pentru o vedere de sus sau Acvariul Civic (este chiar la marginea parcului, vizită rapidă de 40 min).",
+          "activities": []
+        },
+        {
+          "id": "6dpedt0",
+          "num": 3,
+          "label": "Ziua 3: Ziua \"Alex\" (Leolandia)",
+          "body": "Ieșire din oraș spre Capriate San Gervasio.\n• Toată ziua: Leolandia.\n• Sfat: Plecați devreme (ora 09:00) ca să prindeți deschiderea la 10:00. Fiindcă aveți în listă \"Vii o dată, revii gratis\", păstrați biletele! Dacă Alex e prea obosit, vă puteți întoarce a doua zi doar pentru spectacole sau ce ați ratat.\n• Cină: Probabil veți mânca în parc sau pe drumul de întoarcere.",
+          "activities": []
+        },
+        {
+          "id": "w8exq5d",
+          "num": 4,
+          "label": "Ziua 4: Educație și Natură",
+          "body": "Zona Porta Venezia.\n• Dimineața: MUBA (Museo dei Bambini). Verificați orele atelierelor și rezervați online! Este o experiență senzorială superbă pentru un copil de 5 ani.\n• Prânz: În zona Porta Venezia.\n• După-amiaza: Muzeul de Istorie Naturală (este fix peste drum, în Giardini Pubblici Indro Montanelli). Are secțiuni mari cu dinozauri care sunt \"must-see\" la această vârstă.\n• Seara: Plimbare prin parcul de lângă muzeu – are locuri de joacă foarte bune.",
+          "activities": []
+        },
+        {
+          "id": "u4t2k13",
+          "num": 5,
+          "label": "Ziua 5 (Extra): Escapadă sau Relaxare",
+          "body": "În funcție de energie.\n• Varianta A (Activă): Trenul spre Como (1h). Plimbare cu vaporașul. E foarte relaxant pentru toți.\n• Varianta B (Distracție): Acquaworld în Concorezzo (dacă mai aveți chef de bălăceală).\n• Varianta C (Fotbal): Stadionul San Siro. Dacă Alex nu e fan, lăsați-l pe tati să meargă singur 2 ore, iar restul grupului poate merge la Idroscalo pentru o plimbare pe malul lacului artificial.",
+          "activities": []
         }
       ],
       "infos": [
@@ -1023,7 +1058,7 @@
       }
     },
     {
-      "id": "trip_kgvr6j5",
+      "id": "trip_dm6jhc4",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1305,7 +1340,7 @@
       }
     },
     {
-      "id": "trip_lrqoszl",
+      "id": "trip_4s06kcr",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1605,7 +1640,7 @@
       }
     },
     {
-      "id": "trip_hsafcrv",
+      "id": "trip_xj5x1s7",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2690,7 +2725,7 @@
       }
     },
     {
-      "id": "trip_0eiojwj",
+      "id": "trip_8vum4w4",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
