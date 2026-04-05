@@ -1,13 +1,13 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T18:01:47.950Z",
+  "exportedAt": "2026-04-05T18:45:20.829Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_l97rnmd",
+      "id": "trip_bswcts4",
       "type": "city",
       "name": "Milano",
-      "savedAt": 1775041533680,
+      "savedAt": 1775414718871,
       "active": true,
       "categories": [
         {
@@ -731,9 +731,9 @@
           "name": "Stadio Giuseppe Meazza",
           "distance": "6.7 km",
           "unit": "km",
-          "desc": "",
+          "desc": "9/10\nChiar dacă nu ești microbist, San Siro este „Scala Fotbalului”. Mergi pentru istoria colosală a celor două echipe (AC Milan și Inter) și pentru arhitectura brutalistă impresionantă.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.478200, 9.123964"
         },
         {
@@ -741,9 +741,9 @@
           "name": "Duomo di Milano",
           "distance": "1.2 km",
           "unit": "km",
-          "desc": "Se poate urca pe terasele de pe acoperis pentru o vederea panoramica asupra orasului si a Alpilor in silele senine.\nInteriorul gazduieste vitralii uriase si o oraga impresionanta, una dintre cele mai mari din Europa.",
+          "desc": "10/10\nEste inima orașului. Mergi nu doar pentru interiorul gotic, ci neapărat pentru a urca pe acoperiș (le terrazze) – experiența de a te plimba printre statui și turle este unică în lume.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.464167, 9.191612"
         },
         {
@@ -751,9 +751,9 @@
           "name": "Teatro alla Scala",
           "distance": "1.5 km",
           "unit": "km",
-          "desc": "Este situat la celălalt capăt al galeriei și este una dintre cele mai renumite săli de operă din lume.\n\nMuzeul teatrului oferă o privire în culisele spectacolelor de operă și balet.\n\nPiața din fața sa găzduiește statuia lui Leonardo da Vinci, un loc popular de întâlnire.",
+          "desc": "9.5/10\nPentru eleganța supremă. Mergi să vezi un spectacol sau măcar muzeul, pentru a simți vibrația celui mai faimos teatru de operă din lume, unde au cântat cele mai mari voci ale istoriei.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.467604, 9.189114"
         },
         {
@@ -761,9 +761,9 @@
           "name": "Galleria Vittorio Emanuele II",
           "distance": "1.3 km",
           "unit": "km",
-          "desc": "Galleria Vittorio Emanuele II\nSe află chiar lângă catedrală și este considerată „camera de zi” a milanezilor datorită eleganței sale.\n\nGăzduiește magazine de lux, restaurante istorice și mozaicuri faimoase pe podea.\n\nArhitectura cu cupolă de sticlă și fier este un exemplu remarcabil de design din secolul al XIX-lea.",
+          "desc": "9/10\nSupranumită „salonul milanez”, mergi aici pentru un mix de lux, istorie și tradiție (cum ar fi să te învârți pe călcâi pe taurul de mozaic pentru noroc).",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.465611, 9.190006"
         },
         {
@@ -771,9 +771,9 @@
           "name": "Lago di Como",
           "distance": "59.1 km",
           "unit": "km",
-          "desc": "Escapadă la Lacul Como sau Bergamo\nDatorită poziției sale, Milano este baza perfectă pentru a vizita regiunea lacurilor sau orașe medievale pitorești.\n\nLacul Como: Puteți lua trenul din gara Milano Cadorna sau Centrale până în orașul Como (aproximativ o oră). De acolo, o plimbare cu vaporasul până în Bellagio sau Varenna oferă peisaje montane spectaculoase.",
+          "desc": "10/10\nPentru peisajele care par scoase din cărți poștale. Mergi să vezi vilele aristocratice și munții care se oglindesc în apă; este definiția eleganței naturale italiene.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.991759, 9.264881"
         },
         {
@@ -781,9 +781,9 @@
           "name": "Museo dei Bambini Milano",
           "distance": "260 m",
           "unit": "m",
-          "desc": "",
+          "desc": "8/10\nDacă ești cu cei mici, este obligatoriu. Mergi pentru că este un spațiu creativ unde copiii învață prin joacă, departe de conceptul de muzeu plictisitor.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.459951, 9.205128"
         },
         {
@@ -791,9 +791,9 @@
           "name": "Leonardo da Vinci Museum Milano",
           "distance": "2.8 km",
           "unit": "km",
-          "desc": "",
+          "desc": "9.5/10\nUn tribut adus geniului uman. Mergi să vezi machetele invențiilor lui Leonardo și să înțelegi cum un singur om a anticipat viitorul cu 500 de ani înainte.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.461781, 9.170587"
         },
         {
@@ -801,9 +801,9 @@
           "name": "Sforzesco Castle",
           "distance": "39.9 km",
           "unit": "km",
-          "desc": "",
+          "desc": "8.5/10\nPentru a respira aerul unei fortărețe renascentiste. Mergi să vezi curțile interioare și ultima sculptură a lui Michelangelo, Pietà Rondanini.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.478747, 8.695630"
         },
         {
@@ -811,9 +811,9 @@
           "name": "Milan Natural History Museum Museo Civico di Storia Naturale di Milano",
           "distance": "1.2 km",
           "unit": "km",
-          "desc": "",
+          "desc": "8/10\nUn clasic plin de farmec. Mergi pentru dioramele foarte bine realizate și pentru secțiunea dedicată dinozaurilor, situată chiar în frumosul parc Giardini Pubblici.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.472734, 9.202442"
         },
         {
@@ -821,9 +821,9 @@
           "name": "Leolandia(Capriate San Gervasio)",
           "distance": "30.6 km",
           "unit": "km",
-          "desc": "",
+          "desc": "8.5/10\nDestinația nr. 1 pentru familiile cu copii mici. Mergi pentru atmosfera de basm, parcul „Italia în Miniatură” din interior și pentru personajele celebre din desene animate.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.606793, 9.539878"
         },
         {
@@ -831,9 +831,9 @@
           "name": "Idroscalo",
           "distance": "6.5 km",
           "unit": "km",
-          "desc": "",
+          "desc": "7/10\nEste supranumit „marea celor din Milano”. Mergi aici pentru o zi relaxantă de sporturi nautice, jogging sau pur și simplu pentru a scăpa de betonul orașului fără a conduce ore întregi.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.464207, 9.289032"
         },
         {
@@ -841,9 +841,9 @@
           "name": "Acquaworld Milano",
           "distance": "16.5 km",
           "unit": "km",
-          "desc": "",
+          "desc": "8/10\nEste destinația ideală pentru distracție pură. Fiind un parc acvatic indoor, este perfect indiferent de vreme, oferind un mix bun între adrenalină (tobogane) și relaxare (zonă SPA).",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.583413, 9.329031"
         },
         {
@@ -851,9 +851,9 @@
           "name": "Bergamo Alta",
           "distance": "44.6 km",
           "unit": "km",
-          "desc": "",
+          "desc": "10/10\nO bijuterie istorică. Trebuie să mergi pentru atmosfera medievală, străduțele pietruite și priveliștea spectaculoasă de pe zidurile venețiene. Este, fără îndoială, cea mai fotogenică locație din listă.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.702838, 9.665286"
         },
         {
@@ -861,9 +861,9 @@
           "name": "Acquario Civico e Stazione Idrobiologica di Milano",
           "distance": "2.4 km",
           "unit": "km",
-          "desc": "",
+          "desc": "7.5/10\nSituat chiar lângă Parco Sempione, este o vizită scurtă și educativă. Mergi acolo pentru a admira arhitectura Art Nouveau a clădirii și pentru o pauză liniștită de observat viața subacvatică.",
           "checked": false,
-          "open": false,
+          "open": true,
           "coords": "45.473786, 9.180928"
         },
         {
@@ -871,10 +871,11 @@
           "name": "Piazza Gae Aulenti",
           "distance": "2.7 km",
           "unit": "km",
-          "desc": "",
+          "desc": "9.5/10\nEste simbolul Milano-ului futurist. Trebuie să mergi acolo pentru a admira skyline-ul cu Turnul Unicredit, pentru a te bucura de jocurile de apă ale fântânilor și pentru a face o plimbare spre Bosco Verticale (Pădurea Verticală) prin parcul Biblioteca degli Alberi (BAM).",
           "checked": false,
-          "open": false,
-          "coords": "45.483478, 9.190225"
+          "open": true,
+          "coords": "45.483478, 9.190225",
+          "collapsed": false
         }
       ],
       "itinerary": [
@@ -1058,7 +1059,7 @@
       }
     },
     {
-      "id": "trip_dm6jhc4",
+      "id": "trip_y11vz5c",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1340,7 +1341,7 @@
       }
     },
     {
-      "id": "trip_4s06kcr",
+      "id": "trip_14tay4p",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1640,7 +1641,7 @@
       }
     },
     {
-      "id": "trip_xj5x1s7",
+      "id": "trip_33m0jn6",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2725,7 +2726,7 @@
       }
     },
     {
-      "id": "trip_8vum4w4",
+      "id": "trip_r7xwyzn",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
