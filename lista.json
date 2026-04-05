@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T07:08:11.470Z",
-  "activeType": "city",
+  "exportedAt": "2026-04-05T08:12:39.920Z",
+  "activeType": "seaair",
   "trips": [
     {
-      "id": "trip_jolk6mk",
+      "id": "trip_aaezlxs",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -1002,10 +1002,14 @@
           "store": "Lidl",
           "bought": false
         }
-      ]
+      ],
+      "accommodation": {
+        "name": "",
+        "coords": ""
+      }
     },
     {
-      "id": "trip_4zmb87u",
+      "id": "trip_xwfnylz",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1280,10 +1284,14 @@
       "places": [],
       "itinerary": [],
       "infos": [],
-      "shopping": []
+      "shopping": [],
+      "accommodation": {
+        "name": "",
+        "coords": ""
+      }
     },
     {
-      "id": "trip_n9sjviu",
+      "id": "trip_e6jyjnb",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1576,10 +1584,14 @@
       "places": [],
       "itinerary": [],
       "infos": [],
-      "shopping": []
+      "shopping": [],
+      "accommodation": {
+        "name": "",
+        "coords": ""
+      }
     },
     {
-      "id": "trip_a5d4myb",
+      "id": "trip_c6gaij6",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2479,149 +2491,155 @@
       "restaurants": [
         {
           "id": "wajhuis",
-          "name": "El Palmar  - Restaurant Pasqualet",
-          "distance": "",
+          "name": "Restaurant Pasqualet",
+          "distance": "19.1 km",
           "unit": "km",
           "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi și respectate locuri. Este o afacere de familie unde se gătește tradițional.\n\nDe ce să mergi: Au o curte interioară foarte plăcută și sunt renumiți pentru Paella Valenciana (cea cu pui și iepure) și All i Pebre (anghilă, un preparat specific zonei).\n\nPreț: Mediu.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.310816, -0.317767"
         },
         {
           "id": "9rb2yxd",
-          "name": "El Palmar  - Restaurante Arrocería Maribel",
-          "distance": "",
+          "name": "Restaurante Arrocería Maribel",
+          "distance": "19.1 km",
           "unit": "km",
           "desc": "Restaurante Arrocería Maribel\nDacă vrei ceva un pic mai modern, dar cu rădăcini adânci în tradiție.\n\nDe ce să mergi: Prezentarea este mai rafinată, iar orezul este gătit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigăii). Au și opțiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.310639, -0.318162"
         },
         {
           "id": "j0g6pil",
-          "name": "El Palmar  -Restaurante El Redolí",
-          "distance": "",
+          "name": "Restaurante El Redolí",
+          "distance": "19.0 km",
           "unit": "km",
           "desc": "Restaurante El Redolí\nAre o terasă superbă și o atmosferă foarte relaxată, fiind ideal dacă ești cu copilul după drumul cu bicicleta.\n\nDe ce să mergi: Raport calitate-preț excelent. Este foarte popular printre localnicii din Valencia care vin aici în weekend.\n\nSfat: Încearcă aici Arroz a Banda (orez gătit în supă de pește).",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.311084, -0.318832"
         }
       ],
       "places": [
         {
           "id": "ft9h6kz",
-          "name": "Orasul Artelor si Stiintei",
-          "distance": "",
+          "name": "Ciudad de las Artes y las Ciencias",
+          "distance": "3.1 km",
           "unit": "km",
           "desc": "(Ciudad de las Artes y las Ciencias): Este simbolul orașului, un complex spectaculos proiectat de Santiago Calatrava. Chiar dacă nu intri în clădiri, plimbarea printre structurile albe și bazinele de apă turcoaz este obligatorie.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.455756, -0.352552"
         },
         {
           "id": "m0yd8hg",
-          "name": "Oceanograful",
-          "distance": "",
+          "name": "Oceanogràfic Valencia",
+          "distance": "3.7 km",
           "unit": "km",
           "desc": "L’Oceanogràfic: Cel mai mare acvariu din Europa. Este fascinant pentru copii (și adulți), având un tunel cu rechini impresionant și ecosisteme din toate oceanele lumii.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.453049, -0.347181"
         },
         {
           "id": "dxkfq41",
-          "name": "Catedrala din Valencia",
-          "distance": "",
-          "unit": "km",
+          "name": "Valencia Cathedral",
+          "distance": "260 m",
+          "unit": "m",
           "desc": "Catedrala din Valencia: O clădire superbă care îmbină stilurile gotic, baroc și romanic. Aici se află ceea ce mulți consideră a fi adevăratul Sfânt Graal. Nu rata urcarea în turnul El Miguelete pentru cea mai bună panoramă asupra orașului.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.475568, -0.375113"
         },
         {
           "id": "l0a42n5",
-          "name": "Bursa Matasii",
-          "distance": "",
-          "unit": "km",
+          "name": "Lonja de la Seda",
+          "distance": "173 m",
+          "unit": "m",
           "desc": "Llotja de la Seda (Bursa Mătăsii): Un monument UNESCO, exemplu magnific de arhitectură gotică civilă, care amintește de epoca de aur a comerțului din Valencia.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.474432, -0.378260"
         },
         {
           "id": "w0mudn5",
-          "name": "Piata Centerala din Valencia",
-          "distance": "",
+          "name": "Mercado Centrale Valencia",
+          "distance": "125.8 km",
           "unit": "km",
           "desc": "(Mercat Central): Una dintre cele mai mari și mai frumoase piețe de produse proaspete din Europa. Este locul perfect pentru a vedea viața locală și pentru a gusta produse tradiționale (atenție, se închide în jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
           "checked": false,
-          "open": false
-        },
-        {
-          "id": "3wbv9pb",
-          "name": "Barrio del Carmen",
-          "distance": "",
-          "unit": "km",
-          "desc": "Cel mai vechi și boem cartier, plin de străduțe înguste, artă stradală (street art) și terase primitoare.",
-          "checked": false,
-          "open": false
+          "open": false,
+          "coords": "38.348139, -0.486147"
         },
         {
           "id": "pc4byv3",
-          "name": "Grădinile Turia",
-          "distance": "",
-          "unit": "km",
+          "name": "Jardín del Turia",
+          "distance": "989 m",
+          "unit": "m",
           "desc": "Un parc imens de 9 km amenajat în fosta albie a râului care traversează orașul. Este locul ideal pentru a merge cu bicicleta de la centru până la mare. Nu rata Parcul Gulliver, un spatiu de joaca urias.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.474196, -0.366809"
         },
         {
           "id": "h97xu2x",
-          "name": "Parcul Gulliver",
-          "distance": "",
+          "name": "Gulliver park Valencia",
+          "distance": "2.2 km",
           "unit": "km",
           "desc": " Situat în Grădinile Turia, este un loc de joacă uriaș sub forma personajului Gulliver, unde copiii pot urca și aluneca pe hainele și degetele uriașului.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.462499, -0.359502"
         },
         {
           "id": "52kb0a8",
           "name": "Valencia Bioparc",
-          "distance": "",
+          "distance": "2.4 km",
           "unit": "km",
           "desc": "O grădină zoologică de tip \"zoo-imersiune\", unde barierele sunt aproape invizibile, oferindu-ți senzația că te plimbi prin savana africană.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.476216, -0.406398"
         },
         {
           "id": "gp3ga0s",
-          "name": "Plaja Urbana Las Arena",
-          "distance": "",
+          "name": "Playa las Arenas Valencia",
+          "distance": "4.8 km",
           "unit": "km",
           "desc": "Plaje foarte late, cu nisip fin, perfecte pentru o plimbare pe faleză sau un prânz cu paella lângă mare.",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.468899, -0.322761"
         },
         {
           "id": "2leywc9",
-          "name": "Plaja Urbana Malvarrosa",
-          "distance": "",
+          "name": "Malvarrosa beach Valencia",
+          "distance": "4.7 km",
           "unit": "km",
           "desc": "",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.479391, -0.323720"
         },
         {
           "id": "cwb7qwk",
-          "name": "Parcul Natural Albufera - Bicicleta",
-          "distance": "",
+          "name": "Parque Natural de la Albufera",
+          "distance": "19.2 km",
           "unit": "km",
           "desc": "Este, fără îndoială, cel mai frumos loc de vizitat cu bicicleta în afara centrului orașului Valencia. Este o experiență de o zi întreagă care combină natura, plaja și gastronomia.\nDificultate: Foarte mică. Tot traseul este complet plat.\n\nPeisaj: Vei pedala pe o pistă de biciclete dedicată care pleacă din Orașul Artelor și Științelor, trece prin păduri de pini (La Devesa), pe lângă dune de nisip și ajunge la imensul lac de apă dulce.\n\nDistanță: Din centrul Valenciei până în satul El Palmar (inima parcului) sunt aproximativ 20 km. Cu un e-bike, drumul acesta este o relaxare totală, chiar și cu un copil în scaun.\n\nCe să faci în Albufera (Etapele zilei)\nPlaja El Saler: Pe drum, oprește-te la această plajă. Este mult mai sălbatică și mai curată decât Malvarrosa din oraș.\n\nPlimbarea cu barca: Când ajungi la lac (Mirador de Pujol sau în El Palmar), trebuie neapărat să faci o plimbare cu barca tradițională (albuferenc). Costă în jur de 5€ - 10€ de persoană și durează 30-45 de minute. Este magic, mai ales că poți vedea flamingo și alte păsări protejate.\n\nPrânzul în El Palmar: Satul este considerat locul unde s-a inventat Paella. Oprește-te la unul dintre restaurantele locale pentru o paella autentică la ea acasă. (Atenție: în iunie e bine să rezervi masa cu o zi înainte).\n\n",
           "checked": false,
-          "open": false
+          "open": false,
+          "coords": "39.305485, -0.342739"
         },
         {
           "id": "ib926wp",
-          "name": "Rent a Bike",
-          "distance": "",
+          "name": "Rent Your Bike Valencia",
+          "distance": "1790.6 km",
           "unit": "km",
           "desc": "Locații recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate în centrul vechi sau lângă Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPreț e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ în plus.\n\nValencia Bikes: Au 3 locații în oraș (Centru, Ruzafa și lângă port). Sunt cunoscuți pentru servicii de calitate.\n\nPreț e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un preț simbolic dacă închiriezi e-bike.\n\nPelican Bike: Situat aproape de Orașul Artelor și Științelor.\n\nPreț e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gamă largă de scaune și chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O opțiune excelentă lângă Grădinile Turia (Paseo de la Pechina 32).\n\nPreț e-bike: 25€ (până la închidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
           "checked": false,
-          "open": true
+          "open": true,
+          "coords": "52.505119, 13.386056"
         }
       ],
       "itinerary": [],
@@ -2651,10 +2669,14 @@
           "body": "Valencia este unul dintre cele mai prietenoase orașe din Europa pentru biciclete, fiind aproape complet plat și având peste 160 km de piste dedicate. Pentru un grup de 4 adulți și 2 copii de 4-5 ani, închirierea de e-bike-uri (biciclete electrice) este o idee excelentă, mai ales că vă permit să parcurgeți tot parcul Turia (9 km lungime) fără efort.\n\nIată recomandările mele specifice pentru grupul vostru:\n\n1. Unde închiriați (Centre recomandate)\nPentru e-bike-uri de calitate și accesorii pentru copii, cele mai bune opțiuni sunt în zona centrului vechi (Ciutat Vella) sau lângă parcul Turia:\n\nPassion Bike (Serranos/Centru): Au o flotă mare de e-bike-uri și, foarte important, au scaune de copii și remorci (trailers). Sunt foarte obișnuiți cu turiștii.\n\nThe Bike Software / DoYouBike: Au mai multe locații în oraș. Sunt profesioniști și oferă asistență tehnică rapidă.\n\nValencia Bikes (Ruzafa sau Port): Ideali dacă vreți să începeți plimbarea direct dinspre port sau cartierul modern Ruzafa.\n\n2. Configurația pentru copii (4-5 ani)\nLa această vârstă, copiii sunt prea mari pentru scaunele mici de bebeluși, dar prea mici să pedaleze singuri pe distanțe lungi în trafic. Aveți 3 variante:\n\nScaun de spate (Rear Seat): Majoritatea centrelor au scaune care suportă până la 22-25 kg. Verificați greutatea copiilor înainte.\n\nRemorcă (Cariola/Trailer): O soluție excelentă pentru 2 copii. Stau amândoi în spate, protejați de soare, și se pot chiar juca sau dormi în timp ce voi pedalați.\n\nTag-along bike (Semicicletă): O bicicletă mică fără roată față care se agață de bicicleta adultului. Copilul poate pedala dacă vrea, dar este tras de tine. (Verificați disponibilitatea online, nu toate centrele au multe).\n\n3. Cât costă (Estimare 2026)\nE-bike adult: ~25€ - 35€ pentru o zi întreagă (8-10 ore) sau ~10€ - 15€ pentru 2-3 ore.\n\nScaun copil: ~5€ / zi.\n\nRemorcă (pentru 1 sau 2 copii): ~10€ - 15€ / zi.\n\n4. Reguli importante în Valencia\nPiste de biciclete: Este interzis să mergeți pe trotuar. Trebuie să folosiți pistele de biciclete (marcate cu roșu sau verde) sau drumurile cu limită de 30 km/h.\n\nCăști: Pentru copiii sub 16 ani, casca este obligatorie prin lege. Pentru adulți este recomandată, dar nu obligatorie în oraș.\n\nParcare: Nu lăsați bicicletele electrice nesupravegheate pe stradă peste noapte, chiar și cu antifurt. Majoritatea centrelor vă vor cere să le aduceți înapoi la închidere sau să le țineți în interiorul locației de cazare.\n\n5. Traseul perfect cu copiii\nVă recomand traseul prin Grădinile Turia (Jardín del Turia):\n\nÎncepeți de la Turnurile Serranos.\n\nPedalați prin albia secată a râului (fără mașini, doar natură și piste late).\n\nOpriți-vă la Parcul Gulliver (copiii se vor distra de minune).\n\nContinuați până la Orașul Artelor și Științelor.\n\nDacă aveți energie, pedalați încă 15 minute pe pista dreaptă până la Plaja Malvarrosa.\n\nSfat de rezervare: Fiind un grup de 6 persoane cu nevoi specifice (e-bike + accesorii copii), rezervați online cu cel puțin 48h înainte. E-bike-urile cu scaune de copii sunt primele care se epuizează în weekend-uri sau zile însorite."
         }
       ],
-      "shopping": []
+      "shopping": [],
+      "accommodation": {
+        "name": "Casa Valencians",
+        "coords": "39.475986, -0.378099"
+      }
     },
     {
-      "id": "trip_97utixy",
+      "id": "trip_v0g6j1h",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
@@ -2903,7 +2925,11 @@
       ],
       "itinerary": [],
       "infos": [],
-      "shopping": []
+      "shopping": [],
+      "accommodation": {
+        "name": "",
+        "coords": ""
+      }
     }
   ]
 }
