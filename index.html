@@ -1050,71 +1050,45 @@ body.bg-night::before {
   -webkit-backdrop-filter: var(--card-blur);
   backdrop-filter: var(--card-blur);
   border: 1px solid var(--card-border);
-  border-radius:var(--r); margin-bottom:10px;
+  border-radius:var(--r); margin-bottom:12px;
   box-shadow: var(--card-shadow); overflow:hidden;
+  border-left: 4px solid var(--gold);
 }
 .itin-day-hdr {
-  display:flex; align-items:center; gap:8px; padding:13px 14px;
-  cursor:pointer; user-select:none; -webkit-user-select:none;
-  transition:background .12s;
+  display:flex; align-items:center; gap:10px; padding:13px 14px 11px;
+  border-bottom:1px solid var(--sand);
 }
-.itin-day-hdr:hover { background:rgba(200,137,42,.07) }
-.itin-day-hdr:active { background:rgba(200,137,42,.12) }
 .itin-day-num {
-  background:var(--navy); color:#fff; border-radius:8px;
-  font-family:'DM Mono',monospace; font-size:.72rem; font-weight:600;
-  padding:4px 9px; flex-shrink:0; min-width:34px; text-align:center;
+  background: linear-gradient(135deg, var(--navy), var(--navy2));
+  color:#fff; border-radius:9px;
+  font-family:'DM Mono',monospace; font-size:.72rem; font-weight:700;
+  padding:5px 10px; flex-shrink:0; min-width:36px; text-align:center;
+  letter-spacing:.3px;
 }
 .itin-day-label {
   flex:1; font-family:'Fraunces',serif; font-size:16px; font-weight:700;
   color:var(--text); border:none; background:transparent; outline:none; min-width:0;
 }
 .itin-day-label::placeholder { color:#bbb; font-weight:400; font-style:italic }
-.itin-day-acts-count {
-  font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
-  flex-shrink:0; white-space:nowrap;
+.itin-day-body-wrap { padding:12px 14px 14px }
+.itin-body-ta {
+  width:100%; min-height:80px;
+  border:1px solid var(--card-border); border-radius:var(--rs);
+  padding:12px 14px; font-size:15px; font-family:'DM Sans',sans-serif;
+  color:var(--text); line-height:1.7; resize:none; outline:none;
+  background:rgba(232,222,206,0.3); transition:all .15s;
+  overflow:hidden;
+  -webkit-overflow-scrolling:touch;
 }
-.itin-day-chv { color:var(--muted); font-size:.72rem; transition:transform .22s; flex-shrink:0 }
-.itin-day-chv.op { transform:rotate(180deg) }
-.itin-day-body { border-top:1px solid var(--sand) }
-.itin-day-body.hid { display:none }
-.itin-acts { padding:4px 0 }
-.itin-act-row {
-  display:flex; align-items:center; gap:8px; padding:9px 14px;
-  transition:background .12s;
+.itin-body-ta:focus {
+  border-color:var(--gold); background:rgba(255,252,246,0.9);
+  box-shadow:0 0 0 3px rgba(200,137,42,.12);
 }
-.itin-act-row:hover { background:rgba(200,137,42,.06) }
-.act-done-chk {
-  width:18px; height:18px; border-radius:50%; border:2px solid var(--border);
-  flex-shrink:0; cursor:pointer; appearance:none; -webkit-appearance:none;
-  position:relative; transition:all .15s; background:#fff;
-}
-.act-done-chk:checked { background:var(--gold); border-color:var(--gold) }
-.act-done-chk:checked::after {
-  content:'✓'; position:absolute; top:-1px; left:2px;
-  font-size:11px; color:#fff; font-weight:700;
-}
-.act-time {
-  width:52px; font-family:'DM Mono',monospace; font-size:13px;
-  color:var(--muted); background:var(--sand); border:none;
-  border-radius:5px; padding:4px 5px; text-align:center; outline:none; flex-shrink:0;
-}
-.act-time:focus { background:#fff; box-shadow:0 0 0 2px var(--gold); color:var(--text) }
-.act-time::placeholder { color:#bbb }
-.act-txt {
-  flex:1; border:none; background:transparent; color:var(--text);
-  font-family:'DM Sans',sans-serif; outline:none; min-width:0;
-  font-size:15px; padding:0;
-}
-.itin-act-row.act-done .act-txt { text-decoration:line-through; color:var(--muted) }
-.add-act-row {
-  display:flex; gap:8px; align-items:center;
-  padding:8px 14px 12px; border-top:1px dashed var(--sand);
-}
+.itin-body-ta::placeholder { color:#bbb; font-style:italic; line-height:1.7 }
 .add-day-btn {
   width:100%; border:2px dashed var(--border); background:transparent;
-  border-radius:var(--r); padding:13px; cursor:pointer; color:var(--gold);
-  font-size:.88rem; font-family:'DM Sans',sans-serif;
+  border-radius:var(--r); padding:14px; cursor:pointer; color:var(--gold);
+  font-size:.9rem; font-family:'DM Sans',sans-serif; font-weight:500;
   display:flex; align-items:center; justify-content:center; gap:8px;
   transition:all .2s; margin-bottom:10px;
 }
@@ -2310,40 +2284,51 @@ function buildPlace(p, type, ptype) {
 }
 
 function buildItinDay(day, type) {
-  const done=day.activities.filter(a=>a.done).length, tot=day.activities.length;
-  const el=mk('div','itin-day'); el.dataset.did=day.id;
-  const hdr=mk('div','itin-day-hdr');
-  hdr.innerHTML=`
-    <span class="itin-day-num">Z${day.num||'?'}</span>
-    <input class="itin-day-label" value="${e(day.label||'')}" placeholder="Ex: Sosire, Centru vechi, Excursie..."
-      onclick="event.stopPropagation()"
+  // Migrate old activities array → body text (one-time, backward compat)
+  if (!day.body && day.activities && day.activities.length > 0) {
+    day.body = day.activities.map(a => {
+      const time = (a.time || '').trim();
+      const text = (a.text || '').trim();
+      return time ? `${time}: ${text}` : text;
+    }).filter(Boolean).join('\n');
+  }
+
+  const el = mk('div', 'itin-day'); el.dataset.did = day.id;
+
+  // Header
+  const hdr = mk('div', 'itin-day-hdr');
+  hdr.innerHTML = `
+    <span class="itin-day-num">Z${day.num || '?'}</span>
+    <input class="itin-day-label" value="${e(day.label || '')}"
+      placeholder="Titlu ziua (ex: Centrul Istoric, Ziua la plajă...)"
       onchange="editDay('${type}','${day.id}','label',this.value)"/>
-    <span class="itin-day-acts-count">${done}/${tot}</span>
-    <button class="idbtn" onclick="event.stopPropagation();delDay('${type}','${day.id}')" title="Șterge ziua">🗑</button>
-    <span class="itin-day-chv ${day.open?'op':''}">▼</span>`;
-  hdr.addEventListener('click', ev => { if(['INPUT','BUTTON'].includes(ev.target.tagName)) return; togDay(type,day.id); });
+    <button class="idbtn" onclick="delDay('${type}','${day.id}')" title="Șterge ziua">🗑</button>`;
   el.appendChild(hdr);
-  const body=mk('div','itin-day-body'+(day.open?'':' hid'));
-  const acts=mk('div','itin-acts');
-  day.activities.forEach(a => {
-    const row=mk('div','itin-act-row'+(a.done?' act-done':''));
-    row.innerHTML=`
-      <input type="checkbox" class="act-done-chk" ${a.done?'checked':''}
-        onchange="togAct('${type}','${day.id}','${a.id}',this.checked)"/>
-      <input class="act-time" value="${e(a.time||'')}" placeholder="10:00"
-        onchange="editAct('${type}','${day.id}','${a.id}','time',this.value)"/>
-      <input class="act-txt" value="${e(a.text||'')}" placeholder="Activitate..."
-        onchange="editAct('${type}','${day.id}','${a.id}','text',this.value)"/>
-      <button class="idbtn" onclick="delAct('${type}','${day.id}','${a.id}')" title="Șterge">✕</button>`;
-    acts.appendChild(row);
+
+  // Body — free text textarea, auto-resize
+  const bodyWrap = mk('div', 'itin-day-body-wrap');
+  const ta = document.createElement('textarea');
+  ta.className = 'itin-body-ta';
+  ta.placeholder = '• Dimineața: ...\n• Prânz: ...\n• După-amiaza: ...\n\nScrie liber — orice note, sugestii, ore de vizitare...';
+  ta.value = day.body || '';
+  ta.addEventListener('input', function() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+    editDay(type, day.id, 'body', this.value);
   });
-  body.appendChild(acts);
-  const ar=mk('div','add-act-row');
-  ar.innerHTML=`
-    <input class="ainp" placeholder="Adaugă activitate (Enter)..."
-      onkeydown="if(event.key==='Enter'){addAct('${type}','${day.id}',this)}"/>
-    <button class="abtn" onclick="addAct('${type}','${day.id}',this.previousElementSibling)" title="Adaugă">+</button>`;
-  body.appendChild(ar); el.appendChild(body); return el;
+  ta.addEventListener('change', function() {
+    editDay(type, day.id, 'body', this.value);
+  });
+  bodyWrap.appendChild(ta);
+  el.appendChild(bodyWrap);
+
+  // Auto-resize on first render
+  requestAnimationFrame(() => {
+    ta.style.height = 'auto';
+    ta.style.height = ta.scrollHeight + 'px';
+  });
+
+  return el;
 }
 
 const INFO_ICONS=['ℹ️','📌','🔑','🏨','📞','💡','🌐','💰','🚌','⚠️','🍴','🏥','📶','🅿️','🛂','🎫'];
@@ -2378,7 +2363,7 @@ function getItinerary(type) { return tripData(type)?.itinerary; }
 function addDay(type) {
   let itin=tripData(type)?.itinerary;
   if(!itin){ if(tripData(type)) tripData(type).itinerary=itin=[]; else return; }
-  itin.push({id:uid(),num:itin.length+1,label:'',open:true,activities:[]});
+  itin.push({id:uid(), num:itin.length+1, label:'', body:'', activities:[]});
   save(); renderTrip(type);
   requestAnimationFrame(()=>{
     const days=document.querySelectorAll(`#panel-${type} .itin-day`);
@@ -2386,7 +2371,7 @@ function addDay(type) {
   });
 }
 function delDay(type,did) {
-  if(!confirm('Ștergi această zi și toate activitățile ei?')) return;
+  if(!confirm('Ștergi această zi din itinerar?')) return;
   const d=tripData(type); d.itinerary=d.itinerary.filter(day=>day.id!==did);
   d.itinerary.forEach((day,i)=>day.num=i+1);
   save(); renderTrip(type);
