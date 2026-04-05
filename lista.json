@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T08:12:39.920Z",
+  "exportedAt": "2026-04-05T08:23:48.731Z",
   "activeType": "seaair",
   "trips": [
     {
-      "id": "trip_aaezlxs",
+      "id": "trip_xml0m1q",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -894,7 +894,8 @@
               "text": "Ziua 5 (Extra): Escapadă sau Relaxare În funcție de energie. • Varianta A (Activă): Trenul spre Como (1h). Plimbare cu vaporașul. E foarte relaxant pentru toți. • Varianta B (Distracție): Acquaworld în Concorezzo (dacă mai aveți chef de bălăceală). • Varianta C (Fotbal): Stadionul San Siro. Dacă Alex nu e fan, lăsați-l pe tati să meargă singur 2 ore, iar restul grupului poate merge la Idroscalo pentru o plimbare pe malul lacului artificial.",
               "done": false
             }
-          ]
+          ],
+          "body": "Ziua 1: Centrul Istoric și \"Gustul\" Milano Concentrare pe zona Duomo – mers pe jos puțin. • Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona. • Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!). • După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori.\nZiua 2: Tehnologie, Cavaleri și Joacă Zona Parco Sempione – cea mai prietenoasă zonă pentru copii. • Dimineața: Muzeul Național de Știință și Tehnologie. Rezervați minim 3 ore. Submarinul Enrico Toti și avioanele sunt piesa centrală. • Prânz: În zona Sant'Ambrogio (sunt multe bistrouri mici). • După-amiaza: Castello Sforzesco. Intrați în curțile interioare (e gratuit). Apoi treceți direct în Parco Sempione. • Opțional: Turnul Branca (în parc) pentru o vedere de sus sau Acvariul Civic (este chiar la marginea parcului, vizită rapidă de 40 min).\nZiua 3: Ziua \"Alex\" (Leolandia) Ieșire din oraș spre Capriate San Gervasio. • Toată ziua: Leolandia. • Sfat: Plecați devreme (ora 09:00) ca să prindeți deschiderea la 10:00. Fiindcă aveți în listă \"Vii o dată, revii gratis\", păstrați biletele! Dacă Alex e prea obosit, vă puteți întoarce a doua zi doar pentru spectacole sau ce ați ratat. • Cină: Probabil veți mânca în parc sau pe drumul de întoarcere.\nZiua 4: Educație și Natură Zona Porta Venezia. • Dimineața: MUBA (Museo dei Bambini). Verificați orele atelierelor și rezervați online! Este o experiență senzorială superbă pentru un copil de 5 ani. • Prânz: În zona Porta Venezia. • După-amiaza: Muzeul de Istorie Naturală (este fix peste drum, în Giardini Pubblici Indro Montanelli). Are secțiuni mari cu dinozauri care sunt \"must-see\" la această vârstă. • Seara: Plimbare prin parcul de lângă muzeu – are locuri de joacă foarte bune.\nZiua 5 (Extra): Escapadă sau Relaxare În funcție de energie. • Varianta A (Activă): Trenul spre Como (1h). Plimbare cu vaporașul. E foarte relaxant pentru toți. • Varianta B (Distracție): Acquaworld în Concorezzo (dacă mai aveți chef de bălăceală). • Varianta C (Fotbal): Stadionul San Siro. Dacă Alex nu e fan, lăsați-l pe tati să meargă singur 2 ore, iar restul grupului poate merge la Idroscalo pentru o plimbare pe malul lacului artificial."
         }
       ],
       "infos": [
@@ -1009,7 +1010,7 @@
       }
     },
     {
-      "id": "trip_xwfnylz",
+      "id": "trip_psu2781",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1291,7 +1292,7 @@
       }
     },
     {
-      "id": "trip_e6jyjnb",
+      "id": "trip_vzo2e47",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1591,7 +1592,7 @@
       }
     },
     {
-      "id": "trip_c6gaij6",
+      "id": "trip_yrcepkk",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2563,13 +2564,13 @@
         },
         {
           "id": "w0mudn5",
-          "name": "Mercado Centrale Valencia",
-          "distance": "125.8 km",
-          "unit": "km",
+          "name": "Mercat Central de València",
+          "distance": "286 m",
+          "unit": "m",
           "desc": "(Mercat Central): Una dintre cele mai mari și mai frumoase piețe de produse proaspete din Europa. Este locul perfect pentru a vedea viața locală și pentru a gusta produse tradiționale (atenție, se închide în jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
           "checked": false,
           "open": false,
-          "coords": "38.348139, -0.486147"
+          "coords": "39.473492, -0.378905"
         },
         {
           "id": "pc4byv3",
@@ -2638,7 +2639,7 @@
           "unit": "km",
           "desc": "Locații recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate în centrul vechi sau lângă Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPreț e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ în plus.\n\nValencia Bikes: Au 3 locații în oraș (Centru, Ruzafa și lângă port). Sunt cunoscuți pentru servicii de calitate.\n\nPreț e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un preț simbolic dacă închiriezi e-bike.\n\nPelican Bike: Situat aproape de Orașul Artelor și Științelor.\n\nPreț e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gamă largă de scaune și chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O opțiune excelentă lângă Grădinile Turia (Paseo de la Pechina 32).\n\nPreț e-bike: 25€ (până la închidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
           "checked": false,
-          "open": true,
+          "open": false,
           "coords": "52.505119, 13.386056"
         }
       ],
@@ -2676,7 +2677,7 @@
       }
     },
     {
-      "id": "trip_v0g6j1h",
+      "id": "trip_qwxcl28",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
