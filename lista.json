@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T06:41:37.224Z",
+  "exportedAt": "2026-04-05T07:08:11.470Z",
   "activeType": "city",
   "trips": [
     {
@@ -786,7 +786,7 @@
         },
         {
           "id": "xrz5vxh",
-          "name": "Parco Sempione si Turnul Branca",
+          "name": "Castelul Sforezo&Parco Sempione si Turnul Branca",
           "distance": "",
           "unit": "km",
           "desc": "",
@@ -837,9 +837,66 @@
           "desc": "",
           "checked": false,
           "open": false
+        },
+        {
+          "id": "xgfsmx8",
+          "name": "Acvariul Civic",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true
+        },
+        {
+          "id": "fh1c4d2",
+          "name": "Piazza Gae Aulenti",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
         }
       ],
-      "itinerary": [],
+      "itinerary": [
+        {
+          "id": "vil3ofx",
+          "num": 1,
+          "label": "milano",
+          "open": true,
+          "activities": [
+            {
+              "id": "rr37n7m",
+              "time": "",
+              "text": "Ziua 1: Centrul Istoric și \"Gustul\" Milano Concentrare pe zona Duomo – mers pe jos puțin. • Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona. • Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!). • După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori.",
+              "done": false
+            },
+            {
+              "id": "9ym8vfk",
+              "time": "",
+              "text": "Ziua 2: Tehnologie, Cavaleri și Joacă Zona Parco Sempione – cea mai prietenoasă zonă pentru copii. • Dimineața: Muzeul Național de Știință și Tehnologie. Rezervați minim 3 ore. Submarinul Enrico Toti și avioanele sunt piesa centrală. • Prânz: În zona Sant'Ambrogio (sunt multe bistrouri mici). • După-amiaza: Castello Sforzesco. Intrați în curțile interioare (e gratuit). Apoi treceți direct în Parco Sempione. • Opțional: Turnul Branca (în parc) pentru o vedere de sus sau Acvariul Civic (este chiar la marginea parcului, vizită rapidă de 40 min).",
+              "done": false
+            },
+            {
+              "id": "asnsnwn",
+              "time": "",
+              "text": "Ziua 3: Ziua \"Alex\" (Leolandia) Ieșire din oraș spre Capriate San Gervasio. • Toată ziua: Leolandia. • Sfat: Plecați devreme (ora 09:00) ca să prindeți deschiderea la 10:00. Fiindcă aveți în listă \"Vii o dată, revii gratis\", păstrați biletele! Dacă Alex e prea obosit, vă puteți întoarce a doua zi doar pentru spectacole sau ce ați ratat. • Cină: Probabil veți mânca în parc sau pe drumul de întoarcere.",
+              "done": false
+            },
+            {
+              "id": "mm211o4",
+              "time": "",
+              "text": "Ziua 4: Educație și Natură Zona Porta Venezia. • Dimineața: MUBA (Museo dei Bambini). Verificați orele atelierelor și rezervați online! Este o experiență senzorială superbă pentru un copil de 5 ani. • Prânz: În zona Porta Venezia. • După-amiaza: Muzeul de Istorie Naturală (este fix peste drum, în Giardini Pubblici Indro Montanelli). Are secțiuni mari cu dinozauri care sunt \"must-see\" la această vârstă. • Seara: Plimbare prin parcul de lângă muzeu – are locuri de joacă foarte bune.",
+              "done": false
+            },
+            {
+              "id": "d9j726h",
+              "time": "",
+              "text": "Ziua 5 (Extra): Escapadă sau Relaxare În funcție de energie. • Varianta A (Activă): Trenul spre Como (1h). Plimbare cu vaporașul. E foarte relaxant pentru toți. • Varianta B (Distracție): Acquaworld în Concorezzo (dacă mai aveți chef de bălăceală). • Varianta C (Fotbal): Stadionul San Siro. Dacă Alex nu e fan, lăsați-l pe tati să meargă singur 2 ore, iar restul grupului poate merge la Idroscalo pentru o plimbare pe malul lacului artificial.",
+              "done": false
+            }
+          ]
+        }
+      ],
       "infos": [
         {
           "id": "m1uqpt8",
