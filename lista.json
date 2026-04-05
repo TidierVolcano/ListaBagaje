@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-03T07:24:19.100Z",
+  "exportedAt": "2026-04-05T06:41:37.224Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_gwr9nu9",
+      "id": "trip_jolk6mk",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775041533680,
@@ -765,6 +765,78 @@
           "desc": "Escapadă la Lacul Como sau Bergamo\nDatorită poziției sale, Milano este baza perfectă pentru a vizita regiunea lacurilor sau orașe medievale pitorești.\n\nLacul Como: Puteți lua trenul din gara Milano Cadorna sau Centrale până în orașul Como (aproximativ o oră). De acolo, o plimbare cu vaporasul până în Bellagio sau Varenna oferă peisaje montane spectaculoase.",
           "checked": false,
           "open": false
+        },
+        {
+          "id": "u07wlzs",
+          "name": "Museul dei Bambini",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "lv45fkq",
+          "name": "Muzeul national de Stiinta si Tehnologie",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "xrz5vxh",
+          "name": "Parco Sempione si Turnul Branca",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "zy3xix2",
+          "name": "Muzeul de istorie naturala",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "z923w3q",
+          "name": "Leolandia(Capriate San Gervasio)",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "5mg6v0e",
+          "name": "Idroscalo",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "w8eswy9",
+          "name": "Acquaworld(Concoreszo)",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
+        },
+        {
+          "id": "a4k7tov",
+          "name": "Bergamo Alta",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": false
         }
       ],
       "itinerary": [],
@@ -876,7 +948,7 @@
       ]
     },
     {
-      "id": "trip_1l6037g",
+      "id": "trip_4zmb87u",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1154,7 +1226,7 @@
       "shopping": []
     },
     {
-      "id": "trip_8nmp02v",
+      "id": "trip_n9sjviu",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1450,7 +1522,7 @@
       "shopping": []
     },
     {
-      "id": "trip_p92obk3",
+      "id": "trip_a5d4myb",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2525,7 +2597,7 @@
       "shopping": []
     },
     {
-      "id": "trip_654cjxy",
+      "id": "trip_97utixy",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
