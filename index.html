@@ -442,13 +442,15 @@ body::before {
   opacity: 0.7;
 }
 .accom-hdr {
-  display:flex; align-items:center; gap:12px; padding:14px 16px;
+  display:flex; align-items:flex-start; gap:12px; padding:14px 16px;
+  flex-wrap:wrap;
 }
 .accom-icon {
   font-size:1.6rem; flex-shrink:0; line-height:1;
   filter: drop-shadow(0 2px 6px rgba(200,137,42,0.4));
+  margin-top:2px;
 }
-.accom-info { flex:1; min-width:0 }
+.accom-info { flex:1; min-width:0; min-width:120px; }
 .accom-label {
   font-size:.6rem; color:var(--gold2); font-family:'DM Mono',monospace;
   text-transform:uppercase; letter-spacing:.8px; margin-bottom:2px;
@@ -476,12 +478,25 @@ body::before {
   font-size:.75rem; color:rgba(255,255,255,.25); font-style:italic;
   display:block; margin-top:3px; padding-left:2px;
 }
-.accom-actions { display:flex; gap:6px; flex-shrink:0 }
+/* Actions: row on desktop, wrapped below on mobile */
+.accom-actions {
+  display:flex; gap:6px; flex-shrink:0;
+  flex-wrap:wrap; align-items:center;
+}
+/* On small screens, push actions to full row below icon+info */
+@media (max-width: 500px) {
+  .accom-hdr { flex-wrap:wrap; gap:10px; }
+  .accom-actions {
+    width:100%; flex-shrink:0;
+    padding-left:calc(1.6rem + 12px); /* align under accom-info */
+    gap:6px;
+  }
+}
 .accom-btn {
   background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15);
   border-radius:8px; padding:7px 10px; cursor:pointer; color:rgba(255,255,255,.8);
   font-size:.82rem; font-family:'DM Sans',sans-serif; font-weight:500;
-  transition:all .15s; white-space:nowrap; min-height:34px;
+  transition:all .15s; white-space:nowrap; min-height:36px;
   display:flex; align-items:center; gap:4px;
 }
 .accom-btn:hover { background:rgba(255,255,255,.18) }
@@ -491,6 +506,7 @@ body::before {
 .accom-btn.accom-dist-btn {
   background: linear-gradient(135deg, rgba(42,138,126,.35), rgba(42,138,126,.2));
   border-color: rgba(42,138,126,.5); color: #7eeee6;
+  font-size:.78rem;
 }
 .accom-btn.accom-dist-btn:hover { background: rgba(42,138,126,.5); color:#fff }
 .accom-btn.accom-dist-btn:disabled { opacity:.55; cursor:not-allowed }
@@ -718,22 +734,30 @@ body::before {
     padding-top:var(--sat);
     padding-left:0; padding-right:0;
   }
+  /* Align header inner content with card content below */
+  .hdr-inner { padding-left: 0; padding-right: 0; max-width: none; }
+  .hdr-top { padding-left: 28px; padding-right: 28px; }
+  .hdr-actions { padding-left: 28px; padding-right: 28px; }
+  .seg-bar { margin-left: 28px; margin-right: 28px; }
 
-  /* Content — offset by sidebar width, centered in remaining space */
+  /* Content — offset by sidebar width, full width aligned with header */
   .content {
     margin-left: var(--sidebar-w);
     width: calc(100% - var(--sidebar-w));
     padding-top: calc(var(--header-height, 180px) + 18px);
     padding-bottom: 60px;
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    display: block;
+    box-sizing: border-box;
   }
   .content > * {
     width: 100%;
-    max-width: 700px;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   /* Modal as centered dialog, not bottom sheet */
@@ -822,16 +846,21 @@ body::before {
   .tab-bar { display: none !important }
 
   .app-header { left: var(--sidebar-w); right: 0; top: 0; padding-top: var(--sat); padding-left: 0; padding-right: 0 }
+  .hdr-inner { padding-left: 0; padding-right: 0; max-width: none; }
+  .hdr-top { padding-left: 18px; padding-right: 18px; }
+  .hdr-actions { padding-left: 18px; padding-right: 18px; }
+  .seg-bar { margin-left: 18px; margin-right: 18px; }
 
   .content {
     margin-left: var(--sidebar-w);
     width: calc(100% - var(--sidebar-w));
     padding-top: calc(var(--header-height, 180px) + 14px);
-    padding-left: 24px; padding-right: 24px;
+    padding-left: 18px; padding-right: 18px;
     padding-bottom: 40px;
-    display: flex; flex-direction: column; align-items: center;
+    display: block;
+    box-sizing: border-box;
   }
-  .content > * { width: 100%; max-width: 680px; }
+  .content > * { width: 100%; max-width: none; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
 
   .mdbg { align-items: center }
   .mdsh { border-radius: 18px; padding-bottom: 20px; max-height: 80vh; box-shadow: 0 20px 60px rgba(0,0,0,.25) }
