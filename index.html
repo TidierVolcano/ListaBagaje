@@ -360,7 +360,7 @@ body::before {
 .place-card.tf { border-left-color:var(--teal) }
 .place-card.tv { border-left-color:var(--rose) }
 .place-card.done .place-nm { text-decoration:line-through; color:var(--muted) }
-.place-top { display:flex; align-items:center; gap:10px; padding:13px 14px 10px }
+.place-top { display:flex; align-items:center; gap:8px; padding:11px 12px 9px }
 .pchk {
   width:22px; height:22px; border-radius:50%; border:2px solid var(--border);
   flex-shrink:0; cursor:pointer; appearance:none; -webkit-appearance:none;
@@ -375,12 +375,13 @@ body::before {
 }
 .place-nm::placeholder { color:#bbb; font-weight:400; font-style:italic }
 .p-exp {
-  background:none; border:none; cursor:pointer; font-size:.75rem;
-  color:var(--muted); padding:6px; transition:transform .2s; flex-shrink:0;
+  background:none; border:none; cursor:pointer; font-size:.85rem;
+  color:var(--muted); padding:4px 6px; transition:all .2s; flex-shrink:0;
+  border-radius:6px;
 }
-.p-exp.op { transform:rotate(180deg) }
+.p-exp:hover { color:var(--gold); background:rgba(200,137,42,.1) }
 .place-meta {
-  display:flex; align-items:center; gap:8px; padding:0 14px 10px; flex-wrap:wrap;
+  padding:0 12px 8px; display:flex; flex-direction:column; gap:6px;
 }
 .m-chip {
   display:flex; align-items:center; gap:5px; background:var(--cream);
@@ -396,6 +397,7 @@ body::before {
   font-size:.72rem; color:var(--muted); border:none; background:transparent;
   outline:none; cursor:pointer; font-family:'DM Mono',monospace;
 }
+.place-meta-btns { display:flex; gap:6px; flex-wrap:wrap; align-items:center }
 .place-det { border-top:1px solid var(--sand) }
 .place-det.hid { display:none }
 .place-desc-wrap { padding:10px 14px 14px }
@@ -406,8 +408,8 @@ body::before {
 .pdesc {
   width:100%; border:1px solid var(--border); border-radius:var(--rs);
   padding:10px 12px; font-size:15px; font-family:'DM Sans',sans-serif;
-  color:var(--text); resize:none; outline:none; min-height:300px;
-  line-height:1.55; transition:box-shadow .15s;
+  color:var(--text); resize:none; outline:none; min-height:60px;
+  line-height:1.55; transition:box-shadow .15s; overflow:hidden;
 }
 .pdesc:focus { box-shadow:0 0 0 2px var(--gold); border-color:var(--gold) }
 .pdesc::placeholder { color:#bbb }
@@ -1154,9 +1156,9 @@ body.bg-night::before {
 .info-ta {
   width:100%; border:1px solid var(--card-border); border-radius:var(--rs);
   padding:10px 12px; font-size:15px; font-family:'DM Sans',sans-serif;
-  color:var(--text); resize:none; outline:none; min-height:300px;
+  color:var(--text); resize:none; outline:none; min-height:60px;
   line-height:1.6; transition:box-shadow .15s;
-  background: rgba(232,222,206,0.35);
+  background: rgba(232,222,206,0.35); overflow:hidden;
 }
 .info-ta:focus { box-shadow:0 0 0 2px var(--gold); border-color:var(--gold) }
 .info-ta::placeholder { color:#bbb }
@@ -1422,6 +1424,43 @@ body.bg-night::before {
   background:rgba(200,137,42,.06);
   border-radius:var(--r);
 }
+
+/* ═══ DRAG & DROP PENTRU PLACE / ITIN / INFO ═══ */
+.place-drag-handle, .itin-drag-handle, .info-drag-handle {
+  font-size:1.1rem; color:#ccc; cursor:grab; flex-shrink:0;
+  touch-action:none; padding:2px 4px; line-height:1;
+  transition:color .15s; user-select:none; -webkit-user-select:none;
+}
+.place-drag-handle:hover, .itin-drag-handle:hover, .info-drag-handle:hover { color:var(--muted) }
+.place-card.p-dragging, .itin-day.p-dragging, .info-card.p-dragging { opacity:.35 }
+.place-card.p-dov, .itin-day.p-dov, .info-card.p-dov {
+  outline:2px dashed var(--gold);
+  background:rgba(200,137,42,.07);
+}
+
+/* ═══ COLLAPSE BUTON ═══ */
+.card-collapse-btn {
+  background:none; border:none; cursor:pointer;
+  color:var(--muted); font-size:.72rem; padding:4px 6px;
+  border-radius:6px; transition:all .15s; flex-shrink:0;
+  line-height:1; display:flex; align-items:center;
+}
+.card-collapse-btn:hover { color:var(--gold); background:rgba(200,137,42,.1) }
+.card-collapse-btn .chv { transition:transform .22s; display:inline-block }
+.card-collapse-btn.collapsed .chv { transform:rotate(-90deg) }
+
+/* place-card collapse */
+.place-card-body { overflow:hidden; transition:max-height .28s ease }
+.place-card-body.collapsed { max-height:0!important }
+
+/* itin-day body collapse */
+.itin-day-body-wrap.collapsed { display:none }
+
+/* info-card body collapse */
+.info-card-body.collapsed { display:none }
+
+/* auto-resize info textarea — smaller default */
+.info-ta { min-height:60px }
 
 /* ═══ CATEGORII FAVORITE ═══ */
 .fav-cat-card {
@@ -2239,81 +2278,98 @@ function buildItem(item, cid, type) {
 }
 
 function buildPlace(p, type, ptype) {
+  const collapsed = p.collapsed || false;
   const card=mk('div',`place-card t${ptype==='food'?'f':'v'}${p.checked?' done':''}`);
-  card.dataset.pid=p.id;
+  card.dataset.pid=p.id; card.dataset.type=type; card.dataset.ptype=ptype;
+  card.draggable=true;
 
-  // Distance logic
-  const autoDist  = autoDistanceLabel(type, p.coords);   // Haversine (only if both have lat/lng)
-  const hasAccom  = hasAccommodation(type);               // Any accommodation set?
+  const autoDist  = autoDistanceLabel(type, p.coords);
+  const hasAccom  = hasAccommodation(type);
 
-  // Badge: show auto-calculated km when both have GPS coords
   const autoDistBadge = autoDist
-    ? `<span class="dist-auto-badge" title="Distanță linie dreaptă față de cazare">🧭 ${autoDist}</span>`
+    ? `<span class="dist-auto-badge" title="Distanta linie dreapta fata de cazare">&#129517; ${autoDist}</span>`
     : '';
 
-  // Route button: show when accommodation is set (works with any address/name)
   const routeBtn = hasAccom
-    ? `<button class="route-from-accom-btn" 
+    ? `<button class="route-from-accom-btn"
          onclick="openDirectionsFromAccom('${type}','${e(p.name||'')}','${e(p.coords||'')}')"
-         title="Deschide ruta de la cazare în Google Maps">
-         🗺 De la cazare
+         title="Deschide ruta de la cazare in Google Maps">
+         &#128506; De la cazare
        </button>`
     : '';
 
   card.innerHTML=`
     <div class="place-top">
+      <span class="place-drag-handle" data-pdh title="Trage pentru reordonare">&#10783;</span>
       <input type="checkbox" class="pchk" ${p.checked?'checked':''}
         onchange="togPlace('${type}','${ptype}','${p.id}',this.checked)"/>
       <input class="place-nm" value="${e(p.name||'')}"
         placeholder="${ptype==='food'?'Nume restaurant / local...':'Numele obiectivului...'}"
         onchange="epf('${type}','${ptype}','${p.id}','name',this.value)"/>
-      <button class="p-exp ${p.open?'op':''}" onclick="togPOpen('${type}','${ptype}','${p.id}')" title="Detalii">▼</button>
-      <button class="idbtn" onclick="delPlace('${type}','${ptype}','${p.id}')" title="Șterge">🗑</button>
+      <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togPlaceCollapse('${type}','${ptype}','${p.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
+      <button class="p-exp ${p.open?'op':''}" onclick="togPOpen('${type}','${ptype}','${p.id}')" title="Detalii">&#8943;</button>
+      <button class="idbtn" onclick="delPlace('${type}','${ptype}','${p.id}')" title="Sterge">&#128465;</button>
     </div>
-    <div class="place-meta">
-      <div class="m-chip">
-        <span class="lbl">📍 dist.</span>
-        <input class="m-inp" value="${autoDist || e(p.distance||'')}" placeholder="—"
-          title="Distanță față de cazare"
-          onchange="epf('${type}','${ptype}','${p.id}','distance',this.value)"/>
-        <select class="m-sel" onchange="epf('${type}','${ptype}','${p.id}','unit',this.value)">
-          <option value="km" ${(p.unit||'km')==='km'?'selected':''}>km</option>
-          <option value="min" ${p.unit==='min'?'selected':''}>min</option>
-          <option value="m" ${p.unit==='m'?'selected':''}>m</option>
-        </select>
-        <span class="lbl">de la cazare</span>
-        ${autoDistBadge}
+    <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
+      <div class="place-meta">
+        <div class="m-chip">
+          <span class="lbl">&#128205; dist.</span>
+          <input class="m-inp" value="${autoDist || e(p.distance||'')}" placeholder="&mdash;"
+            title="Distanta fata de cazare"
+            onchange="epf('${type}','${ptype}','${p.id}','distance',this.value)"/>
+          <select class="m-sel" onchange="epf('${type}','${ptype}','${p.id}','unit',this.value)">
+            <option value="km" ${(p.unit||'km')==='km'?'selected':''}>km</option>
+            <option value="min" ${p.unit==='min'?'selected':''}>min</option>
+            <option value="m" ${p.unit==='m'?'selected':''}>m</option>
+          </select>
+          <span class="lbl">de la cazare</span>
+          ${autoDistBadge}
+        </div>
+        <div class="place-meta-btns">
+          ${routeBtn}
+          <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide in Google Maps">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Maps
+          </button>
+        </div>
       </div>
-      <div class="place-meta-btns">
-        ${routeBtn}
-        <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide în Google Maps">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Maps
-        </button>
-      </div>
-    </div>
-    <div class="place-det${p.open?'':' hid'}">
-      <div class="coords-wrap">
-        <span class="coords-lbl">📌 coords</span>
-        <input class="coords-inp" value="${e(p.coords||'')}"
-          placeholder="Coordonate sau adresă (ex: 44.4268, 26.1025)"
-          onchange="epf('${type}','${ptype}','${p.id}','coords',this.value);renderTrip('${type}')"
-          title="Coordonate GPS sau adresă pentru Google Maps și calcul automat distanță"/>
-      </div>
-      <div class="place-desc-wrap">
-        <div class="desc-lbl">${ptype==='food'?'🗒 Note / tips':'💡 De ce vreau să merg / descriere'}</div>
-        <textarea class="pdesc"
-          placeholder="${ptype==='food'?'Ex: bucătărie italiană, rezervare necesară, preț ~80 lei/pers...':'Ex: muzeu artă modernă, intrare gratuită joi, durată ~2h, recomandat de...'}"
-          onchange="epf('${type}','${ptype}','${p.id}','desc',this.value)"
-          oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\'"
-        >${e(p.desc||'')}</textarea>
+      <div class="place-det${p.open?'':' hid'}">
+        <div class="coords-wrap">
+          <span class="coords-lbl">&#128204; coords</span>
+          <input class="coords-inp" value="${e(p.coords||'')}"
+            placeholder="Coordonate sau adresa (ex: 44.4268, 26.1025)"
+            onchange="epf('${type}','${ptype}','${p.id}','coords',this.value);renderTrip('${type}')"
+            title="Coordonate GPS sau adresa"/>
+        </div>
+        <div class="place-desc-wrap">
+          <div class="desc-lbl">${ptype==='food'?'&#128221; Note / tips':'&#128161; De ce vreau sa merg / descriere'}</div>
+          <textarea class="pdesc"
+            placeholder="${ptype==='food'?'Ex: bucatarie italiana, rezervare necesara...':'Ex: muzeu arta moderna, intrare gratuita joi...'}"
+            onchange="epf('${type}','${ptype}','${p.id}','desc',this.value)"
+            oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"
+          >${e(p.desc||'')}</textarea>
+        </div>
       </div>
     </div>`;
+
+  card.addEventListener('dragstart', ev => {
+    if(!ev.target.closest('[data-pdh]') && ev.target!==card && !ev.target.closest('.place-top')) { ev.preventDefault(); return; }
+    placeDrag={pid:p.id, type, ptype}; card.classList.add('p-dragging');
+    ev.dataTransfer.effectAllowed='move';
+  });
+  card.addEventListener('dragend', ()=>clrPlaceDrag());
+  card.addEventListener('dragover', ev=>{ ev.preventDefault(); if(placeDrag&&placeDrag.pid!==p.id&&placeDrag.ptype===ptype) card.classList.add('p-dov'); });
+  card.addEventListener('dragleave', ()=>card.classList.remove('p-dov'));
+  card.addEventListener('drop', ev=>{ ev.preventDefault(); dropPlace(card); });
+  card.querySelector('[data-pdh]').addEventListener('touchstart', ev=>tcStartPlace(ev,card),{passive:false});
+
+  requestAnimationFrame(()=>{
+    const ta=card.querySelector('.pdesc'); if(ta&&ta.value){ ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px'; }
+  });
   return card;
 }
 
 function buildItinDay(day, type) {
-  // Migrate old activities array → body text (one-time, backward compat)
   if (!day.body && day.activities && day.activities.length > 0) {
     day.body = day.activities.map(a => {
       const time = (a.time || '').trim();
@@ -2322,57 +2378,69 @@ function buildItinDay(day, type) {
     }).filter(Boolean).join('\n');
   }
 
-  const el = mk('div', 'itin-day'); el.dataset.did = day.id;
+  const collapsed = day.collapsed || false;
+  const el = mk('div', 'itin-day'); el.dataset.did = day.id; el.dataset.type = type;
+  el.draggable = true;
 
-  // Header
   const hdr = mk('div', 'itin-day-hdr');
   hdr.innerHTML = `
+    <span class="itin-drag-handle" data-idh title="Trage pentru reordonare">&#10783;</span>
     <span class="itin-day-num">Z${day.num || '?'}</span>
     <input class="itin-day-label" value="${e(day.label || '')}"
-      placeholder="Titlu ziua (ex: Centrul Istoric, Ziua la plajă...)"
+      placeholder="Titlu ziua (ex: Centrul Istoric, Ziua la plaja...)"
       onchange="editDay('${type}','${day.id}','label',this.value)"/>
-    <button class="idbtn" onclick="delDay('${type}','${day.id}')" title="Șterge ziua">🗑</button>`;
+    <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togItinCollapse('${type}','${day.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
+    <button class="idbtn" onclick="delDay('${type}','${day.id}')" title="Sterge ziua">&#128465;</button>`;
   el.appendChild(hdr);
 
-  // Body — free text textarea, auto-resize
-  const bodyWrap = mk('div', 'itin-day-body-wrap');
+  const bodyWrap = mk('div', 'itin-day-body-wrap'+(collapsed?' collapsed':''));
   const ta = document.createElement('textarea');
   ta.className = 'itin-body-ta';
-  ta.placeholder = '• Dimineața: ...\n• Prânz: ...\n• După-amiaza: ...\n\nScrie liber — orice note, sugestii, ore de vizitare...';
+  ta.placeholder = '• Dimineata: ...\n• Pranz: ...\n• Dupa-amiaza: ...\n\nScrie liber...';
   ta.value = day.body || '';
   ta.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
     editDay(type, day.id, 'body', this.value);
   });
-  ta.addEventListener('change', function() {
-    editDay(type, day.id, 'body', this.value);
-  });
+  ta.addEventListener('change', function() { editDay(type, day.id, 'body', this.value); });
   bodyWrap.appendChild(ta);
   el.appendChild(bodyWrap);
 
-  // Auto-resize on first render
-  requestAnimationFrame(() => {
-    ta.style.height = 'auto';
-    ta.style.height = ta.scrollHeight + 'px';
+  requestAnimationFrame(() => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; });
+
+  // Drag events
+  el.addEventListener('dragstart', ev => {
+    if(!ev.target.closest('[data-idh]') && ev.target!==el && !ev.target.closest('.itin-day-hdr')) { ev.preventDefault(); return; }
+    itinDrag={did:day.id, type}; el.classList.add('p-dragging');
+    ev.dataTransfer.effectAllowed='move';
   });
+  el.addEventListener('dragend', ()=>clrItinDrag());
+  el.addEventListener('dragover', ev=>{ ev.preventDefault(); if(itinDrag&&itinDrag.did!==day.id) el.classList.add('p-dov'); });
+  el.addEventListener('dragleave', ()=>el.classList.remove('p-dov'));
+  el.addEventListener('drop', ev=>{ ev.preventDefault(); dropItin(el); });
+  hdr.querySelector('[data-idh]').addEventListener('touchstart', ev=>tcStartItin(ev,el),{passive:false});
 
   return el;
 }
 
 const INFO_ICONS=['ℹ️','📌','🔑','🏨','📞','💡','🌐','💰','🚌','⚠️','🍴','🏥','📶','🅿️','🛂','🎫'];
 function buildInfoCard(card, type) {
-  const el=mk('div','info-card'); el.dataset.iid=card.id;
+  const collapsed = card.collapsed || false;
+  const el=mk('div','info-card'); el.dataset.iid=card.id; el.dataset.type=type;
+  el.draggable=true;
   el.innerHTML=`
     <div class="info-card-top">
+      <span class="info-drag-handle" data-infodh title="Trage pentru reordonare">&#10783;</span>
       <button class="info-icon-btn" onclick="openIconPicker(event,'${type}','${card.id}')"
-        title="Schimbă pictograma">${card.icon||'ℹ️'}</button>
+        title="Schimba pictograma">${card.icon||'ℹ️'}</button>
       <input class="info-card-title" value="${e(card.title||'')}"
-        placeholder="Titlu (ex: Hotel, WiFi, Urgențe, Monedă...)"
+        placeholder="Titlu (ex: Hotel, WiFi, Urgente, Moneda...)"
         onchange="editInfo('${type}','${card.id}','title',this.value)"/>
-      <button class="idbtn" onclick="delInfo('${type}','${card.id}')" title="Șterge">🗑</button>
+      <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togInfoCollapse('${type}','${card.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
+      <button class="idbtn" onclick="delInfo('${type}','${card.id}')" title="Sterge">&#128465;</button>
     </div>
-    <div class="info-card-body">
+    <div class="info-card-body${collapsed?' collapsed':''}">
       <div class="info-body-wrap">
         <textarea class="info-ta" placeholder="Detalii utile..."
           onchange="editInfo('${type}','${card.id}','body',this.value)"
@@ -2380,14 +2448,244 @@ function buildInfoCard(card, type) {
         >${e(card.body||'')}</textarea>
       </div>
     </div>`;
-  // auto-resize textarea height on render
   requestAnimationFrame(()=>{
-    const ta=el.querySelector('.info-ta'); if(ta){ ta.style.height='auto'; ta.style.height=ta.scrollHeight+'px'; }
+    const ta=el.querySelector('.info-ta'); if(ta){ ta.style.height='auto'; ta.style.height=Math.max(60,ta.scrollHeight)+'px'; }
   });
+
+  el.addEventListener('dragstart', ev=>{
+    if(!ev.target.closest('[data-infodh]') && ev.target!==el && !ev.target.closest('.info-card-top')) { ev.preventDefault(); return; }
+    infoDrag={iid:card.id, type}; el.classList.add('p-dragging');
+    ev.dataTransfer.effectAllowed='move';
+  });
+  el.addEventListener('dragend', ()=>clrInfoDrag());
+  el.addEventListener('dragover', ev=>{ ev.preventDefault(); if(infoDrag&&infoDrag.iid!==card.id) el.classList.add('p-dov'); });
+  el.addEventListener('dragleave', ()=>el.classList.remove('p-dov'));
+  el.addEventListener('drop', ev=>{ ev.preventDefault(); dropInfo(el); });
+  el.querySelector('[data-infodh]').addEventListener('touchstart', ev=>tcStartInfo(ev,el),{passive:false});
+
   return el;
 }
 
-/* ═══════════════ ITINERARIU ACTIONS ═══════════════ */
+/* ═══════════════ COLLAPSE FUNCTIONS ═══════════════ */
+function togPlaceCollapse(type, ptype, pid) {
+  const p = pa(type,ptype).find(p=>p.id===pid); if(!p) return;
+  p.collapsed = !p.collapsed; save();
+  const card = document.querySelector(`[data-pid="${pid}"]`); if(!card) return;
+  const body = card.querySelector('.place-card-body');
+  const btn  = card.querySelector('.card-collapse-btn');
+  if(!body || !btn) return;
+  body.classList.toggle('collapsed', p.collapsed);
+  body.style.maxHeight = p.collapsed ? '0' : '600px';
+  btn.classList.toggle('collapsed', p.collapsed);
+}
+
+function togItinCollapse(type, did) {
+  const day = getItinerary(type)?.find(d=>d.id===did); if(!day) return;
+  day.collapsed = !day.collapsed; save();
+  const el = document.querySelector(`.itin-day[data-did="${did}"]`); if(!el) return;
+  const body = el.querySelector('.itin-day-body-wrap');
+  const btn  = el.querySelector('.card-collapse-btn');
+  if(!body || !btn) return;
+  body.classList.toggle('collapsed', day.collapsed);
+  btn.classList.toggle('collapsed', day.collapsed);
+}
+
+function togInfoCollapse(type, iid) {
+  const card = getInfos(type)?.find(c=>c.id===iid); if(!card) return;
+  card.collapsed = !card.collapsed; save();
+  const el = document.querySelector(`.info-card[data-iid="${iid}"]`); if(!el) return;
+  const body = el.querySelector('.info-card-body');
+  const btn  = el.querySelector('.card-collapse-btn');
+  if(!body || !btn) return;
+  body.classList.toggle('collapsed', card.collapsed);
+  btn.classList.toggle('collapsed', card.collapsed);
+}
+
+/* ═══════════════ DRAG & DROP — PLACE (food/visit) ═══════════════ */
+let placeDrag = null;
+function clrPlaceDrag() {
+  document.querySelectorAll('.place-card').forEach(c=>c.classList.remove('p-dragging','p-dov'));
+  placeDrag = null;
+}
+function dropPlace(targetCard) {
+  if(!placeDrag) return;
+  const {pid, type, ptype} = placeDrag;
+  const tpid = targetCard.dataset.pid;
+  if(pid === tpid) { clrPlaceDrag(); return; }
+  const arr = pa(type, ptype);
+  const fromIdx = arr.findIndex(p=>p.id===pid);
+  const toIdx   = arr.findIndex(p=>p.id===tpid);
+  if(fromIdx<0||toIdx<0) { clrPlaceDrag(); return; }
+  arr.splice(toIdx, 0, arr.splice(fromIdx,1)[0]);
+  save(); clrPlaceDrag(); renderTrip(type);
+}
+
+// Touch drag — place
+let _tcPlace = null;
+function tcStartPlace(ev, card) {
+  ev.preventDefault();
+  const t = ev.touches[0];
+  const rect = card.getBoundingClientRect();
+  _tcPlace = { card, type: card.dataset.type, ptype: card.dataset.ptype, pid: card.dataset.pid,
+    ox: t.clientX - rect.left, oy: t.clientY - rect.top };
+  const ghost = card.cloneNode(true);
+  ghost.id = '_placeGhost';
+  ghost.style.cssText = `position:fixed;width:${rect.width}px;opacity:.85;pointer-events:none;z-index:9999;left:${rect.left}px;top:${rect.top}px;transition:none;border-radius:var(--r)`;
+  document.body.appendChild(ghost);
+  card.style.opacity = '.3';
+  document.addEventListener('touchmove', _tcMovePlace, {passive:false});
+  document.addEventListener('touchend', _tcEndPlace, {passive:true});
+}
+function _tcMovePlace(ev) {
+  if(!_tcPlace) return; ev.preventDefault();
+  const t = ev.touches[0];
+  const g = document.getElementById('_placeGhost'); if(!g) return;
+  g.style.left = (t.clientX - _tcPlace.ox) + 'px';
+  g.style.top  = (t.clientY - _tcPlace.oy) + 'px';
+  document.querySelectorAll('.place-card').forEach(c=>c.classList.remove('p-dov'));
+  g.style.display='none';
+  const el = document.elementFromPoint(t.clientX, t.clientY);
+  g.style.display='';
+  const target = el?.closest('.place-card');
+  if(target && target.dataset.pid !== _tcPlace.pid && target.dataset.ptype === _tcPlace.ptype) target.classList.add('p-dov');
+}
+function _tcEndPlace(ev) {
+  if(!_tcPlace) return;
+  const g = document.getElementById('_placeGhost'); if(g) g.remove();
+  _tcPlace.card.style.opacity = '';
+  const over = document.querySelector('.place-card.p-dov');
+  if(over) {
+    placeDrag = {pid:_tcPlace.pid, type:_tcPlace.type, ptype:_tcPlace.ptype};
+    dropPlace(over);
+  }
+  document.querySelectorAll('.place-card').forEach(c=>c.classList.remove('p-dov'));
+  document.removeEventListener('touchmove', _tcMovePlace);
+  document.removeEventListener('touchend', _tcEndPlace);
+  _tcPlace = null;
+}
+
+/* ═══════════════ DRAG & DROP — ITINERARIU ═══════════════ */
+let itinDrag = null;
+function clrItinDrag() {
+  document.querySelectorAll('.itin-day').forEach(c=>c.classList.remove('p-dragging','p-dov'));
+  itinDrag = null;
+}
+function dropItin(targetEl) {
+  if(!itinDrag) return;
+  const {did, type} = itinDrag;
+  const tdid = targetEl.dataset.did;
+  if(did === tdid) { clrItinDrag(); return; }
+  const itin = getItinerary(type);
+  const fromIdx = itin.findIndex(d=>d.id===did);
+  const toIdx   = itin.findIndex(d=>d.id===tdid);
+  if(fromIdx<0||toIdx<0) { clrItinDrag(); return; }
+  itin.splice(toIdx, 0, itin.splice(fromIdx,1)[0]);
+  itin.forEach((d,i)=>d.num=i+1);
+  save(); clrItinDrag(); renderTrip(type);
+}
+
+let _tcItin = null;
+function tcStartItin(ev, el) {
+  ev.preventDefault();
+  const t = ev.touches[0];
+  const rect = el.getBoundingClientRect();
+  _tcItin = { el, type: el.dataset.type, did: el.dataset.did,
+    ox: t.clientX - rect.left, oy: t.clientY - rect.top };
+  const ghost = el.cloneNode(false); // shallow — no inner content to keep it light
+  ghost.id = '_itinGhost';
+  ghost.innerHTML = el.querySelector('.itin-day-hdr')?.innerHTML || '';
+  ghost.style.cssText = `position:fixed;width:${rect.width}px;opacity:.85;pointer-events:none;z-index:9999;left:${rect.left}px;top:${rect.top}px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);padding:4px;`;
+  document.body.appendChild(ghost);
+  el.style.opacity = '.3';
+  document.addEventListener('touchmove', _tcMoveItin, {passive:false});
+  document.addEventListener('touchend', _tcEndItin, {passive:true});
+}
+function _tcMoveItin(ev) {
+  if(!_tcItin) return; ev.preventDefault();
+  const t = ev.touches[0];
+  const g = document.getElementById('_itinGhost'); if(!g) return;
+  g.style.left = (t.clientX - _tcItin.ox) + 'px';
+  g.style.top  = (t.clientY - _tcItin.oy) + 'px';
+  document.querySelectorAll('.itin-day').forEach(c=>c.classList.remove('p-dov'));
+  g.style.display='none';
+  const el = document.elementFromPoint(t.clientX, t.clientY);
+  g.style.display='';
+  const target = el?.closest('.itin-day');
+  if(target && target.dataset.did !== _tcItin.did) target.classList.add('p-dov');
+}
+function _tcEndItin(ev) {
+  if(!_tcItin) return;
+  const g = document.getElementById('_itinGhost'); if(g) g.remove();
+  _tcItin.el.style.opacity = '';
+  const over = document.querySelector('.itin-day.p-dov');
+  if(over) { itinDrag = {did:_tcItin.did, type:_tcItin.type}; dropItin(over); }
+  document.querySelectorAll('.itin-day').forEach(c=>c.classList.remove('p-dov'));
+  document.removeEventListener('touchmove', _tcMoveItin);
+  document.removeEventListener('touchend', _tcEndItin);
+  _tcItin = null;
+}
+
+/* ═══════════════ DRAG & DROP — INFO ═══════════════ */
+let infoDrag = null;
+function clrInfoDrag() {
+  document.querySelectorAll('.info-card').forEach(c=>c.classList.remove('p-dragging','p-dov'));
+  infoDrag = null;
+}
+function dropInfo(targetEl) {
+  if(!infoDrag) return;
+  const {iid, type} = infoDrag;
+  const tiid = targetEl.dataset.iid;
+  if(iid === tiid) { clrInfoDrag(); return; }
+  const infos = getInfos(type);
+  const fromIdx = infos.findIndex(c=>c.id===iid);
+  const toIdx   = infos.findIndex(c=>c.id===tiid);
+  if(fromIdx<0||toIdx<0) { clrInfoDrag(); return; }
+  infos.splice(toIdx, 0, infos.splice(fromIdx,1)[0]);
+  save(); clrInfoDrag(); renderTrip(type);
+}
+
+let _tcInfo = null;
+function tcStartInfo(ev, el) {
+  ev.preventDefault();
+  const t = ev.touches[0];
+  const rect = el.getBoundingClientRect();
+  _tcInfo = { el, type: el.dataset.type, iid: el.dataset.iid,
+    ox: t.clientX - rect.left, oy: t.clientY - rect.top };
+  const ghost = el.cloneNode(false);
+  ghost.id = '_infoGhost';
+  ghost.innerHTML = el.querySelector('.info-card-top')?.innerHTML || '';
+  ghost.style.cssText = `position:fixed;width:${rect.width}px;opacity:.85;pointer-events:none;z-index:9999;left:${rect.left}px;top:${rect.top}px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r);padding:4px;border-left:4px solid var(--navy2)`;
+  document.body.appendChild(ghost);
+  el.style.opacity = '.3';
+  document.addEventListener('touchmove', _tcMoveInfo, {passive:false});
+  document.addEventListener('touchend', _tcEndInfo, {passive:true});
+}
+function _tcMoveInfo(ev) {
+  if(!_tcInfo) return; ev.preventDefault();
+  const t = ev.touches[0];
+  const g = document.getElementById('_infoGhost'); if(!g) return;
+  g.style.left = (t.clientX - _tcInfo.ox) + 'px';
+  g.style.top  = (t.clientY - _tcInfo.oy) + 'px';
+  document.querySelectorAll('.info-card').forEach(c=>c.classList.remove('p-dov'));
+  g.style.display='none';
+  const el = document.elementFromPoint(t.clientX, t.clientY);
+  g.style.display='';
+  const target = el?.closest('.info-card');
+  if(target && target.dataset.iid !== _tcInfo.iid) target.classList.add('p-dov');
+}
+function _tcEndInfo(ev) {
+  if(!_tcInfo) return;
+  const g = document.getElementById('_infoGhost'); if(g) g.remove();
+  _tcInfo.el.style.opacity = '';
+  const over = document.querySelector('.info-card.p-dov');
+  if(over) { infoDrag = {iid:_tcInfo.iid, type:_tcInfo.type}; dropInfo(over); }
+  document.querySelectorAll('.info-card').forEach(c=>c.classList.remove('p-dov'));
+  document.removeEventListener('touchmove', _tcMoveInfo);
+  document.removeEventListener('touchend', _tcEndInfo);
+  _tcInfo = null;
+}
+
+
 function getItinerary(type) { return tripData(type)?.itinerary; }
 function addDay(type) {
   let itin=tripData(type)?.itinerary;
