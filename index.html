@@ -410,6 +410,7 @@ body::before {
   padding:10px 12px; font-size:15px; font-family:'DM Sans',sans-serif;
   color:var(--text); resize:none; outline:none; min-height:60px;
   line-height:1.55; transition:box-shadow .15s; overflow:hidden;
+  box-sizing:border-box;
 }
 .pdesc:focus { box-shadow:0 0 0 2px var(--gold); border-color:var(--gold) }
 .pdesc::placeholder { color:#bbb }
@@ -547,11 +548,11 @@ body::before {
 }
 /* Auto-distance badge in place cards */
 .dist-auto-badge {
-  display:inline-flex; align-items:center; gap:4px;
-  background:rgba(42,138,126,.18); border:1px solid rgba(42,138,126,.35);
-  border-radius:99px; padding:2px 8px; font-size:.69rem;
-  font-family:'DM Mono',monospace; color:var(--teal); white-space:nowrap;
-  margin-left:4px; vertical-align:middle; cursor:default;
+  display:inline-flex; align-items:center; gap:3px;
+  background:rgba(42,138,126,0.12); border:1px solid rgba(42,138,126,0.28);
+  color:var(--teal); border-radius:99px; padding:2px 8px;
+  font-size:.68rem; font-family:'DM Mono',monospace; font-weight:500;
+  white-space:nowrap; flex-shrink:0;
 }
 /* Route from accommodation button */
 .place-meta-btns {
@@ -2335,25 +2336,13 @@ function buildPlace(p, type, ptype) {
       <input class="place-nm" value="${e(p.name||'')}"
         placeholder="${ptype==='food'?'Nume restaurant / local...':'Numele obiectivului...'}"
         onchange="epf('${type}','${ptype}','${p.id}','name',this.value)"/>
+      ${autoDistBadge}
       <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togPlaceCollapse('${type}','${ptype}','${p.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
       <button class="p-exp ${p.open?'op':''}" onclick="togPOpen('${type}','${ptype}','${p.id}')" title="Detalii">&#8943;</button>
       <button class="idbtn" onclick="delPlace('${type}','${ptype}','${p.id}')" title="Sterge">&#128465;</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
-        <div class="m-chip">
-          <span class="lbl">&#128205; dist.</span>
-          <input class="m-inp" value="${autoDist || e(p.distance||'')}" placeholder="&mdash;"
-            title="Distanta fata de cazare"
-            onchange="epf('${type}','${ptype}','${p.id}','distance',this.value)"/>
-          <select class="m-sel" onchange="epf('${type}','${ptype}','${p.id}','unit',this.value)">
-            <option value="km" ${(p.unit||'km')==='km'?'selected':''}>km</option>
-            <option value="min" ${p.unit==='min'?'selected':''}>min</option>
-            <option value="m" ${p.unit==='m'?'selected':''}>m</option>
-          </select>
-          <span class="lbl">de la cazare</span>
-          ${autoDistBadge}
-        </div>
         <div class="place-meta-btns">
           ${routeBtn}
           ${locationRouteBtn}
