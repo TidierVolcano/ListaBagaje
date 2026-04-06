@@ -2303,8 +2303,8 @@ function renderTrip(type) {
     foodCollBar.style.cssText='display:contents';
     // Append collapse buttons directly into sort bar
     const sortBar = buildPlaceSortBar(type,'food');
-    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">⊖ Restrânge</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">⊕ Extinde</button>`;
+    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">➖</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">➕</button>`;
     fs.appendChild(sortBar);
     getSortedPlaces(d.restaurants, type, 'food').forEach(r => fs.appendChild(buildPlace(r,type,'food')));
   }
@@ -2315,8 +2315,8 @@ function renderTrip(type) {
   if (!d.places.length) vs.appendChild(emptySt('🗺️','Niciun loc de vizitat adăugat.'));
   else {
     const visitSortBar = buildPlaceSortBar(type,'visit');
-    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">⊖ Restrânge</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">⊕ Extinde</button>`;
+    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">➖</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">➕</button>`;
     vs.appendChild(visitSortBar);
     getSortedPlaces(d.places, type, 'visit').forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
   }
