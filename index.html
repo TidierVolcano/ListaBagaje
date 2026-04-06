@@ -399,6 +399,41 @@ body::before {
 }
 .place-meta-btns { display:flex; gap:6px; flex-wrap:nowrap; align-items:center; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px; }
 .place-meta-btns::-webkit-scrollbar { display:none }
+
+/* ═══ STAR RATING ═══ */
+.place-rating-row {
+  display:flex; align-items:center; gap:8px;
+  padding:4px 12px 8px; flex-wrap:wrap;
+}
+.rating-lbl {
+  font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; flex-shrink:0;
+}
+.star-group { display:flex; gap:3px; align-items:center }
+.star-btn {
+  background:none; border:none; cursor:pointer; padding:2px;
+  font-size:1.22rem; line-height:1; transition:transform .12s;
+  -webkit-tap-highlight-color:transparent;
+}
+.star-btn:hover { transform:scale(1.25) }
+.star-btn:active { transform:scale(1.1) }
+.star-btn.filled { color:#f0b429 }
+.star-btn.empty  { color:#d4c9b8 }
+.rating-val-badge {
+  font-size:.72rem; font-family:'DM Mono',monospace; font-weight:600;
+  background:rgba(240,180,41,0.15); color:#b8860b;
+  border:1px solid rgba(240,180,41,0.3); border-radius:99px;
+  padding:1px 8px; flex-shrink:0; transition:all .2s;
+}
+.rating-val-badge.hidden { display:none }
+.rating-clear-btn {
+  background:none; border:none; cursor:pointer; color:#ccc;
+  font-size:.8rem; padding:2px 4px; border-radius:4px; transition:color .15s;
+  flex-shrink:0; display:none;
+}
+.rating-clear-btn.visible { display:inline-block }
+.rating-clear-btn:hover { color:var(--red) }
+
 .place-det { border-top:1px solid var(--sand) }
 .place-det.hid { display:none }
 .place-desc-wrap { padding:10px 14px 14px }
@@ -1588,6 +1623,25 @@ body.bg-night::before {
 /* 5-button seg-bar — reduce font a bit */
 .seg-bar .seg-btn { font-size:.7rem }
 
+/* ═══ PLACE SORT BAR ═══ */
+.place-sort-bar {
+  display:flex; align-items:center; gap:6px; margin-bottom:10px;
+  flex-wrap:wrap;
+}
+.place-sort-lbl {
+  font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.5px; white-space:nowrap;
+}
+.place-sort-btn {
+  display:inline-flex; align-items:center; gap:4px;
+  background:var(--card-bg); border:1px solid var(--card-border);
+  border-radius:99px; padding:5px 12px; font-size:.74rem;
+  font-family:'DM Sans',sans-serif; font-weight:500;
+  color:var(--muted); cursor:pointer; transition:all .15s; white-space:nowrap;
+}
+.place-sort-btn:hover { border-color:var(--gold); color:var(--gold) }
+.place-sort-btn.act { background:var(--navy); color:#fff; border-color:var(--navy) }
+
 /* ═══ PRINT / PDF STYLES ═══ */
 @media print {
   * { -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
@@ -2170,13 +2224,19 @@ function renderTrip(type) {
 
   const fs = mk('div','vsec'+(activeView==='food'?' act':''),{id:`vs-food-${type}`});
   if (!d.restaurants.length) fs.appendChild(emptySt('🍽️','Niciun restaurant adăugat încă.'));
-  else d.restaurants.forEach(r => fs.appendChild(buildPlace(r,type,'food')));
+  else {
+    fs.appendChild(buildPlaceSortBar(type,'food'));
+    getSortedPlaces(d.restaurants, type, 'food').forEach(r => fs.appendChild(buildPlace(r,type,'food')));
+  }
   const afb=mk('button','add-place-btn pf'); afb.innerHTML='🍽️  Adaugă restaurant / local'; afb.onclick=()=>addPlace(type,'food');
   fs.appendChild(afb); panel.appendChild(fs);
 
   const vs = mk('div','vsec'+(activeView==='visit'?' act':''),{id:`vs-visit-${type}`});
   if (!d.places.length) vs.appendChild(emptySt('🗺️','Niciun loc de vizitat adăugat.'));
-  else d.places.forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
+  else {
+    vs.appendChild(buildPlaceSortBar(type,'visit'));
+    getSortedPlaces(d.places, type, 'visit').forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
+  }
   const avb=mk('button','add-place-btn pv'); avb.innerHTML='📍  Adaugă loc de vizitat'; avb.onclick=()=>addPlace(type,'visit');
   vs.appendChild(avb); panel.appendChild(vs);
 
@@ -2303,6 +2363,54 @@ function buildItem(item, cid, type) {
   return row;
 }
 
+/* ═══════════════ SORTARE LOCURI ═══════════════ */
+// sortMode: 'manual' | 'dist_asc' | 'dist_desc'
+const _placeSort = {}; // { 'city-food': 'manual', ... }
+
+function getSortKey(type, ptype) { return `${type}-${ptype}`; }
+
+function parseDist(p, type) {
+  // Try auto-calculated distance first
+  const auto = autoDistanceLabel(type, p.coords);
+  const raw = auto || p.distance || '';
+  if (!raw) return Infinity;
+  const n = parseFloat(raw);
+  if (isNaN(n)) return Infinity;
+  // normalize to meters
+  const unit = (auto ? (raw.endsWith('m') && !raw.endsWith('km') ? 'm' : 'km') : (p.unit || 'km'));
+  if (unit === 'm') return n;
+  if (unit === 'min') return n * 80; // rough 80m/min walking
+  return n * 1000; // km → m
+}
+
+function getSortedPlaces(arr, type, ptype) {
+  const key = getSortKey(type, ptype||'');
+  const mode = _placeSort[key] || 'manual';
+  if (mode === 'manual') return arr;
+  const sorted = [...arr].sort((a,b) => {
+    const da = parseDist(a, type), db = parseDist(b, type);
+    return mode === 'dist_asc' ? da - db : db - da;
+  });
+  return sorted;
+}
+
+function setSortMode(type, ptype, mode) {
+  _placeSort[getSortKey(type, ptype)] = mode;
+  renderTrip(type);
+}
+
+function buildPlaceSortBar(type, ptype) {
+  const key = getSortKey(type, ptype);
+  const mode = _placeSort[key] || 'manual';
+  const bar = mk('div', 'place-sort-bar');
+  bar.innerHTML = `
+    <span class="place-sort-lbl">Sortare:</span>
+    <button class="place-sort-btn${mode==='manual'?' act':''}"    onclick="setSortMode('${type}','${ptype}','manual')">✋ Manual</button>
+    <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">📍 Distanță ↑</button>
+    <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">📍 Distanță ↓</button>`;
+  return bar;
+}
+
 function buildPlace(p, type, ptype) {
   const collapsed = p.collapsed || false;
   const card=mk('div',`place-card t${ptype==='food'?'f':'v'}${p.checked?' done':''}`);
@@ -2340,6 +2448,12 @@ function buildPlace(p, type, ptype) {
         onchange="epf('${type}','${ptype}','${p.id}','name',this.value)"/>
       <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togPlaceCollapse('${type}','${ptype}','${p.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
       <button class="idbtn" onclick="delPlace('${type}','${ptype}','${p.id}')" title="Sterge">&#128465;</button>
+    </div>
+    <div class="place-rating-row">
+      <span class="rating-lbl">${ptype==='food'?'Notă':'Rating'}</span>
+      <div class="star-group">${[1,2,3,4,5].map(n=>`<button class="star-btn ${n<=(p.rating||0)?'filled':'empty'}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',${n})" title="${n} stea${n===1?'':'le'}">${n<=(p.rating||0)?'★':'☆'}</button>`).join('')}</div>
+      <span class="rating-val-badge${(p.rating||0)?'':' hidden'}" id="rbadge-${p.id}">${(p.rating||0)?((p.rating||0)+'/5'):''}</span>
+      <button class="rating-clear-btn${(p.rating||0)?' visible':''}" id="rclr-${p.id}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',0)" title="Șterge nota">✕</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
@@ -2830,6 +2944,22 @@ function addPlace(type,ptype){
 }
 function delPlace(type,ptype,pid){ const arr=pa(type,ptype); const i=arr.findIndex(p=>p.id===pid); if(i>-1)arr.splice(i,1); save(); renderTrip(type); }
 function epf(type,ptype,pid,field,val){ const p=pa(type,ptype).find(p=>p.id===pid); if(p)p[field]=val; save(); }
+function setPlaceRating(type, ptype, pid, val) {
+  epf(type, ptype, pid, 'rating', val);
+  // Update UI without full re-render
+  const card = document.querySelector(`[data-pid="${pid}"]`);
+  if (!card) return;
+  card.querySelectorAll('.star-btn').forEach((btn, i) => {
+    const n = i + 1;
+    const filled = n <= val;
+    btn.className = `star-btn ${filled ? 'filled' : 'empty'}`;
+    btn.textContent = filled ? '★' : '☆';
+  });
+  const badge = document.getElementById('rbadge-' + pid);
+  const clrBtn = document.getElementById('rclr-' + pid);
+  if (badge) { badge.textContent = val ? val + '/5' : ''; badge.classList.toggle('hidden', !val); }
+  if (clrBtn) clrBtn.classList.toggle('visible', !!val);
+}
 function togPlace(type,ptype,pid,chk){ const p=pa(type,ptype).find(p=>p.id===pid); if(p)p.checked=chk; save(); const card=document.querySelector(`[data-pid="${pid}"]`); if(card)card.classList.toggle('done',chk); }
 function togPOpen(type,ptype,pid){
   const p=pa(type,ptype).find(p=>p.id===pid); if(!p)return; p.open=!p.open; save();
