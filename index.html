@@ -434,6 +434,40 @@ body::before {
 .rating-clear-btn.visible { display:inline-block }
 .rating-clear-btn:hover { color:var(--red) }
 
+/* ═══ EXTERNAL RATINGS (Google / TripAdvisor) ═══ */
+.ext-ratings-row {
+  display:flex; align-items:center; gap:7px;
+  padding:0 12px 10px; flex-wrap:wrap;
+}
+.ext-rating-chip {
+  display:inline-flex; align-items:center; gap:5px;
+  border-radius:99px; border:1px solid var(--border);
+  background:var(--cream); padding:4px 10px 4px 8px;
+  flex-shrink:0;
+}
+.ext-rating-chip .ext-logo { font-size:.85rem; line-height:1; flex-shrink:0 }
+.ext-rating-chip .ext-lbl {
+  font-size:.65rem; color:var(--muted); font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.4px; white-space:nowrap;
+}
+.ext-rating-inp {
+  width:38px; font-family:'DM Mono',monospace; font-size:.82rem; font-weight:600;
+  color:var(--text); border:none; background:transparent; outline:none;
+  text-align:center; padding:0;
+}
+.ext-rating-inp::placeholder { color:#ccc; font-weight:400 }
+.ext-rating-inp:focus { color:var(--gold) }
+.ext-search-btn {
+  display:inline-flex; align-items:center; gap:4px;
+  background:none; border:1px solid var(--border); border-radius:99px;
+  padding:4px 10px; font-size:.72rem; font-family:'DM Sans',sans-serif;
+  color:var(--muted); cursor:pointer; transition:all .15s; white-space:nowrap;
+  min-height:28px; font-weight:500;
+}
+.ext-search-btn.g:hover  { background:#4285F4; color:#fff; border-color:#4285F4 }
+.ext-search-btn.ta:hover { background:#00AF87; color:#fff; border-color:#00AF87 }
+.ext-search-btn:active   { opacity:.8; transform:scale(.96) }
+
 .place-det { border-top:1px solid var(--sand) }
 .place-det.hid { display:none }
 .place-desc-wrap { padding:10px 14px 14px }
@@ -2455,6 +2489,19 @@ function buildPlace(p, type, ptype) {
       <span class="rating-val-badge${(p.rating||0)?'':' hidden'}" id="rbadge-${p.id}">${(p.rating||0)?((p.rating||0)+'/5'):''}</span>
       <button class="rating-clear-btn${(p.rating||0)?' visible':''}" id="rclr-${p.id}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',0)" title="Șterge nota">✕</button>
     </div>
+    <div class="ext-ratings-row">
+      <div class="ext-rating-chip">
+        <span class="ext-logo">⭐</span>
+        <span class="ext-lbl">Google</span>
+        <input class="ext-rating-inp" type="number" min="1" max="5" step="0.1"
+          value="${e(p.ratingGoogle||'')}" placeholder="—"
+          onchange="epf('${type}','${ptype}','${p.id}','ratingGoogle',this.value)"
+          title="Nota Google (1-5)"/>
+      </div>
+      <button class="ext-search-btn g"
+        onclick="openExtSearch('google','${e(p.name||'')}','${e(p.coords||'')}')"
+        title="Caută pe Google">⭐ Google</button>
+    </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
         <div class="place-meta-btns">
@@ -2944,6 +2991,15 @@ function addPlace(type,ptype){
 }
 function delPlace(type,ptype,pid){ const arr=pa(type,ptype); const i=arr.findIndex(p=>p.id===pid); if(i>-1)arr.splice(i,1); save(); renderTrip(type); }
 function epf(type,ptype,pid,field,val){ const p=pa(type,ptype).find(p=>p.id===pid); if(p)p[field]=val; save(); }
+function openExtSearch(platform, name, coords) {
+  const q = encodeURIComponent((name || '') + (coords ? ' ' + coords : ''));
+  const urls = {
+    google:      `https://www.google.com/search?q=${q}`,
+    tripadvisor: `https://www.tripadvisor.com/Search?q=${encodeURIComponent(name||coords||'')}`
+  };
+  window.open(urls[platform], '_blank', 'noopener');
+}
+
 function setPlaceRating(type, ptype, pid, val) {
   epf(type, ptype, pid, 'rating', val);
   // Update UI without full re-render
