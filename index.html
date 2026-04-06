@@ -556,6 +556,17 @@ body::before {
 .route-from-accom-btn:hover { background:var(--navy); color:#fff; border-color:var(--navy) }
 .route-from-accom-btn:active { opacity:.8 }
 
+.route-from-location-btn {
+  display:inline-flex; align-items:center; gap:4px;
+  background:rgba(42,138,126,.09); border:1px solid rgba(42,138,126,.28);
+  border-radius:99px; padding:5px 11px; font-size:.76rem;
+  font-family:'DM Sans',sans-serif; font-weight:500;
+  color:var(--teal); cursor:pointer; transition:all .15s; white-space:nowrap;
+  min-height:30px;
+}
+.route-from-location-btn:hover { background:var(--teal); color:#fff; border-color:var(--teal) }
+.route-from-location-btn:active { opacity:.8 }
+
 /* ═══ MODALS ═══ */
 .mdbg {
   position:fixed; inset:0; z-index:300;
@@ -2298,6 +2309,12 @@ function buildPlace(p, type, ptype) {
        </button>`
     : '';
 
+  const locationRouteBtn = `<button class="route-from-location-btn"
+       onclick="openDirectionsFromCurrentLocation('${e(p.name||'')}','${e(p.coords||'')}')"
+       title="Deschide ruta de la locatia ta curenta in Google Maps">
+       &#127757; De la mine
+     </button>`;
+
   card.innerHTML=`
     <div class="place-top">
       <span class="place-drag-handle" data-pdh title="Trage pentru reordonare">&#10783;</span>
@@ -2327,6 +2344,7 @@ function buildPlace(p, type, ptype) {
         </div>
         <div class="place-meta-btns">
           ${routeBtn}
+          ${locationRouteBtn}
           <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide in Google Maps">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Maps
@@ -3084,6 +3102,33 @@ function openDirectionsFromAccom(type, placeName, placeCoords) {
     + '&origin=' + encodeURIComponent(origin)
     + '&destination=' + encodeURIComponent(dest);
   window.open(url, '_blank');
+}
+
+function openDirectionsFromCurrentLocation(placeName, placeCoords) {
+  const dest = (placeCoords && placeCoords.trim()) ? placeCoords.trim() : placeName.trim();
+  if (!dest) { toast('⚠ Adaugă un nume sau adresă pentru această locație!'); return; }
+  if (!navigator.geolocation) {
+    toast('⚠ Browserul tău nu suportă geolocalizare!');
+    return;
+  }
+  toast('📡 Se obține locația ta...');
+  navigator.geolocation.getCurrentPosition(
+    (pos) => {
+      const origin = pos.coords.latitude.toFixed(6) + ',' + pos.coords.longitude.toFixed(6);
+      const url = 'https://www.google.com/maps/dir/?api=1'
+        + '&origin=' + encodeURIComponent(origin)
+        + '&destination=' + encodeURIComponent(dest);
+      window.open(url, '_blank');
+    },
+    (err) => {
+      if (err.code === err.PERMISSION_DENIED) {
+        toast('⚠ Accesul la locație a fost refuzat. Permite locația în browser.');
+      } else {
+        toast('⚠ Nu am putut obține locația. Încearcă din nou.');
+      }
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
 }
 
 /* ═══════════════ GEOCODARE AUTO (Nominatim / OpenStreetMap) ═══════════════ */
