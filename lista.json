@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-05T18:45:20.829Z",
+  "exportedAt": "2026-04-06T08:20:59.785Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_bswcts4",
+      "id": "trip_cs7yu4x",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -682,7 +682,8 @@
           "desc": "Situată aproape de centrul istoric, este locul perfect pentru un prânz sau o cină clasică, într-o atmosferă de modă veche.",
           "checked": false,
           "open": false,
-          "coords": "45.462930, 9.183676"
+          "coords": "45.462930, 9.183676",
+          "collapsed": true
         },
         {
           "id": "is8kr5l",
@@ -692,7 +693,8 @@
           "desc": "Amplasată într-un loc pitoresc pe malul canalului Naviglio Grande, oferă o experiență romantică și preparate lombarde excelente.",
           "checked": false,
           "open": false,
-          "coords": "45.451884, 9.174724"
+          "coords": "45.451884, 9.174724",
+          "collapsed": true
         },
         {
           "id": "y429gp9",
@@ -702,7 +704,8 @@
           "desc": "O locație rustică în zona Navigli, apreciată pentru prețurile corecte și atmosfera de cartier.",
           "checked": false,
           "open": false,
-          "coords": "45.448905, 9.180907"
+          "coords": "45.448905, 9.180907",
+          "collapsed": true
         },
         {
           "id": "tb9kzf9",
@@ -712,7 +715,8 @@
           "desc": "Trebuie neapărat să încerci panzerotti (un fel de gogoși sărate umplute cu mozzarella și roșii). Pregătește-te pentru o coadă mică, dar care merge repede.",
           "checked": false,
           "open": false,
-          "coords": "45.465846, 9.191420"
+          "coords": "45.465846, 9.191420",
+          "collapsed": true
         },
         {
           "id": "zsa7w9q",
@@ -722,7 +726,8 @@
           "desc": "Dacă ți se face dor de o pizza napoletană autentică, Pizzium este una dintre cele mai bune opțiuni moderne din oraș.",
           "checked": false,
           "open": false,
-          "coords": "45.452970, 9.172249"
+          "coords": "45.452970, 9.172249",
+          "collapsed": true
         }
       ],
       "places": [
@@ -734,7 +739,8 @@
           "desc": "9/10\nChiar dacă nu ești microbist, San Siro este „Scala Fotbalului”. Mergi pentru istoria colosală a celor două echipe (AC Milan și Inter) și pentru arhitectura brutalistă impresionantă.",
           "checked": false,
           "open": true,
-          "coords": "45.478200, 9.123964"
+          "coords": "45.478200, 9.123964",
+          "collapsed": true
         },
         {
           "id": "atbr9tg",
@@ -744,7 +750,8 @@
           "desc": "10/10\nEste inima orașului. Mergi nu doar pentru interiorul gotic, ci neapărat pentru a urca pe acoperiș (le terrazze) – experiența de a te plimba printre statui și turle este unică în lume.",
           "checked": false,
           "open": true,
-          "coords": "45.464167, 9.191612"
+          "coords": "45.464167, 9.191612",
+          "collapsed": true
         },
         {
           "id": "jsbvu2d",
@@ -754,7 +761,8 @@
           "desc": "9.5/10\nPentru eleganța supremă. Mergi să vezi un spectacol sau măcar muzeul, pentru a simți vibrația celui mai faimos teatru de operă din lume, unde au cântat cele mai mari voci ale istoriei.",
           "checked": false,
           "open": true,
-          "coords": "45.467604, 9.189114"
+          "coords": "45.467604, 9.189114",
+          "collapsed": true
         },
         {
           "id": "jptnq7r",
@@ -764,7 +772,8 @@
           "desc": "9/10\nSupranumită „salonul milanez”, mergi aici pentru un mix de lux, istorie și tradiție (cum ar fi să te învârți pe călcâi pe taurul de mozaic pentru noroc).",
           "checked": false,
           "open": true,
-          "coords": "45.465611, 9.190006"
+          "coords": "45.465611, 9.190006",
+          "collapsed": true
         },
         {
           "id": "v307wj7",
@@ -774,7 +783,8 @@
           "desc": "10/10\nPentru peisajele care par scoase din cărți poștale. Mergi să vezi vilele aristocratice și munții care se oglindesc în apă; este definiția eleganței naturale italiene.",
           "checked": false,
           "open": true,
-          "coords": "45.991759, 9.264881"
+          "coords": "45.991759, 9.264881",
+          "collapsed": true
         },
         {
           "id": "u07wlzs",
@@ -784,7 +794,8 @@
           "desc": "8/10\nDacă ești cu cei mici, este obligatoriu. Mergi pentru că este un spațiu creativ unde copiii învață prin joacă, departe de conceptul de muzeu plictisitor.",
           "checked": false,
           "open": true,
-          "coords": "45.459951, 9.205128"
+          "coords": "45.459951, 9.205128",
+          "collapsed": true
         },
         {
           "id": "lv45fkq",
@@ -794,7 +805,8 @@
           "desc": "9.5/10\nUn tribut adus geniului uman. Mergi să vezi machetele invențiilor lui Leonardo și să înțelegi cum un singur om a anticipat viitorul cu 500 de ani înainte.",
           "checked": false,
           "open": true,
-          "coords": "45.461781, 9.170587"
+          "coords": "45.461781, 9.170587",
+          "collapsed": true
         },
         {
           "id": "xrz5vxh",
@@ -804,17 +816,19 @@
           "desc": "8.5/10\nPentru a respira aerul unei fortărețe renascentiste. Mergi să vezi curțile interioare și ultima sculptură a lui Michelangelo, Pietà Rondanini.",
           "checked": false,
           "open": true,
-          "coords": "45.478747, 8.695630"
+          "coords": "45.478747, 8.695630",
+          "collapsed": true
         },
         {
           "id": "zy3xix2",
-          "name": "Milan Natural History Museum Museo Civico di Storia Naturale di Milano",
+          "name": "Museo Civico di Storia Naturale di Milano",
           "distance": "1.2 km",
           "unit": "km",
           "desc": "8/10\nUn clasic plin de farmec. Mergi pentru dioramele foarte bine realizate și pentru secțiunea dedicată dinozaurilor, situată chiar în frumosul parc Giardini Pubblici.",
           "checked": false,
           "open": true,
-          "coords": "45.472734, 9.202442"
+          "coords": "45.472734, 9.202442",
+          "collapsed": true
         },
         {
           "id": "z923w3q",
@@ -824,7 +838,8 @@
           "desc": "8.5/10\nDestinația nr. 1 pentru familiile cu copii mici. Mergi pentru atmosfera de basm, parcul „Italia în Miniatură” din interior și pentru personajele celebre din desene animate.",
           "checked": false,
           "open": true,
-          "coords": "45.606793, 9.539878"
+          "coords": "45.606793, 9.539878",
+          "collapsed": true
         },
         {
           "id": "5mg6v0e",
@@ -834,7 +849,8 @@
           "desc": "7/10\nEste supranumit „marea celor din Milano”. Mergi aici pentru o zi relaxantă de sporturi nautice, jogging sau pur și simplu pentru a scăpa de betonul orașului fără a conduce ore întregi.",
           "checked": false,
           "open": true,
-          "coords": "45.464207, 9.289032"
+          "coords": "45.464207, 9.289032",
+          "collapsed": true
         },
         {
           "id": "w8eswy9",
@@ -844,7 +860,8 @@
           "desc": "8/10\nEste destinația ideală pentru distracție pură. Fiind un parc acvatic indoor, este perfect indiferent de vreme, oferind un mix bun între adrenalină (tobogane) și relaxare (zonă SPA).",
           "checked": false,
           "open": true,
-          "coords": "45.583413, 9.329031"
+          "coords": "45.583413, 9.329031",
+          "collapsed": true
         },
         {
           "id": "a4k7tov",
@@ -854,7 +871,8 @@
           "desc": "10/10\nO bijuterie istorică. Trebuie să mergi pentru atmosfera medievală, străduțele pietruite și priveliștea spectaculoasă de pe zidurile venețiene. Este, fără îndoială, cea mai fotogenică locație din listă.",
           "checked": false,
           "open": true,
-          "coords": "45.702838, 9.665286"
+          "coords": "45.702838, 9.665286",
+          "collapsed": true
         },
         {
           "id": "xgfsmx8",
@@ -864,7 +882,8 @@
           "desc": "7.5/10\nSituat chiar lângă Parco Sempione, este o vizită scurtă și educativă. Mergi acolo pentru a admira arhitectura Art Nouveau a clădirii și pentru o pauză liniștită de observat viața subacvatică.",
           "checked": false,
           "open": true,
-          "coords": "45.473786, 9.180928"
+          "coords": "45.473786, 9.180928",
+          "collapsed": true
         },
         {
           "id": "fh1c4d2",
@@ -875,7 +894,7 @@
           "checked": false,
           "open": true,
           "coords": "45.483478, 9.190225",
-          "collapsed": false
+          "collapsed": true
         }
       ],
       "itinerary": [
@@ -916,7 +935,8 @@
               "done": false
             }
           ],
-          "body": "Concentrare pe zona Duomo – mers pe jos puțin.\n• Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona.\n• Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!).\n• După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori."
+          "body": "Concentrare pe zona Duomo – mers pe jos puțin.\n• Dimineața: Duomo di Milano (Terasele cu liftul). La 5 ani, vederea de sus și \"pădurea de piatră\" îl vor impresiona.\n• Prânz: Luini (Panzerotti). E chiar lângă Duomo. Luați-le la pachet și mâncați-le în Galleria Vittorio Emanuele II (uitați-vă după taurul din mozaic de pe podea – Alex trebuie să se învârtă pe călcâi pe el pentru noroc!).\n• După-amiaza: Plimbare spre Teatro alla Scala și apoi relaxare în Piazza Gae Aulenti (zona modernă). Acolo Alex se poate juca la fântânile arteziene din podea în timp ce voi beți o cafea sub zgârie-nori.",
+          "collapsed": false
         },
         {
           "id": "oo1gw4r",
@@ -952,19 +972,22 @@
           "id": "m1uqpt8",
           "icon": "ℹ️",
           "title": "Milano - Verona  1:30min - €35.00",
-          "body": ""
+          "body": "",
+          "collapsed": true
         },
         {
           "id": "qqknqwd",
           "icon": "📌",
           "title": "Milano - Bergamo 42min",
-          "body": ""
+          "body": "",
+          "collapsed": true
         },
         {
           "id": "mau88de",
           "icon": "🔑",
           "title": "Milano - Como ",
-          "body": ""
+          "body": "",
+          "collapsed": true
         }
       ],
       "shopping": [
@@ -1059,7 +1082,7 @@
       }
     },
     {
-      "id": "trip_y11vz5c",
+      "id": "trip_5yf7vy1",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1341,7 +1364,7 @@
       }
     },
     {
-      "id": "trip_14tay4p",
+      "id": "trip_1dit3xg",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1641,7 +1664,7 @@
       }
     },
     {
-      "id": "trip_33m0jn6",
+      "id": "trip_qyx5nas",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775037915818,
@@ -2547,7 +2570,8 @@
           "desc": "Restaurante Pasqualet\nEste unul dintre cele mai vechi și respectate locuri. Este o afacere de familie unde se gătește tradițional.\n\nDe ce să mergi: Au o curte interioară foarte plăcută și sunt renumiți pentru Paella Valenciana (cea cu pui și iepure) și All i Pebre (anghilă, un preparat specific zonei).\n\nPreț: Mediu.",
           "checked": false,
           "open": false,
-          "coords": "39.310816, -0.317767"
+          "coords": "39.310816, -0.317767",
+          "collapsed": true
         },
         {
           "id": "9rb2yxd",
@@ -2557,7 +2581,8 @@
           "desc": "Restaurante Arrocería Maribel\nDacă vrei ceva un pic mai modern, dar cu rădăcini adânci în tradiție.\n\nDe ce să mergi: Prezentarea este mai rafinată, iar orezul este gătit perfect (cu acel socarrat – stratul de orez crocant de pe fundul tigăii). Au și opțiuni excelente de orez cu fructe de mare.\n\nPunct forte: Serviciu foarte atent.",
           "checked": false,
           "open": false,
-          "coords": "39.310639, -0.318162"
+          "coords": "39.310639, -0.318162",
+          "collapsed": true
         },
         {
           "id": "j0g6pil",
@@ -2567,7 +2592,8 @@
           "desc": "Restaurante El Redolí\nAre o terasă superbă și o atmosferă foarte relaxată, fiind ideal dacă ești cu copilul după drumul cu bicicleta.\n\nDe ce să mergi: Raport calitate-preț excelent. Este foarte popular printre localnicii din Valencia care vin aici în weekend.\n\nSfat: Încearcă aici Arroz a Banda (orez gătit în supă de pește).",
           "checked": false,
           "open": false,
-          "coords": "39.311084, -0.318832"
+          "coords": "39.311084, -0.318832",
+          "collapsed": true
         }
       ],
       "places": [
@@ -2579,7 +2605,8 @@
           "desc": "(Ciudad de las Artes y las Ciencias): Este simbolul orașului, un complex spectaculos proiectat de Santiago Calatrava. Chiar dacă nu intri în clădiri, plimbarea printre structurile albe și bazinele de apă turcoaz este obligatorie.",
           "checked": false,
           "open": false,
-          "coords": "39.455756, -0.352552"
+          "coords": "39.455756, -0.352552",
+          "collapsed": true
         },
         {
           "id": "m0yd8hg",
@@ -2589,7 +2616,8 @@
           "desc": "L’Oceanogràfic: Cel mai mare acvariu din Europa. Este fascinant pentru copii (și adulți), având un tunel cu rechini impresionant și ecosisteme din toate oceanele lumii.",
           "checked": false,
           "open": false,
-          "coords": "39.453049, -0.347181"
+          "coords": "39.453049, -0.347181",
+          "collapsed": true
         },
         {
           "id": "dxkfq41",
@@ -2599,7 +2627,8 @@
           "desc": "Catedrala din Valencia: O clădire superbă care îmbină stilurile gotic, baroc și romanic. Aici se află ceea ce mulți consideră a fi adevăratul Sfânt Graal. Nu rata urcarea în turnul El Miguelete pentru cea mai bună panoramă asupra orașului.",
           "checked": false,
           "open": false,
-          "coords": "39.475568, -0.375113"
+          "coords": "39.475568, -0.375113",
+          "collapsed": true
         },
         {
           "id": "l0a42n5",
@@ -2609,7 +2638,8 @@
           "desc": "Llotja de la Seda (Bursa Mătăsii): Un monument UNESCO, exemplu magnific de arhitectură gotică civilă, care amintește de epoca de aur a comerțului din Valencia.",
           "checked": false,
           "open": false,
-          "coords": "39.474432, -0.378260"
+          "coords": "39.474432, -0.378260",
+          "collapsed": true
         },
         {
           "id": "w0mudn5",
@@ -2619,7 +2649,8 @@
           "desc": "(Mercat Central): Una dintre cele mai mari și mai frumoase piețe de produse proaspete din Europa. Este locul perfect pentru a vedea viața locală și pentru a gusta produse tradiționale (atenție, se închide în jurul orei 15:00).\nTrebuie sa degusti \"horchata\" proaspata.",
           "checked": false,
           "open": false,
-          "coords": "39.473492, -0.378905"
+          "coords": "39.473492, -0.378905",
+          "collapsed": true
         },
         {
           "id": "pc4byv3",
@@ -2629,7 +2660,8 @@
           "desc": "Un parc imens de 9 km amenajat în fosta albie a râului care traversează orașul. Este locul ideal pentru a merge cu bicicleta de la centru până la mare. Nu rata Parcul Gulliver, un spatiu de joaca urias.",
           "checked": false,
           "open": false,
-          "coords": "39.474196, -0.366809"
+          "coords": "39.474196, -0.366809",
+          "collapsed": true
         },
         {
           "id": "h97xu2x",
@@ -2639,7 +2671,8 @@
           "desc": " Situat în Grădinile Turia, este un loc de joacă uriaș sub forma personajului Gulliver, unde copiii pot urca și aluneca pe hainele și degetele uriașului.",
           "checked": false,
           "open": false,
-          "coords": "39.462499, -0.359502"
+          "coords": "39.462499, -0.359502",
+          "collapsed": true
         },
         {
           "id": "52kb0a8",
@@ -2649,7 +2682,8 @@
           "desc": "O grădină zoologică de tip \"zoo-imersiune\", unde barierele sunt aproape invizibile, oferindu-ți senzația că te plimbi prin savana africană.",
           "checked": false,
           "open": false,
-          "coords": "39.476216, -0.406398"
+          "coords": "39.476216, -0.406398",
+          "collapsed": true
         },
         {
           "id": "gp3ga0s",
@@ -2659,7 +2693,8 @@
           "desc": "Plaje foarte late, cu nisip fin, perfecte pentru o plimbare pe faleză sau un prânz cu paella lângă mare.",
           "checked": false,
           "open": false,
-          "coords": "39.468899, -0.322761"
+          "coords": "39.468899, -0.322761",
+          "collapsed": true
         },
         {
           "id": "2leywc9",
@@ -2669,7 +2704,8 @@
           "desc": "",
           "checked": false,
           "open": false,
-          "coords": "39.479391, -0.323720"
+          "coords": "39.479391, -0.323720",
+          "collapsed": true
         },
         {
           "id": "cwb7qwk",
@@ -2679,7 +2715,8 @@
           "desc": "Este, fără îndoială, cel mai frumos loc de vizitat cu bicicleta în afara centrului orașului Valencia. Este o experiență de o zi întreagă care combină natura, plaja și gastronomia.\nDificultate: Foarte mică. Tot traseul este complet plat.\n\nPeisaj: Vei pedala pe o pistă de biciclete dedicată care pleacă din Orașul Artelor și Științelor, trece prin păduri de pini (La Devesa), pe lângă dune de nisip și ajunge la imensul lac de apă dulce.\n\nDistanță: Din centrul Valenciei până în satul El Palmar (inima parcului) sunt aproximativ 20 km. Cu un e-bike, drumul acesta este o relaxare totală, chiar și cu un copil în scaun.\n\nCe să faci în Albufera (Etapele zilei)\nPlaja El Saler: Pe drum, oprește-te la această plajă. Este mult mai sălbatică și mai curată decât Malvarrosa din oraș.\n\nPlimbarea cu barca: Când ajungi la lac (Mirador de Pujol sau în El Palmar), trebuie neapărat să faci o plimbare cu barca tradițională (albuferenc). Costă în jur de 5€ - 10€ de persoană și durează 30-45 de minute. Este magic, mai ales că poți vedea flamingo și alte păsări protejate.\n\nPrânzul în El Palmar: Satul este considerat locul unde s-a inventat Paella. Oprește-te la unul dintre restaurantele locale pentru o paella autentică la ea acasă. (Atenție: în iunie e bine să rezervi masa cu o zi înainte).\n\n",
           "checked": false,
           "open": false,
-          "coords": "39.305485, -0.342739"
+          "coords": "39.305485, -0.342739",
+          "collapsed": true
         },
         {
           "id": "ib926wp",
@@ -2689,7 +2726,8 @@
           "desc": "Locații recomandate (E-bike + Scaun copil)\nMajoritatea magazinelor sunt grupate în centrul vechi sau lângă Parcul Turia:\n\nValencia Bike Rent (Ruzafa): Situat pe Calle Cuba 24. Este foarte popular pentru e-bike-urile lor stil \"Dutch\" (foarte confortabile).\n\nPreț e-bike: aprox. 25€ - 30€ pe zi.\n\nScaun copil: doar 3€ în plus.\n\nValencia Bikes: Au 3 locații în oraș (Centru, Ruzafa și lângă port). Sunt cunoscuți pentru servicii de calitate.\n\nPreț e-bike: aprox. 30€ pe zi.\n\nScaun copil: Adesea oferit gratuit sau la un preț simbolic dacă închiriezi e-bike.\n\nPelican Bike: Situat aproape de Orașul Artelor și Științelor.\n\nPreț e-bike: aprox. 28€ - 30€ pe zi.\n\nAccesorii: Au o gamă largă de scaune și chiar remorci (trailers) pentru 2 copii.\n\nBikeWell: O opțiune excelentă lângă Grădinile Turia (Paseo de la Pechina 32).\n\nPreț e-bike: 25€ (până la închidere) sau 30€ (pentru 24h).\n\nScaun copil: aprox. 4€ - 5€.",
           "checked": false,
           "open": false,
-          "coords": "52.505119, 13.386056"
+          "coords": "52.505119, 13.386056",
+          "collapsed": true
         }
       ],
       "itinerary": [],
@@ -2726,7 +2764,7 @@
       }
     },
     {
-      "id": "trip_r7xwyzn",
+      "id": "trip_574u1w0",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
