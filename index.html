@@ -2711,8 +2711,8 @@ function collapseAllPlaces(type, ptype, collapse) {
 function buildCollapseAllBar(onCollapse, onExpand) {
   const bar = mk('div', 'collapse-all-bar');
   bar.innerHTML = `
-    <button class="collapse-all-btn" onclick="${onCollapse}">➖</button>
-    <button class="collapse-all-btn" onclick="${onExpand}">➕</button>`;
+    <button class="collapse-all-btn" onclick="${onCollapse}">⊖ Restrânge tot</button>
+    <button class="collapse-all-btn" onclick="${onExpand}">⊕ Extinde tot</button>`;
   return bar;
 }
 
