@@ -447,11 +447,23 @@ body::before {
   display:flex; align-items:flex-start; gap:12px; padding:14px 16px;
   flex-wrap:wrap;
 }
+.accom-icon-wrap {
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  flex-shrink:0;
+}
 .accom-icon {
   font-size:1.6rem; flex-shrink:0; line-height:1;
   filter: drop-shadow(0 2px 6px rgba(200,137,42,0.4));
-  margin-top:2px;
 }
+.accom-edit-icon-btn {
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15);
+  border-radius:6px; width:28px; height:28px; cursor:pointer;
+  color:rgba(255,255,255,.7); font-size:.9rem;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .15s; flex-shrink:0; padding:0;
+}
+.accom-edit-icon-btn:hover { background:rgba(255,255,255,.22); color:#fff }
+.accom-edit-icon-btn:active { background:rgba(255,255,255,.3) }
 .accom-info { flex:1; min-width:0; min-width:120px; }
 .accom-label {
   font-size:.6rem; color:var(--gold2); font-family:'DM Mono',monospace;
@@ -3012,7 +3024,10 @@ function buildAccommodationCard(type) {
 
   const hdr = mk('div','accom-hdr');
   hdr.innerHTML = `
-    <span class="accom-icon">🏨</span>
+    <div class="accom-icon-wrap">
+      <span class="accom-icon">🏨</span>
+      <button class="accom-edit-icon-btn" onclick="toggleAccomEdit('${type}')" title="Editează cazare">✏️</button>
+    </div>
     <div class="accom-info">
       <div class="accom-label">Cazare rezervată</div>
       ${hasName
@@ -3034,7 +3049,6 @@ function buildAccommodationCard(type) {
         title="Geocodare automată + calcul distanțe față de toate restaurantele și obiectivele">
         📐 Calculează distanțe auto
       </button>` : ''}
-      <button class="accom-btn" onclick="toggleAccomEdit('${type}')" title="Editează cazare">✏️ Editează</button>
     </div>`;
   card.appendChild(hdr);
 
