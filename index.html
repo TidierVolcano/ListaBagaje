@@ -2338,7 +2338,6 @@ function buildPlace(p, type, ptype) {
         onchange="epf('${type}','${ptype}','${p.id}','name',this.value)"/>
       ${autoDistBadge}
       <button class="card-collapse-btn${collapsed?' collapsed':''}" onclick="togPlaceCollapse('${type}','${ptype}','${p.id}')" title="Restringe/Extinde"><span class="chv">&#9660;</span></button>
-      <button class="p-exp ${p.open?'op':''}" onclick="togPOpen('${type}','${ptype}','${p.id}')" title="Detalii">&#8943;</button>
       <button class="idbtn" onclick="delPlace('${type}','${ptype}','${p.id}')" title="Sterge">&#128465;</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
@@ -2352,7 +2351,7 @@ function buildPlace(p, type, ptype) {
           </button>
         </div>
       </div>
-      <div class="place-det${p.open?'':' hid'}">
+      <div class="place-det">
         <div class="coords-wrap">
           <span class="coords-lbl">&#128204; coords</span>
           <input class="coords-inp" value="${e(p.coords||'')}"
