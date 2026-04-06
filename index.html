@@ -2549,7 +2549,7 @@ function buildPlace(p, type, ptype) {
       </div>
       <button class="ext-search-btn g"
         onclick="openExtSearch('google','${e(p.name||'')}','${e(p.coords||'')}')"
-        title="Caută pe Google">⭐ Google</button>
+        title="Caută pe Google">📌 Google</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
@@ -2711,8 +2711,8 @@ function collapseAllPlaces(type, ptype, collapse) {
 function buildCollapseAllBar(onCollapse, onExpand) {
   const bar = mk('div', 'collapse-all-bar');
   bar.innerHTML = `
-    <button class="collapse-all-btn" onclick="${onCollapse}">⊖ Restrânge tot</button>
-    <button class="collapse-all-btn" onclick="${onExpand}">⊕ Extinde tot</button>`;
+    <button class="collapse-all-btn" onclick="${onCollapse}">➖</button>
+    <button class="collapse-all-btn" onclick="${onExpand}">➕</button>`;
   return bar;
 }
 
