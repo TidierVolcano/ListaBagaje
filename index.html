@@ -626,8 +626,12 @@ body::before {
 }
 /* Route from accommodation button */
 .place-meta-btns {
-  display:flex; gap:5px; align-items:center; flex-wrap:wrap;
+  display:flex; gap:5px; align-items:center; flex-wrap:nowrap;
+  overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  padding-bottom:2px;
 }
+.place-meta-btns::-webkit-scrollbar { display:none }
 .route-from-accom-btn {
   display:inline-flex; align-items:center; gap:4px;
   background:rgba(26,46,74,.08); border:1px solid rgba(26,46,74,.18);
@@ -1659,22 +1663,44 @@ body.bg-night::before {
 
 /* ═══ PLACE SORT BAR ═══ */
 .place-sort-bar {
-  display:flex; align-items:center; gap:6px; margin-bottom:10px;
-  flex-wrap:wrap;
+  display:flex; align-items:center; gap:5px; margin-bottom:10px;
+  flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  padding-bottom:2px;
 }
+.place-sort-bar::-webkit-scrollbar { display:none }
 .place-sort-lbl {
   font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
-  text-transform:uppercase; letter-spacing:.5px; white-space:nowrap;
+  text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; flex-shrink:0;
 }
 .place-sort-btn {
   display:inline-flex; align-items:center; gap:4px;
   background:var(--card-bg); border:1px solid var(--card-border);
-  border-radius:99px; padding:5px 12px; font-size:.74rem;
+  border-radius:99px; padding:5px 10px; font-size:.72rem;
   font-family:'DM Sans',sans-serif; font-weight:500;
   color:var(--muted); cursor:pointer; transition:all .15s; white-space:nowrap;
+  flex-shrink:0;
 }
 .place-sort-btn:hover { border-color:var(--gold); color:var(--gold) }
 .place-sort-btn.act { background:var(--navy); color:#fff; border-color:var(--navy) }
+
+/* ═══ COLLAPSE ALL BAR ═══ */
+.collapse-all-bar {
+  display:flex; align-items:center; gap:6px; margin-bottom:8px;
+  flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.collapse-all-bar::-webkit-scrollbar { display:none }
+.collapse-all-btn {
+  display:inline-flex; align-items:center; gap:4px;
+  background:var(--card-bg); border:1px solid var(--card-border);
+  border-radius:99px; padding:4px 12px; font-size:.72rem;
+  font-family:'DM Sans',sans-serif; font-weight:500;
+  color:var(--muted); cursor:pointer; transition:all .15s; white-space:nowrap;
+  flex-shrink:0;
+}
+.collapse-all-btn:hover { border-color:var(--gold); color:var(--gold); background:rgba(200,137,42,.06) }
+.collapse-all-btn:active { opacity:.8 }
 
 /* ═══ PRINT / PDF STYLES ═══ */
 @media print {
@@ -2252,6 +2278,12 @@ function renderTrip(type) {
   panel.appendChild(buildAccommodationCard(type));
 
   const ps = mk('div','vsec'+(activeView==='pack'?' act':''),{id:`vs-pack-${type}`});
+  if (d.categories.length) {
+    ps.appendChild(buildCollapseAllBar(
+      `collapseAllCats('${type}', true)`,
+      `collapseAllCats('${type}', false)`
+    ));
+  }
   d.categories.forEach(cat => ps.appendChild(buildCat(cat, type)));
   const acb = mk('button','add-cat-btn'); acb.textContent='+ Adaugă categorie'; acb.onclick=()=>addCat(type);
   ps.appendChild(acb); panel.appendChild(ps);
@@ -2259,7 +2291,18 @@ function renderTrip(type) {
   const fs = mk('div','vsec'+(activeView==='food'?' act':''),{id:`vs-food-${type}`});
   if (!d.restaurants.length) fs.appendChild(emptySt('🍽️','Niciun restaurant adăugat încă.'));
   else {
-    fs.appendChild(buildPlaceSortBar(type,'food'));
+    const foodBar = mk('div'); foodBar.style.cssText='display:flex;flex-wrap:nowrap;gap:6px;align-items:center;margin-bottom:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;';
+    foodBar.appendChild(buildPlaceSortBar(type,'food'));
+    const foodCollBar = buildCollapseAllBar(
+      `collapseAllPlaces('${type}','food',true)`,
+      `collapseAllPlaces('${type}','food',false)`
+    );
+    foodCollBar.style.cssText='display:contents';
+    // Append collapse buttons directly into sort bar
+    const sortBar = buildPlaceSortBar(type,'food');
+    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">⊖ Tot</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">⊕ Tot</button>`;
+    fs.appendChild(sortBar);
     getSortedPlaces(d.restaurants, type, 'food').forEach(r => fs.appendChild(buildPlace(r,type,'food')));
   }
   const afb=mk('button','add-place-btn pf'); afb.innerHTML='🍽️  Adaugă restaurant / local'; afb.onclick=()=>addPlace(type,'food');
@@ -2268,7 +2311,10 @@ function renderTrip(type) {
   const vs = mk('div','vsec'+(activeView==='visit'?' act':''),{id:`vs-visit-${type}`});
   if (!d.places.length) vs.appendChild(emptySt('🗺️','Niciun loc de vizitat adăugat.'));
   else {
-    vs.appendChild(buildPlaceSortBar(type,'visit'));
+    const visitSortBar = buildPlaceSortBar(type,'visit');
+    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">⊖ Tot</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">⊕ Tot</button>`;
+    vs.appendChild(visitSortBar);
     getSortedPlaces(d.places, type, 'visit').forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
   }
   const avb=mk('button','add-place-btn pv'); avb.innerHTML='📍  Adaugă loc de vizitat'; avb.onclick=()=>addPlace(type,'visit');
@@ -2438,10 +2484,10 @@ function buildPlaceSortBar(type, ptype) {
   const mode = _placeSort[key] || 'manual';
   const bar = mk('div', 'place-sort-bar');
   bar.innerHTML = `
-    <span class="place-sort-lbl">Sortare:</span>
+    <span class="place-sort-lbl">Sort:</span>
     <button class="place-sort-btn${mode==='manual'?' act':''}"    onclick="setSortMode('${type}','${ptype}','manual')">✋ Manual</button>
-    <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">📍 Distanță ↑</button>
-    <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">📍 Distanță ↓</button>`;
+    <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">↑ Dist.</button>
+    <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">↓ Dist.</button>`;
   return bar;
 }
 
@@ -2645,6 +2691,27 @@ function buildInfoCard(card, type) {
   el.querySelector('[data-infodh]').addEventListener('touchstart', ev=>tcStartInfo(ev,el),{passive:false});
 
   return el;
+}
+
+/* ═══════════════ COLLAPSE ALL FUNCTIONS ═══════════════ */
+function collapseAllCats(type, collapse) {
+  const d = tripData(type); if (!d) return;
+  d.categories.forEach(cat => { cat.open = !collapse; });
+  save(); renderTrip(type);
+}
+
+function collapseAllPlaces(type, ptype, collapse) {
+  const arr = pa(type, ptype); if (!arr) return;
+  arr.forEach(p => { p.collapsed = collapse; });
+  save(); renderTrip(type);
+}
+
+function buildCollapseAllBar(onCollapse, onExpand) {
+  const bar = mk('div', 'collapse-all-bar');
+  bar.innerHTML = `
+    <button class="collapse-all-btn" onclick="${onCollapse}">⊖ Restrânge tot</button>
+    <button class="collapse-all-btn" onclick="${onExpand}">⊕ Extinde tot</button>`;
+  return bar;
 }
 
 /* ═══════════════ COLLAPSE FUNCTIONS ═══════════════ */
