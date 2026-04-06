@@ -2487,7 +2487,6 @@ function buildPlaceSortBar(type, ptype) {
   const mode = _placeSort[key] || 'manual';
   const bar = mk('div', 'place-sort-bar');
   bar.innerHTML = `
-    <span class="place-sort-lbl">Sort:</span>
     <button class="place-sort-btn${mode==='manual'?' act':''}"    onclick="setSortMode('${type}','${ptype}','manual')">✋ Manual</button>
     <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">↑ Sort</button>
     <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">↓ Sort</button>`;
