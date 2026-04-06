@@ -397,14 +397,15 @@ body::before {
   font-size:.72rem; color:var(--muted); border:none; background:transparent;
   outline:none; cursor:pointer; font-family:'DM Mono',monospace;
 }
-.place-meta-btns { display:flex; gap:6px; flex-wrap:nowrap; align-items:center; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px; }
-.place-meta-btns::-webkit-scrollbar { display:none }
+/* .place-meta-btns defined below with full padding */
 
 /* ═══ STAR RATING ═══ */
 .place-rating-row {
-  display:flex; align-items:center; gap:8px;
-  padding:4px 12px 8px; flex-wrap:wrap;
+  display:flex; align-items:center; gap:7px;
+  padding:4px 12px 10px;
+  flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
 }
+.place-rating-row::-webkit-scrollbar { display:none }
 .rating-lbl {
   font-size:.68rem; color:var(--muted); font-family:'DM Mono',monospace;
   text-transform:uppercase; letter-spacing:.5px; white-space:nowrap; flex-shrink:0;
@@ -433,11 +434,21 @@ body::before {
 }
 .rating-clear-btn.visible { display:inline-block }
 .rating-clear-btn:hover { color:var(--red) }
+.rating-divider {
+  color:var(--border); font-size:.9rem; flex-shrink:0; user-select:none;
+}
+
+/* Nav buttons row — distance, routes, maps */
+.place-meta-btns {
+  display:flex; gap:5px; align-items:center;
+  flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  padding:0 12px 10px; padding-bottom:10px;
+}
+.place-meta-btns::-webkit-scrollbar { display:none }
 
 /* ═══ EXTERNAL RATINGS (Google / TripAdvisor) ═══ */
 .ext-ratings-row {
-  display:flex; align-items:center; gap:7px;
-  padding:0 12px 10px; flex-wrap:wrap;
+  display:none; /* merged into rating row */
 }
 .ext-rating-chip {
   display:inline-flex; align-items:center; gap:5px;
@@ -2488,8 +2499,7 @@ function buildPlace(p, type, ptype) {
       <div class="star-group">${[1,2,3,4,5].map(n=>`<button class="star-btn ${n<=(p.rating||0)?'filled':'empty'}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',${n})" title="${n} stea${n===1?'':'le'}">${n<=(p.rating||0)?'★':'☆'}</button>`).join('')}</div>
       <span class="rating-val-badge${(p.rating||0)?'':' hidden'}" id="rbadge-${p.id}">${(p.rating||0)?((p.rating||0)+'/5'):''}</span>
       <button class="rating-clear-btn${(p.rating||0)?' visible':''}" id="rclr-${p.id}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',0)" title="Șterge nota">✕</button>
-    </div>
-    <div class="ext-ratings-row">
+      <span class="rating-divider">|</span>
       <div class="ext-rating-chip">
         <span class="ext-logo">⭐</span>
         <span class="ext-lbl">Google</span>
@@ -2503,16 +2513,14 @@ function buildPlace(p, type, ptype) {
         title="Caută pe Google">⭐ Google</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
-      <div class="place-meta">
-        <div class="place-meta-btns">
-          ${autoDistBadge}
-          ${routeBtn}
-          ${locationRouteBtn}
-          <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide in Google Maps">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Maps
-          </button>
-        </div>
+      <div class="place-meta-btns">
+        ${autoDistBadge}
+        ${routeBtn}
+        ${locationRouteBtn}
+        <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide in Google Maps">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Maps
+        </button>
       </div>
       <div class="place-det">
         <div class="coords-wrap">
