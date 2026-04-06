@@ -437,8 +437,11 @@ body::before {
 /* ═══ EXTERNAL RATINGS (Google / TripAdvisor) ═══ */
 .ext-ratings-row {
   display:flex; align-items:center; gap:7px;
-  padding:0 12px 10px; flex-wrap:wrap;
+  padding:0 12px 10px; flex-wrap:nowrap;
+  overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none;
 }
+.ext-ratings-row::-webkit-scrollbar { display:none }
 .ext-rating-chip {
   display:inline-flex; align-items:center; gap:5px;
   border-radius:99px; border:1px solid var(--border);
@@ -2300,8 +2303,8 @@ function renderTrip(type) {
     foodCollBar.style.cssText='display:contents';
     // Append collapse buttons directly into sort bar
     const sortBar = buildPlaceSortBar(type,'food');
-    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">⊖ Tot</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">⊕ Tot</button>`;
+    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">⊖ Restrânge</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">⊕ Extinde</button>`;
     fs.appendChild(sortBar);
     getSortedPlaces(d.restaurants, type, 'food').forEach(r => fs.appendChild(buildPlace(r,type,'food')));
   }
@@ -2312,8 +2315,8 @@ function renderTrip(type) {
   if (!d.places.length) vs.appendChild(emptySt('🗺️','Niciun loc de vizitat adăugat.'));
   else {
     const visitSortBar = buildPlaceSortBar(type,'visit');
-    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">⊖ Tot</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">⊕ Tot</button>`;
+    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">⊖ Restrânge</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">⊕ Extinde</button>`;
     vs.appendChild(visitSortBar);
     getSortedPlaces(d.places, type, 'visit').forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
   }
@@ -2486,8 +2489,8 @@ function buildPlaceSortBar(type, ptype) {
   bar.innerHTML = `
     <span class="place-sort-lbl">Sort:</span>
     <button class="place-sort-btn${mode==='manual'?' act':''}"    onclick="setSortMode('${type}','${ptype}','manual')">✋ Manual</button>
-    <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">↑ Dist.</button>
-    <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">↓ Dist.</button>`;
+    <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">↑ Sort</button>
+    <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">↓ Sort</button>`;
   return bar;
 }
 
@@ -2536,6 +2539,7 @@ function buildPlace(p, type, ptype) {
       <button class="rating-clear-btn${(p.rating||0)?' visible':''}" id="rclr-${p.id}" onclick="setPlaceRating('${type}','${ptype}','${p.id}',0)" title="Șterge nota">✕</button>
     </div>
     <div class="ext-ratings-row">
+      ${autoDistBadge}
       <div class="ext-rating-chip">
         <span class="ext-logo">⭐</span>
         <span class="ext-lbl">Google</span>
@@ -2551,7 +2555,6 @@ function buildPlace(p, type, ptype) {
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
         <div class="place-meta-btns">
-          ${autoDistBadge}
           ${routeBtn}
           ${locationRouteBtn}
           <button class="maps-btn" onclick="openMaps('${e(p.name||'')}','${e(p.coords||'')}')" title="Deschide in Google Maps">
