@@ -3109,28 +3109,8 @@ function openDirectionsFromAccom(type, placeName, placeCoords) {
 function openDirectionsFromCurrentLocation(placeName, placeCoords) {
   const dest = (placeCoords && placeCoords.trim()) ? placeCoords.trim() : placeName.trim();
   if (!dest) { toast('⚠ Adaugă un nume sau adresă pentru această locație!'); return; }
-  if (!navigator.geolocation) {
-    toast('⚠ Browserul tău nu suportă geolocalizare!');
-    return;
-  }
-  toast('📡 Se obține locația ta...');
-  navigator.geolocation.getCurrentPosition(
-    (pos) => {
-      const origin = pos.coords.latitude.toFixed(6) + ',' + pos.coords.longitude.toFixed(6);
-      const url = 'https://www.google.com/maps/dir/?api=1'
-        + '&origin=' + encodeURIComponent(origin)
-        + '&destination=' + encodeURIComponent(dest);
-      window.open(url, '_blank');
-    },
-    (err) => {
-      if (err.code === err.PERMISSION_DENIED) {
-        toast('⚠ Accesul la locație a fost refuzat. Permite locația în browser.');
-      } else {
-        toast('⚠ Nu am putut obține locația. Încearcă din nou.');
-      }
-    },
-    { enableHighAccuracy: true, timeout: 10000 }
-  );
+  const url = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(dest);
+  window.open(url, '_blank');
 }
 
 /* ═══════════════ GEOCODARE AUTO (Nominatim / OpenStreetMap) ═══════════════ */
