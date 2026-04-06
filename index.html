@@ -1760,6 +1760,31 @@ body.bg-night::before {
   letter-spacing: .7px; color: var(--muted); margin: 14px 0 8px; padding-left: 2px;
 }
 .bg-cat-label:first-child { margin-top: 0 }
+
+/* ═══ IMPORT FILE ═══ */
+.imp-file-btn {
+  width:100%; display:flex; align-items:center; justify-content:center; gap:8px;
+  background:rgba(26,46,74,.06); border:2px dashed var(--border);
+  border-radius:var(--rs); padding:13px 16px; cursor:pointer;
+  font-size:.9rem; font-family:'DM Sans',sans-serif; font-weight:500;
+  color:var(--navy); transition:all .18s; margin-bottom:8px;
+}
+.imp-file-btn:hover { border-color:var(--gold); color:var(--gold); background:rgba(200,137,42,.05) }
+.imp-file-btn:active { opacity:.8 }
+.imp-file-name {
+  font-size:.75rem; font-family:'DM Mono',monospace; color:var(--muted);
+  text-align:center; margin-bottom:10px; min-height:1.2em;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:0 4px;
+}
+.imp-file-name.loaded { color:var(--teal); font-weight:500 }
+.imp-divider {
+  display:flex; align-items:center; gap:10px;
+  color:var(--muted); font-size:.72rem; font-family:'DM Mono',monospace;
+  text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px;
+}
+.imp-divider::before, .imp-divider::after {
+  content:''; flex:1; height:1px; background:var(--border);
+}
 </style>
 </head>
 <body>
@@ -1924,11 +1949,18 @@ body.bg-night::before {
   <div class="mdsh">
     <div class="mdh"></div>
     <h3>⬆ Importă</h3>
-    <p>Lipești JSON exportat din PackRo. Suportă atât <strong>export complet</strong> (toate listele) cât și export dintr-o singură listă (format vechi).</p>
+    <p>Încarcă un fișier <strong>.json</strong> exportat din PackRo sau lipește conținutul direct mai jos.</p>
+    <input type="file" id="impFileInp" accept=".json,application/json" style="display:none" onchange="handleImportFile(this)"/>
+    <button class="imp-file-btn" onclick="document.getElementById('impFileInp').click()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Alege fișier JSON
+    </button>
+    <div class="imp-file-name" id="impFileName">Niciun fișier selectat</div>
+    <div class="imp-divider"><span>sau lipește JSON</span></div>
     <textarea class="mdta" id="impTxt" placeholder='{"packroExport":true,"trips":[...]}'></textarea>
     <div class="mda">
       <button class="mb mb-c" onclick="closeMd('impMod')">Anulează</button>
-      <button class="mb mb-g" onclick="doImport()">Importă</button>
+      <button class="mb mb-g" onclick="doImport()">⬆ Importă</button>
     </div>
   </div>
 </div>
@@ -2303,8 +2335,8 @@ function renderTrip(type) {
     foodCollBar.style.cssText='display:contents';
     // Append collapse buttons directly into sort bar
     const sortBar = buildPlaceSortBar(type,'food');
-    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">➖</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">➕</button>`;
+    sortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',true)">⊖ Restrânge</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','food',false)">⊕ Extinde</button>`;
     fs.appendChild(sortBar);
     getSortedPlaces(d.restaurants, type, 'food').forEach(r => fs.appendChild(buildPlace(r,type,'food')));
   }
@@ -2315,8 +2347,8 @@ function renderTrip(type) {
   if (!d.places.length) vs.appendChild(emptySt('🗺️','Niciun loc de vizitat adăugat.'));
   else {
     const visitSortBar = buildPlaceSortBar(type,'visit');
-    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">➖</button>
-      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">➕</button>`;
+    visitSortBar.innerHTML += `<button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',true)">⊖ Restrânge</button>
+      <button class="collapse-all-btn" onclick="collapseAllPlaces('${type}','visit',false)">⊕ Extinde</button>`;
     vs.appendChild(visitSortBar);
     getSortedPlaces(d.places, type, 'visit').forEach(p => vs.appendChild(buildPlace(p,type,'visit')));
   }
@@ -2487,6 +2519,7 @@ function buildPlaceSortBar(type, ptype) {
   const mode = _placeSort[key] || 'manual';
   const bar = mk('div', 'place-sort-bar');
   bar.innerHTML = `
+    <span class="place-sort-lbl">Sort:</span>
     <button class="place-sort-btn${mode==='manual'?' act':''}"    onclick="setSortMode('${type}','${ptype}','manual')">✋ Manual</button>
     <button class="place-sort-btn${mode==='dist_asc'?' act':''}"  onclick="setSortMode('${type}','${ptype}','dist_asc')">↑ Sort</button>
     <button class="place-sort-btn${mode==='dist_desc'?' act':''}" onclick="setSortMode('${type}','${ptype}','dist_desc')">↓ Sort</button>`;
@@ -2549,7 +2582,7 @@ function buildPlace(p, type, ptype) {
       </div>
       <button class="ext-search-btn g"
         onclick="openExtSearch('google','${e(p.name||'')}','${e(p.coords||'')}')"
-        title="Caută pe Google">📌 Google</button>
+        title="Caută pe Google">⭐ Google</button>
     </div>
     <div class="place-card-body${collapsed?' collapsed':''}" style="max-height:${collapsed?'0':'600px'}">
       <div class="place-meta">
@@ -3704,7 +3737,31 @@ function dlExp() {
     toast('✓ Fișier descărcat!');
   } catch { toast('⚠ Folosește butonul Copiază pe iOS'); }
 }
-function openImp(){ document.getElementById('impTxt').value=''; document.getElementById('impMod').classList.add('op'); }
+function openImp(){
+  document.getElementById('impTxt').value='';
+  document.getElementById('impFileInp').value='';
+  const fn = document.getElementById('impFileName');
+  fn.textContent='Niciun fișier selectat';
+  fn.classList.remove('loaded');
+  document.getElementById('impMod').classList.add('op');
+}
+
+function handleImportFile(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const fn = document.getElementById('impFileName');
+  fn.textContent = file.name;
+  fn.classList.add('loaded');
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    document.getElementById('impTxt').value = e.target.result;
+  };
+  reader.onerror = function() {
+    fn.textContent = '⚠ Eroare la citirea fișierului';
+    fn.classList.remove('loaded');
+  };
+  reader.readAsText(file);
+}
 function doImport() {
   try {
     const parsed=JSON.parse(document.getElementById('impTxt').value);
