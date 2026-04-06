@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-06T08:29:14.895Z",
-  "activeType": "city",
+  "exportedAt": "2026-04-06T08:51:55.382Z",
+  "activeType": "seaair",
   "trips": [
     {
-      "id": "trip_jth5hrg",
+      "id": "trip_wach6sx",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_nu5xsl6",
+      "id": "trip_qfluvzx",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_96kdyhh",
+      "id": "trip_18k6soh",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,10 +1697,10 @@
       }
     },
     {
-      "id": "trip_p5g6i27",
+      "id": "trip_7dt4pzs",
       "type": "seaair",
       "name": "Valencia",
-      "savedAt": 1775037915818,
+      "savedAt": 1775465478867,
       "active": true,
       "categories": [
         {
@@ -2627,6 +2627,53 @@
           "open": false,
           "coords": "39.311084, -0.318832",
           "collapsed": true
+        },
+        {
+          "id": "52yh97f",
+          "name": "Central Bar by Ricard Camarena",
+          "distance": "301 m",
+          "unit": "m",
+          "desc": "Se concentrează pe tapas și sandvișuri gourmet (bocadillos) create de un bucătar cu stele Michelin, dar la prețuri accesibile.\n\nSistemul este de tip \"primul venit, primul servit\" la bar, oferind o experiență dinamică și autentică.\n\nÎncercați sandvișul cu calamari sau buletele de carne, care sunt favoritele localnicilor.",
+          "checked": false,
+          "open": true,
+          "coords": "39.473282, -0.378214",
+          "ratingGoogle": "4.5",
+          "collapsed": true
+        },
+        {
+          "id": "83n8swh",
+          "name": "Casa Montana (Tapas)",
+          "distance": "301 m",
+          "unit": "m",
+          "desc": "Este locul ideal pentru a degusta produse de calitate superioară precum anșoa, brânzeturi artizanale și crochetă de cod.\n\nAmbientul este plin de istorie, cu butoaie uriașe de vin care decorează pereții.\n\nDeși este o locație de prestigiu, prețurile rămân corecte pentru calitatea ingredientelor oferite.",
+          "checked": false,
+          "open": true,
+          "coords": "39.473282, -0.378214",
+          "ratingGoogle": "4.6",
+          "collapsed": true
+        },
+        {
+          "id": "o9qouqq",
+          "name": "MAUI RUSSAFA",
+          "distance": "1.8 km",
+          "unit": "km",
+          "desc": "MAUI RUSSAFAClick to open side panel for more information este un simbol al cartierului boem Ruzafa, fiind foarte apreciat de tineri pentru atmosfera relaxată.\n\nSe specializează în tapas de casă creative, ideale pentru a fi împărțite cu prietenii.\n\nPrețurile sunt printre cele mai competitive din zonă, fără a face rabat de la gust.\n\nEste renumit pentru preparatele pe bază de pui și porțiile de \"ensaladilla\".",
+          "checked": false,
+          "open": true,
+          "coords": "39.460118, -0.371938",
+          "ratingGoogle": "4.6",
+          "collapsed": true
+        },
+        {
+          "id": "gfmrqkh",
+          "name": "Napule' Doc (Pizza)",
+          "distance": "2.3 km",
+          "unit": "km",
+          "desc": "Pizza este preparată după metode tradiționale napoletane, fiind considerată una dintre cele mai bune din oraș.\n\nRaportul calitate-preț este excelent, oferind o alternativă delicioasă și sățioasă la bucătăria spaniolă.\n\nLocalul este primitor, fiind potrivit atât pentru familii, cât și pentru grupuri de prieteni.",
+          "checked": false,
+          "open": true,
+          "coords": "39.463382, -0.399779",
+          "collapsed": true
         }
       ],
       "places": [
@@ -2639,7 +2686,8 @@
           "checked": false,
           "open": false,
           "coords": "39.455756, -0.352552",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.7"
         },
         {
           "id": "m0yd8hg",
@@ -2650,7 +2698,8 @@
           "checked": false,
           "open": false,
           "coords": "39.453049, -0.347181",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.6"
         },
         {
           "id": "dxkfq41",
@@ -2661,7 +2710,8 @@
           "checked": false,
           "open": false,
           "coords": "39.475568, -0.375113",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.6"
         },
         {
           "id": "l0a42n5",
@@ -2672,7 +2722,8 @@
           "checked": false,
           "open": false,
           "coords": "39.474432, -0.378260",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.6"
         },
         {
           "id": "w0mudn5",
@@ -2683,7 +2734,8 @@
           "checked": false,
           "open": false,
           "coords": "39.473492, -0.378905",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.7"
         },
         {
           "id": "pc4byv3",
@@ -2694,7 +2746,8 @@
           "checked": false,
           "open": false,
           "coords": "39.474196, -0.366809",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.6"
         },
         {
           "id": "h97xu2x",
@@ -2705,7 +2758,8 @@
           "checked": false,
           "open": false,
           "coords": "39.462499, -0.359502",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.5"
         },
         {
           "id": "52kb0a8",
@@ -2716,7 +2770,8 @@
           "checked": false,
           "open": false,
           "coords": "39.476216, -0.406398",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.6"
         },
         {
           "id": "gp3ga0s",
@@ -2727,7 +2782,8 @@
           "checked": false,
           "open": false,
           "coords": "39.468899, -0.322761",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.5"
         },
         {
           "id": "2leywc9",
@@ -2738,7 +2794,8 @@
           "checked": false,
           "open": false,
           "coords": "39.479391, -0.323720",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.5"
         },
         {
           "id": "cwb7qwk",
@@ -2749,7 +2806,8 @@
           "checked": false,
           "open": false,
           "coords": "39.305485, -0.342739",
-          "collapsed": true
+          "collapsed": true,
+          "ratingGoogle": "4.7"
         },
         {
           "id": "ib926wp",
@@ -2797,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_31kefmx",
+      "id": "trip_ugkxvay",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
