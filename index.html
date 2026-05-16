@@ -1858,6 +1858,7 @@ body.bg-night::before {
         <div class="tog-track"></div><span>Checklist</span>
       </button>
       <div class="spc"></div>
+      <button class="pill pill-g" onclick="saveToGitHub()" title="Salvează datele pe GitHub (lista.json)" id="gh-save-btn">☁️ Salvează GitHub</button>
       <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GitHub</button>
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
@@ -2043,6 +2044,71 @@ body.bg-night::before {
 
 <script>
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
+const GITHUB_OWNER  = 'TidierVolcano';
+const GITHUB_REPO   = 'ListaBagaje';
+const GITHUB_BRANCH = 'main';
+const GITHUB_FILE   = 'lista.json';
+const GITHUB_TOKEN_KEY = 'packro_gh_token';
+
+async function saveToGitHub() {
+  let token = localStorage.getItem(GITHUB_TOKEN_KEY);
+  if (!token) {
+    token = prompt('\u{1F511} Introdu GitHub Personal Access Token (classic, cu permisiuni repo):\n\nToken-ul va fi salvat local in browser pentru utilizari viitoare.');
+    if (!token || !token.trim()) return;
+    token = token.trim();
+    localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  }
+
+  const btn = document.getElementById('gh-save-btn');
+  const origLabel = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.innerHTML = '\u23F3 Se salveaza...'; }
+  toast('\u2601\uFE0F Se salveaza pe GitHub...');
+
+  try {
+    const exportData = buildFullExport();
+    const json = JSON.stringify(exportData, null, 2);
+    const content = btoa(unescape(encodeURIComponent(json)));
+
+    const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+    const headers = {
+      'Authorization': `Bearer ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    };
+
+    let sha = null;
+    const getResp = await fetch(`${apiUrl}?ref=${GITHUB_BRANCH}`, { headers });
+    if (getResp.ok) {
+      sha = (await getResp.json()).sha;
+    } else if (getResp.status === 401 || getResp.status === 403) {
+      localStorage.removeItem(GITHUB_TOKEN_KEY);
+      toast('\u26A0\uFE0F Token invalid \u2014 a fost sters. Incearca din nou.');
+      if (btn) { btn.disabled = false; btn.innerHTML = origLabel; }
+      return;
+    }
+
+    const body = { message: 'Update lista.json via PackRo', content, branch: GITHUB_BRANCH };
+    if (sha) body.sha = sha;
+
+    const putResp = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
+
+    if (putResp.ok) {
+      toast('\u2705 Salvat pe GitHub!');
+    } else {
+      const err = await putResp.json().catch(() => ({}));
+      if (putResp.status === 401 || putResp.status === 403) {
+        localStorage.removeItem(GITHUB_TOKEN_KEY);
+        toast('\u26A0\uFE0F Token invalid \u2014 a fost sters. Incearca din nou.');
+      } else {
+        toast('\u26A0\uFE0F Eroare: ' + (err.message || `HTTP ${putResp.status}`));
+      }
+    }
+  } catch(e) {
+    toast('\u26A0\uFE0F Eroare GitHub: ' + e.message);
+  } finally {
+    if (btn) { btn.disabled = false; btn.innerHTML = origLabel; }
+  }
+}
 
 async function incarcaListaDinGitHub() {
   const dateSalvate = localStorage.getItem('packro_v7');
@@ -4623,6 +4689,7 @@ const SETTINGS_SK_BTN = 'packro_btn_order';
 const SETTINGS_SK_TAB = 'packro_tab_order';
 
 const HDR_BTNS_DEF = [
+  { id: 'ghsave',   label: '☁️ Salvează GitHub', onclick: "saveToGitHub()",  cls: 'pill-g',    title: 'Salvează datele pe GitHub (lista.json)' },
   { id: 'github',   label: '🔄 GitHub',    onclick: "resetDinGitHub()", cls: 'pill-g',    title: 'Resetează la versiunea din GitHub' },
   { id: 'pdf',      label: '📄 PDF',       onclick: "generatePDF()",    cls: 'pill-g',    title: 'Generează PDF' },
   { id: 'favs',     label: '⭐ Favorite',   onclick: "openFavs()",      cls: 'pill-g' },
