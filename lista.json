@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:53:00.794Z",
+  "exportedAt": "2026-05-17T05:58:24.015Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_po8hhua",
+      "id": "trip_tcrgc9o",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -222,18 +222,18 @@
           "id": "hai_c7pvaar",
           "emoji": "👔",
           "name": "Îmbrăcăminte",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "j8fkhcq",
               "text": "Lenjerie intima - N.zile + 2",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "7ymxavw",
               "text": "Sosete - N.zile + 2 (baieti)",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_7mnay7f",
+      "id": "trip_eezpwc0",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_0q0mj9y",
+      "id": "trip_y4nfdiw",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_at6h6pe",
+      "id": "trip_5d3npov",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_g7hwzxt",
+      "id": "trip_uri2rgz",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
