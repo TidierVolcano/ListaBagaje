@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:42:28.294Z",
+  "exportedAt": "2026-05-17T05:45:06.274Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_2ysm6rr",
+      "id": "trip_8ycapjm",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -25,7 +25,7 @@
             {
               "id": "4urmvz7",
               "text": "Pasaport Alex",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
@@ -37,13 +37,13 @@
             {
               "id": "aajv95v",
               "text": "Card bancar EUR",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "mea0zjy",
               "text": "Cash",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_z7xsqho",
+      "id": "trip_qm2vdef",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_dnbo3a6",
+      "id": "trip_6h3cogi",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_9mqxtpf",
+      "id": "trip_ord8zh8",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_ltq0dam",
+      "id": "trip_ewn3m97",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
