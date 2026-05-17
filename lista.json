@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:01:30.305Z",
+  "exportedAt": "2026-05-17T06:44:20.210Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_a49ysvr",
+      "id": "trip_z2ojyo9",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -19,31 +19,31 @@
             {
               "id": "n2002do",
               "text": "Buletin - CI",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "4urmvz7",
               "text": "Pasaport Alex",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "mztbzuy",
               "text": "Permis de conducere",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "aajv95v",
               "text": "Card bancar EUR",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "mea0zjy",
               "text": "Cash",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
@@ -51,13 +51,13 @@
               "text": "Check-In Avion",
               "checked": false,
               "qty": ""
-            },   
+            },
             {
               "id": "roody2u",
               "text": "Check-In Cazare",
               "checked": false,
               "qty": ""
-            },  
+            },
             {
               "id": "roody2s",
               "text": "Bilete & rezervări",
@@ -73,13 +73,13 @@
             {
               "id": "ej9f408",
               "text": "Card de sanatate",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "pkat9u5",
               "text": "Roaming",
-              "checked": true,
+              "checked": false,
               "qty": ""
             }
           ]
@@ -88,7 +88,7 @@
           "id": "act_sb4pob7",
           "emoji": "🎭",
           "name": "Activități",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "5t2v0q4",
@@ -105,7 +105,7 @@
             {
               "id": "qa5srs6",
               "text": "Adaptor de priză",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
@@ -296,7 +296,7 @@
           "id": "sctbuml",
           "emoji": "📷",
           "name": "Igiena",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "zb33yef",
@@ -307,7 +307,7 @@
             {
               "id": "0d3bef2",
               "text": "Sampon adulti F",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -319,49 +319,49 @@
             {
               "id": "53d28i5",
               "text": "Gel de dus M",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "mb0jq22",
               "text": "Gel de dus F",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "9z6kyt7",
               "text": "Pasta de dinti adulti",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "rpvpp20",
               "text": "Pasta de dinti baby",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "xjxgdk8",
               "text": "Periuta de dinti M",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "jxybmo8",
               "text": "Periuta de dinti F",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "s3hlpb6",
               "text": "Periuta de dinti baby",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "sqr1fom",
               "text": "Crema Nivea",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -373,19 +373,19 @@
             {
               "id": "524abjt",
               "text": "Deodorant M",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "pkygnl1",
               "text": "Deodorant F",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "iusf0jl",
               "text": "Gel de par",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -413,6 +413,12 @@
               "qty": ""
             },
             {
+              "id": "vja5tja",
+              "text": "Crema hidratanta",
+              "checked": false,
+              "qty": ""
+            },
+            {
               "id": "wfpgpf6",
               "text": "Sapun solid",
               "checked": false,
@@ -421,12 +427,6 @@
             {
               "id": "i9s8gnr",
               "text": "Detergent rufe",
-              "checked": false,
-              "qty": ""
-            },
-            {
-              "id": "vja5tja",
-              "text": "Crema hidratanta",
               "checked": false,
               "qty": ""
             },
@@ -1127,7 +1127,7 @@
       }
     },
     {
-      "id": "trip_trwsynm",
+      "id": "trip_f3zc5qd",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1409,7 +1409,7 @@
       }
     },
     {
-      "id": "trip_ot9yvfu",
+      "id": "trip_yysskoc",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1709,7 +1709,7 @@
       }
     },
     {
-      "id": "trip_e1sznd0",
+      "id": "trip_bv9325f",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2867,7 +2867,7 @@
       }
     },
     {
-      "id": "trip_zexxhot",
+      "id": "trip_lvplof6",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
