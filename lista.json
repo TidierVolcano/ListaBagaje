@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:57:01.236Z",
+  "exportedAt": "2026-05-17T06:59:41.458Z",
   "activeType": "city",
   "trips": [
     {
@@ -391,7 +391,7 @@
             {
               "id": "o5mkixe",
               "text": "BIC-uri",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -403,7 +403,7 @@
             {
               "id": "vt9paz1",
               "text": "Bicarbonat",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -421,7 +421,7 @@
             {
               "id": "wfpgpf6",
               "text": "Sapun solid",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -489,7 +489,7 @@
             {
               "id": "622q4sh",
               "text": "Medicamente personale",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -507,7 +507,7 @@
             {
               "id": "gufh4jw",
               "text": "Comprese sterile",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -549,7 +549,7 @@
             {
               "id": "n96yvov",
               "text": "Probiotic",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
