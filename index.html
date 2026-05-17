@@ -1859,6 +1859,7 @@ body.bg-night::before {
       </button>
       <div class="spc"></div>
       <button class="pill pill-g" onclick="saveToGitHub()" title="Salvează datele pe GitHub (lista.json)" id="gh-save-btn">☁️ Salvează GitHub</button>
+      <button class="pill pill-g" onclick="openGHSettings()" title="Setări GitHub (token, repo, branch)">⚙️</button>
       <button class="pill pill-g" onclick="resetDinGitHub()" title="Resetează la versiunea din GitHub">🔄 GitHub</button>
       <button class="pill pill-g" onclick="openImp()">⬆ Import</button>
       <button class="pill pill-g" onclick="openExp()">⬇ Export</button>
@@ -2044,71 +2045,165 @@ body.bg-night::before {
 
 <script>
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/TidierVolcano/ListaBagaje/refs/heads/main/lista.json';
-const GITHUB_OWNER  = 'TidierVolcano';
-const GITHUB_REPO   = 'ListaBagaje';
-const GITHUB_BRANCH = 'main';
-const GITHUB_FILE   = 'lista.json';
-const GITHUB_TOKEN_KEY = 'packro_gh_token';
+const GITHUB_TOKEN_KEY   = 'packro_gh_token';
+
+// Sanitize token: keep only printable ASCII (32-126), strip invisible/unicode chars
+function sanitizeToken(t) {
+  return (t || '').replace(/[^ -~]/g, '').trim();
+}
+const GITHUB_SETTINGS_KEY = 'packro_gh_settings';
+
+function getGHSettings() {
+  try {
+    const s = localStorage.getItem(GITHUB_SETTINGS_KEY);
+    return s ? JSON.parse(s) : {};
+  } catch { return {}; }
+}
+function saveGHSettings(s) {
+  localStorage.setItem(GITHUB_SETTINGS_KEY, JSON.stringify(s));
+}
 
 async function saveToGitHub() {
-  let token = localStorage.getItem(GITHUB_TOKEN_KEY);
-  if (!token) {
-    token = prompt('\u{1F511} Introdu GitHub Personal Access Token (classic, cu permisiuni repo):\n\nToken-ul va fi salvat local in browser pentru utilizari viitoare.');
-    if (!token || !token.trim()) return;
-    token = token.trim();
-    localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  const stored = getGHSettings();
+  let token  = sanitizeToken(localStorage.getItem(GITHUB_TOKEN_KEY) || '');
+  let owner  = stored.owner  || '';
+  let repo   = stored.repo   || '';
+  let branch = stored.branch || 'main';
+  let file   = stored.file   || 'lista.json';
+
+  // First time or missing settings — show config dialog
+  if (!token || !owner || !repo) {
+    openGHSettings();
+    return;
   }
 
   const btn = document.getElementById('gh-save-btn');
   const origLabel = btn ? btn.innerHTML : '';
-  if (btn) { btn.disabled = true; btn.innerHTML = '\u23F3 Se salveaza...'; }
-  toast('\u2601\uFE0F Se salveaza pe GitHub...');
+  if (btn) { btn.disabled = true; btn.innerHTML = '⏳ ...'; }
+  toast('☁️ Se salvează pe GitHub...');
 
   try {
     const exportData = buildFullExport();
     const json = JSON.stringify(exportData, null, 2);
-    const content = btoa(unescape(encodeURIComponent(json)));
+    const b64content = btoa(unescape(encodeURIComponent(json)));
 
-    const apiUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${file}`;
     const headers = {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/vnd.github.v3+json',
       'Content-Type': 'application/json'
     };
 
+    // Get existing SHA if file exists
     let sha = null;
-    const getResp = await fetch(`${apiUrl}?ref=${GITHUB_BRANCH}`, { headers });
+    const getResp = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, { headers });
     if (getResp.ok) {
-      sha = (await getResp.json()).sha;
+      const existing = await getResp.json();
+      sha = existing.sha;
     } else if (getResp.status === 401 || getResp.status === 403) {
-      localStorage.removeItem(GITHUB_TOKEN_KEY);
-      toast('\u26A0\uFE0F Token invalid \u2014 a fost sters. Incearca din nou.');
-      if (btn) { btn.disabled = false; btn.innerHTML = origLabel; }
+      toast('⚠️ Token invalid sau expirat. Deschide Setări GitHub.');
+      openGHSettings();
+      return;
+    } else if (getResp.status !== 404) {
+      const errData = await getResp.json().catch(() => ({}));
+      toast('⚠️ Eroare GET ' + getResp.status + ': ' + (errData.message || 'necunoscut'));
       return;
     }
 
-    const body = { message: 'Update lista.json via PackRo', content, branch: GITHUB_BRANCH };
+    const body = { message: 'Update ' + file + ' via PackRo', content: b64content, branch };
     if (sha) body.sha = sha;
 
     const putResp = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
 
     if (putResp.ok) {
-      toast('\u2705 Salvat pe GitHub!');
+      toast('✅ Salvat pe GitHub!');
     } else {
       const err = await putResp.json().catch(() => ({}));
+      const msg = err.message || ('HTTP ' + putResp.status);
       if (putResp.status === 401 || putResp.status === 403) {
-        localStorage.removeItem(GITHUB_TOKEN_KEY);
-        toast('\u26A0\uFE0F Token invalid \u2014 a fost sters. Incearca din nou.');
+        toast('⚠️ Acces refuzat (' + putResp.status + '). Verifică token-ul în Setări GitHub.');
+        openGHSettings();
+      } else if (putResp.status === 404) {
+        toast('⚠️ Not Found (404). Verifică owner/repo/branch în Setări GitHub.');
+        openGHSettings();
+      } else if (putResp.status === 422) {
+        toast('⚠️ SHA conflict. Încearcă din nou.');
       } else {
-        toast('\u26A0\uFE0F Eroare: ' + (err.message || `HTTP ${putResp.status}`));
+        toast('⚠️ Eroare ' + putResp.status + ': ' + msg);
       }
     }
   } catch(e) {
-    toast('\u26A0\uFE0F Eroare GitHub: ' + e.message);
+    toast('⚠️ Eroare: ' + e.message);
   } finally {
     if (btn) { btn.disabled = false; btn.innerHTML = origLabel; }
   }
 }
+
+function openGHSettings() {
+  const stored = getGHSettings();
+  const token  = localStorage.getItem(GITHUB_TOKEN_KEY) || '';
+  // Extract owner/repo from existing GITHUB_JSON_URL as defaults
+  let defOwner = 'TidierVolcano', defRepo = 'ListaBagaje', defBranch = 'main', defFile = 'lista.json';
+  const mod = document.getElementById('ghSettingsMod');
+  if (mod) { mod.classList.add('op'); }
+  // populate fields
+  const f = (id, val) => { const el = document.getElementById(id); if(el) el.value = val; };
+  f('ghs-token',  sanitizeToken(token));
+  f('ghs-owner',  stored.owner  || defOwner);
+  f('ghs-repo',   stored.repo   || defRepo);
+  f('ghs-branch', stored.branch || defBranch);
+  f('ghs-file',   stored.file   || defFile);
+}
+
+function saveGHSettingsAndClose() {
+  const g  = id => (document.getElementById(id)||{}).value || '';
+  const token  = sanitizeToken(g('ghs-token'));
+  const owner  = g('ghs-owner').trim();
+  const repo   = g('ghs-repo').trim();
+  const branch = g('ghs-branch').trim() || 'main';
+  const file   = g('ghs-file').trim()   || 'lista.json';
+  if (!token || !owner || !repo) { alert('Completează toate câmpurile obligatorii.'); return; }
+  if (token)  localStorage.setItem(GITHUB_TOKEN_KEY, token);
+  saveGHSettings({ owner, repo, branch, file });
+  closeMd('ghSettingsMod');
+  toast('✅ Setări GitHub salvate!');
+}
+
+function clearGHToken() {
+  localStorage.removeItem(GITHUB_TOKEN_KEY);
+  const el = document.getElementById('ghs-token');
+  if (el) { el.value = ''; el.focus(); }
+  const res = document.getElementById('ghs-test-result');
+  if (res) { res.textContent = 'Token șters. Introdu unul nou și salvează.'; res.style.color = 'var(--muted)'; }
+}
+
+function testGHConnection() {
+  const g  = id => (document.getElementById(id)||{}).value || '';
+  const token  = sanitizeToken(g('ghs-token'));
+  const owner  = g('ghs-owner').trim();
+  const repo   = g('ghs-repo').trim();
+  const branch = g('ghs-branch').trim() || 'main';
+  if (!token || !owner || !repo) { alert('Completează token, owner și repo mai întâi.'); return; }
+  const btn = document.getElementById('ghs-test-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Se testează...'; }
+  const url = `https://api.github.com/repos/${owner}/${repo}`;
+  fetch(url, { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } })
+    .then(r => r.json().then(d => ({ ok: r.ok, status: r.status, data: d })))
+    .then(({ ok, status, data }) => {
+      const el = document.getElementById('ghs-test-result');
+      if (ok) {
+        el.textContent = '✅ Repo găsit: ' + data.full_name + (data.permissions?.push ? ' · Acces scriere ✓' : ' · ⚠️ Nu ai acces de scriere!');
+        el.style.color = data.permissions?.push ? 'var(--green)' : '#c8892a';
+      } else {
+        el.textContent = '⚠️ ' + status + ': ' + (data.message || 'eroare');
+        el.style.color = 'var(--red)';
+      }
+    })
+    .catch(e => { document.getElementById('ghs-test-result').textContent = '⚠️ ' + e.message; })
+    .finally(() => { if (btn) { btn.disabled = false; btn.textContent = '🔍 Testează conexiunea'; } });
+}
+
+
 
 async function incarcaListaDinGitHub() {
   const dateSalvate = localStorage.getItem('packro_v7');
@@ -5033,6 +5128,47 @@ function _startArctic() {
 _startBgAnim(loadBg());
 </script>
 
-  
+
+<!-- GITHUB SETTINGS MODAL -->
+<div class="mdbg" id="ghSettingsMod" onclick="if(event.target===this)closeMd('ghSettingsMod')">
+  <div class="mdsh">
+    <div class="mdh"></div>
+    <h3>☁️ Setări GitHub</h3>
+    <p>Configurează unde se salvează datele. Token-ul necesită permisiuni <strong>repo</strong> (classic PAT).</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+      <div>
+        <label style="font-size:.75rem;color:var(--muted);display:block;margin-bottom:3px">Personal Access Token (classic)</label>
+        <input id="ghs-token" type="password" class="save-inp" placeholder="ghp_xxxxxxxxxxxxxxxx" style="margin-bottom:0;font-size:14px;padding:10px 12px"/>
+        <div style="font-size:.7rem;color:var(--muted);margin-top:3px">github.com → Settings → Developer settings → PAT → Classic → permisiuni: <code>repo</code></div>
+        <button class="mb mb-c" onclick="clearGHToken()" style="margin-top:8px;width:auto;padding:6px 14px;font-size:.78rem">🗑️ Șterge token & introdu altul</button>
+      </div>
+      <div>
+        <label style="font-size:.75rem;color:var(--muted);display:block;margin-bottom:3px">Owner (utilizator / organizație)</label>
+        <input id="ghs-owner" type="text" class="save-inp" placeholder="ex: TidierVolcano" style="margin-bottom:0;font-size:14px;padding:10px 12px"/>
+      </div>
+      <div>
+        <label style="font-size:.75rem;color:var(--muted);display:block;margin-bottom:3px">Nume repository</label>
+        <input id="ghs-repo" type="text" class="save-inp" placeholder="ex: ListaBagaje" style="margin-bottom:0;font-size:14px;padding:10px 12px"/>
+      </div>
+      <div style="display:flex;gap:8px">
+        <div style="flex:1">
+          <label style="font-size:.75rem;color:var(--muted);display:block;margin-bottom:3px">Branch</label>
+          <input id="ghs-branch" type="text" class="save-inp" placeholder="main" style="margin-bottom:0;font-size:14px;padding:10px 12px"/>
+        </div>
+        <div style="flex:1">
+          <label style="font-size:.75rem;color:var(--muted);display:block;margin-bottom:3px">Fișier</label>
+          <input id="ghs-file" type="text" class="save-inp" placeholder="lista.json" style="margin-bottom:0;font-size:14px;padding:10px 12px"/>
+        </div>
+      </div>
+    </div>
+    <button id="ghs-test-btn" class="mb mb-n" onclick="testGHConnection()" style="width:100%;margin-bottom:8px">🔍 Testează conexiunea</button>
+    <div id="ghs-test-result" style="font-size:.8rem;min-height:1.2em;margin-bottom:12px;padding:0 2px"></div>
+    <div class="mda">
+      <button class="mb mb-c" onclick="closeMd('ghSettingsMod')">Anulează</button>
+      <button class="mb mb-g" onclick="saveGHSettingsAndClose()">✅ Salvează setările</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
