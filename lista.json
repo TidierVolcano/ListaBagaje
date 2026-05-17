@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:35:16.105Z",
+  "exportedAt": "2026-05-17T05:37:21.310Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_fy6i7ta",
+      "id": "trip_3t740nu",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_hqativ6",
+      "id": "trip_3i3impf",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_zjohk20",
+      "id": "trip_d0cpdot",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_hgoudih",
+      "id": "trip_qpxqe7x",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_vzt4cie",
+      "id": "trip_chfkr6w",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
