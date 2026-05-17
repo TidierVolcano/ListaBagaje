@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:58:24.015Z",
+  "exportedAt": "2026-05-17T06:01:30.305Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_tcrgc9o",
+      "id": "trip_a49ysvr",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -14,7 +14,7 @@
           "id": "doc_b9jzk9e",
           "emoji": "📄",
           "name": "Documente",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "n2002do",
@@ -25,7 +25,7 @@
             {
               "id": "4urmvz7",
               "text": "Pasaport Alex",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -37,7 +37,7 @@
             {
               "id": "aajv95v",
               "text": "Card bancar EUR",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -61,13 +61,13 @@
             {
               "id": "ej9f408",
               "text": "Card de sanatate",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "pkat9u5",
               "text": "Roaming",
-              "checked": false,
+              "checked": true,
               "qty": ""
             }
           ]
@@ -222,18 +222,18 @@
           "id": "hai_c7pvaar",
           "emoji": "👔",
           "name": "Îmbrăcăminte",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "j8fkhcq",
               "text": "Lenjerie intima - N.zile + 2",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "7ymxavw",
               "text": "Sosete - N.zile + 2 (baieti)",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_eezpwc0",
+      "id": "trip_trwsynm",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_y4nfdiw",
+      "id": "trip_ot9yvfu",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_5d3npov",
+      "id": "trip_e1sznd0",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_uri2rgz",
+      "id": "trip_zexxhot",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
