@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:52:38.741Z",
+  "exportedAt": "2026-05-17T06:56:44.045Z",
   "activeType": "city",
   "trips": [
     {
@@ -93,13 +93,13 @@
             {
               "id": "5t2v0q4",
               "text": "Hartă offline descărcată",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "6vsyfqz",
               "text": "Rezervări confirmate",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -171,7 +171,7 @@
             {
               "id": "iwvk6fp",
               "text": "Tableta",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
