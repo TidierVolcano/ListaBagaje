@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:56:44.045Z",
+  "exportedAt": "2026-05-17T06:57:01.236Z",
   "activeType": "city",
   "trips": [
     {
@@ -37,13 +37,13 @@
             {
               "id": "aajv95v",
               "text": "Card bancar EUR",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "mea0zjy",
               "text": "Cash",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
