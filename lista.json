@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:59:41.458Z",
+  "exportedAt": "2026-05-17T07:04:44.611Z",
   "activeType": "city",
   "trips": [
     {
@@ -588,7 +588,7 @@
           "id": "foo_288radc",
           "emoji": "🍎",
           "name": "Food",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "muy3nqa",
