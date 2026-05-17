@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:50:00.023Z",
+  "exportedAt": "2026-05-17T05:53:00.794Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_j39l5px",
+      "id": "trip_po8hhua",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -93,7 +93,7 @@
             {
               "id": "qa5srs6",
               "text": "Adaptor de priză",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_mwwimsf",
+      "id": "trip_7mnay7f",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_x24eebq",
+      "id": "trip_0q0mj9y",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_0lbom8b",
+      "id": "trip_at6h6pe",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_bmvwua1",
+      "id": "trip_g7hwzxt",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
