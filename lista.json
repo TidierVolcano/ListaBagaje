@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T05:47:27.284Z",
+  "exportedAt": "2026-05-17T05:50:00.023Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_l6yhovb",
+      "id": "trip_j39l5px",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -14,7 +14,7 @@
           "id": "doc_b9jzk9e",
           "emoji": "📄",
           "name": "Documente",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "n2002do",
@@ -76,7 +76,7 @@
           "id": "act_sb4pob7",
           "emoji": "🎭",
           "name": "Activități",
-          "open": true,
+          "open": false,
           "items": [
             {
               "id": "5t2v0q4",
@@ -93,13 +93,13 @@
             {
               "id": "qa5srs6",
               "text": "Adaptor de priză",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
               "id": "4at6czn",
               "text": "Power bank",
-              "checked": true,
+              "checked": false,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_n5igguu",
+      "id": "trip_mwwimsf",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_y06t74e",
+      "id": "trip_x24eebq",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_qo3zwpo",
+      "id": "trip_0lbom8b",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_mu5zq4w",
+      "id": "trip_bmvwua1",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
