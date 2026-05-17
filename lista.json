@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-04-06T08:51:55.382Z",
-  "activeType": "seaair",
+  "exportedAt": "2026-05-17T05:34:03.235Z",
+  "activeType": "city",
   "trips": [
     {
-      "id": "trip_wach6sx",
+      "id": "trip_oyhe5fo",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -14,12 +14,12 @@
           "id": "doc_b9jzk9e",
           "emoji": "📄",
           "name": "Documente",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "n2002do",
               "text": "Buletin - CI",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -1115,7 +1115,7 @@
       }
     },
     {
-      "id": "trip_qfluvzx",
+      "id": "trip_uxxl3x3",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1397,7 +1397,7 @@
       }
     },
     {
-      "id": "trip_18k6soh",
+      "id": "trip_h5mxqah",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1697,7 +1697,7 @@
       }
     },
     {
-      "id": "trip_7dt4pzs",
+      "id": "trip_vedrtw6",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2855,7 +2855,7 @@
       }
     },
     {
-      "id": "trip_ugkxvay",
+      "id": "trip_h3gr1ke",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
