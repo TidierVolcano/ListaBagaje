@@ -47,6 +47,18 @@
               "qty": ""
             },
             {
+              "id": "roody2t",
+              "text": "Check-In Avion",
+              "checked": false,
+              "qty": ""
+            },   
+            {
+              "id": "roody2u",
+              "text": "Check-In Cazare",
+              "checked": false,
+              "qty": ""
+            },  
+            {
               "id": "roody2s",
               "text": "Bilete & rezervări",
               "checked": false,
