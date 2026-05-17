@@ -2083,7 +2083,6 @@ async function saveToGitHub() {
   toast('☁️ Se salvează pe GitHub...');
 
   try {
-    save(); // asigurăm că S este complet sincronizat cu localStorage
     const exportData = buildFullExport();
     const json = JSON.stringify(exportData, null, 2);
     const b64content = btoa(unescape(encodeURIComponent(json)));
@@ -2097,7 +2096,7 @@ async function saveToGitHub() {
 
     // Get existing SHA if file exists
     let sha = null;
-    const getResp = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}&t=${Date.now()}`, { headers, cache: 'no-store' });
+    const getResp = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, { headers });
     if (getResp.ok) {
       const existing = await getResp.json();
       sha = existing.sha;
@@ -2118,29 +2117,6 @@ async function saveToGitHub() {
 
     if (putResp.ok) {
       toast('✅ Salvat pe GitHub!');
-      // Marchează timestamp-ul ultimei salvări reușite
-      localStorage.setItem('packro_gh_lastsaved', JSON.stringify({ ts: Date.now(), branch, file }));
-    } else if (putResp.status === 409 || putResp.status === 422) {
-      // SHA conflict (fișierul a fost modificat între timp) — refetch SHA și retry automat
-      toast('🔄 Conflict SHA, se reîncearcă automat...');
-      try {
-        const retryGet = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}&t=${Date.now()}`, { headers, cache: 'no-store' });
-        if (retryGet.ok) {
-          body.sha = (await retryGet.json()).sha;
-          const retryPut = await fetch(apiUrl, { method: 'PUT', headers, body: JSON.stringify(body) });
-          if (retryPut.ok) {
-            toast('✅ Salvat pe GitHub! (după retry)');
-            localStorage.setItem('packro_gh_lastsaved', JSON.stringify({ ts: Date.now(), branch, file }));
-          } else {
-            const e2 = await retryPut.json().catch(() => ({}));
-            toast('⚠️ Eroare după retry ' + retryPut.status + ': ' + (e2.message || ''));
-          }
-        } else {
-          toast('⚠️ Nu s-a putut prelua SHA actualizat (' + retryGet.status + ').');
-        }
-      } catch(retryErr) {
-        toast('⚠️ Retry eșuat: ' + retryErr.message);
-      }
     } else {
       const err = await putResp.json().catch(() => ({}));
       const msg = err.message || ('HTTP ' + putResp.status);
@@ -2150,6 +2126,8 @@ async function saveToGitHub() {
       } else if (putResp.status === 404) {
         toast('⚠️ Not Found (404). Verifică owner/repo/branch în Setări GitHub.');
         openGHSettings();
+      } else if (putResp.status === 422) {
+        toast('⚠️ SHA conflict. Încearcă din nou.');
       } else {
         toast('⚠️ Eroare ' + putResp.status + ': ' + msg);
       }
@@ -2229,32 +2207,7 @@ function testGHConnection() {
 
 async function incarcaListaDinGitHub() {
   const dateSalvate = localStorage.getItem('packro_v7');
-  // Dacă există date locale, verifică dacă GitHub are o versiune mai nouă
-  if (dateSalvate) {
-    try {
-      const localTs = (() => { try { const g = JSON.parse(localStorage.getItem('packro_gh_lastsaved')); return g?.ts || 0; } catch { return 0; } })();
-      // Verifică timestamp-ul de pe GitHub (fișier mic, rapid)
-      const headResp = await fetch(GITHUB_JSON_URL + '?check=' + Date.now(), { cache: 'no-store', method: 'GET' });
-      if (headResp.ok) {
-        const ghData = await headResp.json();
-        const ghTs = ghData.exportedAt ? new Date(ghData.exportedAt).getTime() : 0;
-        const localExportTs = (() => { try { const s = JSON.parse(dateSalvate); return s._exportedAt ? new Date(s._exportedAt).getTime() : 0; } catch { return 0; } })();
-        const bestLocalTs = Math.max(localTs, localExportTs);
-        if (ghTs > bestLocalTs + 5000) {
-          // GitHub e mai nou cu >5s — sincronizare automată silențioasă
-          console.log('[PackRo] GitHub mai nou (' + new Date(ghTs).toISOString() + ') față de local (' + new Date(bestLocalTs).toISOString() + '). Sincronizez...');
-          localStorage.removeItem('packro_v7');
-          // continuă să încarce de pe GitHub (nu return)
-        } else {
-          return; // local e la zi, nu e nevoie de sync
-        }
-      } else {
-        return; // nu putem verifica, rămânem pe local
-      }
-    } catch(e) {
-      return; // eroare la verificare, rămânem pe local
-    }
-  }
+  if (dateSalvate) return;
 
   try {
     // cache: 'no-store' ocolește Service Worker-ul și aduce mereu versiunea live de pe GitHub
@@ -3915,7 +3868,6 @@ function buildFullExport() {
   return {
     packroExport: true,
     exportedAt: new Date().toISOString(),
-    _savedFrom: navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad') ? 'ios' : 'pc',
     activeType: activeType,
     trips: allTrips
   };
