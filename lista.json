@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-17T06:44:20.210Z",
+  "exportedAt": "2026-05-17T06:52:38.741Z",
   "activeType": "city",
   "trips": [
     {
@@ -105,13 +105,13 @@
             {
               "id": "qa5srs6",
               "text": "Adaptor de priză",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "4at6czn",
               "text": "Power bank",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -129,7 +129,7 @@
             {
               "id": "q39em76",
               "text": "Cablu Lightning",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -141,7 +141,7 @@
             {
               "id": "ojtrogw",
               "text": "Cablu Micro USB",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -159,7 +159,7 @@
             {
               "id": "dmkxsn1",
               "text": "Casti Beats",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -177,7 +177,7 @@
             {
               "id": "atjqy3k",
               "text": "Suport Tableta",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -466,7 +466,7 @@
           "id": "med_1skz6xo",
           "emoji": "💊",
           "name": "Medicamente",
-          "open": false,
+          "open": true,
           "items": [
             {
               "id": "mms3mz1",
@@ -525,13 +525,13 @@
             {
               "id": "okzgw15",
               "text": "Parasinus",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
               "id": "fqayy5k",
               "text": "Nurofen adulti",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
@@ -543,7 +543,7 @@
             {
               "id": "pcrb4em",
               "text": "Leucoplast",
-              "checked": false,
+              "checked": true,
               "qty": ""
             },
             {
