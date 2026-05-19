@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-19T13:08:35.395Z",
+  "exportedAt": "2026-05-19T13:11:21.075Z",
   "activeType": "city",
   "trips": [
     {
@@ -831,6 +831,16 @@
           "checked": false,
           "open": true,
           "coords": "45.463512, 9.187045"
+        },
+        {
+          "id": "9nr81qj",
+          "name": "Pasta d’autore",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "coords": "Corso di Porta Ticinese, 16, 20123 Milano MI, Italy"
         }
       ],
       "places": [
