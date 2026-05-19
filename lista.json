@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-18T12:15:30.870Z",
+  "exportedAt": "2026-05-19T13:08:35.395Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_hlm2j56",
+      "id": "trip_yjvl16m",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -695,8 +695,8 @@
         {
           "id": "ogidxqc",
           "name": "Trattoria Milanese",
-          "distance": "1.8 km",
-          "unit": "km",
+          "distance": "865 m",
+          "unit": "m",
           "desc": "Situată aproape de centrul istoric, este locul perfect pentru un prânz sau o cină clasică, într-o atmosferă de modă veche.",
           "checked": false,
           "open": false,
@@ -707,7 +707,7 @@
         {
           "id": "is8kr5l",
           "name": "El Brellin",
-          "distance": "2.7 km",
+          "distance": "1.9 km",
           "unit": "km",
           "desc": "Amplasată într-un loc pitoresc pe malul canalului Naviglio Grande, oferă o experiență romantică și preparate lombarde excelente.",
           "checked": false,
@@ -719,7 +719,7 @@
         {
           "id": "y429gp9",
           "name": "Trattoria Madonnina",
-          "distance": "2.5 km",
+          "distance": "2.3 km",
           "unit": "km",
           "desc": "O locație rustică în zona Navigli, apreciată pentru prețurile corecte și atmosfera de cartier.",
           "checked": false,
@@ -743,21 +743,101 @@
         {
           "id": "zsa7w9q",
           "name": "Pizzium - Via Vigevano",
-          "distance": "2.8 km",
+          "distance": "1.8 km",
           "unit": "km",
           "desc": "Dacă ți se face dor de o pizza napoletană autentică, Pizzium este una dintre cele mai bune opțiuni moderne din oraș.",
           "checked": false,
           "open": false,
           "coords": "45.452970, 9.172249",
-          "collapsed": true,
+          "collapsed": false,
           "ratingGoogle": "4.4"
+        },
+        {
+          "id": "e2ipkep",
+          "name": "Artico Gelateria Tradizionale",
+          "distance": "1.2 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "collapsed": false,
+          "coords": "45.463214, 9.189602"
+        },
+        {
+          "id": "9qk50kd",
+          "name": "Terra Gelato",
+          "distance": "2.8 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "coords": "45.482638, 9.206469"
+        },
+        {
+          "id": "21ieo5a",
+          "name": "Ciacco",
+          "distance": "963 m",
+          "unit": "m",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "coords": "45.463827, 9.186654"
+        },
+        {
+          "id": "i5wkjei",
+          "name": "",
+          "distance": "",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true
+        },
+        {
+          "id": "czam14l",
+          "name": "Market Pam Local",
+          "distance": "331 m",
+          "unit": "m",
+          "desc": "Lanțul „Pam Local” este gândit special pentru cumpărături rapide în zonele centrale. Au prețuri corecte la brandul propriu (Pam) și o selecție foarte bună de mâncare gata preparată (salate, paste, pui la rotisor), ideală dacă vrei să iei ceva ieftin de mâncare la apartament.\n• Adresă: Via Vincenzo Monti, 21, 20123 Milano MI (la doar 4-5 minute de mers pe jos de gară)\n• Program: Luni - Sâmbătă: 07:30 - 20:30 (Atenție, duminica este închis).",
+          "checked": false,
+          "open": true,
+          "coords": "45.468000, 9.172786"
+        },
+        {
+          "id": "bgrgiz4",
+          "name": "Sapori & Dintorni Conad",
+          "distance": "764 m",
+          "unit": "m",
+          "desc": "Așa cum îți spuneam mai sus, acesta nu este un supermarket obișnuit, ci unul axat pe gastronomia regională italiană.\n• Ce găsești: Caută la raft brandul lor propriu, „Sapori & Dintorni” sau linia „Sapori & Idee”. Sunt sosuri realizate după rețete tradiționale certificate (cum ar fi Ragù alla Bolognese cu carne certificată, Pesto Genovese proaspăt cu busuioc DOP de Prà sau sosuri cu Pomodorini del Piennolo del Vesuvio).\n• Avantaj: Calitatea este net superioară sosurilor comerciale (ca Barilla), dar prețul este excelent (în jur de 2.50€ – 4.50€ borcanul). Găsești și o secțiune de frigider cu pesto și sosuri proaspete, fără conservanți, cu valabilitate scurtă.",
+          "checked": false,
+          "open": true,
+          "coords": "45.465566, 9.168291"
+        },
+        {
+          "id": "tti7csb",
+          "name": "Paradisul Gastonomic: Eataly Milano Smeraldo (Piazza XXV Aprile, 10)",
+          "distance": "1.5 km",
+          "unit": "km",
+          "desc": "Dacă vrei o selecție uriașă de sosuri artizanal-industriale de top de la mici producători din toată Italia (Liguria, Sicilia, Toscana), acesta este locul perfect. Este un uriaș magazin-concept dedicat exclusiv mâncării italiene de calitate.\n• Ce găsești: Branduri artizanale renumite precum Italpesto (pentru cel mai bun pesto la borcan), Niasca Portofino, sau sosuri de roșii incredibile de la Afeltra și Ciro Flagella. Au de la rețete simple (Cacio e Pepe, Arrabiata) până la sosuri sofisticate de vânat (mistreț, rață) sau cu trufe.\n• Cum ajungi de la Cadorna: Iei metroul verde (M2) direct de la Cadorna și cobori la stația Moscova sau Garibaldi. De acolo mergi pe jos 5 minute.\n• Prețuri: Medii spre mari (între 4€ și 9€ borcanul), dar calitatea este incredibilă.",
+          "checked": false,
+          "open": true,
+          "coords": "45.480571, 9.187876"
+        },
+        {
+          "id": "esshax7",
+          "name": "Varianta Ultra-Luxury / Cadou: Peck",
+          "distance": "1.0 km",
+          "unit": "km",
+          "desc": "Dacă ești deja în centru lângă Dom (unde ai și gelateria Ciacco), trebuie să intri la Peck. Este cea mai veche și faimoasă băcănie de lux (gastronomia istorică) din Milano, deschisă din 1883.\n• Ce găsești: Sosuri proaspete făcute în laboratorul propriu de bucătarii lor, dar și sosuri la borcan sub brandul propriu Peck. Sunt considerate etalonul luxului culinar în Milano (de exemplu, ragu de vițel cu trufe albe, sosuri gourmet cu ingrediente rare).\n• Prețuri: Mari (pot depăși ușor 10€ - 15€ un borcănel), dar ambalajele și gustul sunt de revistă. Este locul ideal dacă vrei să cumperi un cadou deosebit.",
+          "checked": false,
+          "open": true,
+          "coords": "45.463512, 9.187045"
         }
       ],
       "places": [
         {
           "id": "1e2g5h1",
           "name": "Stadio Giuseppe Meazza",
-          "distance": "6.7 km",
+          "distance": "4.2 km",
           "unit": "km",
           "desc": "9/10\nChiar dacă nu ești microbist, San Siro este „Scala Fotbalului”. Mergi pentru istoria colosală a celor două echipe (AC Milan și Inter) și pentru arhitectura brutalistă impresionantă.",
           "checked": false,
@@ -770,7 +850,7 @@
         {
           "id": "atbr9tg",
           "name": "Duomo di Milano",
-          "distance": "1.2 km",
+          "distance": "1.3 km",
           "unit": "km",
           "desc": "10/10\nEste inima orașului. Mergi nu doar pentru interiorul gotic, ci neapărat pentru a urca pe acoperiș (le terrazze) – experiența de a te plimba printre statui și turle este unică în lume.",
           "checked": false,
@@ -783,8 +863,8 @@
         {
           "id": "jsbvu2d",
           "name": "Teatro alla Scala",
-          "distance": "1.5 km",
-          "unit": "km",
+          "distance": "976 m",
+          "unit": "m",
           "desc": "9.5/10\nPentru eleganța supremă. Mergi să vezi un spectacol sau măcar muzeul, pentru a simți vibrația celui mai faimos teatru de operă din lume, unde au cântat cele mai mari voci ale istoriei.",
           "checked": false,
           "open": true,
@@ -796,7 +876,7 @@
         {
           "id": "jptnq7r",
           "name": "Galleria Vittorio Emanuele II",
-          "distance": "1.3 km",
+          "distance": "1.1 km",
           "unit": "km",
           "desc": "9/10\nSupranumită „salonul milanez”, mergi aici pentru un mix de lux, istorie și tradiție (cum ar fi să te învârți pe călcâi pe taurul de mozaic pentru noroc).",
           "checked": false,
@@ -809,7 +889,7 @@
         {
           "id": "v307wj7",
           "name": "Lago di Como",
-          "distance": "59.1 km",
+          "distance": "58.5 km",
           "unit": "km",
           "desc": "10/10\nPentru peisajele care par scoase din cărți poștale. Mergi să vezi vilele aristocratice și munții care se oglindesc în apă; este definiția eleganței naturale italiene.",
           "checked": false,
@@ -821,8 +901,8 @@
         {
           "id": "u07wlzs",
           "name": "Museo dei Bambini Milano",
-          "distance": "260 m",
-          "unit": "m",
+          "distance": "2.4 km",
+          "unit": "km",
           "desc": "8/10\nDacă ești cu cei mici, este obligatoriu. Mergi pentru că este un spațiu creativ unde copiii învață prin joacă, departe de conceptul de muzeu plictisitor.",
           "checked": false,
           "open": true,
@@ -834,8 +914,8 @@
         {
           "id": "lv45fkq",
           "name": "Leonardo da Vinci Museum Milano",
-          "distance": "2.8 km",
-          "unit": "km",
+          "distance": "938 m",
+          "unit": "m",
           "desc": "9.5/10\nUn tribut adus geniului uman. Mergi să vezi machetele invențiilor lui Leonardo și să înțelegi cum un singur om a anticipat viitorul cu 500 de ani înainte.",
           "checked": false,
           "open": true,
@@ -847,7 +927,7 @@
         {
           "id": "xrz5vxh",
           "name": "Sforzesco Castle",
-          "distance": "39.9 km",
+          "distance": "37.5 km",
           "unit": "km",
           "desc": "8.5/10\nPentru a respira aerul unei fortărețe renascentiste. Mergi să vezi curțile interioare și ultima sculptură a lui Michelangelo, Pietà Rondanini.",
           "checked": false,
@@ -860,7 +940,7 @@
         {
           "id": "zy3xix2",
           "name": "Museo Civico di Storia Naturale di Milano",
-          "distance": "1.2 km",
+          "distance": "2.0 km",
           "unit": "km",
           "desc": "8/10\nUn clasic plin de farmec. Mergi pentru dioramele foarte bine realizate și pentru secțiunea dedicată dinozaurilor, situată chiar în frumosul parc Giardini Pubblici.",
           "checked": false,
@@ -873,7 +953,7 @@
         {
           "id": "z923w3q",
           "name": "Leolandia(Capriate San Gervasio)",
-          "distance": "30.6 km",
+          "distance": "32.2 km",
           "unit": "km",
           "desc": "8.5/10\nDestinația nr. 1 pentru familiile cu copii mici. Mergi pentru atmosfera de basm, parcul „Italia în Miniatură” din interior și pentru personajele celebre din desene animate.",
           "checked": false,
@@ -886,7 +966,7 @@
         {
           "id": "5mg6v0e",
           "name": "Idroscalo",
-          "distance": "6.5 km",
+          "distance": "8.8 km",
           "unit": "km",
           "desc": "7/10\nEste supranumit „marea celor din Milano”. Mergi aici pentru o zi relaxantă de sporturi nautice, jogging sau pur și simplu pentru a scăpa de betonul orașului fără a conduce ore întregi.",
           "checked": false,
@@ -899,7 +979,7 @@
         {
           "id": "w8eswy9",
           "name": "Acquaworld Milano",
-          "distance": "16.5 km",
+          "distance": "17.4 km",
           "unit": "km",
           "desc": "8/10\nEste destinația ideală pentru distracție pură. Fiind un parc acvatic indoor, este perfect indiferent de vreme, oferind un mix bun între adrenalină (tobogane) și relaxare (zonă SPA).",
           "checked": false,
@@ -912,7 +992,7 @@
         {
           "id": "a4k7tov",
           "name": "Bergamo Alta",
-          "distance": "44.6 km",
+          "distance": "46.1 km",
           "unit": "km",
           "desc": "10/10\nO bijuterie istorică. Trebuie să mergi pentru atmosfera medievală, străduțele pietruite și priveliștea spectaculoasă de pe zidurile venețiene. Este, fără îndoială, cea mai fotogenică locație din listă.",
           "checked": false,
@@ -924,8 +1004,8 @@
         {
           "id": "xgfsmx8",
           "name": "Acquario Civico e Stazione Idrobiologica di Milano",
-          "distance": "2.4 km",
-          "unit": "km",
+          "distance": "621 m",
+          "unit": "m",
           "desc": "7.5/10\nSituat chiar lângă Parco Sempione, este o vizită scurtă și educativă. Mergi acolo pentru a admira arhitectura Art Nouveau a clădirii și pentru o pauză liniștită de observat viața subacvatică.",
           "checked": false,
           "open": true,
@@ -937,7 +1017,7 @@
         {
           "id": "fh1c4d2",
           "name": "Piazza Gae Aulenti",
-          "distance": "2.7 km",
+          "distance": "1.9 km",
           "unit": "km",
           "desc": "9.5/10\nEste simbolul Milano-ului futurist. Trebuie să mergi acolo pentru a admira skyline-ul cu Turnul Unicredit, pentru a te bucura de jocurile de apă ale fântânilor și pentru a face o plimbare spre Bosco Verticale (Pădurea Verticală) prin parcul Biblioteca degli Alberi (BAM).",
           "checked": false,
@@ -1128,12 +1208,12 @@
         }
       ],
       "accommodation": {
-        "name": "Aparthotel Meneghino",
-        "coords": "45.462141, 9.206304"
+        "name": "Suite Apartment Castello Sforzesco",
+        "coords": "45.469020, 9.176767"
       }
     },
     {
-      "id": "trip_xzc7eqb",
+      "id": "trip_t6nu29h",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1415,7 +1495,7 @@
       }
     },
     {
-      "id": "trip_zfcuqp7",
+      "id": "trip_7gjshsa",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1715,7 +1795,7 @@
       }
     },
     {
-      "id": "trip_jvsoebr",
+      "id": "trip_qswxjcl",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2873,7 +2953,7 @@
       }
     },
     {
-      "id": "trip_70evfke",
+      "id": "trip_rodwkhv",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
