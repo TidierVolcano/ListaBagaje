@@ -1,10 +1,10 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-19T13:11:21.075Z",
+  "exportedAt": "2026-05-22T06:19:54.667Z",
   "activeType": "city",
   "trips": [
     {
-      "id": "trip_yjvl16m",
+      "id": "trip_f19utn3",
       "type": "city",
       "name": "Milano",
       "savedAt": 1775414718871,
@@ -835,12 +835,32 @@
         {
           "id": "9nr81qj",
           "name": "Pasta d’autore",
+          "distance": "1.2 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "coords": "45.458756, 9.180996"
+        },
+        {
+          "id": "vy5xkf7",
+          "name": "Cova montenapoleone",
+          "distance": "1.5 km",
+          "unit": "km",
+          "desc": "",
+          "checked": false,
+          "open": true,
+          "coords": "45.468111, 9.195490"
+        },
+        {
+          "id": "beybyat",
+          "name": "Marchesi 1824",
           "distance": "",
           "unit": "km",
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "Corso di Porta Ticinese, 16, 20123 Milano MI, Italy"
+          "coords": "Via Santa Maria alla Porta, 11/a, 20123 Milano MI, Italy"
         }
       ],
       "places": [
@@ -1223,7 +1243,7 @@
       }
     },
     {
-      "id": "trip_t6nu29h",
+      "id": "trip_o57jrm9",
       "type": "seacar",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1505,7 +1525,7 @@
       }
     },
     {
-      "id": "trip_7gjshsa",
+      "id": "trip_l7pcomw",
       "type": "camp",
       "name": "Lista mea",
       "savedAt": 1775037657380,
@@ -1805,7 +1825,7 @@
       }
     },
     {
-      "id": "trip_qswxjcl",
+      "id": "trip_2seo09r",
       "type": "seaair",
       "name": "Valencia",
       "savedAt": 1775465478867,
@@ -2963,7 +2983,7 @@
       }
     },
     {
-      "id": "trip_rodwkhv",
+      "id": "trip_hz05irt",
       "type": "city",
       "name": "Roma",
       "savedAt": 1775037933169,
