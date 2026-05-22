@@ -1,6 +1,6 @@
 {
   "packroExport": true,
-  "exportedAt": "2026-05-22T06:19:54.667Z",
+  "exportedAt": "2026-05-22T06:20:48.136Z",
   "activeType": "city",
   "trips": [
     {
@@ -749,7 +749,7 @@
           "checked": false,
           "open": false,
           "coords": "45.452970, 9.172249",
-          "collapsed": false,
+          "collapsed": true,
           "ratingGoogle": "4.4"
         },
         {
@@ -760,7 +760,7 @@
           "desc": "",
           "checked": false,
           "open": true,
-          "collapsed": false,
+          "collapsed": true,
           "coords": "45.463214, 9.189602"
         },
         {
@@ -771,7 +771,8 @@
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "45.482638, 9.206469"
+          "coords": "45.482638, 9.206469",
+          "collapsed": true
         },
         {
           "id": "21ieo5a",
@@ -781,16 +782,8 @@
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "45.463827, 9.186654"
-        },
-        {
-          "id": "i5wkjei",
-          "name": "",
-          "distance": "",
-          "unit": "km",
-          "desc": "",
-          "checked": false,
-          "open": true
+          "coords": "45.463827, 9.186654",
+          "collapsed": true
         },
         {
           "id": "czam14l",
@@ -800,7 +793,8 @@
           "desc": "Lanțul „Pam Local” este gândit special pentru cumpărături rapide în zonele centrale. Au prețuri corecte la brandul propriu (Pam) și o selecție foarte bună de mâncare gata preparată (salate, paste, pui la rotisor), ideală dacă vrei să iei ceva ieftin de mâncare la apartament.\n• Adresă: Via Vincenzo Monti, 21, 20123 Milano MI (la doar 4-5 minute de mers pe jos de gară)\n• Program: Luni - Sâmbătă: 07:30 - 20:30 (Atenție, duminica este închis).",
           "checked": false,
           "open": true,
-          "coords": "45.468000, 9.172786"
+          "coords": "45.468000, 9.172786",
+          "collapsed": true
         },
         {
           "id": "bgrgiz4",
@@ -810,7 +804,8 @@
           "desc": "Așa cum îți spuneam mai sus, acesta nu este un supermarket obișnuit, ci unul axat pe gastronomia regională italiană.\n• Ce găsești: Caută la raft brandul lor propriu, „Sapori & Dintorni” sau linia „Sapori & Idee”. Sunt sosuri realizate după rețete tradiționale certificate (cum ar fi Ragù alla Bolognese cu carne certificată, Pesto Genovese proaspăt cu busuioc DOP de Prà sau sosuri cu Pomodorini del Piennolo del Vesuvio).\n• Avantaj: Calitatea este net superioară sosurilor comerciale (ca Barilla), dar prețul este excelent (în jur de 2.50€ – 4.50€ borcanul). Găsești și o secțiune de frigider cu pesto și sosuri proaspete, fără conservanți, cu valabilitate scurtă.",
           "checked": false,
           "open": true,
-          "coords": "45.465566, 9.168291"
+          "coords": "45.465566, 9.168291",
+          "collapsed": true
         },
         {
           "id": "tti7csb",
@@ -820,7 +815,8 @@
           "desc": "Dacă vrei o selecție uriașă de sosuri artizanal-industriale de top de la mici producători din toată Italia (Liguria, Sicilia, Toscana), acesta este locul perfect. Este un uriaș magazin-concept dedicat exclusiv mâncării italiene de calitate.\n• Ce găsești: Branduri artizanale renumite precum Italpesto (pentru cel mai bun pesto la borcan), Niasca Portofino, sau sosuri de roșii incredibile de la Afeltra și Ciro Flagella. Au de la rețete simple (Cacio e Pepe, Arrabiata) până la sosuri sofisticate de vânat (mistreț, rață) sau cu trufe.\n• Cum ajungi de la Cadorna: Iei metroul verde (M2) direct de la Cadorna și cobori la stația Moscova sau Garibaldi. De acolo mergi pe jos 5 minute.\n• Prețuri: Medii spre mari (între 4€ și 9€ borcanul), dar calitatea este incredibilă.",
           "checked": false,
           "open": true,
-          "coords": "45.480571, 9.187876"
+          "coords": "45.480571, 9.187876",
+          "collapsed": true
         },
         {
           "id": "esshax7",
@@ -830,7 +826,8 @@
           "desc": "Dacă ești deja în centru lângă Dom (unde ai și gelateria Ciacco), trebuie să intri la Peck. Este cea mai veche și faimoasă băcănie de lux (gastronomia istorică) din Milano, deschisă din 1883.\n• Ce găsești: Sosuri proaspete făcute în laboratorul propriu de bucătarii lor, dar și sosuri la borcan sub brandul propriu Peck. Sunt considerate etalonul luxului culinar în Milano (de exemplu, ragu de vițel cu trufe albe, sosuri gourmet cu ingrediente rare).\n• Prețuri: Mari (pot depăși ușor 10€ - 15€ un borcănel), dar ambalajele și gustul sunt de revistă. Este locul ideal dacă vrei să cumperi un cadou deosebit.",
           "checked": false,
           "open": true,
-          "coords": "45.463512, 9.187045"
+          "coords": "45.463512, 9.187045",
+          "collapsed": true
         },
         {
           "id": "9nr81qj",
@@ -840,7 +837,8 @@
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "45.458756, 9.180996"
+          "coords": "45.458756, 9.180996",
+          "collapsed": true
         },
         {
           "id": "vy5xkf7",
@@ -850,17 +848,19 @@
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "45.468111, 9.195490"
+          "coords": "45.468111, 9.195490",
+          "collapsed": true
         },
         {
           "id": "beybyat",
           "name": "Marchesi 1824",
-          "distance": "",
-          "unit": "km",
+          "distance": "494 m",
+          "unit": "m",
           "desc": "",
           "checked": false,
           "open": true,
-          "coords": "Via Santa Maria alla Porta, 11/a, 20123 Milano MI, Italy"
+          "coords": "45.465483, 9.180597",
+          "collapsed": true
         }
       ],
       "places": [
